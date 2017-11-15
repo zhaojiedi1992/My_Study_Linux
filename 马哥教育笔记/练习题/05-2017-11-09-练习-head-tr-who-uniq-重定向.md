@@ -1,15 +1,12 @@
 ## 练习1
 1. 将/etc/passwd 文件的前5行内容转化为大写后保存到/tmp/passwd.out文件
+```bash
+[root@centos6 dirtest]# head -n 5 /etc/passwd |tr 'a-z' 'A-Z' > /tmp/passwd.out
+```
 1. 将登陆到当前系统的用户信息的后3行信息转化为大写保存到/tmp/who.out文件中
 
 ```bash
-[root@centos6 dirtest]# head -n 5 /etc/passwd |tr 'a-z' 'A-Z' > /tmp/passwd.out
-
-```
-
-```bash
 [root@centos6 dirtest]# who |tail -n 3  | tr 'a-z' 'A-Z' > /tmp/who.out
-
 ```
 ## 练习2
 1. 取出/etc/passwd 文件中的第6行至第10行，并将这些信息按第3个字段数值进行排序，最后显示进显示第一个字段，
@@ -58,8 +55,9 @@ end$
 ```
 7 、处理字符串“xt.,l 1 jr#!$mn 2 c*/fe 3 uz 4 ”，只保留其中的数字
 和空格
+
 ```bash
-[root@centos7 app]# echo "xt.,l 1 jr#win.txtmn 2 c*/fe 3 uz 4 " | tr -cd "[0-9] " 
+[root@centos7 app]# echo 'xt.,l 1 jr#win.txtmn 2 c*/fe 3 uz 4 ' | tr -cd "[0-9] " 
 ```
 8 、将PATH 变量每个目录显示在独立的一行
 ```bash
@@ -73,7 +71,6 @@ end$
 9、  将 指定文件中0-9 分别替代成a-j
 ```bash
 [root@centos7 app]# cat /etc/fstab |tr [0-9] [a-j]
-
 #
 # /etc/fstab
 # Created by anaconda on Tue Nov  a aa:aa:aa aaaa
@@ -88,5 +85,5 @@ UUID=bacaaafa-aeea-abac-aeaa-edaacbaacaaa swap                    swap    defaul
 ```
 10 、将/etc/centos-release文件中每个单词（由字母组成）显示在独立的一行，并无空行
 ```bash
-[root@centos7 app]# cat /etc/centos-release | tr -dc "a-zA-Z " |tr -s " " "\n"
+[root@centos7 app]# cat /etc/centos-release | tr -sc "a-zA-Z " "\n" 
 ```
