@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>01-2017-07-练习-Linux简介练习 &mdash; my_study_linux v0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
+        <link rel="next" title="02-2017-11-08-练习-日期开机关机" href="02-2017-11-08-练习-日期开机关机.html"/>
+        <link rel="prev" title="欢迎查看zhaojiedi1992的linux学习笔记" href="../index.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> my_study_linux
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">练习题</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">01-2017-07-练习-Linux简介练习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#halt-poweroff-shutdown-init-0">1)halt,poweroff,shutdown,init 0的主要区别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">2)用户登陆相关</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="02-2017-11-08-练习-日期开机关机.html">02-2017-11-08-练习-日期开机关机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-2017-11-09-练习-glob.html">03-2017-11-09-练习-glob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-2017-11-09-练习-目录相关.html">04-2017-11-09-练习-目录相关</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-2017-11-09-练习-head-tr-管道.html">05-2017-11-09-练习-head-tr-管道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-2017-11-16-练习-用户管理.html">06-2017-11-16-练习-用户管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-2017-11-10-练习-wc-useradd.html">07-2017-11-10-练习-wc-useradd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-2017-11-10-练习-grep-文本.html">08-2017-11-10-练习-grep-文本</a></li>
+</ul>
+<p class="caption"><span class="caption-text">课堂笔记</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/00-2017-11-00.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/01-2017-11-06.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/02-2017-11-07.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/03-2017-11-08.html">03-2017-11-08</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/04-2017-11-10.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/05-2017-11-13.html">05-2017-11-13</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/06-2017-11-15.html">06-2017-11-15</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/07-2017-11-17.html">07-2017-11-17</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/08-2017-11-20.html">08-2017-11-20</a></li>
+</ul>
+<p class="caption"><span class="caption-text">博客作业</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1711.html">11月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1712.html">12月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1801.html">1月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1803.html">3月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1804.html">4月博客作业</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">my_study_linux</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>01-2017-07-练习-Linux简介练习</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/练习题/01-2017-07-练习-Linux简介.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="linux">
+<h1>01-2017-07-练习-Linux简介练习<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
+<div class="section" id="halt-poweroff-shutdown-init-0">
+<h2>1)halt,poweroff,shutdown,init 0的主要区别<a class="headerlink" href="#halt-poweroff-shutdown-init-0" title="永久链接至标题">¶</a></h2>
+<p>关机相关shutdown,init 0:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>shutdown实际上是调用init 0, init 0会cleanup一些工作然后调用halt或者poweroff。
+其实主要区别是halt和poweroff，做没有acpi（高级配置和电源管理接口）的系统上，
+halt只是关闭了os，电源还在工作，你得手动取按一下那个按钮，
+但在现在的系统上，他们实际上都一样了
+</pre></div>
+</div>
+<p>重启相关reboot,shudown,init6:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&quot;init 6&quot; 基于一系列/etc/inittab文件，并且每个应用都会有一个相应shutdown脚本。
+&#39;init 6&#39; 调用一系列shutdown脚本(/etc/rc0.d/K*)来使系统优雅关机;
+&#39;reboot&#39;并不执行这些过程，
+reboot更是一个kernel级别的命令，不对应用使用shutdown脚本。
+我们应该在通常情况下使用 init 6.
+在出问题的状况下或强制重启时使用reboot.
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>2)用户登陆相关<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>who,whoami,w的使用:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># who #查看当前用户登陆情况， 建议使用w，显示更全面</span>
+<span class="n">root</span>     <span class="n">tty1</span>         <span class="mi">2017</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">07</span> <span class="mi">16</span><span class="p">:</span><span class="mi">20</span> <span class="p">(:</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">root</span>     <span class="n">pts</span><span class="o">/</span><span class="mi">0</span>        <span class="mi">2017</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">07</span> <span class="mi">16</span><span class="p">:</span><span class="mi">20</span> <span class="p">(:</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">root</span>     <span class="n">pts</span><span class="o">/</span><span class="mi">1</span>        <span class="mi">2017</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">07</span> <span class="mi">16</span><span class="p">:</span><span class="mi">34</span> <span class="p">(:</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">root</span>     <span class="n">pts</span><span class="o">/</span><span class="mi">2</span>        <span class="mi">2017</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">07</span> <span class="mi">16</span><span class="p">:</span><span class="mi">39</span> <span class="p">(</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">27.1</span><span class="p">)</span>
+<span class="n">root</span>     <span class="n">pts</span><span class="o">/</span><span class="mi">3</span>        <span class="mi">2017</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">07</span> <span class="mi">17</span><span class="p">:</span><span class="mi">11</span> <span class="p">(</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">27.1</span><span class="p">)</span>
+<span class="n">root</span>     <span class="n">pts</span><span class="o">/</span><span class="mi">4</span>        <span class="mi">2017</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">07</span> <span class="mi">18</span><span class="p">:</span><span class="mi">56</span> <span class="p">(</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">27.1</span><span class="p">)</span>
+
+
+<span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># who -r #显示运行级别</span>
+<span class="n">run</span><span class="o">-</span><span class="n">level</span> <span class="mi">5</span>  <span class="mi">2017</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">07</span> <span class="mi">16</span><span class="p">:</span><span class="mi">11</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># whoami</span>
+<span class="n">root</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># w #    带有启动时间，用户数，还有负载情况，用户，连接终端，来源ip,登陆时间，空闲时间，占用cpu时常</span>
+<span class="mi">19</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mi">53</span> <span class="n">up</span>  <span class="mi">2</span><span class="p">:</span><span class="mi">54</span><span class="p">,</span>  <span class="mi">6</span> <span class="n">users</span><span class="p">,</span>  <span class="n">load</span> <span class="n">average</span><span class="p">:</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span>
+
+<span class="n">USER</span>     <span class="n">TTY</span>      <span class="n">FROM</span>              <span class="n">LOGIN</span><span class="o">@</span>   <span class="n">IDLE</span>   <span class="n">JCPU</span>   <span class="n">PCPU</span> <span class="n">WHAT</span>
+<span class="n">root</span>     <span class="n">tty1</span>     <span class="p">:</span><span class="mi">0</span>               <span class="mi">16</span><span class="p">:</span><span class="mi">20</span>    <span class="mi">2</span><span class="p">:</span><span class="mi">54</span><span class="n">m</span>  <span class="mf">5.38</span><span class="n">s</span>  <span class="mf">5.38</span><span class="n">s</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">Xorg</span> <span class="p">:</span><span class="mi">0</span> <span class="o">-</span><span class="n">br</span> <span class="o">-</span><span class="n">v</span>
+<span class="n">root</span>     <span class="n">pts</span><span class="o">/</span><span class="mi">0</span>    <span class="p">:</span><span class="mi">0</span>               <span class="mi">16</span><span class="p">:</span><span class="mi">20</span>    <span class="mi">2</span><span class="p">:</span><span class="mi">45</span><span class="n">m</span>  <span class="mf">0.00</span><span class="n">s</span>  <span class="mf">0.54</span><span class="n">s</span> <span class="n">kded4</span>
+<span class="n">root</span>     <span class="n">pts</span><span class="o">/</span><span class="mi">1</span>    <span class="p">:</span><span class="mi">0</span>               <span class="mi">16</span><span class="p">:</span><span class="mi">34</span>    <span class="mi">2</span><span class="p">:</span><span class="mi">30</span><span class="n">m</span>  <span class="mf">0.00</span><span class="n">s</span>  <span class="mf">0.00</span><span class="n">s</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>
+<span class="n">root</span>     <span class="n">pts</span><span class="o">/</span><span class="mi">2</span>    <span class="mf">192.168</span><span class="o">.</span><span class="mf">27.1</span>     <span class="mi">16</span><span class="p">:</span><span class="mi">39</span>    <span class="mi">2</span><span class="p">:</span><span class="mi">12</span><span class="n">m</span>  <span class="mf">0.04</span><span class="n">s</span>  <span class="mf">0.04</span><span class="n">s</span> <span class="o">-</span><span class="n">bash</span>
+<span class="n">root</span>     <span class="n">pts</span><span class="o">/</span><span class="mi">3</span>    <span class="mf">192.168</span><span class="o">.</span><span class="mf">27.1</span>     <span class="mi">17</span><span class="p">:</span><span class="mi">11</span>    <span class="mi">1</span><span class="p">:</span><span class="mi">21</span><span class="n">m</span>  <span class="mf">0.07</span><span class="n">s</span>  <span class="mf">0.07</span><span class="n">s</span> <span class="o">-</span><span class="n">bash</span>
+<span class="n">root</span>     <span class="n">pts</span><span class="o">/</span><span class="mi">4</span>    <span class="mf">192.168</span><span class="o">.</span><span class="mf">27.1</span>     <span class="mi">18</span><span class="p">:</span><span class="mi">56</span>    <span class="mf">0.00</span><span class="n">s</span>  <span class="mf">0.16</span><span class="n">s</span>  <span class="mf">0.10</span><span class="n">s</span> <span class="n">w</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="02-2017-11-08-练习-日期开机关机.html" class="btn btn-neutral float-right" title="02-2017-11-08-练习-日期开机关机" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="欢迎查看zhaojiedi1992的linux学习笔记" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, zhaojiedi1992@outlook.com.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
