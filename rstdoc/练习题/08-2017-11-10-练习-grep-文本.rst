@@ -101,7 +101,7 @@
 
 2 、查出分区空间使用率的最大百分比值     ::
 
-        [root@centos7 app]# df |cut -c 44-46 |sort -n  | tail -n 1
+[root@centos7 app]# df |cut -c 44-46 |sort -n  | tail -n 1
         100
 
 3 、查出用户UID 最大值的用户名、UID 及shell 类型 ::
@@ -249,11 +249,13 @@
 
 3 、使用egrep 取出/etc/rc.d/init.d/functions 中其基名 ::
 
-        [root@centos7 app]# echo "/etc/rc.d/init.d/function" |egrep "[^/]*/?$" -o |grep -o "[^/]*"
+        [root@centos7 app]# echo "/etc/rc.d/init.d/function" |egrep -o ".*[^/]+" |egrep "[^/]*$" -o
+        [root@centos7 app]# echo "/etc/rc.d/init.d/" |egrep -o ".*[^/]+" |egrep "[^/]*$" -o
 
 4 、使用egrep 取出上面路径的目录名 ::
 
-        [root@centos7 app]# echo "/etc/rc.d/init.d/fucntion/" | egrep -o ".*[^/]+"  |grep "/.*/" -o
+        [root@centos7 app]#  echo "/etc/rc.d/init.d/fucntion" | egrep -o ".*[^/]+" |grep ".*/" -o |grep -o ".*[^/]+"
+        [root@centos7 app]#  echo "/etc/rc.d/init.d/" | egrep -o ".*[^/]+" |grep ".*/" -o |grep -o ".*[^/]+"
  
 5 、统计last 命令中以root 登录的每个主机IP 地址登录次数 ::
 
@@ -285,6 +287,7 @@
         255.255.255.0
         192.168.122.255
 
-8 、将此字符串：welcome to magedu linux  中的每个字符去重并排序，重复次数多的排到前面
+8 、将此字符串：welcome to magedu linux  中的每个字符去重并排序，重复次数多的排到前面 ::
+
         [root@centos7 app]# echo "welcome to magedu linux"  |grep "[[:alnum:]]"  -o |sort |uniq -c   | sort -nrt " " -k2 |cut -d " " -f8 |tr -d "\n"
 
