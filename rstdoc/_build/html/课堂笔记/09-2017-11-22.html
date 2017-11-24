@@ -185,24 +185,69 @@
 <h1>09-2017-11-22<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id2">
 <h2>上节课回顾<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt>正则表达式 ::</dt>
-<dd><p class="first">?
+<p>正则表达式</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>.
+*
+?
 []
 [^]
-|</p>
-<p>&lt;
-&gt;
-{n}
-{m,n}
-{m,}
-{,m}</p>
-<p class="last">1</p>
-</dd>
-</dl>
+|
+
+
+^
+$
+\&lt;
+\&gt;
+\{n\}
+\{m,n\}
+\{m,\}
+\{,m\}
+
+\1
+</pre></div>
+</div>
 </div>
 <div class="section" id="id3">
 <h2>本节内容<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>vim技巧</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>3&quot;tyy:复制3行到t寄存器
+tp:复制t寄存器的内容到节目上
+
+vim -b a.binary:
+：%!xxd:
+
+ctrl+v：面向块的复制
+ ，、、
+:set ai ：自动对齐
+:set si :自动缩进
+:set ic :忽略大小写
+:set hlsearch:高亮搜索
+:syntax on :开启语法
+:set list :显示回车和tab键
+:set ff=unix,ff=dos:设置文档格式
+:set parse: 设置复制保留格式
+:set cul : 设置光标所在行
+:help option-list:获取帮助
+:set all :获取帮助
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>bash编程  ::</dt>
+<dd><p class="first">unset：清空变量设置
+$$:当前进程ide
+$PPID:当前进程的父
+pstree -p：查看进程树</p>
+<p>export:生成环境变量
+declere -x:生成环境变
+$SHLVL：查看shell的级别</p>
+<p>$_:上一个命令的最后一个参数</p>
+<p>declare -r :只读变量
+(umask=066 touch a.txt):指定环境下创建一个文件</p>
+<p>$*:全部参数何为一个字符串
+$&#64;:每个参数都是一个独立的字符串</p>
+<p class="last">shift:清空一个位置变量</p>
+</dd>
+</dl>
 </div>
 </div>
 

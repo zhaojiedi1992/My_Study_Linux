@@ -101,7 +101,7 @@
 
 2 、查出分区空间使用率的最大百分比值     ::
 
-        [root@centos7 app]# df |cut -c 44-46 |sort -n  | tail -n 1
+[root@centos7 app]# df |cut -c 44-46 |sort -n  | tail -n 1
         100
 
 3 、查出用户UID 最大值的用户名、UID 及shell 类型 ::

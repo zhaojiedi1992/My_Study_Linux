@@ -289,9 +289,10 @@
 </div>
 <p>2 、查出分区空间使用率的最大百分比值</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="n">app</span><span class="p">]</span><span class="c1"># df |cut -c 44-46 |sort -n  | tail -n 1</span>
-<span class="mi">100</span>
 </pre></div>
 </div>
+<blockquote>
+<div>100</div></blockquote>
 <p>3 、查出用户UID 最大值的用户名、UID 及shell 类型</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="n">app</span><span class="p">]</span><span class="c1"># cat /etc/passwd  | sort -t &quot;:&quot; -k 3 -nr |head -n 1 |cut -d &quot;:&quot; -f1,3,7</span>
 <span class="n">nfsnobody</span><span class="p">:</span><span class="mi">65534</span><span class="p">:</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>

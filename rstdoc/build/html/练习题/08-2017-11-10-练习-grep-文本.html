@@ -36,7 +36,7 @@
               href="../genindex.html"/>
         <link rel="search" title="搜索" href="../search.html"/>
     <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
-        <link rel="next" title="08-2017-11-20" href="../课堂笔记/00-2017-11-00.html"/>
+        <link rel="next" title="12-2017-11-23-练习-bash" href="12-2017-11-23-联系-bash.html"/>
         <link rel="prev" title="07-2017-11-10-练习-wc-useradd" href="07-2017-11-10-练习-wc-useradd.html"/> 
 
   
@@ -107,6 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id3">练习5-egrep</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="12-2017-11-23-联系-bash.html">12-2017-11-23-练习-bash</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
@@ -119,6 +120,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/06-2017-11-15.html">06-2017-11-15</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/07-2017-11-17.html">07-2017-11-17</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/08-2017-11-20.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/09-2017-11-22.html">09-2017-11-22</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/10-2017-11-24.html">10-2017-11-24</a></li>
 </ul>
 <p class="caption"><span class="caption-text">博客作业</span></p>
 <ul>
@@ -289,9 +292,10 @@
 </div>
 <p>2 、查出分区空间使用率的最大百分比值</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="n">app</span><span class="p">]</span><span class="c1"># df |cut -c 44-46 |sort -n  | tail -n 1</span>
-<span class="mi">100</span>
 </pre></div>
 </div>
+<blockquote>
+<div>100</div></blockquote>
 <p>3 、查出用户UID 最大值的用户名、UID 及shell 类型</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="n">app</span><span class="p">]</span><span class="c1"># cat /etc/passwd  | sort -t &quot;:&quot; -k 3 -nr |head -n 1 |cut -d &quot;:&quot; -f1,3,7</span>
 <span class="n">nfsnobody</span><span class="p">:</span><span class="mi">65534</span><span class="p">:</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
@@ -491,7 +495,7 @@ UUID=b2c064f5-1ee5-4b5c-9e75-ed41cb99c5aa swap                    swap    defaul
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../课堂笔记/00-2017-11-00.html" class="btn btn-neutral float-right" title="08-2017-11-20" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="12-2017-11-23-联系-bash.html" class="btn btn-neutral float-right" title="12-2017-11-23-练习-bash" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="07-2017-11-10-练习-wc-useradd.html" class="btn btn-neutral" title="07-2017-11-10-练习-wc-useradd" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
