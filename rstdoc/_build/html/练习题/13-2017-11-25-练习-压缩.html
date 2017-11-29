@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>13-2017-11-25-练习-压缩 &mdash; my_study_linux v0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
+        <link rel="next" title="14-2017-11-28-练习-sed" href="14-2017-11-28-练习-sed.html"/>
+        <link rel="prev" title="12-2017-11-23-练习-bash" href="12-2017-11-23-联系-bash.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> my_study_linux
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">练习题</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="01-2017-07-练习-Linux简介.html">01-2017-07-练习-Linux简介练习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-2017-11-08-练习-日期开机关机.html">02-2017-11-08-练习-日期开机关机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-2017-11-09-练习-glob.html">03-2017-11-09-练习-glob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-2017-11-09-练习-目录相关.html">04-2017-11-09-练习-目录相关</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-2017-11-09-练习-head-tr-管道.html">05-2017-11-09-练习-head-tr-管道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-2017-11-16-练习-用户管理.html">06-2017-11-16-练习-用户管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-2017-11-10-练习-wc-useradd.html">07-2017-11-10-练习-wc-useradd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-2017-11-10-练习-grep-文本.html">08-2017-11-10-练习-grep-文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-2017-11-23-联系-bash.html">12-2017-11-23-练习-bash</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">13-2017-11-25-练习-压缩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-2017-11-28-练习-sed.html">14-2017-11-28-练习-sed</a></li>
+</ul>
+<p class="caption"><span class="caption-text">课堂笔记</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/00-2017-11-00.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/01-2017-11-06.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/02-2017-11-07.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/03-2017-11-08.html">03-2017-11-08</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/04-2017-11-10.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/05-2017-11-13.html">05-2017-11-13</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/06-2017-11-15.html">06-2017-11-15</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/07-2017-11-17.html">07-2017-11-17</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/08-2017-11-20.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/09-2017-11-22.html">09-2017-11-22</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/10-2017-11-24.html">10-2017-11-24</a></li>
+</ul>
+<p class="caption"><span class="caption-text">博客作业</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1711.html">11月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1712.html">12月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1801.html">1月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1803.html">3月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1804.html">4月博客作业</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">my_study_linux</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>13-2017-11-25-练习-压缩</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/练习题/13-2017-11-25-练习-压缩.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>13-2017-11-25-练习-压缩<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>1 、使用不同压缩工具对同一个文件进行压缩，并比较大小</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos7 test]$ compress -c messages-20171113 &gt; messages.Z
+[root@centos7 test]$ ll
+total 3684
+-rw-------. 1 root root 1678853 Nov 28 09:42 messages-20171113
+-rw-------. 1 root root 1678853 Nov 28 09:45 messages-20171113.bak
+-rw-r--r--. 1 root root  411094 Nov 28 09:47 messages.Z
+[root@centos7 test]$ gzip -c messages-20171113 &gt; message.gz
+[root@centos7 test]$ ll
+total 3892
+-rw-r--r--. 1 root root  212778 Nov 28 09:48 message.gz
+-rw-------. 1 root root 1678853 Nov 28 09:42 messages-20171113
+-rw-------. 1 root root 1678853 Nov 28 09:45 messages-20171113.bak
+-rw-r--r--. 1 root root  411094 Nov 28 09:47 messages.Z
+[root@centos7 test]$ xz -c messages-20171113 &gt;messages.xz
+[root@centos7 test]$ ll
+total 4044
+-rw-r--r--. 1 root root  212778 Nov 28 09:48 message.gz
+-rw-------. 1 root root 1678853 Nov 28 09:42 messages-20171113
+-rw-------. 1 root root 1678853 Nov 28 09:45 messages-20171113.bak
+-rw-r--r--. 1 root root   76476 Nov 28 09:50 messages.xz
+-rw-r--r--. 1 root root  411094 Nov 28 09:47 messages.Z
+[root@centos7 test]$ ll -S
+total 3968
+-rw-------. 1 root root 1678853 Nov 28 09:42 messages-20171113
+-rw-------. 1 root root 1678853 Nov 28 09:45 messages-20171113.bak
+-rw-r--r--. 1 root root  411094 Nov 28 09:47 messages.Z
+-rw-r--r--. 1 root root  212778 Nov 28 09:48 message.gz
+-rw-r--r--. 1 root root   76476 Nov 28 09:50 messages.xz
+
+[root@centos7 test]$ echo -e  &quot;xz:$[1678853/76476]\ngz:$[1678853/212778]\nZ:$[1678853/411094]&quot;
+xz:21
+gz:7
+Z:4
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last">从上面的对比可以看出来， xz的压缩效果最好，其次gzip，最差的compress压缩。</p>
+</div>
+<p>2 、zip,unzip对/etc/sysconfig打包和压缩</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos7 test]$ zip -r sysconfig.zip /etc/sysconfig
+[root@centos7 test]$ unzip sysconfig.zip
+</pre></div>
+</div>
+<p>3 、使用tar命令创建归档，并添加文件，查看文件列表，展开归档</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos7 test]$ tar Jcvf sysconfig.tar.xz  /etc/sysconfig/
+[root@centos7 test]$ ll
+total 900
+-rw-r--r--. 1 root root 919508 Nov 28 10:13 sysconfig.tar.xz
+[root@centos7 test]$ tar tvf sysconfig.tar.xz
+root@centos7 test]$ tar -rf sysconfig.tar.xz /root/access_log
+tar: Cannot update compressed archives
+tar: Error is not recoverable: exiting now
+[root@centos7 test]$ tar xf sysconfig.tar.xz  -C /usr/src
+[root@centos7 test]$ ll /usr/src
+total 12
+drwxr-xr-x. 2 root root 4096 Nov  5  2016 debug
+drwxr-xr-x. 3 root root 4096 Nov 28 10:19 etc
+drwxr-xr-x. 3 root root 4096 Nov 23 10:06 kernels
+</pre></div>
+</div>
+<p>4 、split分割一个tar文件，并合并这些文件</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos7 test]$ split -d -b 50k sysconfig.tar.xz  myconfig
+[root@centos7 test]$ ll myconfig*
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig00
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig01
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig02
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig03
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig04
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig05
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig06
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig07
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig08
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig09
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig10
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig11
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig12
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig13
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig14
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig15
+-rw-r--r--. 1 root root 51200 Nov 28 10:21 myconfig16
+-rw-r--r--. 1 root root 49108 Nov 28 10:21 myconfig17
+[root@centos7 test]$ cat myconfig* &gt;&gt; myconfig.tar.xz
+</pre></div>
+</div>
+<p>5 、cpio 进行打包并还原</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos7 test]$ find /etc/sysconfig -print  |cpio -ovc &gt;sysconfig.cpio
+[root@centos7 test]$ find /etc/scpio -tv &lt; sysconfig.cpio
+[root@centos7 test]$ cpio -idv &lt; sysconfig.cpio
+</pre></div>
+</div>
+<p>6 、测试压缩并解压对文件权限的影响</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos7 test]$ touch general.txt
+[root@centos7 test]$ touch acl.txt
+[root@centos7 test]$ setfacl -m &quot;u:zhaojiedi:rwx&quot; acl.txt
+[root@centos7 test]$ ll
+total 4
+-rw-rwxr--+ 1 root root 0 Nov 28 10:33 acl.txt
+-rw-r--r--. 1 root root 0 Nov 28 10:33 general.txt
+[root@centos7 test]$ mkdir bakdir
+[root@centos7 test]$ xz -c acl.txt  &gt; bakdir/acl.txt.xz
+[root@centos7 test]$ gzip -c general.txt  &gt; bakdir/general.txt.gz
+[root@centos7 test]$ cd bakdir
+[root@centos7 bakdir]$ ll
+total 8
+-rw-r--r--. 1 root root 32 Nov 28 10:35 acl.txt.xz
+-rw-r--r--. 1 root root 32 Nov 28 10:38 general.txt.gz
+[root@centos7 bakdir]$ xz -d acl.txt.xz
+[root@centos7 bakdir]$ gzip -d general.txt.gz
+[root@centos7 bakdir]$ ll . ; ll ../
+total 0
+-rw-r--r--. 1 root root 0 Nov 28 10:35 acl.txt
+-rw-r--r--. 1 root root 0 Nov 28 10:38 general.txt
+total 8
+-rw-rwxr--+ 1 root root    0 Nov 28 10:33 acl.txt
+drwxr-xr-x. 2 root root 4096 Nov 28 10:38 bakdir
+-rw-r--r--. 1 root root    0 Nov 28 10:33 general.txt
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">经过测试我们发现，普通的权限还是能保留的，acl权限会在压缩和解压过程中丢失的。</p>
+</div>
+<p>7 、测试tar打包保留权限的问题</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos7 test]$ ll
+total 4
+-rw-rwxr--+ 1 root root 0 Nov 28 10:33 acl.txt
+-rw-r--r--. 1 root root 0 Nov 28 10:33 general.txt
+[root@centos7 test]$ tar Jcvf /root/test.tar.xz /app/test
+tar: Removing leading `/&#39; from member names
+/app/test/
+/app/test/general.txt
+/app/test/acl.txt
+[root@centos7 test]$ tar --acl -Jcvf /root/test.tar.xz /app/test
+tar: Removing leading `/&#39; from member names
+/app/test/
+/app/test/general.txt
+/app/test/acl.txt
+[root@centos7 test]$ cd /root
+[root@centos7 ~]$ tar xvf test.tar.xz
+app/test/
+app/test/general.txt
+app/test/acl.txt
+[root@centos7 ~]$ ll /app/test
+total 4
+-rw-rwxr--+ 1 root root 0 Nov 28 10:33 acl.txt
+-rw-r--r--. 1 root root 0 Nov 28 10:33 general.txt
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last">经过测试我们发现使用tar --acl 选项打包的时候可以保留acl权限。其实还有xattrs，selinux保留选项的</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="14-2017-11-28-练习-sed.html" class="btn btn-neutral float-right" title="14-2017-11-28-练习-sed" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="12-2017-11-23-联系-bash.html" class="btn btn-neutral" title="12-2017-11-23-练习-bash" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, zhaojiedi1992@outlook.com.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
