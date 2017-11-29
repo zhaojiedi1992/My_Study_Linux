@@ -143,9 +143,9 @@
     #Other      :
     #================================================
 
-[ $# -lt 1 ] && echo "must one parameter" && exit 1
-[ ! -f $1 ] && echo " file not exist" && exit 2
-echo `cat $1 |grep "^[[:space:]]*$" |wc -l`
+    [ $# -lt 1 ] && echo "must one parameter" && exit 1
+    [ ! -f $1 ] && echo " file not exist" && exit 2
+    echo `cat $1 |grep "^[[:space:]]*$" |wc -l`
 
 2、编写脚本/root/bin/hostping.sh，接受一个主机的IPv4地址做为参数，测试是否可连通。如果能ping通，则提示用户“该IP地址可访问”；如果不可ping通，则提示用户“该IP地址不可访问” ::
 
@@ -182,3 +182,128 @@ echo `cat $1 |grep "^[[:space:]]*$" |wc -l`
 
     [ $data_block_max -ge $data_limit ] && wall "data_block beyond $data_limit" 
     [ $inode_block_max -ge $inode_limit ] && wall "inode_block beyond $inode_limit" 
+
+练习4
+-------------------------------------------------------------------------------------------------------------
+1、编写脚本/bin/per.sh,判断当前用户对指定的参数文件，是否不可读并且不可写 ::
+
+    #!/bin/bash
+    #================================================
+    #FileName   :per_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-24 19:40:48
+    #Version    :V1.0
+    #Other      :
+    #================================================
+
+    [ $# -lt 1 ] && echo " must a parameter" && exit 1
+
+    [ ! -r $1 ] && [ ! -w $1 ] && echo " no read,and write" || echo " other"
+
+
+2、编写脚本/root/bin/excute.sh ，判断参数文件是否为sh后缀的普通文件，如果是，添加所有人可执行权限，否则提示用户非脚本文件 ::
+
+    #!/bin/bash
+    #================================================
+    #FileName   :excute_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-24 19:50:29
+    #Version    :V1.0
+    #Other      :
+    #================================================
+
+    [ $# -lt 1 ] && echo "must one parameter" && exit 1
+    [ ! -f $1 ] && echo "file not exist" 
+    [[ "$1" =~ .*.sh$ ]] && chmod a+x $1 || echo "not sh file  "
+
+
+3、编写脚本/root/bin/nologin.sh和login.sh,实现禁止和充许普通用户登录系统 ::
+
+    #!/bin/bash
+    #================================================
+    #FileName   :nologin.sh_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-24 19:56:30
+    #Version    :V1.0
+    #Other      :
+    #================================================
+    [ ! -f /etc/nologin ] && touch /etc/nologin
+
+    [root@centos7 sh]# cat login.sh_46_zhaojiedi.sh 
+    #!/bin/bash
+    #================================================
+    #FileName   :login.sh_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-24 19:57:23
+    #Version    :V1.0
+    #Other      :
+    #================================================
+
+    [ -f /etc/nologin ] && rm -rf /etc/nologin
+
+练习5 
+---------------------------------------------------------------------
+
+1、让所有用户的PATH环境变量的值多出一个路径，例如：/usr/local/apache/bin ::
+
+    [root@centos7 job]# echo "export PATH=$PATH:/usr/local/apache/bin" >>/etc/profile.d/path.sh
+
+2、用户root登录时，将命令指示符变成红色，并自动启用如下别名：rm=‘rm –i’cdnet=‘cd /etc/sysconfig/network-scripts/’ editnet=‘vim /etc/sysconfig/network-scripts/ifcfg-eth0’ editnet=‘vim /etc/sysconfig/network-scripts/ifcfg-eno16777736 或 ifcfg-ens33 ’ (如果系统是CentOS7) ::
+
+    [root@centos7 ~]# echo "PS1=\"\033[1;31m$PS1\033[0m\"" >>/root/.bash_profile
+    [root@centos7 .etc]# cat alias.sh 
+    alias rm='rm-i'
+    alias cdnet='cd /etc/sysconfig/network-scripts'
+    alias editeth0='vim /etc/sysconfig/network-scripts/ifcfg-eth0'
+    alias editens33='vim /etc/sysconfig/network-scripts/ifcfg-ens33'
+    # 添加如下行到/root/.bashrc文件中去   
+    . ~/.etc/alias.sh 
+    echo ". ~/.etc/alias.sh" >> /root/.bashrc
+
+
+
+3、任意用户登录系统时，显示红色字体的警示提醒信息“Hi,dangerous！”  ::
+
+    [root@centos7 .etc]# cat -A /etc/motd
+    ^[[31mHi,dangerous^[[0m$
+
+
+4、编写生成脚本基本格式的脚本，包括作者，联系方式，版本，时间，描述等 ::
+
+    #!/bin/bash
+    #change filename
+    filename=$1_46_zhaojiedi.sh
+    #check file exist
+    [ -e $filename ] && echo "$filename has exist" && exit 1
+    # create file and add x 
+    touch $filename
+    chmod u+x $filename
+    #add info
+
+    echo "#!/bin/bash
+    #================================================
+    #FileName   :$(basename $filename)
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :$(date "+%Y-%m-%d %H:%M:%S")
+    #Version    :V1.0
+    #Other      :
+    #================================================
+    " >> $filename
+
+
+    # start vim
+    vim $filename  +
+
+
+5、编写用户的环境初始化脚本reset.sh，包括别名，登录提示符，vim的设置，环境变量等 ::
+
+    . alias.sh
+    . prompt.sh
+    . vim.sh
+    . path.sh
+

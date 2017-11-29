@@ -36,7 +36,7 @@
               href="../genindex.html"/>
         <link rel="search" title="搜索" href="../search.html"/>
     <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
-        <link rel="next" title="08-2017-11-20" href="../课堂笔记/00-2017-11-00.html"/>
+        <link rel="next" title="13-2017-11-25-练习-压缩" href="13-2017-11-25-练习-压缩.html"/>
         <link rel="prev" title="08-2017-11-10-练习-grep-文本" href="08-2017-11-10-练习-grep-文本.html"/> 
 
   
@@ -108,6 +108,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#id5">练习5</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="13-2017-11-25-练习-压缩.html">13-2017-11-25-练习-压缩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-2017-11-28-练习-sed.html">14-2017-11-28-练习-sed</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
@@ -325,20 +327,21 @@ echo $sumfiles
 <div class="section" id="id3">
 <h2>练习3<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>1、编写脚本/root/bin/argsnum.sh，接受一个文件路径作为参数；如果参数个数小于1，则提示用户“至少应该给一个参数”，并立即退出；如果参数个数不小于1，则显示第一个参数所指向的文件中的空白行数</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="c1">#================================================</span>
-<span class="c1">#FileName   :argsnum_46_zhaojiedi.sh</span>
-<span class="c1">#Author     :zhaojiedi</span>
-<span class="c1">#Description:</span>
-<span class="c1">#DateTime   :2017-11-24 18:55:43</span>
-<span class="c1">#Version    :V1.0</span>
-<span class="c1">#Other      :</span>
-<span class="c1">#================================================</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span>#!/bin/bash
+#================================================
+#FileName   :argsnum_46_zhaojiedi.sh
+#Author     :zhaojiedi
+#Description:
+#DateTime   :2017-11-24 18:55:43
+#Version    :V1.0
+#Other      :
+#================================================
+
+[ $# -lt 1 ] &amp;&amp; echo &quot;must one parameter&quot; &amp;&amp; exit 1
+[ ! -f $1 ] &amp;&amp; echo &quot; file not exist&quot; &amp;&amp; exit 2
+echo `cat $1 |grep &quot;^[[:space:]]*$&quot; |wc -l`
 </pre></div>
 </div>
-<p>[ $# -lt 1 ] &amp;&amp; echo &quot;must one parameter&quot; &amp;&amp; exit 1
-[ ! -f $1 ] &amp;&amp; echo &quot; file not exist&quot; &amp;&amp; exit 2
-echo <cite>cat $1 |grep &quot;^[[:space:]]*$&quot; |wc -l</cite></p>
 <p>2、编写脚本/root/bin/hostping.sh，接受一个主机的IPv4地址做为参数，测试是否可连通。如果能ping通，则提示用户“该IP地址可访问”；如果不可ping通，则提示用户“该IP地址不可访问”</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>#!/bin/bash
 #================================================
@@ -460,9 +463,8 @@ declare -i inode_block_max=`df -i |egrep &quot;/dev/[sh]d.*&quot; |egrep &quot;[
 ^[[31mHi,dangerous^[[0m$
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>4、编写生成脚本基本格式的脚本，包括作者，联系方式，版本，时间，描述等 ::</dt>
-<dd><p class="first">#!/bin/bash
+<p>4、编写生成脚本基本格式的脚本，包括作者，联系方式，版本，时间，描述等</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>#!/bin/bash
 #change filename
 filename=$1_46_zhaojiedi.sh
 #check file exist
@@ -470,8 +472,9 @@ filename=$1_46_zhaojiedi.sh
 # create file and add x
 touch $filename
 chmod u+x $filename
-#add info</p>
-<p>echo &quot;#!/bin/bash
+#add info
+
+echo &quot;#!/bin/bash
 #================================================
 #FileName   :$(basename $filename)
 #Author     :zhaojiedi
@@ -480,11 +483,13 @@ chmod u+x $filename
 #Version    :V1.0
 #Other      :
 #================================================
-&quot; &gt;&gt; $filename</p>
-<p class="last"># start vim
-vim $filename  +</p>
-</dd>
-</dl>
+&quot; &gt;&gt; $filename
+
+
+# start vim
+vim $filename  +
+</pre></div>
+</div>
 <p>5、编写用户的环境初始化脚本reset.sh，包括别名，登录提示符，vim的设置，环境变量等</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">.</span> <span class="n">alias</span><span class="o">.</span><span class="n">sh</span>
 <span class="o">.</span> <span class="n">prompt</span><span class="o">.</span><span class="n">sh</span>
@@ -505,7 +510,7 @@ vim $filename  +</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../课堂笔记/00-2017-11-00.html" class="btn btn-neutral float-right" title="08-2017-11-20" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="13-2017-11-25-练习-压缩.html" class="btn btn-neutral float-right" title="13-2017-11-25-练习-压缩" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="08-2017-11-10-练习-grep-文本.html" class="btn btn-neutral" title="08-2017-11-10-练习-grep-文本" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -104,6 +104,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#id1">练习1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">练习2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">练习3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">练习4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">练习5</a></li>
 </ul>
 </li>
 </ul>
@@ -118,6 +120,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/06-2017-11-15.html">06-2017-11-15</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/07-2017-11-17.html">07-2017-11-17</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/08-2017-11-20.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/09-2017-11-22.html">09-2017-11-22</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/10-2017-11-24.html">10-2017-11-24</a></li>
 </ul>
 <p class="caption"><span class="caption-text">博客作业</span></p>
 <ul>
@@ -321,20 +325,21 @@ echo $sumfiles
 <div class="section" id="id3">
 <h2>练习3<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>1、编写脚本/root/bin/argsnum.sh，接受一个文件路径作为参数；如果参数个数小于1，则提示用户“至少应该给一个参数”，并立即退出；如果参数个数不小于1，则显示第一个参数所指向的文件中的空白行数</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="c1">#================================================</span>
-<span class="c1">#FileName   :argsnum_46_zhaojiedi.sh</span>
-<span class="c1">#Author     :zhaojiedi</span>
-<span class="c1">#Description:</span>
-<span class="c1">#DateTime   :2017-11-24 18:55:43</span>
-<span class="c1">#Version    :V1.0</span>
-<span class="c1">#Other      :</span>
-<span class="c1">#================================================</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span>#!/bin/bash
+#================================================
+#FileName   :argsnum_46_zhaojiedi.sh
+#Author     :zhaojiedi
+#Description:
+#DateTime   :2017-11-24 18:55:43
+#Version    :V1.0
+#Other      :
+#================================================
+
+[ $# -lt 1 ] &amp;&amp; echo &quot;must one parameter&quot; &amp;&amp; exit 1
+[ ! -f $1 ] &amp;&amp; echo &quot; file not exist&quot; &amp;&amp; exit 2
+echo `cat $1 |grep &quot;^[[:space:]]*$&quot; |wc -l`
 </pre></div>
 </div>
-<p>[ $# -lt 1 ] &amp;&amp; echo &quot;must one parameter&quot; &amp;&amp; exit 1
-[ ! -f $1 ] &amp;&amp; echo &quot; file not exist&quot; &amp;&amp; exit 2
-echo <cite>cat $1 |grep &quot;^[[:space:]]*$&quot; |wc -l</cite></p>
 <p>2、编写脚本/root/bin/hostping.sh，接受一个主机的IPv4地址做为参数，测试是否可连通。如果能ping通，则提示用户“该IP地址可访问”；如果不可ping通，则提示用户“该IP地址不可访问”</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>#!/bin/bash
 #================================================
@@ -369,6 +374,125 @@ declare -i inode_block_max=`df -i |egrep &quot;/dev/[sh]d.*&quot; |egrep &quot;[
 
 [ $data_block_max -ge $data_limit ] &amp;&amp; wall &quot;data_block beyond $data_limit&quot;
 [ $inode_block_max -ge $inode_limit ] &amp;&amp; wall &quot;inode_block beyond $inode_limit&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>练习4<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>1、编写脚本/bin/per.sh,判断当前用户对指定的参数文件，是否不可读并且不可写</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>#!/bin/bash
+#================================================
+#FileName   :per_46_zhaojiedi.sh
+#Author     :zhaojiedi
+#Description:
+#DateTime   :2017-11-24 19:40:48
+#Version    :V1.0
+#Other      :
+#================================================
+
+[ $# -lt 1 ] &amp;&amp; echo &quot; must a parameter&quot; &amp;&amp; exit 1
+
+[ ! -r $1 ] &amp;&amp; [ ! -w $1 ] &amp;&amp; echo &quot; no read,and write&quot; || echo &quot; other&quot;
+</pre></div>
+</div>
+<p>2、编写脚本/root/bin/excute.sh ，判断参数文件是否为sh后缀的普通文件，如果是，添加所有人可执行权限，否则提示用户非脚本文件</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>#!/bin/bash
+#================================================
+#FileName   :excute_46_zhaojiedi.sh
+#Author     :zhaojiedi
+#Description:
+#DateTime   :2017-11-24 19:50:29
+#Version    :V1.0
+#Other      :
+#================================================
+
+[ $# -lt 1 ] &amp;&amp; echo &quot;must one parameter&quot; &amp;&amp; exit 1
+[ ! -f $1 ] &amp;&amp; echo &quot;file not exist&quot;
+[[ &quot;$1&quot; =~ .*.sh$ ]] &amp;&amp; chmod a+x $1 || echo &quot;not sh file  &quot;
+</pre></div>
+</div>
+<p>3、编写脚本/root/bin/nologin.sh和login.sh,实现禁止和充许普通用户登录系统</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>#!/bin/bash
+#================================================
+#FileName   :nologin.sh_46_zhaojiedi.sh
+#Author     :zhaojiedi
+#Description:
+#DateTime   :2017-11-24 19:56:30
+#Version    :V1.0
+#Other      :
+#================================================
+[ ! -f /etc/nologin ] &amp;&amp; touch /etc/nologin
+
+[root@centos7 sh]# cat login.sh_46_zhaojiedi.sh
+#!/bin/bash
+#================================================
+#FileName   :login.sh_46_zhaojiedi.sh
+#Author     :zhaojiedi
+#Description:
+#DateTime   :2017-11-24 19:57:23
+#Version    :V1.0
+#Other      :
+#================================================
+
+[ -f /etc/nologin ] &amp;&amp; rm -rf /etc/nologin
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>练习5<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>1、让所有用户的PATH环境变量的值多出一个路径，例如：/usr/local/apache/bin</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="n">job</span><span class="p">]</span><span class="c1"># echo &quot;export PATH=$PATH:/usr/local/apache/bin&quot; &gt;&gt;/etc/profile.d/path.sh</span>
+</pre></div>
+</div>
+<p>2、用户root登录时，将命令指示符变成红色，并自动启用如下别名：rm=‘rm –i’cdnet=‘cd /etc/sysconfig/network-scripts/’ editnet=‘vim /etc/sysconfig/network-scripts/ifcfg-eth0’ editnet=‘vim /etc/sysconfig/network-scripts/ifcfg-eno16777736 或 ifcfg-ens33 ’ (如果系统是CentOS7)</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="o">~</span><span class="p">]</span><span class="c1"># echo &quot;PS1=\&quot;\033[1;31m$PS1\033[0m\&quot;&quot; &gt;&gt;/root/.bash_profile</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="o">.</span><span class="n">etc</span><span class="p">]</span><span class="c1"># cat alias.sh</span>
+<span class="n">alias</span> <span class="n">rm</span><span class="o">=</span><span class="s1">&#39;rm-i&#39;</span>
+<span class="n">alias</span> <span class="n">cdnet</span><span class="o">=</span><span class="s1">&#39;cd /etc/sysconfig/network-scripts&#39;</span>
+<span class="n">alias</span> <span class="n">editeth0</span><span class="o">=</span><span class="s1">&#39;vim /etc/sysconfig/network-scripts/ifcfg-eth0&#39;</span>
+<span class="n">alias</span> <span class="n">editens33</span><span class="o">=</span><span class="s1">&#39;vim /etc/sysconfig/network-scripts/ifcfg-ens33&#39;</span>
+<span class="c1"># 添加如下行到/root/.bashrc文件中去</span>
+<span class="o">.</span> <span class="o">~/.</span><span class="n">etc</span><span class="o">/</span><span class="n">alias</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">echo</span> <span class="s2">&quot;. ~/.etc/alias.sh&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">root</span><span class="o">/.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+<p>3、任意用户登录系统时，显示红色字体的警示提醒信息“Hi,dangerous！”</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos7 .etc]# cat -A /etc/motd
+^[[31mHi,dangerous^[[0m$
+</pre></div>
+</div>
+<p>4、编写生成脚本基本格式的脚本，包括作者，联系方式，版本，时间，描述等</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>#!/bin/bash
+#change filename
+filename=$1_46_zhaojiedi.sh
+#check file exist
+[ -e $filename ] &amp;&amp; echo &quot;$filename has exist&quot; &amp;&amp; exit 1
+# create file and add x
+touch $filename
+chmod u+x $filename
+#add info
+
+echo &quot;#!/bin/bash
+#================================================
+#FileName   :$(basename $filename)
+#Author     :zhaojiedi
+#Description:
+#DateTime   :$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)
+#Version    :V1.0
+#Other      :
+#================================================
+&quot; &gt;&gt; $filename
+
+
+# start vim
+vim $filename  +
+</pre></div>
+</div>
+<p>5、编写用户的环境初始化脚本reset.sh，包括别名，登录提示符，vim的设置，环境变量等</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">.</span> <span class="n">alias</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">.</span> <span class="n">prompt</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">.</span> <span class="n">vim</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">.</span> <span class="n">path</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 </div>
