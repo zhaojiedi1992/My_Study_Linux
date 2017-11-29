@@ -143,9 +143,9 @@
     #Other      :
     #================================================
 
-[ $# -lt 1 ] && echo "must one parameter" && exit 1
-[ ! -f $1 ] && echo " file not exist" && exit 2
-echo `cat $1 |grep "^[[:space:]]*$" |wc -l`
+    [ $# -lt 1 ] && echo "must one parameter" && exit 1
+    [ ! -f $1 ] && echo " file not exist" && exit 2
+    echo `cat $1 |grep "^[[:space:]]*$" |wc -l`
 
 2、编写脚本/root/bin/hostping.sh，接受一个主机的IPv4地址做为参数，测试是否可连通。如果能ping通，则提示用户“该IP地址可访问”；如果不可ping通，则提示用户“该IP地址不可访问” ::
 
@@ -273,6 +273,7 @@ echo `cat $1 |grep "^[[:space:]]*$" |wc -l`
 
 
 4、编写生成脚本基本格式的脚本，包括作者，联系方式，版本，时间，描述等 ::
+
     #!/bin/bash
     #change filename
     filename=$1_46_zhaojiedi.sh
