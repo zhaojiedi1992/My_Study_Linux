@@ -102,7 +102,10 @@
 <li class="toctree-l1"><a class="reference internal" href="08-2017-11-10-练习-grep-文本.html">08-2017-11-10-练习-grep-文本</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12-2017-11-23-联系-bash.html">12-2017-11-23-练习-bash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13-2017-11-25-练习-压缩.html">13-2017-11-25-练习-压缩</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">14-2017-11-28-练习-sed</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">14-2017-11-28-练习-sed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">练习1</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
@@ -190,8 +193,9 @@
             
   <div class="section" id="sed">
 <h1>14-2017-11-28-练习-sed<a class="headerlink" href="#sed" title="永久链接至标题">¶</a></h1>
-<p>练习1
-1、删除centos7系统/etc/grub2.cfg文件中所有以空白开头的行行首的空白字符</p>
+<div class="section" id="id1">
+<h2>练习1<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>1、删除centos7系统/etc/grub2.cfg文件中所有以空白开头的行行首的空白字符</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos7 ~]$ sed -nr &#39;s@^([[:space:]]+)(.*)@\2@p&#39; /etc/grub2.cfg
 </pre></div>
 </div>
@@ -229,7 +233,7 @@
 </div>
 <p>8、统计/etc/init.d/functions文件中每个单词的出现次数，并排序（用grep和sed两种方法分别实现）</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cat</span>  <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">functions</span>  <span class="o">|</span> <span class="n">egrep</span> <span class="o">-</span><span class="n">o</span> <span class="s2">&quot;([[:alpha:]]+)&quot;</span>  <span class="o">|</span><span class="n">sort</span> <span class="o">|</span><span class="n">uniq</span> <span class="o">-</span><span class="n">c</span>  <span class="o">&gt;</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">grep</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">functions</span> <span class="o">|</span><span class="n">sed</span> <span class="o">-</span><span class="n">nr</span> <span class="s1">&#39;s@.*@#</span><span class="se">\0</span><span class="s1">@p&#39;</span><span class="o">|</span> <span class="n">sed</span> <span class="o">-</span><span class="n">nr</span> <span class="s1">&#39;s@[^[:alpha:]]@</span><span class="se">\n</span><span class="s1">@gp&#39;</span><span class="o">|</span><span class="n">sed</span> <span class="s1">&#39;/^$/d&#39;</span> <span class="o">|</span><span class="n">sort</span> <span class="o">|</span><span class="n">uniq</span> <span class="o">-</span><span class="n">c</span>  <span class="o">&gt;/</span><span class="n">root</span><span class="o">/</span><span class="n">sed</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">functions</span> <span class="o">|</span> <span class="n">sed</span> <span class="o">-</span><span class="n">r</span> <span class="s1">&#39;s@[^[:alpha:]]@</span><span class="se">\n</span><span class="s1">@g&#39;</span> <span class="o">|</span><span class="n">sed</span> <span class="s1">&#39;/^$/d&#39;</span> <span class="o">|</span><span class="n">sort</span> <span class="o">|</span><span class="n">uniq</span> <span class="o">-</span><span class="n">c</span>  <span class="o">&gt;/</span><span class="n">root</span><span class="o">/</span><span class="n">sed</span><span class="o">.</span><span class="n">txt</span>
 <span class="n">diff</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">sed</span><span class="o">.</span><span class="n">txt</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">grep</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
@@ -240,6 +244,7 @@
 <p>9、将文本文件的n和n+1行合并为一行，n为奇数行</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos7 ~]$ sed &#39;N;s@\n@@&#39; /etc/fstab
 </pre></div>
+</div>
 </div>
 </div>
 

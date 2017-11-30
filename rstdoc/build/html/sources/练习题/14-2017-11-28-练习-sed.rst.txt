@@ -43,7 +43,7 @@
 8、统计/etc/init.d/functions文件中每个单词的出现次数，并排序（用grep和sed两种方法分别实现） :: 
    
     cat  /etc/init.d/functions  | egrep -o "([[:alpha:]]+)"  |sort |uniq -c  > /root/grep.txt
-    cat /etc/init.d/functions |sed -nr 's@.*@#\0@p'| sed -nr 's@[^[:alpha:]]@\n@gp'|sed '/^$/d' |sort |uniq -c  >/root/sed.txt
+    cat /etc/init.d/functions | sed -r 's@[^[:alpha:]]@\n@g' |sed '/^$/d' |sort |uniq -c  >/root/sed.txt
     diff /root/sed.txt /root/grep.txt 
 
 .. warning:: 这个题，2种结果必须是一致的， 如果第二种方式没有sed -nr 's@.*@#\0@p' 就会少统计行单独为fi的行。

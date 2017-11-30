@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; my_study_linux v0.1 文档</title>
+  <title>10-2017-11-14-练习-vim &mdash; my_study_linux v0.1 文档</title>
   
 
   
@@ -115,6 +115,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/08-2017-11-20.html">08-2017-11-20</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/09-2017-11-22.html">09-2017-11-22</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/10-2017-11-24.html">10-2017-11-24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/11-2017-11-27.html">11-2017-11-27</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/12-2017-11-29.html">12-2017-11-29</a></li>
 </ul>
 <p class="caption"><span class="caption-text">博客作业</span></p>
 <ul>
@@ -167,7 +169,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>&lt;no title&gt;</li>
+      <li>10-2017-11-14-练习-vim</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -186,13 +188,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p>## 练习1</p>
-<p>1） 复制/etc/grub.conf至/tmp目录，删除/tmp/grub.conf文件中的目录的空白字符</p>
+  <div class="section" id="vim">
+<h1>10-2017-11-14-练习-vim<a class="headerlink" href="#vim" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>练习1<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>1） 复制/etc/grub.conf至/tmp目录，删除/tmp/grub.conf文件中的开头的空白字符</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="o">@</span><span class="p">[[:</span><span class="n">space</span><span class="p">:]]</span>\<span class="o">+@</span><span class="nd">@g</span>
+</pre></div>
+</div>
 <p>2）复制/etc/rc.d/rc.sysinit至/tmp目录，将/tmp/rc.sysinit文件中的至少一个空白字符开头的行行首加#号。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="o">@^</span><span class="p">[[:</span><span class="n">space</span><span class="p">:]]</span>\<span class="o">+@</span><span class="c1">#\0@g</span>
+</pre></div>
+</div>
 <p>3）删除/tmp/rc.sysinit文件中以#开头，且后面跟了至少一个空白字符的行的行首的#号和空白字符。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="o">@^</span><span class="c1">#[[:space:]]\+(.*)@\1@g</span>
+</pre></div>
+</div>
 <p>4）为/tmpgrub.conf文件的前3行加#号</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="n">s</span><span class="o">@.*@</span><span class="c1">#\0@g</span>
+</pre></div>
+</div>
 <p>5）将/etc/yum.repos.d/CentOS-Media.repo文件中的enable=0he gpgcheck=0改成1</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="nd">@enabled</span><span class="o">=</span><span class="mi">0</span><span class="nd">@enabled</span><span class="o">=</span><span class="mi">1</span><span class="o">@</span>
+<span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="nd">@gpgcheck</span><span class="o">=</span><span class="mi">0</span><span class="nd">@gpgcheck</span><span class="o">=</span><span class="mi">1</span><span class="o">@</span>
+</pre></div>
+</div>
 <p>6）复制/etc/rc.d/init.d/functions至/tmp目录，替换/tmp/functions文件中的/etc/sysconfig/init为/var/log</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="o">@/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysconfig</span><span class="o">/</span><span class="n">init</span><span class="o">@/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">@</span>
+</pre></div>
+</div>
+</div>
+</div>
 
 
            </div>
