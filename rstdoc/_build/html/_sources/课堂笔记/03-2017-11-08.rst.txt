@@ -30,14 +30,14 @@ cat /etc/motd ： message of the day 登陆成功提示
 
 rz ：上传文件
 
-图形界面不用输入密码
-```bash
-/etc/gdm/custom.conf
-[deamon]
-AutomaticLoginEnable=true
-AutomaticLogin=root
-代码含义：启动自动登录，设置自动登陆用户名
-```
+图形界面不用输入密码 ::
+
+    /etc/gdm/custom.conf
+    [deamon]
+    AutomaticLoginEnable=true
+    AutomaticLogin=root
+    代码含义：启动自动登录，设置自动登陆用户名
+
 
 enable ：查看所有内部命令，centos6,7都是61个
 
@@ -52,10 +52,11 @@ enable logout:启用logout的命令
 enable -n ：查看所有被禁用的命令
 
 
-命令执行步骤：
-1.bash内置查找
-2.hash查找
-3.path环境变量目录找。
+命令执行步骤 
+
+1. bash内置查找
+2. hash查找
+3. path环境变量目录找。
 
 hash -d 清空指定命令的缓存
 
@@ -85,16 +86,19 @@ ctrl + d ： 正常退出
 ctrl + l : 清空屏幕
 
 多个命令可以使用;比如sleep 10 ; ls
+
 一行命令可以分行写， 使用\转义符
 
 1970年1月1日作为时间记录基
 
 reset 重置
+
 timedatectl set-teimzone PACIFIC/TONGATAPU 设置时区
 
-时区修改
-centos7 ： timedatectl
-centos6 ： tzselect
+时区修改 ::
+
+    centos7 ： timedatectl
+    centos6 ： tzselect
 
 tz:windows上传到linux上
 
@@ -106,7 +110,7 @@ screen:可以远程协助
 
 iconv -l 查看编码
 
-iconv -f gb2312 in.txt -o out.txt 
+iconv -f gb2312 -t utf-8  in.txt -o out.txt 
 
 
 echo f1{,.bak}  = f1 f1.bak
@@ -122,15 +126,16 @@ makewhatis:centos6 制作 whatis数据库
 mandb:centos7  制作whatis数据库
 
 man 章节
-* 1用户命令
-* 2系统调用
-* 3库嗲用
-* 4 
-* 5配置文件
-* 6 游戏
-* 7 杂项
-* 8 管理类
-* 9 内核api
+
+# 用户命令
+# 系统调用
+# 库调用
+# 设备文件
+# 配置文件
+# 游戏
+# 杂项
+# 管理类
+# 内核api
 
 关系的章节是1，5，8
 
@@ -178,6 +183,7 @@ enable :查看说明内置命令
 enable -n ：查看所有禁用的内置命令
 
 hash：
+
 * -l:显示
 * -p:给全路径起个简短的名字
 * -t:打印指定name的缓存路径

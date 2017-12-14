@@ -101,6 +101,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../练习题/07-2017-11-10-练习-wc-useradd.html">07-2017-11-10-练习-wc-useradd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/08-2017-11-10-练习-grep-文本.html">08-2017-11-10-练习-grep-文本</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/12-2017-11-23-联系-bash.html">12-2017-11-23-练习-bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/13-2017-11-25-练习-压缩.html">13-2017-11-25-练习-压缩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/14-2017-11-28-练习-sed.html">14-2017-11-28-练习-sed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/15-2017-11-29-练习-rpm.html">15-2017-11-28-练习-rpm</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul class="current">
@@ -119,6 +122,8 @@
 <li class="toctree-l1"><a class="reference internal" href="08-2017-11-20.html">08-2017-11-20</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09-2017-11-22.html">09-2017-11-22</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10-2017-11-24.html">10-2017-11-24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-2017-11-27.html">11-2017-11-27</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-2017-11-29.html">12-2017-11-29</a></li>
 </ul>
 <p class="caption"><span class="caption-text">博客作业</span></p>
 <ul>
@@ -209,24 +214,26 @@ gedit：图形边界器</p>
 <p>lsb_release:查看操作系统发行版本</p>
 <p>cat /etc/motd ： message of the day 登陆成功提示</p>
 <p>rz ：上传文件</p>
-<p>图形界面不用输入密码
-<code class="docutils literal"><span class="pre">`bash</span>
-<span class="pre">/etc/gdm/custom.conf</span>
-<span class="pre">[deamon]</span>
-<span class="pre">AutomaticLoginEnable=true</span>
-<span class="pre">AutomaticLogin=root</span>
-<span class="pre">代码含义：启动自动登录，设置自动登陆用户名</span>
-<span class="pre">`</span></code></p>
+<p>图形界面不用输入密码</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>/etc/gdm/custom.conf
+[deamon]
+AutomaticLoginEnable=true
+AutomaticLogin=root
+代码含义：启动自动登录，设置自动登陆用户名
+</pre></div>
+</div>
 <p>enable ：查看所有内部命令，centos6,7都是61个</p>
 <p>ctrl + d ： 快速注销， 相当于执行logout。</p>
 <p>help：查看所有命令，并提示有帮助信息</p>
 <p>enable -n logout: 禁用logout的命令</p>
 <p>enable logout:启用logout的命令</p>
 <p>enable -n ：查看所有被禁用的命令</p>
-<p>命令执行步骤：
-1.bash内置查找
-2.hash查找
-3.path环境变量目录找。</p>
+<p>命令执行步骤</p>
+<ol class="arabic simple">
+<li>bash内置查找</li>
+<li>hash查找</li>
+<li>path环境变量目录找。</li>
+</ol>
 <p>hash -d 清空指定命令的缓存</p>
 <p>不使用别名用法： ls，或者使用单引号引这</p>
 <p>hash -p /usr/bin/free f 给hash的命令起个别名</p>
@@ -240,35 +247,37 @@ gedit：图形边界器</p>
 <p>ctrl + c ： 终止任务。</p>
 <p>ctrl + d ： 正常退出</p>
 <p>ctrl + l : 清空屏幕</p>
-<p>多个命令可以使用;比如sleep 10 ; ls
-一行命令可以分行写， 使用转义符</p>
+<p>多个命令可以使用;比如sleep 10 ; ls</p>
+<p>一行命令可以分行写， 使用转义符</p>
 <p>1970年1月1日作为时间记录基</p>
-<p>reset 重置
-timedatectl set-teimzone PACIFIC/TONGATAPU 设置时区</p>
-<p>时区修改
-centos7 ： timedatectl
-centos6 ： tzselect</p>
+<p>reset 重置</p>
+<p>timedatectl set-teimzone PACIFIC/TONGATAPU 设置时区</p>
+<p>时区修改</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>centos7 ： timedatectl
+centos6 ： tzselect
+</pre></div>
+</div>
 <p>tz:windows上传到linux上</p>
 <p>sz:linux传输文件到windows</p>
 <p>screen:可以远程协助</p>
 <p>iconv -l 查看编码</p>
-<p>iconv -f gb2312 in.txt -o out.txt</p>
+<p>iconv -f gb2312 -t utf-8  in.txt -o out.txt</p>
 <p>echo f1{,.bak}  = f1 f1.bak</p>
 <p>echo f{001..020}</p>
 <p>~2tab显示系统所有用户</p>
 <p>$2tab显示系统的变量</p>
 <p>makewhatis:centos6 制作 whatis数据库</p>
 <p>mandb:centos7  制作whatis数据库</p>
-<p>man 章节
-* 1用户命令
-* 2系统调用
-* 3库嗲用
-* 4
-* 5配置文件
-* 6 游戏
-* 7 杂项
-* 8 管理类
-* 9 内核api</p>
+<p>man 章节</p>
+<p># 用户命令
+# 系统调用
+# 库调用
+# 设备文件
+# 配置文件
+# 游戏
+# 杂项
+# 管理类
+# 内核api</p>
 <p>关系的章节是1，5，8</p>
 <p>修改/etc/issue，man issue,man agetty</p>
 <p>man -key password ： 查找指定关键词相关的命令</p>
@@ -296,12 +305,14 @@ W当前目录基名
 #开机后命令历史数</p>
 <p>enable :查看说明内置命令</p>
 <p>enable -n ：查看所有禁用的内置命令</p>
-<p>hash：
-* -l:显示
-* -p:给全路径起个简短的名字
-* -t:打印指定name的缓存路径
-* -d: 清空指定name的
-* -r:清空hash</p>
+<p>hash：</p>
+<ul class="simple">
+<li>-l:显示</li>
+<li>-p:给全路径起个简短的名字</li>
+<li>-t:打印指定name的缓存路径</li>
+<li>-d: 清空指定name的</li>
+<li>-r:清空hash</li>
+</ul>
 <p>重复执行上一条命令(4种）：
 * 方向键上翻
 * !!

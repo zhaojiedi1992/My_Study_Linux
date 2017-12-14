@@ -5,6 +5,9 @@
 ------------------------------------------------
 1 、 删除一个动态链接库， 并使用救援模式修复它 ::
 
+    光盘挂载启动，进入救援模式
+    copy so /sys/sysimage目录下对应目录即可
+
 2 、 内核被卸载 ，并安装后丢失了启动菜单修复他   
 
 模拟一个破坏环境 ::
@@ -61,10 +64,10 @@
 
 修复问题 ::
 
-[root@centos6 ~]# rpm -ivh /misc/cd/Packages/kernel-2.6.32-696.el6.x86_64.rpm
-Preparing...                ########################################### [100%]
-   1:kernel                 ########################################### [100%]
-grubby fatal error: unable to find a suitable template
+    [root@centos6 ~]# rpm -ivh /misc/cd/Packages/kernel-2.6.32-696.el6.x86_64.rpm
+    Preparing...                ########################################### [100%]
+    1:kernel                 ########################################### [100%]
+    grubby fatal error: unable to find a suitable template
 
     [root@centos6 ~]# ll /bot
     ls: cannot access /bot: No such file or directory
@@ -212,7 +215,7 @@ grubby fatal error: unable to find a suitable template
     ! grep PS1 ~/.bash_profile &&  echo PS1=\"'\033[1;33m[\u@\h \W]$ \033[0m'\" >> ~/.bash_profile
 
 
-4、在CentOS6上编译安装apache 2.2源码包,并启动此服务
+4、在CentOS6上编译安装apache 2.2源码包,并启动此服务 ::
 
     [root@centos7 Bash]$ cat install_httpd_46_zhaojiedi.sh 
     #!/bin/bash
