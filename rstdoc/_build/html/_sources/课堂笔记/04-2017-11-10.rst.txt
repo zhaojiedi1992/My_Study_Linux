@@ -84,7 +84,7 @@ f[A-C]:不仅仅是A-C的。
 
 ls -a  -I "[^.]*"  = l. = ls -a .* 
 
-cp --preserv： 指定保留的属性。
+cp --preserve： 指定保留的属性。
 
 cp -f : 覆盖其他人的文件
 
