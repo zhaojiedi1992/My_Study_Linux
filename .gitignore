@@ -3,3 +3,4 @@
 rstdoc/
 rstdoc/_build/*
 rstdoc/build/*
+rstdoc/_build/html/*
