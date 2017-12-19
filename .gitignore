@@ -1,4 +1,5 @@
-
+.vs/*
+.vscode/*
+rstdoc/
 rstdoc/_build/*
 rstdoc/build/*
-.vs/*
