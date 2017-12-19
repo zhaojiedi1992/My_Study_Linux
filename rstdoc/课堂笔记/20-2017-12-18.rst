@@ -16,6 +16,9 @@
     cornie-anacron:补充包
     corntabs:系统维护
 
+    at.allow优先级最高。 
+    at.deny
+
     
 
 
