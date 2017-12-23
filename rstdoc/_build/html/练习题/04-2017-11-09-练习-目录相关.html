@@ -108,6 +108,12 @@
 <li class="toctree-l1"><a class="reference internal" href="13-2017-11-25-练习-压缩.html">13-2017-11-25-练习-压缩</a></li>
 <li class="toctree-l1"><a class="reference internal" href="14-2017-11-28-练习-sed.html">14-2017-11-28-练习-sed</a></li>
 <li class="toctree-l1"><a class="reference internal" href="15-2017-11-29-练习-rpm.html">15-2017-11-28-练习-rpm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-2017-12-01-练习-磁盘管理.html">16-2017-12-01-练习-磁盘管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-2017-12-03-练习-高级磁盘管理.html">17-2017-12-03-练习-高级磁盘管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-2017-12-13-练习-网络.html">18-2017-12-13-练习-网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-2017-12-16-练习-网络其他.html">21-2017-12-16-练习-网络其他</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22-2017-12-18-练习-脚本进阶循环.html">22-2017-12-18-练习-脚本进阶循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23-2017-12-22-练习-脚本进阶服务.html">23-2017-12-18-练习-脚本进阶服务</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
@@ -124,6 +130,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/10-2017-11-24.html">10-2017-11-24</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/11-2017-11-27.html">11-2017-11-27</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/12-2017-11-29.html">12-2017-11-29</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/13-2017-12-01.html">13-2017-12-01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/14-2017-12-04.html">14-2017-12-04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/15-2017-12-06.html">15-2017-12-06</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/16-2017-12-11.html">16-2017-12-11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/17-2017-12-12.html">17-2017-12-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/18-2017-12-14.html">18-2017-12-14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/19-2017-12-15.html">19-2017-12-05</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/20-2017-12-18.html">19-2017-12-05</a></li>
 </ul>
 <p class="caption"><span class="caption-text">博客作业</span></p>
 <ul>
@@ -200,97 +214,97 @@
 <div class="section" id="mkdir">
 <h2>练习1-mkdir<a class="headerlink" href="#mkdir" title="永久链接至标题">¶</a></h2>
 <p>1、如何创建/app/x/y1,/app/x/y2,/app/x/y1/a,/app/y1/b,/app/x/y2/a,/app/x/y2/b</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos6 dirtest]# mkdir x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x/y2/b -pv
-mkdir: created directory `x&#39;
-mkdir: created directory `x/y1,x&#39;
-mkdir: created directory `x/y1,x/y2,x&#39;
-mkdir: created directory `x/y1,x/y2,x/y1&#39;
-mkdir: created directory `x/y1,x/y2,x/y1/a,y1&#39;
-mkdir: created directory `x/y1,x/y2,x/y1/a,y1/b,x&#39;
-mkdir: created directory `x/y1,x/y2,x/y1/a,y1/b,x/y2&#39;
-mkdir: created directory `x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x&#39;
-mkdir: created directory `x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x/y2&#39;
-mkdir: created directory `x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x/y2/b&#39;
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 dirtest<span class="o">]</span><span class="c1"># mkdir x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x/y2/b -pv</span>
+mkdir: created directory <span class="s1">&#39;x&#39;</span>
+mkdir: created directory <span class="s1">&#39;x/y1,x&#39;</span>
+mkdir: created directory <span class="s1">&#39;x/y1,x/y2,x&#39;</span>
+mkdir: created directory <span class="s1">&#39;x/y1,x/y2,x/y1&#39;</span>
+mkdir: created directory <span class="s1">&#39;x/y1,x/y2,x/y1/a,y1&#39;</span>
+mkdir: created directory <span class="s1">&#39;x/y1,x/y2,x/y1/a,y1/b,x&#39;</span>
+mkdir: created directory <span class="s1">&#39;x/y1,x/y2,x/y1/a,y1/b,x/y2&#39;</span>
+mkdir: created directory <span class="s1">&#39;x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x&#39;</span>
+mkdir: created directory <span class="s1">&#39;x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x/y2&#39;</span>
+mkdir: created directory <span class="s1">&#39;x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x/y2/b&#39;</span>
 </pre></div>
 </div>
 <p>2、如何创建x_m,y_m,x_n,y_n</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos6 dirtest]# mkdir -pv {x,y}_{m,n}
-mkdir: created directory `x_m&#39;
-mkdir: created directory `x_n&#39;
-mkdir: created directory `y_m&#39;
-mkdir: created directory `y_n&#39;
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 dirtest<span class="o">]</span><span class="c1"># mkdir -pv {x,y}_{m,n}</span>
+mkdir: created directory <span class="s1">&#39;x_m&#39;</span>
+mkdir: created directory <span class="s1">&#39;x_n&#39;</span>
+mkdir: created directory <span class="s1">&#39;y_m&#39;</span>
+mkdir: created directory <span class="s1">&#39;y_n&#39;</span>
 </pre></div>
 </div>
 <p>3、如何创建/app/bin,/app/sbin,/app/usr/app/usr/bin,/app/usr/sbin</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos6 dirtest]# mkdir -pv {bin,sbin,usr/{bin,sbin}}
-mkdir: created directory `bin&#39;
-mkdir: created directory `sbin&#39;
-mkdir: created directory `usr&#39;
-mkdir: created directory `usr/bin&#39;
-mkdir: created directory `usr/sbin&#39;
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 dirtest<span class="o">]</span><span class="c1"># mkdir -pv {bin,sbin,usr/{bin,sbin}}</span>
+mkdir: created directory <span class="s1">&#39;bin&#39;</span>
+mkdir: created directory <span class="s1">&#39;sbin&#39;</span>
+mkdir: created directory <span class="s1">&#39;usr&#39;</span>
+mkdir: created directory <span class="s1">&#39;usr/bin&#39;</span>
+mkdir: created directory <span class="s1">&#39;usr/sbin&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="alias-cp">
 <h2>练习2-alias,cp<a class="headerlink" href="#alias-cp" title="永久链接至标题">¶</a></h2>
 <p>1 、定义别名命令baketc ，每 天将 将/etc/ 目录下所有文件，备份到/app 独立的子目录 下， 并要求子目录 格式为 为 backupYYYY-mm-dd， ， 备份过程可见</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="n">cpdir</span><span class="p">]</span><span class="c1"># alias baketc=&quot;cp -av /etc /app/backup$(date +%Y-%m-%d)&quot;</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 cpdir<span class="o">]</span><span class="c1"># alias baketc=&quot;cp -av /etc /app/backup$(date +%Y-%m-%d)&quot;</span>
 </pre></div>
 </div>
 <p>2 、创建/app/rootdir 目录，并复制/root下 下 所有文件 到该目录 内，要求保留权限</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#这个有点迷，不知道是复制到文件内部还是就是root复制到/rootdir</span>
-<span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="n">cpdir</span><span class="p">]</span><span class="c1"># cp -a /root /app/rootdir</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1">#这个有点迷，不知道是复制到文件内部还是就是root复制到/rootdir</span>
+<span class="o">[</span>root@centos7 cpdir<span class="o">]</span><span class="c1"># cp -a /root /app/rootdir</span>
 </pre></div>
 </div>
 <p>练习3-rename</p>
 <p>1 、 目录下有f1..f300文件，修改为f001..f300。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="n">renametest</span><span class="p">]</span><span class="c1"># touch f{1..300}         # 创建一些样例文件</span>
-<span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="n">renametest</span><span class="p">]</span><span class="c1"># ls                      # 查看下文件</span>
-<span class="n">f1</span>    <span class="n">f117</span>  <span class="n">f135</span>  <span class="n">f153</span>  <span class="n">f171</span>  <span class="n">f19</span>   <span class="n">f207</span>  <span class="n">f225</span>  <span class="n">f243</span>  <span class="n">f261</span>  <span class="n">f28</span>   <span class="n">f298</span>  <span class="n">f45</span>  <span class="n">f63</span>  <span class="n">f81</span>
-<span class="n">f10</span>   <span class="n">f118</span>  <span class="n">f136</span>  <span class="n">f154</span>  <span class="n">f172</span>  <span class="n">f190</span>  <span class="n">f208</span>  <span class="n">f226</span>  <span class="n">f244</span>  <span class="n">f262</span>  <span class="n">f280</span>  <span class="n">f299</span>  <span class="n">f46</span>  <span class="n">f64</span>  <span class="n">f82</span>
-<span class="n">f100</span>  <span class="n">f119</span>  <span class="n">f137</span>  <span class="n">f155</span>  <span class="n">f173</span>  <span class="n">f191</span>  <span class="n">f209</span>  <span class="n">f227</span>  <span class="n">f245</span>  <span class="n">f263</span>  <span class="n">f281</span>  <span class="n">f3</span>    <span class="n">f47</span>  <span class="n">f65</span>  <span class="n">f83</span>
-<span class="n">f101</span>  <span class="n">f12</span>   <span class="n">f138</span>  <span class="n">f156</span>  <span class="n">f174</span>  <span class="n">f192</span>  <span class="n">f21</span>   <span class="n">f228</span>  <span class="n">f246</span>  <span class="n">f264</span>  <span class="n">f282</span>  <span class="n">f30</span>   <span class="n">f48</span>  <span class="n">f66</span>  <span class="n">f84</span>
-<span class="n">f102</span>  <span class="n">f120</span>  <span class="n">f139</span>  <span class="n">f157</span>  <span class="n">f175</span>  <span class="n">f193</span>  <span class="n">f210</span>  <span class="n">f229</span>  <span class="n">f247</span>  <span class="n">f265</span>  <span class="n">f283</span>  <span class="n">f300</span>  <span class="n">f49</span>  <span class="n">f67</span>  <span class="n">f85</span>
-<span class="n">f103</span>  <span class="n">f121</span>  <span class="n">f14</span>   <span class="n">f158</span>  <span class="n">f176</span>  <span class="n">f194</span>  <span class="n">f211</span>  <span class="n">f23</span>   <span class="n">f248</span>  <span class="n">f266</span>  <span class="n">f284</span>  <span class="n">f31</span>   <span class="n">f5</span>   <span class="n">f68</span>  <span class="n">f86</span>
-<span class="n">f104</span>  <span class="n">f122</span>  <span class="n">f140</span>  <span class="n">f159</span>  <span class="n">f177</span>  <span class="n">f195</span>  <span class="n">f212</span>  <span class="n">f230</span>  <span class="n">f249</span>  <span class="n">f267</span>  <span class="n">f285</span>  <span class="n">f32</span>   <span class="n">f50</span>  <span class="n">f69</span>  <span class="n">f87</span>
-<span class="n">f105</span>  <span class="n">f123</span>  <span class="n">f141</span>  <span class="n">f16</span>   <span class="n">f178</span>  <span class="n">f196</span>  <span class="n">f213</span>  <span class="n">f231</span>  <span class="n">f25</span>   <span class="n">f268</span>  <span class="n">f286</span>  <span class="n">f33</span>   <span class="n">f51</span>  <span class="n">f7</span>   <span class="n">f88</span>
-<span class="n">f106</span>  <span class="n">f124</span>  <span class="n">f142</span>  <span class="n">f160</span>  <span class="n">f179</span>  <span class="n">f197</span>  <span class="n">f214</span>  <span class="n">f232</span>  <span class="n">f250</span>  <span class="n">f269</span>  <span class="n">f287</span>  <span class="n">f34</span>   <span class="n">f52</span>  <span class="n">f70</span>  <span class="n">f89</span>
-<span class="n">f107</span>  <span class="n">f125</span>  <span class="n">f143</span>  <span class="n">f161</span>  <span class="n">f18</span>   <span class="n">f198</span>  <span class="n">f215</span>  <span class="n">f233</span>  <span class="n">f251</span>  <span class="n">f27</span>   <span class="n">f288</span>  <span class="n">f35</span>   <span class="n">f53</span>  <span class="n">f71</span>  <span class="n">f9</span>
-<span class="n">f108</span>  <span class="n">f126</span>  <span class="n">f144</span>  <span class="n">f162</span>  <span class="n">f180</span>  <span class="n">f199</span>  <span class="n">f216</span>  <span class="n">f234</span>  <span class="n">f252</span>  <span class="n">f270</span>  <span class="n">f289</span>  <span class="n">f36</span>   <span class="n">f54</span>  <span class="n">f72</span>  <span class="n">f90</span>
-<span class="n">f109</span>  <span class="n">f127</span>  <span class="n">f145</span>  <span class="n">f163</span>  <span class="n">f181</span>  <span class="n">f2</span>    <span class="n">f217</span>  <span class="n">f235</span>  <span class="n">f253</span>  <span class="n">f271</span>  <span class="n">f29</span>   <span class="n">f37</span>   <span class="n">f55</span>  <span class="n">f73</span>  <span class="n">f91</span>
-<span class="n">f11</span>   <span class="n">f128</span>  <span class="n">f146</span>  <span class="n">f164</span>  <span class="n">f182</span>  <span class="n">f20</span>   <span class="n">f218</span>  <span class="n">f236</span>  <span class="n">f254</span>  <span class="n">f272</span>  <span class="n">f290</span>  <span class="n">f38</span>   <span class="n">f56</span>  <span class="n">f74</span>  <span class="n">f92</span>
-<span class="n">f110</span>  <span class="n">f129</span>  <span class="n">f147</span>  <span class="n">f165</span>  <span class="n">f183</span>  <span class="n">f200</span>  <span class="n">f219</span>  <span class="n">f237</span>  <span class="n">f255</span>  <span class="n">f273</span>  <span class="n">f291</span>  <span class="n">f39</span>   <span class="n">f57</span>  <span class="n">f75</span>  <span class="n">f93</span>
-<span class="n">f111</span>  <span class="n">f13</span>   <span class="n">f148</span>  <span class="n">f166</span>  <span class="n">f184</span>  <span class="n">f201</span>  <span class="n">f22</span>   <span class="n">f238</span>  <span class="n">f256</span>  <span class="n">f274</span>  <span class="n">f292</span>  <span class="n">f4</span>    <span class="n">f58</span>  <span class="n">f76</span>  <span class="n">f94</span>
-<span class="n">f112</span>  <span class="n">f130</span>  <span class="n">f149</span>  <span class="n">f167</span>  <span class="n">f185</span>  <span class="n">f202</span>  <span class="n">f220</span>  <span class="n">f239</span>  <span class="n">f257</span>  <span class="n">f275</span>  <span class="n">f293</span>  <span class="n">f40</span>   <span class="n">f59</span>  <span class="n">f77</span>  <span class="n">f95</span>
-<span class="n">f113</span>  <span class="n">f131</span>  <span class="n">f15</span>   <span class="n">f168</span>  <span class="n">f186</span>  <span class="n">f203</span>  <span class="n">f221</span>  <span class="n">f24</span>   <span class="n">f258</span>  <span class="n">f276</span>  <span class="n">f294</span>  <span class="n">f41</span>   <span class="n">f6</span>   <span class="n">f78</span>  <span class="n">f96</span>
-<span class="n">f114</span>  <span class="n">f132</span>  <span class="n">f150</span>  <span class="n">f169</span>  <span class="n">f187</span>  <span class="n">f204</span>  <span class="n">f222</span>  <span class="n">f240</span>  <span class="n">f259</span>  <span class="n">f277</span>  <span class="n">f295</span>  <span class="n">f42</span>   <span class="n">f60</span>  <span class="n">f79</span>  <span class="n">f97</span>
-<span class="n">f115</span>  <span class="n">f133</span>  <span class="n">f151</span>  <span class="n">f17</span>   <span class="n">f188</span>  <span class="n">f205</span>  <span class="n">f223</span>  <span class="n">f241</span>  <span class="n">f26</span>   <span class="n">f278</span>  <span class="n">f296</span>  <span class="n">f43</span>   <span class="n">f61</span>  <span class="n">f8</span>   <span class="n">f98</span>
-<span class="n">f116</span>  <span class="n">f134</span>  <span class="n">f152</span>  <span class="n">f170</span>  <span class="n">f189</span>  <span class="n">f206</span>  <span class="n">f224</span>  <span class="n">f242</span>  <span class="n">f260</span>  <span class="n">f279</span>  <span class="n">f297</span>  <span class="n">f44</span>   <span class="n">f62</span>  <span class="n">f80</span>  <span class="n">f99</span>
-<span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="n">renametest</span><span class="p">]</span><span class="c1"># rename f f00 f?            # 这个f?匹配到f1..f9这些文件， 然后把f替换为f00,就变成了f001..f009</span>
-<span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="n">renametest</span><span class="p">]</span><span class="c1"># rename f f0 f??            # 这个f??匹配到f10..f99这些文件， 然后把f替换为f0,就变成了f010..f099</span>
-<span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="n">renametest</span><span class="p">]</span><span class="c1"># ls                         # 再次查看</span>
-<span class="n">f001</span>  <span class="n">f023</span>  <span class="n">f045</span>  <span class="n">f067</span>  <span class="n">f089</span>  <span class="n">f111</span>  <span class="n">f133</span>  <span class="n">f155</span>  <span class="n">f177</span>  <span class="n">f199</span>  <span class="n">f221</span>  <span class="n">f243</span>  <span class="n">f265</span>  <span class="n">f287</span>
-<span class="n">f002</span>  <span class="n">f024</span>  <span class="n">f046</span>  <span class="n">f068</span>  <span class="n">f090</span>  <span class="n">f112</span>  <span class="n">f134</span>  <span class="n">f156</span>  <span class="n">f178</span>  <span class="n">f200</span>  <span class="n">f222</span>  <span class="n">f244</span>  <span class="n">f266</span>  <span class="n">f288</span>
-<span class="n">f003</span>  <span class="n">f025</span>  <span class="n">f047</span>  <span class="n">f069</span>  <span class="n">f091</span>  <span class="n">f113</span>  <span class="n">f135</span>  <span class="n">f157</span>  <span class="n">f179</span>  <span class="n">f201</span>  <span class="n">f223</span>  <span class="n">f245</span>  <span class="n">f267</span>  <span class="n">f289</span>
-<span class="n">f004</span>  <span class="n">f026</span>  <span class="n">f048</span>  <span class="n">f070</span>  <span class="n">f092</span>  <span class="n">f114</span>  <span class="n">f136</span>  <span class="n">f158</span>  <span class="n">f180</span>  <span class="n">f202</span>  <span class="n">f224</span>  <span class="n">f246</span>  <span class="n">f268</span>  <span class="n">f290</span>
-<span class="n">f005</span>  <span class="n">f027</span>  <span class="n">f049</span>  <span class="n">f071</span>  <span class="n">f093</span>  <span class="n">f115</span>  <span class="n">f137</span>  <span class="n">f159</span>  <span class="n">f181</span>  <span class="n">f203</span>  <span class="n">f225</span>  <span class="n">f247</span>  <span class="n">f269</span>  <span class="n">f291</span>
-<span class="n">f006</span>  <span class="n">f028</span>  <span class="n">f050</span>  <span class="n">f072</span>  <span class="n">f094</span>  <span class="n">f116</span>  <span class="n">f138</span>  <span class="n">f160</span>  <span class="n">f182</span>  <span class="n">f204</span>  <span class="n">f226</span>  <span class="n">f248</span>  <span class="n">f270</span>  <span class="n">f292</span>
-<span class="n">f007</span>  <span class="n">f029</span>  <span class="n">f051</span>  <span class="n">f073</span>  <span class="n">f095</span>  <span class="n">f117</span>  <span class="n">f139</span>  <span class="n">f161</span>  <span class="n">f183</span>  <span class="n">f205</span>  <span class="n">f227</span>  <span class="n">f249</span>  <span class="n">f271</span>  <span class="n">f293</span>
-<span class="n">f008</span>  <span class="n">f030</span>  <span class="n">f052</span>  <span class="n">f074</span>  <span class="n">f096</span>  <span class="n">f118</span>  <span class="n">f140</span>  <span class="n">f162</span>  <span class="n">f184</span>  <span class="n">f206</span>  <span class="n">f228</span>  <span class="n">f250</span>  <span class="n">f272</span>  <span class="n">f294</span>
-<span class="n">f009</span>  <span class="n">f031</span>  <span class="n">f053</span>  <span class="n">f075</span>  <span class="n">f097</span>  <span class="n">f119</span>  <span class="n">f141</span>  <span class="n">f163</span>  <span class="n">f185</span>  <span class="n">f207</span>  <span class="n">f229</span>  <span class="n">f251</span>  <span class="n">f273</span>  <span class="n">f295</span>
-<span class="n">f010</span>  <span class="n">f032</span>  <span class="n">f054</span>  <span class="n">f076</span>  <span class="n">f098</span>  <span class="n">f120</span>  <span class="n">f142</span>  <span class="n">f164</span>  <span class="n">f186</span>  <span class="n">f208</span>  <span class="n">f230</span>  <span class="n">f252</span>  <span class="n">f274</span>  <span class="n">f296</span>
-<span class="n">f011</span>  <span class="n">f033</span>  <span class="n">f055</span>  <span class="n">f077</span>  <span class="n">f099</span>  <span class="n">f121</span>  <span class="n">f143</span>  <span class="n">f165</span>  <span class="n">f187</span>  <span class="n">f209</span>  <span class="n">f231</span>  <span class="n">f253</span>  <span class="n">f275</span>  <span class="n">f297</span>
-<span class="n">f012</span>  <span class="n">f034</span>  <span class="n">f056</span>  <span class="n">f078</span>  <span class="n">f100</span>  <span class="n">f122</span>  <span class="n">f144</span>  <span class="n">f166</span>  <span class="n">f188</span>  <span class="n">f210</span>  <span class="n">f232</span>  <span class="n">f254</span>  <span class="n">f276</span>  <span class="n">f298</span>
-<span class="n">f013</span>  <span class="n">f035</span>  <span class="n">f057</span>  <span class="n">f079</span>  <span class="n">f101</span>  <span class="n">f123</span>  <span class="n">f145</span>  <span class="n">f167</span>  <span class="n">f189</span>  <span class="n">f211</span>  <span class="n">f233</span>  <span class="n">f255</span>  <span class="n">f277</span>  <span class="n">f299</span>
-<span class="n">f014</span>  <span class="n">f036</span>  <span class="n">f058</span>  <span class="n">f080</span>  <span class="n">f102</span>  <span class="n">f124</span>  <span class="n">f146</span>  <span class="n">f168</span>  <span class="n">f190</span>  <span class="n">f212</span>  <span class="n">f234</span>  <span class="n">f256</span>  <span class="n">f278</span>  <span class="n">f300</span>
-<span class="n">f015</span>  <span class="n">f037</span>  <span class="n">f059</span>  <span class="n">f081</span>  <span class="n">f103</span>  <span class="n">f125</span>  <span class="n">f147</span>  <span class="n">f169</span>  <span class="n">f191</span>  <span class="n">f213</span>  <span class="n">f235</span>  <span class="n">f257</span>  <span class="n">f279</span>
-<span class="n">f016</span>  <span class="n">f038</span>  <span class="n">f060</span>  <span class="n">f082</span>  <span class="n">f104</span>  <span class="n">f126</span>  <span class="n">f148</span>  <span class="n">f170</span>  <span class="n">f192</span>  <span class="n">f214</span>  <span class="n">f236</span>  <span class="n">f258</span>  <span class="n">f280</span>
-<span class="n">f017</span>  <span class="n">f039</span>  <span class="n">f061</span>  <span class="n">f083</span>  <span class="n">f105</span>  <span class="n">f127</span>  <span class="n">f149</span>  <span class="n">f171</span>  <span class="n">f193</span>  <span class="n">f215</span>  <span class="n">f237</span>  <span class="n">f259</span>  <span class="n">f281</span>
-<span class="n">f018</span>  <span class="n">f040</span>  <span class="n">f062</span>  <span class="n">f084</span>  <span class="n">f106</span>  <span class="n">f128</span>  <span class="n">f150</span>  <span class="n">f172</span>  <span class="n">f194</span>  <span class="n">f216</span>  <span class="n">f238</span>  <span class="n">f260</span>  <span class="n">f282</span>
-<span class="n">f019</span>  <span class="n">f041</span>  <span class="n">f063</span>  <span class="n">f085</span>  <span class="n">f107</span>  <span class="n">f129</span>  <span class="n">f151</span>  <span class="n">f173</span>  <span class="n">f195</span>  <span class="n">f217</span>  <span class="n">f239</span>  <span class="n">f261</span>  <span class="n">f283</span>
-<span class="n">f020</span>  <span class="n">f042</span>  <span class="n">f064</span>  <span class="n">f086</span>  <span class="n">f108</span>  <span class="n">f130</span>  <span class="n">f152</span>  <span class="n">f174</span>  <span class="n">f196</span>  <span class="n">f218</span>  <span class="n">f240</span>  <span class="n">f262</span>  <span class="n">f284</span>
-<span class="n">f021</span>  <span class="n">f043</span>  <span class="n">f065</span>  <span class="n">f087</span>  <span class="n">f109</span>  <span class="n">f131</span>  <span class="n">f153</span>  <span class="n">f175</span>  <span class="n">f197</span>  <span class="n">f219</span>  <span class="n">f241</span>  <span class="n">f263</span>  <span class="n">f285</span>
-<span class="n">f022</span>  <span class="n">f044</span>  <span class="n">f066</span>  <span class="n">f088</span>  <span class="n">f110</span>  <span class="n">f132</span>  <span class="n">f154</span>  <span class="n">f176</span>  <span class="n">f198</span>  <span class="n">f220</span>  <span class="n">f242</span>  <span class="n">f264</span>  <span class="n">f286</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 renametest<span class="o">]</span><span class="c1"># touch f{1..300}         # 创建一些样例文件</span>
+<span class="o">[</span>root@centos7 renametest<span class="o">]</span><span class="c1"># ls                      # 查看下文件</span>
+f1    f117  f135  f153  f171  f19   f207  f225  f243  f261  f28   f298  f45  f63  f81
+f10   f118  f136  f154  f172  f190  f208  f226  f244  f262  f280  f299  f46  f64  f82
+f100  f119  f137  f155  f173  f191  f209  f227  f245  f263  f281  f3    f47  f65  f83
+f101  f12   f138  f156  f174  f192  f21   f228  f246  f264  f282  f30   f48  f66  f84
+f102  f120  f139  f157  f175  f193  f210  f229  f247  f265  f283  f300  f49  f67  f85
+f103  f121  f14   f158  f176  f194  f211  f23   f248  f266  f284  f31   f5   f68  f86
+f104  f122  f140  f159  f177  f195  f212  f230  f249  f267  f285  f32   f50  f69  f87
+f105  f123  f141  f16   f178  f196  f213  f231  f25   f268  f286  f33   f51  f7   f88
+f106  f124  f142  f160  f179  f197  f214  f232  f250  f269  f287  f34   f52  f70  f89
+f107  f125  f143  f161  f18   f198  f215  f233  f251  f27   f288  f35   f53  f71  f9
+f108  f126  f144  f162  f180  f199  f216  f234  f252  f270  f289  f36   f54  f72  f90
+f109  f127  f145  f163  f181  f2    f217  f235  f253  f271  f29   f37   f55  f73  f91
+f11   f128  f146  f164  f182  f20   f218  f236  f254  f272  f290  f38   f56  f74  f92
+f110  f129  f147  f165  f183  f200  f219  f237  f255  f273  f291  f39   f57  f75  f93
+f111  f13   f148  f166  f184  f201  f22   f238  f256  f274  f292  f4    f58  f76  f94
+f112  f130  f149  f167  f185  f202  f220  f239  f257  f275  f293  f40   f59  f77  f95
+f113  f131  f15   f168  f186  f203  f221  f24   f258  f276  f294  f41   f6   f78  f96
+f114  f132  f150  f169  f187  f204  f222  f240  f259  f277  f295  f42   f60  f79  f97
+f115  f133  f151  f17   f188  f205  f223  f241  f26   f278  f296  f43   f61  f8   f98
+f116  f134  f152  f170  f189  f206  f224  f242  f260  f279  f297  f44   f62  f80  f99
+<span class="o">[</span>root@centos7 renametest<span class="o">]</span><span class="c1"># rename f f00 f?            # 这个f?匹配到f1..f9这些文件， 然后把f替换为f00,就变成了f001..f009</span>
+<span class="o">[</span>root@centos7 renametest<span class="o">]</span><span class="c1"># rename f f0 f??            # 这个f??匹配到f10..f99这些文件， 然后把f替换为f0,就变成了f010..f099</span>
+<span class="o">[</span>root@centos7 renametest<span class="o">]</span><span class="c1"># ls                         # 再次查看</span>
+f001  f023  f045  f067  f089  f111  f133  f155  f177  f199  f221  f243  f265  f287
+f002  f024  f046  f068  f090  f112  f134  f156  f178  f200  f222  f244  f266  f288
+f003  f025  f047  f069  f091  f113  f135  f157  f179  f201  f223  f245  f267  f289
+f004  f026  f048  f070  f092  f114  f136  f158  f180  f202  f224  f246  f268  f290
+f005  f027  f049  f071  f093  f115  f137  f159  f181  f203  f225  f247  f269  f291
+f006  f028  f050  f072  f094  f116  f138  f160  f182  f204  f226  f248  f270  f292
+f007  f029  f051  f073  f095  f117  f139  f161  f183  f205  f227  f249  f271  f293
+f008  f030  f052  f074  f096  f118  f140  f162  f184  f206  f228  f250  f272  f294
+f009  f031  f053  f075  f097  f119  f141  f163  f185  f207  f229  f251  f273  f295
+f010  f032  f054  f076  f098  f120  f142  f164  f186  f208  f230  f252  f274  f296
+f011  f033  f055  f077  f099  f121  f143  f165  f187  f209  f231  f253  f275  f297
+f012  f034  f056  f078  f100  f122  f144  f166  f188  f210  f232  f254  f276  f298
+f013  f035  f057  f079  f101  f123  f145  f167  f189  f211  f233  f255  f277  f299
+f014  f036  f058  f080  f102  f124  f146  f168  f190  f212  f234  f256  f278  f300
+f015  f037  f059  f081  f103  f125  f147  f169  f191  f213  f235  f257  f279
+f016  f038  f060  f082  f104  f126  f148  f170  f192  f214  f236  f258  f280
+f017  f039  f061  f083  f105  f127  f149  f171  f193  f215  f237  f259  f281
+f018  f040  f062  f084  f106  f128  f150  f172  f194  f216  f238  f260  f282
+f019  f041  f063  f085  f107  f129  f151  f173  f195  f217  f239  f261  f283
+f020  f042  f064  f086  f108  f130  f152  f174  f196  f218  f240  f262  f284
+f021  f043  f065  f087  f109  f131  f153  f175  f197  f219  f241  f263  f285
+f022  f044  f066  f088  f110  f132  f154  f176  f198  f220  f242  f264  f286
 </pre></div>
 </div>
 </div>

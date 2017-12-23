@@ -4,45 +4,55 @@
 练习1-mkdir
 ---------------------------
 
-1、如何创建/app/x/y1,/app/x/y2,/app/x/y1/a,/app/y1/b,/app/x/y2/a,/app/x/y2/b ::
+1、如何创建/app/x/y1,/app/x/y2,/app/x/y1/a,/app/y1/b,/app/x/y2/a,/app/x/y2/b 
+
+.. code-block:: bash
 
     [root@centos6 dirtest]# mkdir x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x/y2/b -pv
-    mkdir: created directory `x'
-    mkdir: created directory `x/y1,x'
-    mkdir: created directory `x/y1,x/y2,x'
-    mkdir: created directory `x/y1,x/y2,x/y1'
-    mkdir: created directory `x/y1,x/y2,x/y1/a,y1'
-    mkdir: created directory `x/y1,x/y2,x/y1/a,y1/b,x'
-    mkdir: created directory `x/y1,x/y2,x/y1/a,y1/b,x/y2'
-    mkdir: created directory `x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x'
-    mkdir: created directory `x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x/y2'
-    mkdir: created directory `x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x/y2/b'
+    mkdir: created directory 'x'
+    mkdir: created directory 'x/y1,x'
+    mkdir: created directory 'x/y1,x/y2,x'
+    mkdir: created directory 'x/y1,x/y2,x/y1'
+    mkdir: created directory 'x/y1,x/y2,x/y1/a,y1'
+    mkdir: created directory 'x/y1,x/y2,x/y1/a,y1/b,x'
+    mkdir: created directory 'x/y1,x/y2,x/y1/a,y1/b,x/y2'
+    mkdir: created directory 'x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x'
+    mkdir: created directory 'x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x/y2'
+    mkdir: created directory 'x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x/y2/b'
 
-2、如何创建x_m,y_m,x_n,y_n ::
+2、如何创建x_m,y_m,x_n,y_n 
+
+.. code-block:: bash
 
     [root@centos6 dirtest]# mkdir -pv {x,y}_{m,n}
-    mkdir: created directory `x_m'
-    mkdir: created directory `x_n'
-    mkdir: created directory `y_m'
-    mkdir: created directory `y_n'
+    mkdir: created directory 'x_m'
+    mkdir: created directory 'x_n'
+    mkdir: created directory 'y_m'
+    mkdir: created directory 'y_n'
 
-3、如何创建/app/bin,/app/sbin,/app/usr/app/usr/bin,/app/usr/sbin ::
+3、如何创建/app/bin,/app/sbin,/app/usr/app/usr/bin,/app/usr/sbin 
+
+.. code-block:: bash
 
     [root@centos6 dirtest]# mkdir -pv {bin,sbin,usr/{bin,sbin}}
-    mkdir: created directory `bin'
-    mkdir: created directory `sbin'
-    mkdir: created directory `usr'
-    mkdir: created directory `usr/bin'
-    mkdir: created directory `usr/sbin'
+    mkdir: created directory 'bin'
+    mkdir: created directory 'sbin'
+    mkdir: created directory 'usr'
+    mkdir: created directory 'usr/bin'
+    mkdir: created directory 'usr/sbin'
 
 练习2-alias,cp
 -------------------------
 
-1 、定义别名命令baketc ，每 天将 将/etc/ 目录下所有文件，备份到/app 独立的子目录 下， 并要求子目录 格式为 为 backupYYYY-mm-dd， ， 备份过程可见 ::
+1 、定义别名命令baketc ，每 天将 将/etc/ 目录下所有文件，备份到/app 独立的子目录 下， 并要求子目录 格式为 为 backupYYYY-mm-dd， ， 备份过程可见 
+
+.. code-block:: bash
 
     [root@centos7 cpdir]# alias baketc="cp -av /etc /app/backup$(date +%Y-%m-%d)"
 
-2 、创建/app/rootdir 目录，并复制/root下 下 所有文件 到该目录 内，要求保留权限 ::
+2 、创建/app/rootdir 目录，并复制/root下 下 所有文件 到该目录 内，要求保留权限 
+
+.. code-block:: bash
 
     #这个有点迷，不知道是复制到文件内部还是就是root复制到/rootdir
     [root@centos7 cpdir]# cp -a /root /app/rootdir
@@ -50,7 +60,9 @@
 
 练习3-rename
 
-1 、 目录下有f1..f300文件，修改为f001..f300。 ::
+1 、 目录下有f1..f300文件，修改为f001..f300。 
+
+.. code-block:: bash
 
     [root@centos7 renametest]# touch f{1..300}         # 创建一些样例文件
     [root@centos7 renametest]# ls                      # 查看下文件

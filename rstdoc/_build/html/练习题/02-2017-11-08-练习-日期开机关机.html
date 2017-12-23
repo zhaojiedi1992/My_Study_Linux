@@ -108,6 +108,12 @@
 <li class="toctree-l1"><a class="reference internal" href="13-2017-11-25-练习-压缩.html">13-2017-11-25-练习-压缩</a></li>
 <li class="toctree-l1"><a class="reference internal" href="14-2017-11-28-练习-sed.html">14-2017-11-28-练习-sed</a></li>
 <li class="toctree-l1"><a class="reference internal" href="15-2017-11-29-练习-rpm.html">15-2017-11-28-练习-rpm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-2017-12-01-练习-磁盘管理.html">16-2017-12-01-练习-磁盘管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-2017-12-03-练习-高级磁盘管理.html">17-2017-12-03-练习-高级磁盘管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-2017-12-13-练习-网络.html">18-2017-12-13-练习-网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-2017-12-16-练习-网络其他.html">21-2017-12-16-练习-网络其他</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22-2017-12-18-练习-脚本进阶循环.html">22-2017-12-18-练习-脚本进阶循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23-2017-12-22-练习-脚本进阶服务.html">23-2017-12-18-练习-脚本进阶服务</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
@@ -124,6 +130,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/10-2017-11-24.html">10-2017-11-24</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/11-2017-11-27.html">11-2017-11-27</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/12-2017-11-29.html">12-2017-11-29</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/13-2017-12-01.html">13-2017-12-01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/14-2017-12-04.html">14-2017-12-04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/15-2017-12-06.html">15-2017-12-06</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/16-2017-12-11.html">16-2017-12-11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/17-2017-12-12.html">17-2017-12-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/18-2017-12-14.html">18-2017-12-14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/19-2017-12-15.html">19-2017-12-05</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/20-2017-12-18.html">19-2017-12-05</a></li>
 </ul>
 <p class="caption"><span class="caption-text">博客作业</span></p>
 <ul>
@@ -199,27 +213,27 @@
 <h1>02-2017-11-08-练习-日期开机关机<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="date">
 <h2>练习1-date<a class="headerlink" href="#date" title="永久链接至标题">¶</a></h2>
-<p>1 、显示当前时间，格式：2016-06-18 10:20:30:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># date &quot;+%Y-%m-%d %H:%M:%S&quot;</span>
-<span class="mi">2017</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">10</span> <span class="mi">09</span><span class="p">:</span><span class="mi">20</span><span class="p">:</span><span class="mi">34</span>
+<p>1 、显示当前时间，格式：2016-06-18 10:20:30</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># date &quot;+%Y-%m-%d %H:%M:%S&quot;</span>
+<span class="m">2017</span>-11-10 <span class="m">09</span>:20:34
 </pre></div>
 </div>
-<p>2 、显示前天是星期几:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># date</span>
-<span class="n">Fri</span> <span class="n">Nov</span> <span class="mi">10</span> <span class="mi">09</span><span class="p">:</span><span class="mi">27</span><span class="p">:</span><span class="mi">41</span> <span class="n">CST</span> <span class="mi">2017</span>
-<span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># date -d  &quot;@&quot;$(echo $(date +%s) -  60*60*24*2 |bc) +%w</span>
-<span class="mi">3</span>
-<span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># date -d  &quot;-2 day&quot; +%w</span>
-<span class="mi">3</span>
+<p>2 、显示前天是星期几</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># date</span>
+Fri Nov <span class="m">10</span> <span class="m">09</span>:27:41 CST <span class="m">2017</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># date -d  &quot;@&quot;$(echo $(date +%s) -  60*60*24*2 |bc) +%w</span>
+<span class="m">3</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># date -d  &quot;-2 day&quot; +%w</span>
+<span class="m">3</span>
 </pre></div>
 </div>
-<p>3 、设置当前日期为2019-08-07 06:05:10:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># date 080706052019.10</span>
-<span class="n">Wed</span> <span class="n">Aug</span>  <span class="mi">7</span> <span class="mi">06</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mi">10</span> <span class="n">CST</span> <span class="mi">2019</span>
-<span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># date</span>
-<span class="n">Wed</span> <span class="n">Aug</span>  <span class="mi">7</span> <span class="mi">06</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mi">12</span> <span class="n">CST</span> <span class="mi">2019</span>
-<span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># date &quot;+%Y-%m-%d %H:%M:%S&quot;</span>
-<span class="mi">2019</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">07</span> <span class="mi">06</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mi">42</span>
+<p>3 、设置当前日期为2019-08-07 06:05:10</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># date 080706052019.10</span>
+Wed Aug  <span class="m">7</span> <span class="m">06</span>:05:10 CST <span class="m">2019</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># date</span>
+Wed Aug  <span class="m">7</span> <span class="m">06</span>:05:12 CST <span class="m">2019</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># date &quot;+%Y-%m-%d %H:%M:%S&quot;</span>
+<span class="m">2019</span>-08-07 <span class="m">06</span>:05:42
 </pre></div>
 </div>
 </div>
@@ -263,22 +277,22 @@
 <td>inserts operating system version (uname -v).操作系统版本</td></tr>
 </tbody>
 </table>
-<p>修改文件如下即可:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># cat /etc/issue</span>
-<span class="n">CentOS</span> <span class="n">release</span> <span class="mf">6.9</span> <span class="p">(</span><span class="n">Final</span><span class="p">)</span>
-<span class="n">Kernel</span> \<span class="n">r</span> <span class="n">on</span> <span class="n">an</span> \<span class="n">m</span>
-<span class="n">current</span> <span class="n">time</span><span class="p">:</span> \<span class="n">d</span> \<span class="n">t</span>
-<span class="n">hostname</span> <span class="p">:</span> \<span class="n">n</span>
-<span class="n">tty</span><span class="p">:</span>    \<span class="n">l</span>
+<p>修改文件如下即可</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># cat /etc/issue</span>
+CentOS release <span class="m">6</span>.9 <span class="o">(</span>Final<span class="o">)</span>
+Kernel <span class="se">\r</span> on an <span class="se">\m</span>
+current time: <span class="se">\d</span> <span class="se">\t</span>
+hostname : <span class="se">\n</span>
+tty:    <span class="se">\l</span>
 </pre></div>
 </div>
-<p>2、今天18：30自动关机，并提示用户:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos6 ~]# shutdown 18:30 &quot;computer will close&quot;
+<p>2、今天18：30自动关机，并提示用户</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># shutdown 18:30 &quot;computer will close&quot;</span>
 
 Broadcast message from root@centos6.magedu.com
-        (/dev/pts/1) at 6:28 ...
+        <span class="o">(</span>/dev/pts/1<span class="o">)</span> at <span class="m">6</span>:28 ...
 
-The system is going down for maintenance in 722 minutes!
+The system is going down <span class="k">for</span> maintenance in <span class="m">722</span> minutes!
 computer will close
 </pre></div>
 </div>

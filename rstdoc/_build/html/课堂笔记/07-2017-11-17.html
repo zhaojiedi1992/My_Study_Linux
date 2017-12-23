@@ -104,6 +104,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../练习题/13-2017-11-25-练习-压缩.html">13-2017-11-25-练习-压缩</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/14-2017-11-28-练习-sed.html">14-2017-11-28-练习-sed</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/15-2017-11-29-练习-rpm.html">15-2017-11-28-练习-rpm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/16-2017-12-01-练习-磁盘管理.html">16-2017-12-01-练习-磁盘管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/17-2017-12-03-练习-高级磁盘管理.html">17-2017-12-03-练习-高级磁盘管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/18-2017-12-13-练习-网络.html">18-2017-12-13-练习-网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/21-2017-12-16-练习-网络其他.html">21-2017-12-16-练习-网络其他</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/22-2017-12-18-练习-脚本进阶.html">22-2017-12-18-练习-脚本进阶</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul class="current">
@@ -124,6 +129,14 @@
 <li class="toctree-l1"><a class="reference internal" href="10-2017-11-24.html">10-2017-11-24</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11-2017-11-27.html">11-2017-11-27</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12-2017-11-29.html">12-2017-11-29</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-2017-12-01.html">13-2017-12-01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-2017-12-04.html">14-2017-12-04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-2017-12-06.html">15-2017-12-06</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-2017-12-11.html">16-2017-12-11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-2017-12-12.html">17-2017-12-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-2017-12-14.html">18-2017-12-14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19-2017-12-15.html">19-2017-12-05</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20-2017-12-18.html">19-2017-12-05</a></li>
 </ul>
 <p class="caption"><span class="caption-text">博客作业</span></p>
 <ul>
@@ -202,32 +215,49 @@
 </div>
 <div class="section" id="id3">
 <h2>本节内容<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>umask -p: 可以追加到bashrc文件
-umake -S</p>
-<p>suid:
+<div class="highlight-default"><div class="highlight"><pre><span></span>umask -p: 可以追加到bashrc文件
+umake -S
+
+suid:
 * suid 只能作用在二进制上， 不能作用在scripts上。
-* suid 将使用该程序的所有者的权限。</p>
-<p>粘滞位： 即使你有目录的写权限，也无法删除文件， 重命名文件。</p>
-<p>sgid:
+* suid 将使用该程序的所有者的权限。
+
+粘滞位： 即使你有目录的写权限，也无法删除文件， 重命名文件。
+
+sgid:
 * 文件， 让用户使用所属组的权限
-* 文件夹： 这个目录新建的文件所属组集成目录的所属组</p>
-<p>sticky:
-* 文件上：用户只能删除自己文件的</p>
-<p>chattr: +i:写保护。</p>
-<p>chattr:+a:只能追加</p>
-<p>chattr:+A:不更新accesstime</p>
-<p>tune2fs -l /dev/sda3: 默认挂载选项</p>
-<p>setfacl -m u:zhaojiedi:rw file1: file1上添加acl权限</p>
-<p>mask：影响除了所有者其他人。</p>
-<p>权限判定：
+* 文件夹： 这个目录新建的文件所属组集成目录的所属组
+
+sticky:
+* 文件上：用户只能删除自己文件的
+
+chattr: +i:写保护。
+
+chattr:+a:只能追加
+
+chattr:+A:不更新accesstime
+
+tune2fs -l /dev/sda3: 默认挂载选项
+
+setfacl -m u:zhaojiedi:rw file1: file1上添加acl权限
+
+mask：影响除了所有者其他人。
+
+权限判定：
 1. 判定所有,返回
 1. 判定特定用户，effective权限
 1. 判定组，判定特定组 effective权限
-1. other</p>
-<p>getfacl file1 | setfacl --set-file - f2|将f1的权限复制给f2</p>
-<p>rev:abc=&gt;cba</p>
-<p>cat:行反转</p>
-<p>paste：合并到一行。</p>
+1. other
+
+getfacl file1 | setfacl --set-file - f2|将f1的权限复制给f2
+
+rev:abc=&gt;cba
+
+cat:行反转
+
+paste：合并到一行。
+</pre></div>
+</div>
 </div>
 </div>
 

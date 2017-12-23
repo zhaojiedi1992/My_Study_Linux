@@ -102,6 +102,12 @@
 <li class="toctree-l1"><a class="reference internal" href="13-2017-11-25-练习-压缩.html">13-2017-11-25-练习-压缩</a></li>
 <li class="toctree-l1"><a class="reference internal" href="14-2017-11-28-练习-sed.html">14-2017-11-28-练习-sed</a></li>
 <li class="toctree-l1"><a class="reference internal" href="15-2017-11-29-练习-rpm.html">15-2017-11-28-练习-rpm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-2017-12-01-练习-磁盘管理.html">16-2017-12-01-练习-磁盘管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-2017-12-03-练习-高级磁盘管理.html">17-2017-12-03-练习-高级磁盘管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-2017-12-13-练习-网络.html">18-2017-12-13-练习-网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-2017-12-16-练习-网络其他.html">21-2017-12-16-练习-网络其他</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22-2017-12-18-练习-脚本进阶循环.html">22-2017-12-18-练习-脚本进阶循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23-2017-12-22-练习-脚本进阶服务.html">23-2017-12-18-练习-脚本进阶服务</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
@@ -118,6 +124,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/10-2017-11-24.html">10-2017-11-24</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/11-2017-11-27.html">11-2017-11-27</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/12-2017-11-29.html">12-2017-11-29</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/13-2017-12-01.html">13-2017-12-01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/14-2017-12-04.html">14-2017-12-04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/15-2017-12-06.html">15-2017-12-06</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/16-2017-12-11.html">16-2017-12-11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/17-2017-12-12.html">17-2017-12-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/18-2017-12-14.html">18-2017-12-14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/19-2017-12-15.html">19-2017-12-05</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/20-2017-12-18.html">19-2017-12-05</a></li>
 </ul>
 <p class="caption"><span class="caption-text">博客作业</span></p>
 <ul>
@@ -194,28 +208,28 @@
 <div class="section" id="id1">
 <h2>练习1<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>1） 复制/etc/grub.conf至/tmp目录，删除/tmp/grub.conf文件中的开头的空白字符</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="o">@</span><span class="p">[[:</span><span class="n">space</span><span class="p">:]]</span>\<span class="o">+@</span><span class="nd">@g</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>:%s@<span class="o">[[</span>:space:<span class="o">]]</span><span class="se">\+</span>@@g
 </pre></div>
 </div>
 <p>2）复制/etc/rc.d/rc.sysinit至/tmp目录，将/tmp/rc.sysinit文件中的至少一个空白字符开头的行行首加#号。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="o">@^</span><span class="p">[[:</span><span class="n">space</span><span class="p">:]]</span>\<span class="o">+@</span><span class="c1">#\0@g</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>:%s@^<span class="o">[[</span>:space:<span class="o">]]</span><span class="se">\+</span>@#<span class="se">\0</span>@g
 </pre></div>
 </div>
 <p>3）删除/tmp/rc.sysinit文件中以#开头，且后面跟了至少一个空白字符的行的行首的#号和空白字符。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="o">@^</span><span class="c1">#[[:space:]]\+(.*)@\1@g</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>:%s@^#<span class="o">[[</span>:space:<span class="o">]]</span><span class="se">\+</span><span class="o">(</span>.*<span class="o">)</span>@<span class="se">\1</span>@g
 </pre></div>
 </div>
 <p>4）为/tmpgrub.conf文件的前3行加#号</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="n">s</span><span class="o">@.*@</span><span class="c1">#\0@g</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>:1,3s@.*@#<span class="se">\0</span>@g
 </pre></div>
 </div>
 <p>5）将/etc/yum.repos.d/CentOS-Media.repo文件中的enable=0he gpgcheck=0改成1</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="nd">@enabled</span><span class="o">=</span><span class="mi">0</span><span class="nd">@enabled</span><span class="o">=</span><span class="mi">1</span><span class="o">@</span>
-<span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="nd">@gpgcheck</span><span class="o">=</span><span class="mi">0</span><span class="nd">@gpgcheck</span><span class="o">=</span><span class="mi">1</span><span class="o">@</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>:%s@enabled<span class="o">=</span><span class="m">0</span>@enabled<span class="o">=</span><span class="m">1</span>@
+:%s@gpgcheck<span class="o">=</span><span class="m">0</span>@gpgcheck<span class="o">=</span><span class="m">1</span>@
 </pre></div>
 </div>
 <p>6）复制/etc/rc.d/init.d/functions至/tmp目录，替换/tmp/functions文件中的/etc/sysconfig/init为/var/log</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="o">@/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysconfig</span><span class="o">/</span><span class="n">init</span><span class="o">@/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">@</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>:%s@/etc/sysconfig/init@/var/log@
 </pre></div>
 </div>
 </div>

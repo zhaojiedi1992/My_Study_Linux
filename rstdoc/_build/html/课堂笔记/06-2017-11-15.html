@@ -104,6 +104,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../练习题/13-2017-11-25-练习-压缩.html">13-2017-11-25-练习-压缩</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/14-2017-11-28-练习-sed.html">14-2017-11-28-练习-sed</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/15-2017-11-29-练习-rpm.html">15-2017-11-28-练习-rpm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/16-2017-12-01-练习-磁盘管理.html">16-2017-12-01-练习-磁盘管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/17-2017-12-03-练习-高级磁盘管理.html">17-2017-12-03-练习-高级磁盘管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/18-2017-12-13-练习-网络.html">18-2017-12-13-练习-网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/21-2017-12-16-练习-网络其他.html">21-2017-12-16-练习-网络其他</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/22-2017-12-18-练习-脚本进阶.html">22-2017-12-18-练习-脚本进阶</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul class="current">
@@ -124,6 +129,14 @@
 <li class="toctree-l1"><a class="reference internal" href="10-2017-11-24.html">10-2017-11-24</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11-2017-11-27.html">11-2017-11-27</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12-2017-11-29.html">12-2017-11-29</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-2017-12-01.html">13-2017-12-01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-2017-12-04.html">14-2017-12-04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-2017-12-06.html">15-2017-12-06</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-2017-12-11.html">16-2017-12-11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-2017-12-12.html">17-2017-12-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-2017-12-14.html">18-2017-12-14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19-2017-12-15.html">19-2017-12-05</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20-2017-12-18.html">19-2017-12-05</a></li>
 </ul>
 <p class="caption"><span class="caption-text">博客作业</span></p>
 <ul>
@@ -202,51 +215,96 @@
 </div>
 <div class="section" id="id3">
 <h2>本节内容<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>主组：primary group</p>
-<p>附加组：supplementary group</p>
-<p>/etc/passwd: name:passwd:uid,gid,gecos:dir:shell</p>
-<p>getent passwd root:查看指定用户信息</p>
-<p>pwunconv: 将shadow的密码转到/etc/passwd中</p>
-<p>pwconv：</p>
-<p>重新登陆获取令牌信息。</p>
-<p>root uid修改修复
+<div class="highlight-default"><div class="highlight"><pre><span></span>主组：primary group
+
+附加组：supplementary group
+
+/etc/passwd: name:passwd:uid,gid,gecos:dir:shell
+
+getent passwd root:查看指定用户信息
+
+pwunconv: 将shadow的密码转到/etc/passwd中
+
+pwconv：
+
+重新登陆获取令牌信息。
+
+root uid修改修复
 1)菜单项e键盘进入设置 init=/bin/bash selinux=0
 2)mount -o rw,remount /
 3)vim
-4）reboot</p>
-<p>chfn : change finger 添加个人信息</p>
-<p>chsh: 修改shell,或者usermod</p>
-<p>$6:SHA512</p>
-<p>%1:MD5</p>
-<p>authconfig --passalgo=sha256 --update ：更新加密算法</p>
-<p>/etc/login.defs：定义登陆相关的配置</p>
-<p>openssl rand -base64 30：产生随机数</p>
-<p>空密码是可以登陆的。</p>
-<p>centos5:可以使用usermod-U让用户无密码登陆，centos6不可以。</p>
-<p>net accounts：windows查看账户信息</p>
-<p>chage:修改口令有效期</p>
-<p>passwd -e zhaojiedi:用户即使过期</p>
-<p>chage -d 0 zhaojiedi:用户立即过期</p>
-<p>group zhajiedi:查看用户组信息。</p>
-<p>newgrp:切换主组</p>
-<p>gpasswd:设置组信息，可以设置管理员</p>
-<p>groupmems:组成员管理</p>
-<p>vipw,vigr:编辑密码和组文件
-pwck,grpck:文件检查</p>
-<p>useradd -r：系统不会自动给系统用户创建家目录</p>
-<p>rpm -qp --scripts a.rpm: 查看对应包的相关脚本</p>
-<p>/etc/default/useradd：添加用户默认配置</p>
-<p>/etc/skel：新建用户的摹本文件夹</p>
-<p>newusers:创建用户根据一个文件。</p>
-<p>新加一个文件， 用户名：密码</p>
-<p>chpasswd:批量修改用户密码</p>
-<p>groups root:查看指定用户组信息。</p>
-<p>删除附加组： usermod -G &quot;&quot; zhao</p>
-<p>fat格式文件系统不支持权限设置。 不支持所有者设置</p>
-<p>chown root: file1 : =chown root:root file1</p>
-<p>读写对root没控制的，但是执行对root有影响。</p>
-<p>chown -R wang / app: 问题很大。</p>
-<p>chmod -R a+X /app ： 只给目录权限， 文件不添加。</p>
+4）reboot
+
+chfn : change finger 添加个人信息
+
+chsh: 修改shell,或者usermod
+
+$6:SHA512
+
+$1:MD5
+
+authconfig --passalgo=sha256 --update ：更新加密算法
+
+/etc/login.defs：定义登陆相关的配置
+
+openssl rand -base64 30：产生随机数
+
+空密码是可以登陆的。
+
+centos5:可以使用usermod-U让用户无密码登陆，centos6不可以。
+
+
+net accounts：windows查看账户信息
+
+chage:修改口令有效期
+
+passwd -e zhaojiedi:用户即使过期
+
+chage -d 0 zhaojiedi:用户立即过期
+
+group zhajiedi:查看用户组信息。
+
+newgrp:切换主组
+
+gpasswd:设置组信息，可以设置管理员
+
+groupmems:组成员管理
+
+vipw,vigr:编辑密码和组文件
+pwck,grpck:文件检查
+
+useradd -r：系统不会自动给系统用户创建家目录
+
+rpm -qp --scripts a.rpm: 查看对应包的相关脚本
+
+/etc/default/useradd：添加用户默认配置
+
+/etc/skel：新建用户的摹本文件夹
+
+newusers:创建用户根据一个文件。
+
+新加一个文件， 用户名：密码
+
+chpasswd:批量修改用户密码
+
+groups root:查看指定用户组信息。
+
+
+删除附加组： usermod -G &quot;&quot; zhao
+
+fat格式文件系统不支持权限设置。 不支持所有者设置
+
+
+chown root: file1 : =chown root:root file1
+
+
+读写对root没控制的，但是执行对root有影响。
+
+chown -R wang / app: 问题很大。
+
+chmod -R a+X /app ： 只给目录权限， 文件不添加。
+</pre></div>
+</div>
 </div>
 </div>
 

@@ -4,7 +4,9 @@
 练习1
 ---------------------------------------------------
 
-1、编写脚本/root/bin/systeminfo.sh,显示当前主机系统信息，包括主机名，IPv4地址，操作系统版本，内核版本，CPU型号，内存大小，硬盘大小 ::
+1、编写脚本/root/bin/systeminfo.sh,显示当前主机系统信息，包括主机名，IPv4地址，操作系统版本，内核版本，CPU型号，内存大小，硬盘大小 
+
+.. code-block:: bash
 
     #!/bin/bash
     #================================================
@@ -35,7 +37,9 @@
     " 
 
 
-2、编写脚本/root/bin/backup.sh，可实现每日将/etc/目录备份到/root/etcYYYY-mm-dd中 ::
+2、编写脚本/root/bin/backup.sh，可实现每日将/etc/目录备份到/root/etcYYYY-mm-dd中 
+
+.. code-block:: bash
     
     #!/bin/bash
     #Author:     root
@@ -45,7 +49,9 @@
 
     cp -a /etc /root/etc$(date "+%Y-%m-%d")
 
-3、编写脚本/root/bin/disk.sh,显示当前硬盘分区中空间利用率最大的值 ::
+3、编写脚本/root/bin/disk.sh,显示当前硬盘分区中空间利用率最大的值 
+
+.. code-block:: bash
     
     #!/bin/bash
     #================================================
@@ -60,7 +66,9 @@
     val=`df  |egrep "[0-9]{1,3}%" -o |tr -d "%" |sort  -n |tail -n 1`
     echo val
 
-4、编写脚本/root/bin/links.sh,显示正连接本主机的每个远程主机的IPv4地址和连接数，并按连接数从大到小排序 ::
+4、编写脚本/root/bin/links.sh,显示正连接本主机的每个远程主机的IPv4地址和连接数，并按连接数从大到小排序 
+
+.. code-block:: bash
     
     #!/bin/bash
     #================================================
@@ -78,7 +86,9 @@
 练习2
 --------------------------------------------------------------------------------
 
-1、编写脚本/root/bin/sumid.sh，计算/etc/passwd文件中的第10个用户和第20用户的ID之和 ::
+1、编写脚本/root/bin/sumid.sh，计算/etc/passwd文件中的第10个用户和第20用户的ID之和 
+
+.. code-block:: bash
 
     #!/bin/bash
     #================================================
@@ -95,7 +105,9 @@
     sum_id=$[uid_10+uid_20]
     echo $sum_id
 
-2、编写脚本/root/bin/sumspace.sh，传递两个文件路径作为参数给脚本，计算这两个文件中所有空白行之和 ::
+2、编写脚本/root/bin/sumspace.sh，传递两个文件路径作为参数给脚本，计算这两个文件中所有空白行之和 
+
+.. code-block:: bash
 
     #!/bin/bash
     #================================================
@@ -114,7 +126,9 @@
     sum_space_line=$[file1_space_line+file2_space_line]
     echo $sum_space_line
 
-3、编写脚本/root/bin/sumfile.sh,统计/etc, /var, /usr目录中共有多少个一级子目录和文件 ::
+3、编写脚本/root/bin/sumfile.sh,统计/etc, /var, /usr目录中共有多少个一级子目录和文件 
+
+.. code-block:: bash
 
     #!/bin/bash
     #================================================
@@ -131,7 +145,9 @@
     
 练习3
 ---------------------------------------------------------
-1、编写脚本/root/bin/argsnum.sh，接受一个文件路径作为参数；如果参数个数小于1，则提示用户“至少应该给一个参数”，并立即退出；如果参数个数不小于1，则显示第一个参数所指向的文件中的空白行数 ::
+1、编写脚本/root/bin/argsnum.sh，接受一个文件路径作为参数；如果参数个数小于1，则提示用户“至少应该给一个参数”，并立即退出；如果参数个数不小于1，则显示第一个参数所指向的文件中的空白行数 
+
+.. code-block:: bash
     
     #!/bin/bash
     #================================================
@@ -147,7 +163,9 @@
     [ ! -f $1 ] && echo " file not exist" && exit 2
     echo `cat $1 |grep "^[[:space:]]*$" |wc -l`
 
-2、编写脚本/root/bin/hostping.sh，接受一个主机的IPv4地址做为参数，测试是否可连通。如果能ping通，则提示用户“该IP地址可访问”；如果不可ping通，则提示用户“该IP地址不可访问” ::
+2、编写脚本/root/bin/hostping.sh，接受一个主机的IPv4地址做为参数，测试是否可连通。如果能ping通，则提示用户“该IP地址可访问”；如果不可ping通，则提示用户“该IP地址不可访问” 
+
+.. code-block:: bash
 
     #!/bin/bash
     #================================================
@@ -163,7 +181,9 @@
     [ $? -ne 0 ] && echo " ip is not reacheable" && exit 2 
     ping -t 1 -c 1 $1 &>/dev/null  && echo "ip is reachable" ||echo "ip is not reachable"
 
-3、编写脚本/root/bin/checkdisk.sh，检查磁盘分区空间和inode使用率，如果超过80%，就发广播警告空间将满 ::
+3、编写脚本/root/bin/checkdisk.sh，检查磁盘分区空间和inode使用率，如果超过80%，就发广播警告空间将满 
+
+.. code-block:: bash
 
     #!/bin/bash
     #================================================
@@ -185,7 +205,9 @@
 
 练习4
 -------------------------------------------------------------------------------------------------------------
-1、编写脚本/bin/per.sh,判断当前用户对指定的参数文件，是否不可读并且不可写 ::
+1、编写脚本/bin/per.sh,判断当前用户对指定的参数文件，是否不可读并且不可写 
+
+.. code-block:: bash
 
     #!/bin/bash
     #================================================
@@ -202,7 +224,9 @@
     [ ! -r $1 ] && [ ! -w $1 ] && echo " no read,and write" || echo " other"
 
 
-2、编写脚本/root/bin/excute.sh ，判断参数文件是否为sh后缀的普通文件，如果是，添加所有人可执行权限，否则提示用户非脚本文件 ::
+2、编写脚本/root/bin/excute.sh ，判断参数文件是否为sh后缀的普通文件，如果是，添加所有人可执行权限，否则提示用户非脚本文件 
+
+.. code-block:: bash
 
     #!/bin/bash
     #================================================
@@ -219,7 +243,9 @@
     [[ "$1" =~ .*.sh$ ]] && chmod a+x $1 || echo "not sh file  "
 
 
-3、编写脚本/root/bin/nologin.sh和login.sh,实现禁止和充许普通用户登录系统 ::
+3、编写脚本/root/bin/nologin.sh和login.sh,实现禁止和充许普通用户登录系统 
+
+.. code-block:: bash
 
     #!/bin/bash
     #================================================
@@ -248,7 +274,9 @@
 练习5 
 ---------------------------------------------------------------------
 
-1、让所有用户的PATH环境变量的值多出一个路径，例如：/usr/local/apache/bin ::
+1、让所有用户的PATH环境变量的值多出一个路径，例如：/usr/local/apache/bin 
+
+.. code-block:: bash
 
     [root@centos7 job]# echo "export PATH=$PATH:/usr/local/apache/bin" >>/etc/profile.d/path.sh
 
@@ -266,13 +294,17 @@
 
 
 
-3、任意用户登录系统时，显示红色字体的警示提醒信息“Hi,dangerous！”  ::
+3、任意用户登录系统时，显示红色字体的警示提醒信息“Hi,dangerous！”  
+
+.. code-block:: bash
 
     [root@centos7 .etc]# cat -A /etc/motd
     ^[[31mHi,dangerous^[[0m$
 
 
-4、编写生成脚本基本格式的脚本，包括作者，联系方式，版本，时间，描述等 ::
+4、编写生成脚本基本格式的脚本，包括作者，联系方式，版本，时间，描述等 
+
+.. code-block:: bash
 
     #!/bin/bash
     #change filename
@@ -300,7 +332,9 @@
     vim $filename  +
 
 
-5、编写用户的环境初始化脚本reset.sh，包括别名，登录提示符，vim的设置，环境变量等 ::
+5、编写用户的环境初始化脚本reset.sh，包括别名，登录提示符，vim的设置，环境变量等 
+
+.. code-block:: bash
 
     . alias.sh
     . prompt.sh

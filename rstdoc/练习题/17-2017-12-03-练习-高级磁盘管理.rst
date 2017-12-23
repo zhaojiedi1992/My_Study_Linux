@@ -3,7 +3,9 @@
 
 练习1-LVM
 ------------------------------------------------
-::
+
+
+.. code-block:: bash
 
     1、创建一个至少有两个PV组成的大小为20G的名为testvg的VG；要求PE大小为16MB, 而后在卷组中创建大小为5G的逻辑卷testlv；挂载至/users目录
     2、 新建用户archlinux，要求其家目录为/users/archlinux，而后su切换至archlinux用户，复制/etc/pam.d目录至自己的家目录

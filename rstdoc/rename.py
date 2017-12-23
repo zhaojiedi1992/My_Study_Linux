@@ -68,4 +68,3 @@ for i in names:
         my_copytree(os.path.join(source,i), dst)
     else:
         shutil.copy2(os.path.join(source,i), dst)
-    

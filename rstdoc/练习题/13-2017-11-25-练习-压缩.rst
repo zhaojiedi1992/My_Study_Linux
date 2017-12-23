@@ -1,7 +1,9 @@
 13-2017-11-25-练习-压缩
 ======================================
 
-1 、使用不同压缩工具对同一个文件进行压缩，并比较大小 ::
+1 、使用不同压缩工具对同一个文件进行压缩，并比较大小 
+
+.. code-block:: bash
 
     [root@centos7 test]$ compress -c messages-20171113 > messages.Z
     [root@centos7 test]$ ll
@@ -39,12 +41,16 @@
 
 .. important::  从上面的对比可以看出来， xz的压缩效果最好，其次gzip，最差的compress压缩。
 
-2 、zip,unzip对/etc/sysconfig打包和压缩 ::
+2 、zip,unzip对/etc/sysconfig打包和压缩 
+
+.. code-block:: bash
 
     [root@centos7 test]$ zip -r sysconfig.zip /etc/sysconfig
     [root@centos7 test]$ unzip sysconfig.zip
 
-3 、使用tar命令创建归档，并添加文件，查看文件列表，展开归档 ::
+3 、使用tar命令创建归档，并添加文件，查看文件列表，展开归档 
+
+.. code-block:: bash
 
     [root@centos7 test]$ tar Jcvf sysconfig.tar.xz  /etc/sysconfig/ 
     [root@centos7 test]$ ll
@@ -61,7 +67,9 @@
     drwxr-xr-x. 3 root root 4096 Nov 28 10:19 etc
     drwxr-xr-x. 3 root root 4096 Nov 23 10:06 kernels
 
-4 、split分割一个tar文件，并合并这些文件 ::
+4 、split分割一个tar文件，并合并这些文件 
+
+.. code-block:: bash
 
     [root@centos7 test]$ split -d -b 50k sysconfig.tar.xz  myconfig
     [root@centos7 test]$ ll myconfig*
@@ -85,13 +93,17 @@
     -rw-r--r--. 1 root root 49108 Nov 28 10:21 myconfig17
     [root@centos7 test]$ cat myconfig* >> myconfig.tar.xz
 
-5 、cpio 进行打包并还原 ::
+5 、cpio 进行打包并还原 
+
+.. code-block:: bash
 
     [root@centos7 test]$ find /etc/sysconfig -print  |cpio -ovc >sysconfig.cpio
     [root@centos7 test]$ find /etc/scpio -tv < sysconfig.cpio
     [root@centos7 test]$ cpio -idv < sysconfig.cpio 
 
-6 、测试压缩并解压对文件权限的影响 ::
+6 、测试压缩并解压对文件权限的影响 
+
+.. code-block:: bash
 
     [root@centos7 test]$ touch general.txt 
     [root@centos7 test]$ touch acl.txt
@@ -121,19 +133,21 @@
 
 .. warning::   经过测试我们发现，普通的权限还是能保留的，acl权限会在压缩和解压过程中丢失的。
 
-7 、测试tar打包保留权限的问题 ::
+7 、测试tar打包保留权限的问题 
+
+.. code-block:: bash
 
     [root@centos7 test]$ ll
     total 4
     -rw-rwxr--+ 1 root root 0 Nov 28 10:33 acl.txt
     -rw-r--r--. 1 root root 0 Nov 28 10:33 general.txt
     [root@centos7 test]$ tar Jcvf /root/test.tar.xz /app/test
-    tar: Removing leading `/' from member names
+    tar: Removing leading '/' from member names
     /app/test/
     /app/test/general.txt
     /app/test/acl.txt
     [root@centos7 test]$ tar --acl -Jcvf /root/test.tar.xz /app/test
-    tar: Removing leading `/' from member names
+    tar: Removing leading '/' from member names
     /app/test/
     /app/test/general.txt
     /app/test/acl.txt

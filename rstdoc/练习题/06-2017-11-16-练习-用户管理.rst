@@ -4,7 +4,9 @@
 练习1-useradd,usermod
 ----------------------
 
-1、创建用户gentoo，附加组为distro和linux,默认shell为/bin/csh,注释信息"gentoo distribution"  ::
+1、创建用户gentoo，附加组为distro和linux,默认shell为/bin/csh,注释信息"gentoo distribution"  
+
+.. code-block:: bash
 
     [root@centos6 ~]# useradd -G distro,linux -s /bin/csh -c "gentoo distribution" gentoo
 
@@ -14,7 +16,9 @@
 
 1、创建好的用户wang,用户家目录被删除的，如何还原。 
 
-模拟一个破坏环境 ::
+模拟一个破坏环境 
+
+.. code-block:: bash
 
     [root@centos6 ~]# useradd wang                          #创建用户
     [root@centos6 ~]# echo "oracle" | passwd --stdin wang   #设置密码
@@ -29,7 +33,9 @@
     su: warning: cannot change directory to /home/wang: No such file or directory
     -bash-4.1$                                                #这里家目录没有就是-bash-4.1的样子了。
 
-修复过程 ::
+修复过程 
+
+.. code-block:: bash
 
     [root@centos6 home]# cp -r /etc/skel /home/wang   #复制模板文件夹
     [root@centos6 home]# ll
@@ -61,7 +67,9 @@
 练习3-useradd,passwd
 ----------------------------
 
-1 、创建用户gentoo ，附加组为bin 和root ，默认shell为 为/bin/csh ，注释信息为"Gentoo Distribution" ::
+1 、创建用户gentoo ，附加组为bin 和root ，默认shell为 为/bin/csh ，注释信息为"Gentoo Distribution" 
+
+.. code-block:: bash
 
     [root@centos6 home]# useradd -G bin,root -s /bin/csh -c "Gentoo Distribution" gentoo
 
@@ -71,7 +79,9 @@
 * 用户natasha ，使用admins  作为附属组
 * 用户harry ，也使用admins  作为附属组
 * 用户sarah ，不可交互登录系统，且不是admins  的成员，
-* natasha ，harry ，sarah 密码都是centos  ::
+* natasha ，harry ，sarah 密码都是centos  
+
+.. code-block:: bash
 
     [root@centos6 home]# groupadd admins
     [root@centos6 home]# useradd -G admins natasha
@@ -90,7 +100,9 @@
 
 练习4-批量添加用户和修改密码
 -------------------------------
-批量添加用户 ::
+批量添加用户 
+
+.. code-block:: bash
 
     [root@centos6 home]# echo user{00..10} |tr " " "\n"   |xargs -L  1  useradd  #cent6创建11个用户
     [root@centos6 ~]# tail -n 11 /etc/passwd >>need_to_add_users.txt             #cent6把/etc/passwd后面的11行数据到文件中
@@ -113,7 +125,9 @@
     uid=608(user01) gid=609(user01) groups=609(user01)
 
 
-批量改密码 ::
+批量改密码 
+
+.. code-block:: bash
 
     [root@centos7 ~]# nano all_pass.txt #编辑一个密码文件
     [root@centos7 ~]# cat all_pass.txt  #查看
@@ -134,23 +148,33 @@
 练习5-权限判断
 ---------------------
 
-1 、当用户xiaoming 对/testdir  目录无执行权限时，意味着无法做哪些操作？ ::
+1 、当用户xiaoming 对/testdir  目录无执行权限时，意味着无法做哪些操作？ 
+
+.. code-block:: bash
 
     无法进入目录
 
-2 、当用户xiaoqiang 对/testdir  目录无读权限时，意味着无法做哪些操作？ ::
+2 、当用户xiaoqiang 对/testdir  目录无读权限时，意味着无法做哪些操作？ 
+
+.. code-block:: bash
     
     无法查看目录下的文件
     
-3 、当用户wangcai  对/testdir  目录无写权限时，该目录下的只读文件file1 是否可修改和删除？ ::
+3 、当用户wangcai  对/testdir  目录无写权限时，该目录下的只读文件file1 是否可修改和删除？ 
+
+.. code-block:: bash
 
     不可修改，无法删除
 
-4 、当用户wangcai  对/testdir  目录有写和执行权限时，该目录下的只读文件file1 是否可修改和删除？ ::
+4 、当用户wangcai  对/testdir  目录有写和执行权限时，该目录下的只读文件file1 是否可修改和删除？ 
+
+.. code-block:: bash
 
     不可修改，但是可以删除
 
-5 、复制/etc/fstab 文件到/var/tmp 下，设置文件所有者为wangcai 读写权限，所属组为sysadmins 组有读写权限，其他人无权限 ::
+5 、复制/etc/fstab 文件到/var/tmp 下，设置文件所有者为wangcai 读写权限，所属组为sysadmins 组有读写权限，其他人无权限 
+
+.. code-block:: bash
 
     [root@centos7 app]$ chown wangcai:sysadmins /var/tmp/fstab 
     [root@centos7 app]$ chmod 660 /var/tmp/fstab 
@@ -167,7 +191,9 @@
 * 3)alice 在g2组，需要先创建用户，读写权限
 * 4）tome在g3组， 需要创建用户，有读权限
 * 5）其他用户无权限     
-::
+
+
+.. code-block:: bash
 
     [root@centos6 ~]# mkdir /testdir/dir -pv
     mkdir: created directory `/testdir'
@@ -192,7 +218,9 @@
     [root@centos6 dir]# chmod o-rx /testdir/dir/ -R
     [root@centos6 dir]# setfacl -m "d:o::---" -R /testdir/dir/
 
-2 、备份/testdir/dir 里所有文件的ACL 权限到/root/acl.txt 中，清除/testdir/dir 中所有ACL 权限，最后还原ACL  ::
+2 、备份/testdir/dir 里所有文件的ACL 权限到/root/acl.txt 中，清除/testdir/dir 中所有ACL 权限，最后还原ACL  
+
+.. code-block:: bash
 
     [root@centos6 dir]# getfacl /testdir/dir -R >/root/acl.txt
     getfacl: Removing leading '/' from absolute path names

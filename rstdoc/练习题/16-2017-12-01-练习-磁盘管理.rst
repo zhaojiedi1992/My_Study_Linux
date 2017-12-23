@@ -3,8 +3,9 @@
 
 练习1
 --------------------------------------------
-1、 mbr损坏的修复 ::
+1、 mbr损坏的修复 
 
+.. code-block:: bash
     [root@centos7 ~]$ dd if=/dev/sda of=/app/mbr bs=1 count=512
     512+0 records in
     512+0 records out
@@ -24,7 +25,9 @@
 
 2、文件系统出现故障的修复 
 
-模拟破坏环境 ::
+模拟破坏环境
+
+.. code-block:: bash
 
     [root@centos7 mnt]$ mkfs.ext4 /dev/sdb1
     mke2fs 1.42.9 (28-Dec-2013)
@@ -59,7 +62,9 @@
     10485760 bytes (10 MB) copied, 0.00539083 s, 1.9 GB/s
 
 
-修复文件系统问题 ::
+修复文件系统问题 
+
+.. code-block:: bash
 
     [root@centos7 mnt]$ umount /dev/sdb1
     [root@centos7 mnt]$ fsck /dev/sdb1
@@ -112,7 +117,9 @@
 
 练习2 
 --------------------------------------------------
-1、创建一个2G的文件系统，块大小为2048byte，预留1%可用空间,文件系统ext4，卷标为TEST，要求此分区开机后自动挂载至/test目录，且默认有acl挂载选项 ::
+1、创建一个2G的文件系统，块大小为2048byte，预留1%可用空间,文件系统ext4，卷标为TEST，要求此分区开机后自动挂载至/test目录，且默认有acl挂载选项
+
+.. code-block:: bash
 
     [root@centos7 app]$ fdisk /dev/sdb
     WARNING: fdisk GPT support is currently new, and therefore in an experimental phase. Use at your own discretion.
@@ -279,12 +286,16 @@
     (1) 列出当前系统识别到的所有磁盘设备
     (2) 如磁盘数量为1，则显示其空间使用信息
 
-否则，则显示最后一个磁盘上的空间使用信息 ::
+否则，则显示最后一个磁盘上的空间使用信息 
+
+.. code-block:: bash
 
     lsblk  |grep '^s[dh][a-z]\+' -o
     df  /dev/`lsblk  |grep '^s[dh][a-z]\+' -o | tail -n 1 `
 
-3、将CentOS6的CentOS-6.8-x86_64-bin-DVD1.iso和CentOS-6.8-x86_64-bin-DVD2.iso两个文件，合并成一个CentOS-6.8-x86_64-Everything.iso文件，并将其配置为yum源 ::
+3、将CentOS6的CentOS-6.8-x86_64-bin-DVD1.iso和CentOS-6.8-x86_64-bin-DVD2.iso两个文件，合并成一个CentOS-6.8-x86_64-Everything.iso文件，并将其配置为yum源 
+
+.. code-block:: bash
 
     mount /dev/sr2 /mnt/cdrom1
     mount /dev/sr3 /mnt/cdrom2 
@@ -296,7 +307,9 @@
 
 练习3 
 ------------------------------------------------
-1 、制作交换分区，并启用 ::
+1 、制作交换分区，并启用 
+
+.. code-block:: bash
 
     [root@centos7 ~]$ fdisk /dev/sdb
     WARNING: fdisk GPT support is currently new, and therefore in an experimental phase. Use at your own discretion.

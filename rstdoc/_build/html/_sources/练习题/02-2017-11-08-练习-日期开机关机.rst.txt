@@ -3,12 +3,16 @@
 
 练习1-date
 ---------------
-1 、显示当前时间，格式：2016-06-18 10:20:30::
+1 、显示当前时间，格式：2016-06-18 10:20:30
+
+.. code-block:: bash
 
         [root@centos6 ~]# date "+%Y-%m-%d %H:%M:%S"
         2017-11-10 09:20:34
 
-2 、显示前天是星期几::
+2 、显示前天是星期几
+
+.. code-block:: bash
 
         [root@centos6 ~]# date
         Fri Nov 10 09:27:41 CST 2017
@@ -17,7 +21,9 @@
         [root@centos6 ~]# date -d  "-2 day" +%w
         3
 
-3 、设置当前日期为2019-08-07 06:05:10::
+3 、设置当前日期为2019-08-07 06:05:10
+
+.. code-block:: bash
 
         [root@centos6 ~]# date 080706052019.10
         Wed Aug  7 06:05:10 CST 2019
@@ -43,7 +49,9 @@
 -v      inserts operating system version (uname -v).操作系统版本
 
 
-修改文件如下即可::
+修改文件如下即可
+
+.. code-block:: bash
 
         [root@centos6 ~]# cat /etc/issue
         CentOS release 6.9 (Final)
@@ -53,7 +61,9 @@
         tty:    \l
 
 
-2、今天18：30自动关机，并提示用户::
+2、今天18：30自动关机，并提示用户
+
+.. code-block:: bash
 
         [root@centos6 ~]# shutdown 18:30 "computer will close"
 
