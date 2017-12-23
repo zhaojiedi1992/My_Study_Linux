@@ -100,6 +100,8 @@
 <li class="toctree-l1"><a class="reference internal" href="06-2017-11-16-练习-用户管理.html">06-2017-11-16-练习-用户管理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07-2017-11-10-练习-wc-useradd.html">07-2017-11-10-练习-wc-useradd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08-2017-11-10-练习-grep-文本.html">08-2017-11-10-练习-grep-文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-2017-11-13-练习-find.html">09-2017-11-13-练习-find</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-2017-11-14-练习-vim.html">10-2017-11-14-练习-vim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12-2017-11-23-联系-bash.html">12-2017-11-23-练习-bash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13-2017-11-25-练习-压缩.html">13-2017-11-25-练习-压缩</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">14-2017-11-28-练习-sed</a><ul>
@@ -110,9 +112,12 @@
 <li class="toctree-l1"><a class="reference internal" href="16-2017-12-01-练习-磁盘管理.html">16-2017-12-01-练习-磁盘管理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17-2017-12-03-练习-高级磁盘管理.html">17-2017-12-03-练习-高级磁盘管理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18-2017-12-13-练习-网络.html">18-2017-12-13-练习-网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19-2017-12-15-练习-进程管理和作业管理计划任务.html">19-2017-12-15-练习-进程管理和作业管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20-2017-12-16-练习-ip-nmcli.html">2017-12-16-练习-ip-nmcli</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21-2017-12-16-练习-网络其他.html">21-2017-12-16-练习-网络其他</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22-2017-12-18-练习-脚本进阶循环.html">22-2017-12-18-练习-脚本进阶循环</a></li>
 <li class="toctree-l1"><a class="reference internal" href="23-2017-12-22-练习-脚本进阶服务.html">23-2017-12-18-练习-脚本进阶服务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24-2017-12-23-练习-常用启动故障修复.html">24-2017-12-23-练习-常用启动故障修复</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
@@ -213,45 +218,45 @@
 <div class="section" id="id1">
 <h2>练习1<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>1、删除centos7系统/etc/grub2.cfg文件中所有以空白开头的行行首的空白字符</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos7 ~]$ sed -nr &#39;s@^([[:space:]]+)(.*)@\2@p&#39; /etc/grub2.cfg
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 ~<span class="o">]</span>$ sed -nr <span class="s1">&#39;s@^([[:space:]]+)(.*)@\2@p&#39;</span> /etc/grub2.cfg
 </pre></div>
 </div>
 <p>2、删除/etc/fstab文件中所有以#开头，后面至少跟一个空白字符的行的行首的#和空白字符</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos7 ~]$ sed -nr &#39;s@(^#[[:space:]])(.*)@\2@p&#39; /etc/fstab
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 ~<span class="o">]</span>$ sed -nr <span class="s1">&#39;s@(^#[[:space:]])(.*)@\2@p&#39;</span> /etc/fstab
 </pre></div>
 </div>
 <p>3、在centos6系统/root/install.log每一行行首增加#号</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># sed -nr &#39;s@.*@#\0@p&#39; /root/install.log</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># sed -nr &#39;s@.*@#\0@p&#39; /root/install.log</span>
 </pre></div>
 </div>
 <p>4、在/etc/fstab文件中不以#开头的行的行首增加#号</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># sed -nr &#39;s@^[^#].*@#\0@p&#39; /etc/fstab</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># sed -nr &#39;s@^[^#].*@#\0@p&#39; /etc/fstab</span>
 </pre></div>
 </div>
 <p>5、处理/etc/fstab路径,使用sed命令取出其目录名和基名</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># echo &quot;/etc/fstab&quot;   |sed -nr &#39;s@(.*/)([^/]+)/?@\2@p&#39;</span>
-<span class="n">fstab</span>
-<span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># echo &quot;/etc/fstab/&quot;   |sed -nr &#39;s@(.*/)([^/]+)/?@\2@p&#39;</span>
-<span class="n">fstab</span>
-<span class="p">[</span><span class="n">root</span><span class="nd">@centos6</span> <span class="o">~</span><span class="p">]</span><span class="c1"># echo &quot;/etc/&quot;   |sed -nr &#39;s@(.*/)([^/]+)/?@\1@p&#39;</span>
-<span class="o">/</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># echo &quot;/etc/fstab&quot;   |sed -nr &#39;s@(.*/)([^/]+)/?@\2@p&#39;</span>
+fstab
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># echo &quot;/etc/fstab/&quot;   |sed -nr &#39;s@(.*/)([^/]+)/?@\2@p&#39;</span>
+fstab
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># echo &quot;/etc/&quot;   |sed -nr &#39;s@(.*/)([^/]+)/?@\1@p&#39;</span>
+/
 </pre></div>
 </div>
 <p>6、利用sed 取出ifconfig命令中本机的IPv4地址</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos7 ~]$ ifconfig ens33 |sed -nr &#39;2s@.*inet (.*) netmask.*@\1@p&#39;
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 ~<span class="o">]</span>$ ifconfig ens33 <span class="p">|</span>sed -nr <span class="s1">&#39;2s@.*inet (.*) netmask.*@\1@p&#39;</span>
 </pre></div>
 </div>
 <p>7、统计centos安装光盘中Package目录下的所有rpm文件的以.分隔倒数第二个字段的重复次数</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>root@centos7 ~]$ ls /misc/cd/Packages/ |sed -nr &#39;s@.*\.([^.]*)\.rpm@\1@p&#39; |sort  |uniq -c
-2141 i686
-3076 noarch
-4374 x86_64
+<div class="highlight-bash"><div class="highlight"><pre><span></span>root@centos7 ~<span class="o">]</span>$ ls /misc/cd/Packages/ <span class="p">|</span>sed -nr <span class="s1">&#39;s@.*\.([^.]*)\.rpm@\1@p&#39;</span> <span class="p">|</span>sort  <span class="p">|</span>uniq -c
+<span class="m">2141</span> i686
+<span class="m">3076</span> noarch
+<span class="m">4374</span> x86_64
 </pre></div>
 </div>
 <p>8、统计/etc/init.d/functions文件中每个单词的出现次数，并排序（用grep和sed两种方法分别实现）</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cat</span>  <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">functions</span>  <span class="o">|</span> <span class="n">egrep</span> <span class="o">-</span><span class="n">o</span> <span class="s2">&quot;([[:alpha:]]+)&quot;</span>  <span class="o">|</span><span class="n">sort</span> <span class="o">|</span><span class="n">uniq</span> <span class="o">-</span><span class="n">c</span>  <span class="o">&gt;</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">grep</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">functions</span> <span class="o">|</span> <span class="n">sed</span> <span class="o">-</span><span class="n">r</span> <span class="s1">&#39;s@[^[:alpha:]]@</span><span class="se">\n</span><span class="s1">@g&#39;</span> <span class="o">|</span><span class="n">sed</span> <span class="s1">&#39;/^$/d&#39;</span> <span class="o">|</span><span class="n">sort</span> <span class="o">|</span><span class="n">uniq</span> <span class="o">-</span><span class="n">c</span>  <span class="o">&gt;/</span><span class="n">root</span><span class="o">/</span><span class="n">sed</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">diff</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">sed</span><span class="o">.</span><span class="n">txt</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">grep</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>cat  /etc/init.d/functions  <span class="p">|</span> egrep -o <span class="s2">&quot;([[:alpha:]]+)&quot;</span>  <span class="p">|</span>sort <span class="p">|</span>uniq -c  &gt; /root/grep.txt
+cat /etc/init.d/functions <span class="p">|</span> sed -r <span class="s1">&#39;s@[^[:alpha:]]@\n@g&#39;</span> <span class="p">|</span>sed <span class="s1">&#39;/^$/d&#39;</span> <span class="p">|</span>sort <span class="p">|</span>uniq -c  &gt;/root/sed.txt
+diff /root/sed.txt /root/grep.txt
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -259,7 +264,7 @@
 <p class="last">这个题，2种结果必须是一致的， 如果第二种方式没有sed -nr 's&#64;.*&#64;#0&#64;p' 就会少统计行单独为fi的行。</p>
 </div>
 <p>9、将文本文件的n和n+1行合并为一行，n为奇数行</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[root@centos7 ~]$ sed &#39;N;s@\n@@&#39; /etc/fstab
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 ~<span class="o">]</span>$ sed <span class="s1">&#39;N;s@\n@@&#39;</span> /etc/fstab
 </pre></div>
 </div>
 </div>

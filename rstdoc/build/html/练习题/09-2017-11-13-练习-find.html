@@ -35,7 +35,9 @@
         <link rel="index" title="索引"
               href="../genindex.html"/>
         <link rel="search" title="搜索" href="../search.html"/>
-    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/> 
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
+        <link rel="next" title="10-2017-11-14-练习-vim" href="10-2017-11-14-练习-vim.html"/>
+        <link rel="prev" title="08-2017-11-10-练习-grep-文本" href="08-2017-11-10-练习-grep-文本.html"/> 
 
   
   <script src="../static/js/modernizr.min.js"></script>
@@ -89,7 +91,7 @@
             
             
               <p class="caption"><span class="caption-text">练习题</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="01-2017-07-练习-Linux简介.html">01-2017-07-练习-Linux简介练习</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02-2017-11-08-练习-日期开机关机.html">02-2017-11-08-练习-日期开机关机</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03-2017-11-09-练习-glob.html">03-2017-11-09-练习-glob</a></li>
@@ -98,6 +100,12 @@
 <li class="toctree-l1"><a class="reference internal" href="06-2017-11-16-练习-用户管理.html">06-2017-11-16-练习-用户管理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07-2017-11-10-练习-wc-useradd.html">07-2017-11-10-练习-wc-useradd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08-2017-11-10-练习-grep-文本.html">08-2017-11-10-练习-grep-文本</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">09-2017-11-13-练习-find</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">练习1-find</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">练习2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="10-2017-11-14-练习-vim.html">10-2017-11-14-练习-vim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12-2017-11-23-联系-bash.html">12-2017-11-23-练习-bash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13-2017-11-25-练习-压缩.html">13-2017-11-25-练习-压缩</a></li>
 <li class="toctree-l1"><a class="reference internal" href="14-2017-11-28-练习-sed.html">14-2017-11-28-练习-sed</a></li>
@@ -105,9 +113,12 @@
 <li class="toctree-l1"><a class="reference internal" href="16-2017-12-01-练习-磁盘管理.html">16-2017-12-01-练习-磁盘管理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17-2017-12-03-练习-高级磁盘管理.html">17-2017-12-03-练习-高级磁盘管理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18-2017-12-13-练习-网络.html">18-2017-12-13-练习-网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19-2017-12-15-练习-进程管理和作业管理计划任务.html">19-2017-12-15-练习-进程管理和作业管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20-2017-12-16-练习-ip-nmcli.html">2017-12-16-练习-ip-nmcli</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21-2017-12-16-练习-网络其他.html">21-2017-12-16-练习-网络其他</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22-2017-12-18-练习-脚本进阶循环.html">22-2017-12-18-练习-脚本进阶循环</a></li>
 <li class="toctree-l1"><a class="reference internal" href="23-2017-12-22-练习-脚本进阶服务.html">23-2017-12-18-练习-脚本进阶服务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24-2017-12-23-练习-常用启动故障修复.html">24-2017-12-23-练习-常用启动故障修复</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
@@ -208,70 +219,70 @@
 <div class="section" id="id1">
 <h2>练习1-find<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>1、查找/var目录属主为root且属组为mail的所有文件。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span> <span class="o">-</span><span class="n">user</span> <span class="n">root</span> <span class="o">-</span><span class="n">group</span> <span class="n">mail</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find /var/ -user root -group mail
 </pre></div>
 </div>
 <p>2、查找/usr目录下不属于root，bin,hadoop的文件。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span> <span class="o">-</span><span class="ow">not</span> \<span class="p">(</span> <span class="o">-</span><span class="n">user</span> <span class="n">root</span> <span class="o">-</span><span class="n">o</span> <span class="o">-</span><span class="n">user</span> <span class="nb">bin</span> <span class="o">-</span><span class="n">o</span> <span class="o">-</span><span class="n">user</span> <span class="n">hadoop</span> \<span class="p">)</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find /usr/ -not <span class="se">\(</span> -user root -o -user bin -o -user hadoop <span class="se">\)</span>
 </pre></div>
 </div>
 <p>3、查找/etc/目录下最近一周内其内容修改过的，且不属于root且不属于hadoop。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span> <span class="o">-</span><span class="n">mtime</span> <span class="o">-</span><span class="mi">7</span> <span class="o">-</span><span class="ow">not</span> <span class="o">-</span><span class="n">user</span> <span class="n">root</span> <span class="o">-</span><span class="ow">not</span> <span class="o">-</span><span class="n">user</span> <span class="n">hadoop</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find /etc/ -mtime -7 -not -user root -not -user hadoop
 </pre></div>
 </div>
 <p>4、查找系统上没有属主或属组，且最近一个月曾被访问过。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span> <span class="o">-</span><span class="n">nouser</span> <span class="o">-</span><span class="n">nogroup</span>  <span class="o">-</span><span class="n">atime</span> <span class="o">-</span><span class="mi">30</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find / -nouser -nogroup  -atime -30
 </pre></div>
 </div>
 <p>5、查找/etc/目录不大于1M且类型为普通文件的所有文件</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>find /etc/ -size -$[1*1024*1024] -type f
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find /etc/ -size -$<span class="o">[</span><span class="m">1</span>*1024*1024<span class="o">]</span> -type f
 </pre></div>
 </div>
 <p>6、查找/etc/目录所有用户都没有写权限的文件</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span> <span class="o">-</span><span class="ow">not</span> <span class="o">-</span><span class="n">perm</span> <span class="o">/</span><span class="mi">222</span> <span class="o">-</span><span class="n">ls</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find /etc/ -not -perm /222 -ls
 </pre></div>
 </div>
 <p>7、查找/etc目录下只有一类用户没有写权限的文件</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span>  \<span class="p">(</span> <span class="o">-</span><span class="n">perm</span> <span class="o">-</span><span class="mi">220</span> <span class="o">-</span><span class="n">o</span> <span class="o">-</span><span class="n">perm</span> <span class="o">-</span><span class="mi">202</span> <span class="o">-</span><span class="n">o</span> <span class="o">-</span><span class="n">perm</span> <span class="o">-</span><span class="mi">022</span> \<span class="p">)</span> <span class="o">-</span><span class="ow">not</span> <span class="o">-</span><span class="n">perm</span> <span class="o">-</span><span class="mi">222</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find /etc/  <span class="se">\(</span> -perm -220 -o -perm -202 -o -perm -022 <span class="se">\)</span> -not -perm -222
 </pre></div>
 </div>
 <p>8、查找/etc/init.d目录下，所有用户都有执行权限，且其他用户有写权限的文件</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span> <span class="o">-</span><span class="n">perm</span> <span class="o">-</span><span class="mi">111</span> <span class="o">-</span><span class="n">perm</span> <span class="o">-</span><span class="mi">002</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find /etc/init.d/ -perm -111 -perm -002
 </pre></div>
 </div>
 </div>
 <div class="section" id="id2">
 <h2>练习2<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>1、查找/var目录下属主为root，且属组为mail的所有文件</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span> <span class="o">-</span><span class="n">user</span> <span class="n">root</span> <span class="o">-</span><span class="n">group</span> <span class="n">mail</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find /var/ -user root -group mail
 </pre></div>
 </div>
 <p>2、查找/var目录下不属于root、lp、gdm的所有文件</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span> <span class="o">-</span><span class="ow">not</span> \<span class="p">(</span> <span class="o">-</span><span class="n">user</span> <span class="n">root</span> <span class="o">-</span><span class="n">o</span> <span class="o">-</span><span class="n">user</span> <span class="n">lp</span> <span class="o">-</span><span class="n">o</span> <span class="o">-</span><span class="n">user</span>  <span class="n">gdm</span>  \<span class="p">)</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find /var/ -not <span class="se">\(</span> -user root -o -user lp -o -user  gdm  <span class="se">\)</span>
 </pre></div>
 </div>
 <p>3、查找/var目录下最近一周内其内容修改过，同时属主不为root，也不是postfix的文件</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span><span class="n">var</span>  <span class="n">find</span> <span class="o">/</span><span class="n">var</span> <span class="o">-</span><span class="n">mtime</span> <span class="o">-</span><span class="mi">7</span> <span class="o">-</span><span class="ow">not</span> \<span class="p">(</span> <span class="o">-</span><span class="n">user</span> <span class="n">root</span> <span class="o">-</span><span class="n">o</span> <span class="o">-</span><span class="n">user</span> <span class="n">postfix</span> \<span class="p">)</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find /var  find /var -mtime -7 -not <span class="se">\(</span> -user root -o -user postfix <span class="se">\)</span>
 </pre></div>
 </div>
 <p>4、查找当前系统上没有属主或属组，且最近一个周内曾被访问过的文件</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span> <span class="o">-</span><span class="n">nouser</span> <span class="o">-</span><span class="n">nogroup</span> <span class="o">-</span><span class="n">mtime</span> <span class="o">-</span><span class="mi">7</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find / -nouser -nogroup -mtime -7
 </pre></div>
 </div>
 <p>5、查找/etc目录下大于1M且类型为普通文件的所有文件</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span> <span class="o">-</span><span class="n">size</span> <span class="o">+</span><span class="mi">1</span><span class="n">M</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find /etc/ -size +1M -type f
 </pre></div>
 </div>
 <p>6、查找/etc目录下所有用户都没有写权限的文件</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span> <span class="o">-</span><span class="ow">not</span>  <span class="o">-</span><span class="n">perm</span> <span class="o">/</span><span class="mi">222</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find /etc/ -not  -perm /222
 </pre></div>
 </div>
 <p>7、查找/etc目录下至少有一类用户没有执行权限的文件</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span> \<span class="p">(</span> <span class="o">-</span><span class="n">perm</span> <span class="o">-</span><span class="mi">110</span> <span class="o">-</span><span class="n">o</span> <span class="o">-</span><span class="n">perm</span> <span class="o">-</span><span class="mi">101</span> <span class="o">-</span><span class="n">o</span> <span class="o">-</span><span class="n">perm</span> <span class="o">-</span><span class="mi">011</span> \<span class="p">)</span> <span class="o">-</span><span class="ow">not</span> <span class="o">-</span><span class="n">perm</span> <span class="o">-</span><span class="mi">111</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find /etc/ <span class="se">\(</span> -perm -110 -o -perm -101 -o -perm -011 <span class="se">\)</span> -not -perm -111
 </pre></div>
 </div>
 <p>8、查找/etc/init.d目录下，所有用户都有执行权限，且其它用户有写权限的文件</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span> <span class="o">-</span><span class="n">perm</span> <span class="o">-</span><span class="mi">111</span> <span class="o">-</span><span class="n">perm</span> <span class="o">-</span><span class="mi">002</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>find /etc/init.d/ -perm -111 -perm -002
 </pre></div>
 </div>
 </div>
@@ -284,6 +295,15 @@
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="10-2017-11-14-练习-vim.html" class="btn btn-neutral float-right" title="10-2017-11-14-练习-vim" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="08-2017-11-10-练习-grep-文本.html" class="btn btn-neutral" title="08-2017-11-10-练习-grep-文本" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
