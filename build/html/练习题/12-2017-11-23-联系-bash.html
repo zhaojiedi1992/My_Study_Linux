@@ -1,0 +1,605 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>12-2017-11-23-练习-bash &mdash; my_study_linux v0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
+        <link rel="next" title="13-2017-11-25-练习-压缩" href="13-2017-11-25-练习-压缩.html"/>
+        <link rel="prev" title="&lt;no title&gt;" href="11-2017-11-15-练习-mount.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> my_study_linux
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">练习题</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="01-2017-07-练习-Linux简介.html">01-2017-07-练习-Linux简介练习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-2017-11-08-练习-日期开机关机.html">02-2017-11-08-练习-日期开机关机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-2017-11-09-练习-glob.html">03-2017-11-09-练习-glob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-2017-11-09-练习-目录相关.html">04-2017-11-09-练习-目录相关</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-2017-11-09-练习-head-tr-管道.html">05-2017-11-09-练习-head-tr-管道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-2017-11-16-练习-用户管理.html">06-2017-11-16-练习-用户管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-2017-11-10-练习-wc-useradd.html">07-2017-11-10-练习-wc-useradd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-2017-11-10-练习-grep-文本.html">08-2017-11-10-练习-grep-文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-2017-11-13-练习-find.html">09-2017-11-13-练习-find</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-2017-11-14-练习-vim.html">10-2017-11-14-练习-vim</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12-2017-11-23-练习-bash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">练习1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">练习2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">练习3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">练习4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">练习5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="13-2017-11-25-练习-压缩.html">13-2017-11-25-练习-压缩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-2017-11-28-练习-sed.html">14-2017-11-28-练习-sed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-2017-11-29-练习-rpm.html">15-2017-11-28-练习-rpm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-2017-12-01-练习-磁盘管理.html">16-2017-12-01-练习-磁盘管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-2017-12-03-练习-高级磁盘管理.html">17-2017-12-03-练习-高级磁盘管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-2017-12-13-练习-网络.html">18-2017-12-13-练习-网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19-2017-12-15-练习-进程管理和作业管理计划任务.html">19-2017-12-15-练习-进程管理和作业管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20-2017-12-16-练习-ip-nmcli.html">2017-12-16-练习-ip-nmcli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-2017-12-16-练习-网络其他.html">21-2017-12-16-练习-网络其他</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22-2017-12-18-练习-脚本进阶循环.html">22-2017-12-18-练习-脚本进阶循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23-2017-12-22-练习-脚本进阶服务.html">23-2017-12-18-练习-脚本进阶服务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24-2017-12-23-练习-常用启动故障修复.html">24-2017-12-23-练习-常用启动故障修复</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25-2017-12-26-练习-脚本进阶3.html">25-2017-12-26-练习-脚本进阶3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26-2017-12-25-练习-常用启动故障修复2.html">26-2017-12-23-练习-常用启动故障修复2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27-2017-12-27-练习-自定linux和编译内核.html">27-2017-12-27-练习-自定linux和编译内核</a></li>
+<li class="toctree-l1"><a class="reference internal" href="28-2017-12-28-练习selinux.html">28-2017-12-28-练习selinux</a></li>
+</ul>
+<p class="caption"><span class="caption-text">课堂笔记</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/00-2017-11-00.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/01-2017-11-06.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/02-2017-11-07.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/03-2017-11-08.html">03-2017-11-08</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/04-2017-11-10.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/05-2017-11-13.html">05-2017-11-13</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/06-2017-11-15.html">06-2017-11-15</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/07-2017-11-17.html">07-2017-11-17</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/08-2017-11-20.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/09-2017-11-22.html">09-2017-11-22</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/10-2017-11-24.html">10-2017-11-24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/11-2017-11-27.html">11-2017-11-27</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/12-2017-11-29.html">12-2017-11-29</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/13-2017-12-01.html">13-2017-12-01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/14-2017-12-04.html">14-2017-12-04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/15-2017-12-06.html">15-2017-12-06</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/16-2017-12-11.html">16-2017-12-11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/17-2017-12-12.html">17-2017-12-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/18-2017-12-14.html">18-2017-12-14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/19-2017-12-15.html">19-2017-12-05</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/20-2017-12-18.html">19-2017-12-05</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/21-2017-12-20.html">21-2017-12-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/22-2017-12-22.html">22-2017-12-22</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/23-2017-12-25.html">23-2017-12-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/24-2017-12-27.html">24-2017-12-27</a></li>
+</ul>
+<p class="caption"><span class="caption-text">博客作业</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1711.html">11月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1712.html">12月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1801.html">1月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1803.html">3月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1804.html">4月博客作业</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">my_study_linux</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>12-2017-11-23-练习-bash</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/练习题/12-2017-11-23-联系-bash.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bash">
+<h1>12-2017-11-23-练习-bash<a class="headerlink" href="#bash" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>练习1<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>1、编写脚本/root/bin/systeminfo.sh,显示当前主机系统信息，包括主机名，IPv4地址，操作系统版本，内核版本，CPU型号，内存大小，硬盘大小</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :systeminfo_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-23 09:01:32</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+<span class="nv">hostname</span><span class="o">=</span><span class="sb">`</span>hostname<span class="sb">`</span>
+<span class="nv">ipv4</span><span class="o">=</span><span class="sb">`</span>ifconfig ens33 <span class="p">|</span>grep <span class="s2">&quot;inet &quot;</span> <span class="p">|</span>egrep <span class="s2">&quot;[0-9]{1,3}(\.[0-9]{1,3}){3}&quot;</span> -o <span class="p">|</span>head -n <span class="m">1</span><span class="sb">`</span>
+<span class="nv">os_version</span><span class="o">=</span><span class="sb">`</span>cat /etc/redhat-release<span class="sb">`</span>
+<span class="nv">kernel_version</span><span class="o">=</span><span class="sb">`</span>uname -r<span class="sb">`</span>
+<span class="nv">cpu_info</span><span class="o">=</span><span class="sb">`</span>lscpu <span class="p">|</span>grep <span class="s2">&quot;Model name:&quot;</span> <span class="p">|</span>cut -c <span class="m">12</span>- <span class="p">|</span>grep <span class="s2">&quot;[^[:space:]].*&quot;</span> -o<span class="sb">`</span>
+<span class="nv">mem_size</span><span class="o">=</span><span class="sb">`</span>cat /proc/meminfo  <span class="p">|</span>grep <span class="s2">&quot;MemTotal&quot;</span> <span class="p">|</span>cut -c <span class="m">10</span>- <span class="p">|</span> grep <span class="s2">&quot;[^[:space:]].*&quot;</span> -o<span class="sb">`</span>
+<span class="nv">disk_size</span><span class="o">=</span><span class="sb">`</span>df -h<span class="sb">`</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;system info is</span>
+<span class="s2">===========================================</span>
+<span class="s2">hostname=</span><span class="nv">$hostname</span><span class="s2"></span>
+<span class="s2">ipv4=</span><span class="nv">$ipv4</span><span class="s2"></span>
+<span class="s2">kernel_version=</span><span class="nv">$kernel_version</span><span class="s2"></span>
+<span class="s2">cpu_info=</span><span class="nv">$cpu_info</span><span class="s2"></span>
+<span class="s2">mem_size=</span><span class="nv">$mem_size</span><span class="s2"></span>
+<span class="s2">disk_size=</span><span class="nv">$disk_size</span><span class="s2"></span>
+<span class="s2">============================================</span>
+<span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>2、编写脚本/root/bin/backup.sh，可实现每日将/etc/目录备份到/root/etcYYYY-mm-dd中</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#Author:     root</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime:   2017-11-22 14:53:42</span>
+<span class="c1">#Version:    V1.0</span>
+
+cp -a /etc /root/etc<span class="k">$(</span>date <span class="s2">&quot;+%Y-%m-%d&quot;</span><span class="k">)</span>
+</pre></div>
+</div>
+<p>3、编写脚本/root/bin/disk.sh,显示当前硬盘分区中空间利用率最大的值</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :disk_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-23 09:25:00</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="nv">val</span><span class="o">=</span><span class="sb">`</span>df  <span class="p">|</span>egrep <span class="s2">&quot;[0-9]{1,3}%&quot;</span> -o <span class="p">|</span>tr -d <span class="s2">&quot;%&quot;</span> <span class="p">|</span>sort  -n <span class="p">|</span>tail -n <span class="m">1</span><span class="sb">`</span>
+<span class="nb">echo</span> val
+</pre></div>
+</div>
+<p>4、编写脚本/root/bin/links.sh,显示正连接本主机的每个远程主机的IPv4地址和连接数，并按连接数从大到小排序</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :links_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-23 09:28:28</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="nv">links</span><span class="o">=</span><span class="sb">`</span>ss -tan <span class="p">|</span>grep <span class="s2">&quot;^ESTAB&quot;</span> <span class="p">|</span>egrep <span class="s2">&quot;[0-9]{1,3}(\.[0-9]{1,3}){3}:[0-9]{1,6}[[:space:]]*</span>$<span class="s2">&quot;</span> -o <span class="p">|</span>cut -d <span class="s2">&quot;:&quot;</span> -f <span class="m">1</span> <span class="p">|</span>sort <span class="p">|</span>uniq -c <span class="p">|</span> sort  -r -n -t <span class="s2">&quot; &quot;</span> -k1<span class="sb">`</span>
+<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$links</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>练习2<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>1、编写脚本/root/bin/sumid.sh，计算/etc/passwd文件中的第10个用户和第20用户的ID之和</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :sumid_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-23 10:33:24</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="nv">uid_10</span><span class="o">=</span><span class="sb">`</span>cat /etc/passwd <span class="p">|</span>head -n <span class="m">10</span> <span class="p">|</span>tail -n <span class="m">1</span> <span class="p">|</span>cut -d <span class="s2">&quot;:&quot;</span> -f <span class="m">3</span><span class="sb">`</span>
+<span class="nv">uid_20</span><span class="o">=</span><span class="sb">`</span>cat /etc/passwd <span class="p">|</span>head -n <span class="m">20</span> <span class="p">|</span>tail -n <span class="m">1</span> <span class="p">|</span>cut -d <span class="s2">&quot;:&quot;</span> -f <span class="m">3</span><span class="sb">`</span>
+<span class="nv">sum_id</span><span class="o">=</span>$<span class="o">[</span>uid_10+uid_20<span class="o">]</span>
+<span class="nb">echo</span> <span class="nv">$sum_id</span>
+</pre></div>
+</div>
+<p>2、编写脚本/root/bin/sumspace.sh，传递两个文件路径作为参数给脚本，计算这两个文件中所有空白行之和</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :sumspace_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-23 10:39:22</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="c1"># need to check  paramter number</span>
+<span class="nv">file1_space_line</span><span class="o">=</span><span class="sb">`</span>cat <span class="nv">$1</span>  <span class="p">|</span>grep <span class="s2">&quot;^</span>$<span class="s2">&quot;</span> <span class="p">|</span>wc -l<span class="sb">`</span>
+<span class="nv">file2_space_line</span><span class="o">=</span><span class="sb">`</span>cat <span class="nv">$2</span>  <span class="p">|</span>grep <span class="s2">&quot;^</span>$<span class="s2">&quot;</span> <span class="p">|</span>wc -l<span class="sb">`</span>
+
+<span class="nv">sum_space_line</span><span class="o">=</span>$<span class="o">[</span>file1_space_line+file2_space_line<span class="o">]</span>
+<span class="nb">echo</span> <span class="nv">$sum_space_line</span>
+</pre></div>
+</div>
+<p>3、编写脚本/root/bin/sumfile.sh,统计/etc, /var, /usr目录中共有多少个一级子目录和文件</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :sumfile_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-23 10:44:17</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="nb">let</span> <span class="nv">sumfiles</span><span class="o">=</span>$<span class="o">[</span><span class="sb">`</span>ls -A -1 /etc <span class="p">|</span>wc -l<span class="sb">`</span><span class="o">]</span>+$<span class="o">[</span><span class="sb">`</span>ls -A -1 /usr <span class="p">|</span> wc -l<span class="sb">`</span><span class="o">]</span>+$<span class="o">[</span><span class="sb">`</span>ls -A -1 /var <span class="p">|</span>wc -l<span class="sb">`</span><span class="o">]</span>
+<span class="nb">echo</span> <span class="nv">$sumfiles</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>练习3<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>1、编写脚本/root/bin/argsnum.sh，接受一个文件路径作为参数；如果参数个数小于1，则提示用户“至少应该给一个参数”，并立即退出；如果参数个数不小于1，则显示第一个参数所指向的文件中的空白行数</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :argsnum_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-24 18:55:43</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="o">[</span> <span class="nv">$#</span> -lt <span class="m">1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;must one parameter&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> <span class="m">1</span>
+<span class="o">[</span> ! -f <span class="nv">$1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot; file not exist&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> <span class="m">2</span>
+<span class="nb">echo</span> <span class="sb">`</span>cat <span class="nv">$1</span> <span class="p">|</span>grep <span class="s2">&quot;^[[:space:]]*</span>$<span class="s2">&quot;</span> <span class="p">|</span>wc -l<span class="sb">`</span>
+</pre></div>
+</div>
+<p>2、编写脚本/root/bin/hostping.sh，接受一个主机的IPv4地址做为参数，测试是否可连通。如果能ping通，则提示用户“该IP地址可访问”；如果不可ping通，则提示用户“该IP地址不可访问”</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :hostping_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-24 19:00:40</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+<span class="o">[</span> <span class="nv">$#</span> -lt <span class="m">1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;must a parameter &quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> <span class="m">1</span>
+<span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span>~ ^<span class="o">(([</span><span class="m">0</span>-9<span class="o">]</span><span class="p">|</span><span class="o">([</span><span class="m">1</span>-9<span class="o">][</span><span class="m">0</span>-9<span class="o">])</span><span class="p">|</span><span class="o">(</span><span class="m">1</span><span class="o">[</span><span class="m">0</span>-9<span class="o">][</span><span class="m">0</span>-9<span class="o">])</span><span class="p">|</span><span class="o">(</span><span class="m">2</span><span class="o">[</span><span class="m">0</span>-4<span class="o">][</span><span class="m">0</span>-9<span class="o">])</span><span class="p">|</span><span class="o">(</span><span class="m">25</span><span class="o">[</span><span class="m">0</span>-5<span class="o">]))(</span><span class="se">\.</span><span class="o">([</span><span class="m">0</span>-9<span class="o">]</span><span class="p">|</span><span class="o">([</span><span class="m">1</span>-9<span class="o">][</span><span class="m">0</span>-9<span class="o">])</span><span class="p">|</span><span class="o">(</span><span class="m">1</span><span class="o">[</span><span class="m">0</span>-9<span class="o">][</span><span class="m">0</span>-9<span class="o">])</span><span class="p">|</span><span class="o">(</span><span class="m">2</span><span class="o">[</span><span class="m">0</span>-4<span class="o">][</span><span class="m">0</span>-9<span class="o">])</span><span class="p">|</span><span class="o">(</span><span class="m">25</span><span class="o">[</span><span class="m">0</span>-5<span class="o">]))){</span><span class="m">3</span><span class="o">})</span>$ <span class="o">]]</span>
+<span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot; ip is not reacheable&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> <span class="m">2</span>
+ping -t <span class="m">1</span> -c <span class="m">1</span> <span class="nv">$1</span> <span class="p">&amp;</span>&gt;/dev/null  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;ip is reachable&quot;</span> <span class="o">||</span><span class="nb">echo</span> <span class="s2">&quot;ip is not reachable&quot;</span>
+</pre></div>
+</div>
+<p>3、编写脚本/root/bin/checkdisk.sh，检查磁盘分区空间和inode使用率，如果超过80%，就发广播警告空间将满</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :checkdisk_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-24 11:25:31</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+<span class="nb">declare</span> -i <span class="nv">data_limit</span><span class="o">=</span><span class="m">10</span>
+<span class="nb">declare</span> -i <span class="nv">inode_limit</span><span class="o">=</span><span class="m">10</span>
+<span class="nb">declare</span> -i <span class="nv">data_block_max</span><span class="o">=</span><span class="sb">`</span>df <span class="p">|</span>egrep <span class="s2">&quot;/dev/[sh]d.*&quot;</span> <span class="p">|</span>egrep <span class="s2">&quot;[0-9]{1,3}%&quot;</span> -o <span class="p">|</span>egrep <span class="s2">&quot;[0-9]{1,3}&quot;</span> -o <span class="p">|</span>sort -nr <span class="p">|</span>head -n <span class="m">1</span><span class="sb">`</span>
+<span class="nb">declare</span> -i <span class="nv">inode_block_max</span><span class="o">=</span><span class="sb">`</span>df -i <span class="p">|</span>egrep <span class="s2">&quot;/dev/[sh]d.*&quot;</span> <span class="p">|</span>egrep <span class="s2">&quot;[0-9]{1,3}%&quot;</span> -o <span class="p">|</span>egrep <span class="s2">&quot;[0-9]{1,3}&quot;</span> -o <span class="p">|</span>sort -nr <span class="p">|</span>head -n <span class="m">1</span><span class="sb">`</span>
+
+
+<span class="o">[</span> <span class="nv">$data_block_max</span> -ge <span class="nv">$data_limit</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> wall <span class="s2">&quot;data_block beyond </span><span class="nv">$data_limit</span><span class="s2">&quot;</span>
+<span class="o">[</span> <span class="nv">$inode_block_max</span> -ge <span class="nv">$inode_limit</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> wall <span class="s2">&quot;inode_block beyond </span><span class="nv">$inode_limit</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>练习4<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>1、编写脚本/bin/per.sh,判断当前用户对指定的参数文件，是否不可读并且不可写</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :per_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-24 19:40:48</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="o">[</span> <span class="nv">$#</span> -lt <span class="m">1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot; must a parameter&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> <span class="m">1</span>
+
+<span class="o">[</span> ! -r <span class="nv">$1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> ! -w <span class="nv">$1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot; no read,and write&quot;</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&quot; other&quot;</span>
+</pre></div>
+</div>
+<p>2、编写脚本/root/bin/excute.sh ，判断参数文件是否为sh后缀的普通文件，如果是，添加所有人可执行权限，否则提示用户非脚本文件</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :excute_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-24 19:50:29</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="o">[</span> <span class="nv">$#</span> -lt <span class="m">1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;must one parameter&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> <span class="m">1</span>
+<span class="o">[</span> ! -f <span class="nv">$1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;file not exist&quot;</span>
+<span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span>~ .*.sh$ <span class="o">]]</span> <span class="o">&amp;&amp;</span> chmod a+x <span class="nv">$1</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&quot;not sh file  &quot;</span>
+</pre></div>
+</div>
+<p>3、编写脚本/root/bin/nologin.sh和login.sh,实现禁止和充许普通用户登录系统</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :nologin.sh_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-24 19:56:30</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+<span class="o">[</span> ! -f /etc/nologin <span class="o">]</span> <span class="o">&amp;&amp;</span> touch /etc/nologin
+
+<span class="o">[</span>root@centos7 sh<span class="o">]</span><span class="c1"># cat login.sh_46_zhaojiedi.sh</span>
+<span class="c1">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :login.sh_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-24 19:57:23</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="o">[</span> -f /etc/nologin <span class="o">]</span> <span class="o">&amp;&amp;</span> rm -rf /etc/nologin
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>练习5<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>1、让所有用户的PATH环境变量的值多出一个路径，例如：/usr/local/apache/bin</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 job<span class="o">]</span><span class="c1"># echo &quot;export PATH=$PATH:/usr/local/apache/bin&quot; &gt;&gt;/etc/profile.d/path.sh</span>
+</pre></div>
+</div>
+<p>2、用户root登录时，将命令指示符变成红色，并自动启用如下别名：rm=‘rm –i’cdnet=‘cd /etc/sysconfig/network-scripts/’ editnet=‘vim /etc/sysconfig/network-scripts/ifcfg-eth0’ editnet=‘vim /etc/sysconfig/network-scripts/ifcfg-eno16777736 或 ifcfg-ens33 ’ (如果系统是CentOS7)</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="o">~</span><span class="p">]</span><span class="c1"># echo &quot;PS1=\&quot;\033[1;31m$PS1\033[0m\&quot;&quot; &gt;&gt;/root/.bash_profile</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="o">.</span><span class="n">etc</span><span class="p">]</span><span class="c1"># cat alias.sh</span>
+<span class="n">alias</span> <span class="n">rm</span><span class="o">=</span><span class="s1">&#39;rm-i&#39;</span>
+<span class="n">alias</span> <span class="n">cdnet</span><span class="o">=</span><span class="s1">&#39;cd /etc/sysconfig/network-scripts&#39;</span>
+<span class="n">alias</span> <span class="n">editeth0</span><span class="o">=</span><span class="s1">&#39;vim /etc/sysconfig/network-scripts/ifcfg-eth0&#39;</span>
+<span class="n">alias</span> <span class="n">editens33</span><span class="o">=</span><span class="s1">&#39;vim /etc/sysconfig/network-scripts/ifcfg-ens33&#39;</span>
+<span class="c1"># 添加如下行到/root/.bashrc文件中去</span>
+<span class="o">.</span> <span class="o">~/.</span><span class="n">etc</span><span class="o">/</span><span class="n">alias</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">echo</span> <span class="s2">&quot;. ~/.etc/alias.sh&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">root</span><span class="o">/.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+<p>3、任意用户登录系统时，显示红色字体的警示提醒信息“Hi,dangerous！”</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 .etc<span class="o">]</span><span class="c1"># cat -A /etc/motd</span>
+^<span class="o">[[</span>31mHi,dangerous^<span class="o">[[</span>0m$
+</pre></div>
+</div>
+<p>4、编写生成脚本基本格式的脚本，包括作者，联系方式，版本，时间，描述等</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#change filename</span>
+<span class="nv">filename</span><span class="o">=</span><span class="nv">$1</span>_46_zhaojiedi.sh
+<span class="c1">#check file exist</span>
+<span class="o">[</span> -e <span class="nv">$filename</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$filename</span><span class="s2"> has exist&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> <span class="m">1</span>
+<span class="c1"># create file and add x</span>
+touch <span class="nv">$filename</span>
+chmod u+x <span class="nv">$filename</span>
+<span class="c1">#add info</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;#!/bin/bash</span>
+<span class="s2">#================================================</span>
+<span class="s2">#FileName   :</span><span class="k">$(</span>basename <span class="nv">$filename</span><span class="k">)</span><span class="s2"></span>
+<span class="s2">#Author     :zhaojiedi</span>
+<span class="s2">#Description:</span>
+<span class="s2">#DateTime   :</span><span class="k">$(</span>date <span class="s2">&quot;+%Y-%m-%d %H:%M:%S&quot;</span><span class="k">)</span><span class="s2"></span>
+<span class="s2">#Version    :V1.0</span>
+<span class="s2">#Other      :</span>
+<span class="s2">#================================================</span>
+<span class="s2">&quot;</span> &gt;&gt; <span class="nv">$filename</span>
+
+
+<span class="c1"># start vim</span>
+vim <span class="nv">$filename</span>  +
+</pre></div>
+</div>
+<p>5、编写用户的环境初始化脚本reset.sh，包括别名，登录提示符，vim的设置，环境变量等</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>. alias.sh
+. prompt.sh
+. vim.sh
+. path.sh
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="13-2017-11-25-练习-压缩.html" class="btn btn-neutral float-right" title="13-2017-11-25-练习-压缩" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="11-2017-11-15-练习-mount.html" class="btn btn-neutral" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, zhaojiedi1992@outlook.com.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
