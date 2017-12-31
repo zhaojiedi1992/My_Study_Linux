@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>17-2017-12-03-练习-高级磁盘管理</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>17-2017-12-03-练习-高级磁盘管理</h1>
+<div class="section" id="lvm">
+<h2>练习1-LVM</h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="m">1</span>、创建一个至少有两个PV组成的大小为20G的名为testvg的VG；要求PE大小为16MB, 而后在卷组中创建大小为5G的逻辑卷testlv；挂载至/users目录
+<span class="m">2</span>、 新建用户archlinux，要求其家目录为/users/archlinux，而后su切换至archlinux用户，复制/etc/pam.d目录至自己的家目录
+<span class="m">3</span>、扩展testlv至7G，要求archlinux用户的文件不能丢失
+<span class="m">4</span>、收缩testlv至3G，要求archlinux用户的文件不能丢失
+<span class="m">5</span>、对testlv创建快照，并尝试基于快照备份数据，验证快照的功能
+</pre></div>
+</div>
+<p>具体参考地址如下 ： <a class="reference external" href="http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_042_lvm.html">LVM的使用</a><span class="link-target"> [http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_042_lvm.html]</span>.</p>
+</div>
+<div class="section" id="raid">
+<h2>练习2-raid</h2>
+<p>具体参考地址如下 ： <a class="reference external" href="http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_041_raid.html">raid的使用</a><span class="link-target"> [http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_041_raid.html]</span>.</p>
+</div>
+<div class="section" id="quota">
+<h2>练习3-quota</h2>
+<p>具体参考地址如下 ： <a class="reference external" href="http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_040_quota.html">quota的使用</a><span class="link-target"> [http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_040_quota.html]</span>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

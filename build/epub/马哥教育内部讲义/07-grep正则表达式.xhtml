@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>07 grep正则表达式</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="grep">
+<h1>07 grep正则表达式</h1>
+<div class="section" id="id1">
+<h2>grep</h2>
+<p>grep:global search regula expression and print out the line.</p>
+<p>分类：</p>
+<ul class="simple">
+<li><p>基本的</p></li>
+<li><p>扩展的</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>7.1 grep语法</h2>
+<dl class="option-list">
+<dt><kbd><span class="option">--color</span></kbd></dt>
+<dd><p>高亮显示匹配到字符串</p>
+</dd>
+<dt><kbd><span class="option">-v</span></kbd></dt>
+<dd><p>显示不能被匹配的行</p>
+</dd>
+<dt><kbd><span class="option">-i</span></kbd></dt>
+<dd><p>忽略大小写</p>
+</dd>
+<dt><kbd><span class="option">-o</span></kbd></dt>
+<dd><p>仅仅显示匹配到的</p>
+</dd>
+<dt><kbd><span class="option">-q</span></kbd></dt>
+<dd><p>静默模式</p>
+</dd>
+<dt><kbd><span class="option">-A</span></kbd></dt>
+<dd><p>后面几行</p>
+</dd>
+<dt><kbd><span class="option">-B</span></kbd></dt>
+<dd><p>前面几行</p>
+</dd>
+<dt><kbd><span class="option">-C</span></kbd></dt>
+<dd><p>前后几行</p>
+</dd>
+<dt><kbd><span class="option">-E</span></kbd></dt>
+<dd><p>启用扩展</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>7.2 基本的正则表达式</h2>
+<div class="section" id="id4">
+<h3>7.2.1 字符匹配</h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>.                   任意字符一次
+<span class="o">[]</span>                  几何中任一个字符
+<span class="o">[</span>^<span class="o">]</span>                 几何之外任何一个
+<span class="o">[</span>:alpha:<span class="o">]</span>           字母
+<span class="o">[</span>:alnum:<span class="o">]</span>           字母数字
+<span class="o">[</span>:digit:<span class="o">]</span>           数字
+<span class="o">[</span>:punct:<span class="o">]</span>           标点符号
+<span class="o">[</span>:space:<span class="o">]</span>           空白字符
+<span class="o">[</span>:upper:<span class="o">]</span>           大写
+<span class="o">[</span>:lower:<span class="o">]</span>           小写
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>7.2.2 次数匹配</h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>多次</p></li>
+</ul>
+<p>?              0次或者1次
++              1次或者更多次
+{m}           精确m次
+{m,n}         m到n次
+{0,n}         小于等于n次
+{m,}          大于等于m次</p>
+</div>
+<div class="section" id="id6">
+<h3>7.2.3 位置锚定</h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>^           行首锚定
+$           行尾锚定
+&lt;          单词头锚定
+&gt;          单词尾锚定
+b          单词边界锚定</p>
+</div>
+<div class="section" id="id7">
+<h3>7.2.4 分组</h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>()            分组
+1              分组后的后向引用</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>7.3 扩展正则表达式</h2>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

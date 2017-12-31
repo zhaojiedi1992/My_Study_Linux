@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>12-2017-11-29</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>12-2017-11-29</h1>
+<div class="section" id="id2">
+<h2>上节课回顾</h2>
+</div>
+<div class="section" id="id3">
+<h2>本节内容</h2>
+<p>分包</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tool</span>
+<span class="n">tool</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">tool</span><span class="o">-</span><span class="n">utils</span>
+<span class="n">tool</span><span class="o">-</span><span class="n">libs</span>
+</pre></div>
+</div>
+<p>管理工具</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">yum</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span>
+<span class="n">zypper</span>
+<span class="n">dnf</span>
+</pre></div>
+</div>
+<p>rpm重要的几个参数</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-i</span></kbd></dt>
+<dd><p>安装</p>
+</dd>
+<dt><kbd><span class="option">-v</span></kbd></dt>
+<dd><p>提示信息</p>
+</dd>
+<dt><kbd><span class="option">-h</span></kbd></dt>
+<dd><p>进度信息</p>
+</dd>
+<dt><kbd><span class="option">-q</span></kbd></dt>
+<dd><p>查询</p>
+</dd>
+<dt><kbd><span class="option">-f</span></kbd></dt>
+<dd><p>指定文件</p>
+</dd>
+<dt><kbd><span class="option">-p</span></kbd></dt>
+<dd><p>指定rpm全路径</p>
+</dd>
+<dt><kbd><span class="option">-i</span></kbd></dt>
+<dd><p>获取包的详细信息</p>
+</dd>
+<dt><kbd><span class="option">--test</span></kbd></dt>
+<dd><p>测试</p>
+</dd>
+<dt><kbd><span class="option">--nosignature</span></kbd></dt>
+<dd><p>不检查来源合法性</p>
+</dd>
+<dt><kbd><span class="option">--nodigest</span></kbd></dt>
+<dd><p>不检查完整性</p>
+</dd>
+<dt><kbd><span class="option">--noscripts</span></kbd></dt>
+<dd><p>不执行程序的包脚本</p>
+</dd>
+<dt><kbd><span class="option">--nodeps</span></kbd></dt>
+<dd><p>不考虑依赖性</p>
+</dd>
+<dt><kbd><span class="option">--replacepkgs</span></kbd></dt>
+<dd><p>替换包</p>
+</dd>
+<dt><kbd><span class="option">--replacefiles</span></kbd></dt>
+<dd><p>替换文件</p>
+</dd>
+<dt><kbd><span class="option">--force</span></kbd></dt>
+<dd><p>强制</p>
+</dd>
+<dt><kbd><span class="option">--oldpackagekk</span></kbd></dt>
+<dd><p>安装老版本的</p>
+</dd>
+<dt><kbd><span class="option">--whatprovides</span></kbd></dt>
+<dd><p>查询特定功能由那个包提供</p>
+</dd>
+<dt><kbd><span class="option">--whatrequires</span></kbd></dt>
+<dd><p>查询特定功能能由那些包依赖</p>
+</dd>
+<dt><kbd><span class="option">--privides</span></kbd></dt>
+<dd><p>查询包提供的功能</p>
+</dd>
+<dt><kbd><span class="option">--import</span></kbd></dt>
+<dd><p>导入公钥</p>
+</dd>
+<dt><kbd><span class="option">-U</span></kbd></dt>
+<dd><p>更新</p>
+</dd>
+<dt><kbd><span class="option">-F</span></kbd></dt>
+<dd><p>升级</p>
+</dd>
+<dt><kbd><span class="option">-V</span></kbd></dt>
+<dd><p>验证包提供的文件变换情况</p>
+</dd>
+<dt><kbd><span class="option">-K</span></kbd></dt>
+<dd><p>验证包</p>
+</dd>
+<dt><kbd><span class="option">--script</span></kbd></dt>
+<dd><p>脚本</p>
+</dd>
+<dt><kbd><span class="option">--allmatches</span></kbd></dt>
+<dd><p>所有匹配的</p>
+</dd>
+</dl>
+<p>rpm包检查符号描述</p>
+<p>-S file Size differs
+-M Mode differs (includes permissions and file type)
+-5 digest (formerly MD5 sum) differs
+-D Device major/minor number mismatch
+-L readLink(2) path mismatch
+-U User ownership differs
+-G Group ownership differs
+-T mTime differs
+-P caPabilities differ</p>
+<p>rpm</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>rpm2cpio a.rpm | cpio -id
+
+数据库： /var/lib/rpm
+epel : extra packages for enterprise linux
+
+rpm搜索:
+    http://pkgs.org
+    http://rpmfind.org
+
+
+rpm2cpio file.rpm |cpio -id ./file2
+
+rpm -qa :查看所有包
+
+rpm -qf :查询文件来自那个包
+
+rpm -qlp : 包全名
+
+--whatprovides : 那个包提供
+--whatrequires : 被那个包依赖
+
+--privides : 可以用命令
+
+-R ： 查询依赖那些包
+--script : 查看相关的脚本
+</pre></div>
+</div>
+<p>YUM</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cachedir</span><span class="p">:</span>
+<span class="n">keepcache</span><span class="p">:</span>
+<span class="n">gpgcheck</span><span class="p">:</span>
+<span class="n">history</span><span class="p">:</span>
+<span class="n">repolist</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>system stop firewalld
+system disable firewalld</p>
+<p>chkconfig iptables off
+service iptables stop</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>02 LINUX文件系统</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="linux">
+<h1>02 LINUX文件系统</h1>
+<p>根文件系统： linux识别的第一个与根直接关联的文件系统。</p>
+<p>FHS:LSB组织定义的LINUX发行版基础目录命名法则及功用规定。filesystem hierarchy standard，文件系统层级标准</p>
+<div class="section" id="id1">
+<h2>2.1 linux根简介</h2>
+<ul class="simple">
+<li><p>/boot: 系统引导启动目录</p></li>
+<li><p>/bin:系统相关的二进制程序</p></li>
+<li><p>/sbin:系统相关的管理类基础命令</p></li>
+<li><p>/lib:基础的共享库文件</p></li>
+<li><p>/lib64:专用64系统上的辅助共享库</p></li>
+<li><p>/etc:配置文件</p></li>
+<li><p>/home:家目录</p></li>
+<li><p>/root:管理员家目录</p></li>
+<li><p>/media:便携式移动设备的挂载点</p></li>
+<li><p>/mnt:临时文件系统挂载点</p></li>
+<li><p>/dev:设备文件</p></li>
+<li><p>/opt:第三方安装目录</p></li>
+<li><p>/src：服务类存放目录</p></li>
+<li><p>/tmp:临时文件存放目录</p></li>
+<li><p>/usr:unix software resource</p></li>
+<li><p>/var/cache:应用缓存目录</p></li>
+<li><p>/var/lib:应用库目录</p></li>
+<li><p>/var/local:应用程序可变存储目录</p></li>
+<li><p>/var/lock:锁文件</p></li>
+<li><p>/var/log：日志文件存放目录</p></li>
+<li><p>/var/run：存储进程的pid目录</p></li>
+<li><p>/var/spool:应用程序的数据池</p></li>
+<li><p>/var/tmp：保存系统2次重启之间产生的临时数据</p></li>
+<li><p>/proc:用于输入内核与进程信息相关的虚拟文件系统</p></li>
+<li><p>/sys:用于输出当前系统上硬件设备相关信息的虚拟文件系统</p></li>
+<li><p>/selinux:selinux相关的安全策略等信息</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>2.2 应用程序主要组成部分</h2>
+<ul class="simple">
+<li><p>二进制程序: /bin,/sbin,/usr/bin,/usr/sbin,/usr/local/bin,/usr/local/sbin</p></li>
+<li><p>库文件:/lib,/lib64,/usr/lib,/usr/lib64,/usr/local/lib,/usr/local/lib64</p></li>
+<li><p>配置文件:/etc,/etc/DIRECTORY,/usr/local/etc</p></li>
+<li><p>帮助文件:/usr/share/man, /usr/share/doc, /usr/local/share/man,/usr/local/share/doc</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

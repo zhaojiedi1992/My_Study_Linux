@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>12-2017-11-23-练习-bash</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="bash">
+<h1>12-2017-11-23-练习-bash</h1>
+<div class="section" id="id1">
+<h2>练习1</h2>
+<p>1、编写脚本/root/bin/systeminfo.sh,显示当前主机系统信息，包括主机名，IPv4地址，操作系统版本，内核版本，CPU型号，内存大小，硬盘大小</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :systeminfo_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-23 09:01:32</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+<span class="nv">hostname</span><span class="o">=</span><span class="sb">`</span>hostname<span class="sb">`</span>
+<span class="nv">ipv4</span><span class="o">=</span><span class="sb">`</span>ifconfig ens33 <span class="p">|</span>grep <span class="s2">&quot;inet &quot;</span> <span class="p">|</span>egrep <span class="s2">&quot;[0-9]{1,3}(\.[0-9]{1,3}){3}&quot;</span> -o <span class="p">|</span>head -n <span class="m">1</span><span class="sb">`</span>
+<span class="nv">os_version</span><span class="o">=</span><span class="sb">`</span>cat /etc/redhat-release<span class="sb">`</span>
+<span class="nv">kernel_version</span><span class="o">=</span><span class="sb">`</span>uname -r<span class="sb">`</span>
+<span class="nv">cpu_info</span><span class="o">=</span><span class="sb">`</span>lscpu <span class="p">|</span>grep <span class="s2">&quot;Model name:&quot;</span> <span class="p">|</span>cut -c <span class="m">12</span>- <span class="p">|</span>grep <span class="s2">&quot;[^[:space:]].*&quot;</span> -o<span class="sb">`</span>
+<span class="nv">mem_size</span><span class="o">=</span><span class="sb">`</span>cat /proc/meminfo  <span class="p">|</span>grep <span class="s2">&quot;MemTotal&quot;</span> <span class="p">|</span>cut -c <span class="m">10</span>- <span class="p">|</span> grep <span class="s2">&quot;[^[:space:]].*&quot;</span> -o<span class="sb">`</span>
+<span class="nv">disk_size</span><span class="o">=</span><span class="sb">`</span>df -h<span class="sb">`</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;system info is</span>
+<span class="s2">===========================================</span>
+<span class="s2">hostname=</span><span class="nv">$hostname</span><span class="s2"></span>
+<span class="s2">ipv4=</span><span class="nv">$ipv4</span><span class="s2"></span>
+<span class="s2">kernel_version=</span><span class="nv">$kernel_version</span><span class="s2"></span>
+<span class="s2">cpu_info=</span><span class="nv">$cpu_info</span><span class="s2"></span>
+<span class="s2">mem_size=</span><span class="nv">$mem_size</span><span class="s2"></span>
+<span class="s2">disk_size=</span><span class="nv">$disk_size</span><span class="s2"></span>
+<span class="s2">============================================</span>
+<span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>2、编写脚本/root/bin/backup.sh，可实现每日将/etc/目录备份到/root/etcYYYY-mm-dd中</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#Author:     root</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime:   2017-11-22 14:53:42</span>
+<span class="c1">#Version:    V1.0</span>
+
+cp -a /etc /root/etc<span class="k">$(</span>date <span class="s2">&quot;+%Y-%m-%d&quot;</span><span class="k">)</span>
+</pre></div>
+</div>
+<p>3、编写脚本/root/bin/disk.sh,显示当前硬盘分区中空间利用率最大的值</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :disk_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-23 09:25:00</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="nv">val</span><span class="o">=</span><span class="sb">`</span>df  <span class="p">|</span>egrep <span class="s2">&quot;[0-9]{1,3}%&quot;</span> -o <span class="p">|</span>tr -d <span class="s2">&quot;%&quot;</span> <span class="p">|</span>sort  -n <span class="p">|</span>tail -n <span class="m">1</span><span class="sb">`</span>
+<span class="nb">echo</span> val
+</pre></div>
+</div>
+<p>4、编写脚本/root/bin/links.sh,显示正连接本主机的每个远程主机的IPv4地址和连接数，并按连接数从大到小排序</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :links_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-23 09:28:28</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="nv">links</span><span class="o">=</span><span class="sb">`</span>ss -tan <span class="p">|</span>grep <span class="s2">&quot;^ESTAB&quot;</span> <span class="p">|</span>egrep <span class="s2">&quot;[0-9]{1,3}(\.[0-9]{1,3}){3}:[0-9]{1,6}[[:space:]]*</span>$<span class="s2">&quot;</span> -o <span class="p">|</span>cut -d <span class="s2">&quot;:&quot;</span> -f <span class="m">1</span> <span class="p">|</span>sort <span class="p">|</span>uniq -c <span class="p">|</span> sort  -r -n -t <span class="s2">&quot; &quot;</span> -k1<span class="sb">`</span>
+<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$links</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>练习2</h2>
+<p>1、编写脚本/root/bin/sumid.sh，计算/etc/passwd文件中的第10个用户和第20用户的ID之和</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :sumid_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-23 10:33:24</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="nv">uid_10</span><span class="o">=</span><span class="sb">`</span>cat /etc/passwd <span class="p">|</span>head -n <span class="m">10</span> <span class="p">|</span>tail -n <span class="m">1</span> <span class="p">|</span>cut -d <span class="s2">&quot;:&quot;</span> -f <span class="m">3</span><span class="sb">`</span>
+<span class="nv">uid_20</span><span class="o">=</span><span class="sb">`</span>cat /etc/passwd <span class="p">|</span>head -n <span class="m">20</span> <span class="p">|</span>tail -n <span class="m">1</span> <span class="p">|</span>cut -d <span class="s2">&quot;:&quot;</span> -f <span class="m">3</span><span class="sb">`</span>
+<span class="nv">sum_id</span><span class="o">=</span>$<span class="o">[</span>uid_10+uid_20<span class="o">]</span>
+<span class="nb">echo</span> <span class="nv">$sum_id</span>
+</pre></div>
+</div>
+<p>2、编写脚本/root/bin/sumspace.sh，传递两个文件路径作为参数给脚本，计算这两个文件中所有空白行之和</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :sumspace_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-23 10:39:22</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="c1"># need to check  paramter number</span>
+<span class="nv">file1_space_line</span><span class="o">=</span><span class="sb">`</span>cat <span class="nv">$1</span>  <span class="p">|</span>grep <span class="s2">&quot;^</span>$<span class="s2">&quot;</span> <span class="p">|</span>wc -l<span class="sb">`</span>
+<span class="nv">file2_space_line</span><span class="o">=</span><span class="sb">`</span>cat <span class="nv">$2</span>  <span class="p">|</span>grep <span class="s2">&quot;^</span>$<span class="s2">&quot;</span> <span class="p">|</span>wc -l<span class="sb">`</span>
+
+<span class="nv">sum_space_line</span><span class="o">=</span>$<span class="o">[</span>file1_space_line+file2_space_line<span class="o">]</span>
+<span class="nb">echo</span> <span class="nv">$sum_space_line</span>
+</pre></div>
+</div>
+<p>3、编写脚本/root/bin/sumfile.sh,统计/etc, /var, /usr目录中共有多少个一级子目录和文件</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :sumfile_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-23 10:44:17</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="nb">let</span> <span class="nv">sumfiles</span><span class="o">=</span>$<span class="o">[</span><span class="sb">`</span>ls -A -1 /etc <span class="p">|</span>wc -l<span class="sb">`</span><span class="o">]</span>+$<span class="o">[</span><span class="sb">`</span>ls -A -1 /usr <span class="p">|</span> wc -l<span class="sb">`</span><span class="o">]</span>+$<span class="o">[</span><span class="sb">`</span>ls -A -1 /var <span class="p">|</span>wc -l<span class="sb">`</span><span class="o">]</span>
+<span class="nb">echo</span> <span class="nv">$sumfiles</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>练习3</h2>
+<p>1、编写脚本/root/bin/argsnum.sh，接受一个文件路径作为参数；如果参数个数小于1，则提示用户“至少应该给一个参数”，并立即退出；如果参数个数不小于1，则显示第一个参数所指向的文件中的空白行数</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :argsnum_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-24 18:55:43</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="o">[</span> <span class="nv">$#</span> -lt <span class="m">1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;must one parameter&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> <span class="m">1</span>
+<span class="o">[</span> ! -f <span class="nv">$1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot; file not exist&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> <span class="m">2</span>
+<span class="nb">echo</span> <span class="sb">`</span>cat <span class="nv">$1</span> <span class="p">|</span>grep <span class="s2">&quot;^[[:space:]]*</span>$<span class="s2">&quot;</span> <span class="p">|</span>wc -l<span class="sb">`</span>
+</pre></div>
+</div>
+<p>2、编写脚本/root/bin/hostping.sh，接受一个主机的IPv4地址做为参数，测试是否可连通。如果能ping通，则提示用户“该IP地址可访问”；如果不可ping通，则提示用户“该IP地址不可访问”</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :hostping_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-24 19:00:40</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+<span class="o">[</span> <span class="nv">$#</span> -lt <span class="m">1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;must a parameter &quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> <span class="m">1</span>
+<span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span>~ ^<span class="o">(([</span><span class="m">0</span>-9<span class="o">]</span><span class="p">|</span><span class="o">([</span><span class="m">1</span>-9<span class="o">][</span><span class="m">0</span>-9<span class="o">])</span><span class="p">|</span><span class="o">(</span><span class="m">1</span><span class="o">[</span><span class="m">0</span>-9<span class="o">][</span><span class="m">0</span>-9<span class="o">])</span><span class="p">|</span><span class="o">(</span><span class="m">2</span><span class="o">[</span><span class="m">0</span>-4<span class="o">][</span><span class="m">0</span>-9<span class="o">])</span><span class="p">|</span><span class="o">(</span><span class="m">25</span><span class="o">[</span><span class="m">0</span>-5<span class="o">]))(</span><span class="se">\.</span><span class="o">([</span><span class="m">0</span>-9<span class="o">]</span><span class="p">|</span><span class="o">([</span><span class="m">1</span>-9<span class="o">][</span><span class="m">0</span>-9<span class="o">])</span><span class="p">|</span><span class="o">(</span><span class="m">1</span><span class="o">[</span><span class="m">0</span>-9<span class="o">][</span><span class="m">0</span>-9<span class="o">])</span><span class="p">|</span><span class="o">(</span><span class="m">2</span><span class="o">[</span><span class="m">0</span>-4<span class="o">][</span><span class="m">0</span>-9<span class="o">])</span><span class="p">|</span><span class="o">(</span><span class="m">25</span><span class="o">[</span><span class="m">0</span>-5<span class="o">]))){</span><span class="m">3</span><span class="o">})</span>$ <span class="o">]]</span>
+<span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot; ip is not reacheable&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> <span class="m">2</span>
+ping -t <span class="m">1</span> -c <span class="m">1</span> <span class="nv">$1</span> <span class="p">&amp;</span>&gt;/dev/null  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;ip is reachable&quot;</span> <span class="o">||</span><span class="nb">echo</span> <span class="s2">&quot;ip is not reachable&quot;</span>
+</pre></div>
+</div>
+<p>3、编写脚本/root/bin/checkdisk.sh，检查磁盘分区空间和inode使用率，如果超过80%，就发广播警告空间将满</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :checkdisk_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-24 11:25:31</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+<span class="nb">declare</span> -i <span class="nv">data_limit</span><span class="o">=</span><span class="m">10</span>
+<span class="nb">declare</span> -i <span class="nv">inode_limit</span><span class="o">=</span><span class="m">10</span>
+<span class="nb">declare</span> -i <span class="nv">data_block_max</span><span class="o">=</span><span class="sb">`</span>df <span class="p">|</span>egrep <span class="s2">&quot;/dev/[sh]d.*&quot;</span> <span class="p">|</span>egrep <span class="s2">&quot;[0-9]{1,3}%&quot;</span> -o <span class="p">|</span>egrep <span class="s2">&quot;[0-9]{1,3}&quot;</span> -o <span class="p">|</span>sort -nr <span class="p">|</span>head -n <span class="m">1</span><span class="sb">`</span>
+<span class="nb">declare</span> -i <span class="nv">inode_block_max</span><span class="o">=</span><span class="sb">`</span>df -i <span class="p">|</span>egrep <span class="s2">&quot;/dev/[sh]d.*&quot;</span> <span class="p">|</span>egrep <span class="s2">&quot;[0-9]{1,3}%&quot;</span> -o <span class="p">|</span>egrep <span class="s2">&quot;[0-9]{1,3}&quot;</span> -o <span class="p">|</span>sort -nr <span class="p">|</span>head -n <span class="m">1</span><span class="sb">`</span>
+
+
+<span class="o">[</span> <span class="nv">$data_block_max</span> -ge <span class="nv">$data_limit</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> wall <span class="s2">&quot;data_block beyond </span><span class="nv">$data_limit</span><span class="s2">&quot;</span>
+<span class="o">[</span> <span class="nv">$inode_block_max</span> -ge <span class="nv">$inode_limit</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> wall <span class="s2">&quot;inode_block beyond </span><span class="nv">$inode_limit</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>练习4</h2>
+<p>1、编写脚本/bin/per.sh,判断当前用户对指定的参数文件，是否不可读并且不可写</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :per_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-24 19:40:48</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="o">[</span> <span class="nv">$#</span> -lt <span class="m">1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot; must a parameter&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> <span class="m">1</span>
+
+<span class="o">[</span> ! -r <span class="nv">$1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> ! -w <span class="nv">$1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot; no read,and write&quot;</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&quot; other&quot;</span>
+</pre></div>
+</div>
+<p>2、编写脚本/root/bin/excute.sh ，判断参数文件是否为sh后缀的普通文件，如果是，添加所有人可执行权限，否则提示用户非脚本文件</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :excute_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-24 19:50:29</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="o">[</span> <span class="nv">$#</span> -lt <span class="m">1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;must one parameter&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> <span class="m">1</span>
+<span class="o">[</span> ! -f <span class="nv">$1</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;file not exist&quot;</span>
+<span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span>~ .*.sh$ <span class="o">]]</span> <span class="o">&amp;&amp;</span> chmod a+x <span class="nv">$1</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&quot;not sh file  &quot;</span>
+</pre></div>
+</div>
+<p>3、编写脚本/root/bin/nologin.sh和login.sh,实现禁止和充许普通用户登录系统</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :nologin.sh_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-24 19:56:30</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+<span class="o">[</span> ! -f /etc/nologin <span class="o">]</span> <span class="o">&amp;&amp;</span> touch /etc/nologin
+
+<span class="o">[</span>root@centos7 sh<span class="o">]</span><span class="c1"># cat login.sh_46_zhaojiedi.sh</span>
+<span class="c1">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :login.sh_46_zhaojiedi.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-11-24 19:57:23</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+<span class="o">[</span> -f /etc/nologin <span class="o">]</span> <span class="o">&amp;&amp;</span> rm -rf /etc/nologin
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>练习5</h2>
+<p>1、让所有用户的PATH环境变量的值多出一个路径，例如：/usr/local/apache/bin</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 job<span class="o">]</span><span class="c1"># echo &quot;export PATH=$PATH:/usr/local/apache/bin&quot; &gt;&gt;/etc/profile.d/path.sh</span>
+</pre></div>
+</div>
+<p>2、用户root登录时，将命令指示符变成红色，并自动启用如下别名：rm=‘rm –i’cdnet=‘cd /etc/sysconfig/network-scripts/’ editnet=‘vim /etc/sysconfig/network-scripts/ifcfg-eth0’ editnet=‘vim /etc/sysconfig/network-scripts/ifcfg-eno16777736 或 ifcfg-ens33 ’ (如果系统是CentOS7)</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="o">~</span><span class="p">]</span><span class="c1"># echo &quot;PS1=\&quot;\033[1;31m$PS1\033[0m\&quot;&quot; &gt;&gt;/root/.bash_profile</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@centos7</span> <span class="o">.</span><span class="n">etc</span><span class="p">]</span><span class="c1"># cat alias.sh</span>
+<span class="n">alias</span> <span class="n">rm</span><span class="o">=</span><span class="s1">&#39;rm-i&#39;</span>
+<span class="n">alias</span> <span class="n">cdnet</span><span class="o">=</span><span class="s1">&#39;cd /etc/sysconfig/network-scripts&#39;</span>
+<span class="n">alias</span> <span class="n">editeth0</span><span class="o">=</span><span class="s1">&#39;vim /etc/sysconfig/network-scripts/ifcfg-eth0&#39;</span>
+<span class="n">alias</span> <span class="n">editens33</span><span class="o">=</span><span class="s1">&#39;vim /etc/sysconfig/network-scripts/ifcfg-ens33&#39;</span>
+<span class="c1"># 添加如下行到/root/.bashrc文件中去</span>
+<span class="o">.</span> <span class="o">~/.</span><span class="n">etc</span><span class="o">/</span><span class="n">alias</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">echo</span> <span class="s2">&quot;. ~/.etc/alias.sh&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">root</span><span class="o">/.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+<p>3、任意用户登录系统时，显示红色字体的警示提醒信息“Hi,dangerous！”</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 .etc<span class="o">]</span><span class="c1"># cat -A /etc/motd</span>
+^<span class="o">[[</span>31mHi,dangerous^<span class="o">[[</span>0m$
+</pre></div>
+</div>
+<p>4、编写生成脚本基本格式的脚本，包括作者，联系方式，版本，时间，描述等</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#change filename</span>
+<span class="nv">filename</span><span class="o">=</span><span class="nv">$1</span>_46_zhaojiedi.sh
+<span class="c1">#check file exist</span>
+<span class="o">[</span> -e <span class="nv">$filename</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$filename</span><span class="s2"> has exist&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span> <span class="m">1</span>
+<span class="c1"># create file and add x</span>
+touch <span class="nv">$filename</span>
+chmod u+x <span class="nv">$filename</span>
+<span class="c1">#add info</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;#!/bin/bash</span>
+<span class="s2">#================================================</span>
+<span class="s2">#FileName   :</span><span class="k">$(</span>basename <span class="nv">$filename</span><span class="k">)</span><span class="s2"></span>
+<span class="s2">#Author     :zhaojiedi</span>
+<span class="s2">#Description:</span>
+<span class="s2">#DateTime   :</span><span class="k">$(</span>date <span class="s2">&quot;+%Y-%m-%d %H:%M:%S&quot;</span><span class="k">)</span><span class="s2"></span>
+<span class="s2">#Version    :V1.0</span>
+<span class="s2">#Other      :</span>
+<span class="s2">#================================================</span>
+<span class="s2">&quot;</span> &gt;&gt; <span class="nv">$filename</span>
+
+
+<span class="c1"># start vim</span>
+vim <span class="nv">$filename</span>  +
+</pre></div>
+</div>
+<p>5、编写用户的环境初始化脚本reset.sh，包括别名，登录提示符，vim的设置，环境变量等</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>. alias.sh
+. prompt.sh
+. vim.sh
+. path.sh
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>13-2017-12-01</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>13-2017-12-01</h1>
+<div class="section" id="id2">
+<h2>上节课回顾</h2>
+<p>etc作为配置文件</p>
+<p>软件安装方式</p>
+<ul class="simple">
+<li><p>rpm</p></li>
+<li><p>yum</p></li>
+<li><p>source</p></li>
+<li><p>直接那别人编译好的</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>本节内容</h2>
+<p>单位</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MB</span><span class="p">:</span> <span class="nb">bytes</span>
+<span class="n">Mb</span><span class="p">:</span> <span class="n">bit</span>
+<span class="n">rpm</span><span class="p">:</span> <span class="n">rotations</span> <span class="n">per</span> <span class="n">minute</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>HDD</p></li>
+<li><p>SSD</p></li>
+</ul>
+<p>设备文件</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>/dev/vd:虚拟文件
+gnome-disk：查看磁盘信息
+palimpsest:查看磁盘信息
+
+zbr:zoned bit recording
+</pre></div>
+</div>
+<p>CHS:24位，cylinder,head,sector</p>
+<p>LBA:48位，128PB
+分区</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MBR</span><span class="p">:</span><span class="mi">0</span><span class="n">磁盘0扇区</span>
+<span class="mi">446</span> <span class="p">:</span><span class="n">boot</span> <span class="n">loader</span>
+<span class="mi">64</span> <span class="p">:</span> <span class="n">分区表</span>
+<span class="mi">2</span>   <span class="p">:</span> <span class="mi">55</span><span class="n">AA</span>
+</pre></div>
+</div>
+<p>硬盘存储术语</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">head</span> <span class="p">:</span>
+<span class="n">track</span><span class="p">:</span>
+<span class="n">cylinder</span><span class="p">:</span>
+<span class="n">sector</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>查看分区</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sd</span><span class="o">*</span>
+<span class="n">cat</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">partitions</span>
+<span class="n">lsblk</span>
+<span class="n">fdisk</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span>
+</pre></div>
+</div>
+<p>parted命令</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>添加了分区：partx -a /dev/dev/sda
+删除了分区：partx -d --nr 6-7 /dev/sda
+
+partprobe:centos7,centos5都可以
+</pre></div>
+</div>
+<p>文件系统</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>ext2不支持日志
+
+修复文件系统不能挂载状态中。
+</pre></div>
+</div>
+<p>常见的文件系统</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>linux: ext2,ext3,ext4,xfs,btrfs,reiserfs,jfs
+光盘： iso9660
+window:fat32,vsfat,ntfs
+unix : FFS,UFS,JFS2
+网络文件系统：NFS,CIFS
+集群文件系统：GFS2,OCFS2
+分布式文件系统：FASTDFSceph ,glusterfs
+RAW:裸设备
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>05-2017-11-09-练习-head-tr-管道</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="head-tr">
+<h1>05-2017-11-09-练习-head-tr-管道</h1>
+<div class="section" id="tr-cut-sort-tail">
+<h2>练习1-tr,cut,sort,tail</h2>
+<p>1、 将/etc/passwd 文件的前5行内容转化为大写后保存到/tmp/passwd.out文件</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 dirtest<span class="o">]</span><span class="c1"># head -n 5 /etc/passwd |tr &#39;a-z&#39; &#39;A-Z&#39; &gt; /tmp/passwd.out</span>
+</pre></div>
+</div>
+<p>2、 将登陆到当前系统的用户信息的后3行信息转化为大写保存到/tmp/who.out文件中</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 dirtest<span class="o">]</span><span class="c1"># who |tail -n 3  | tr &#39;a-z&#39; &#39;A-Z&#39; &gt; /tmp/who.out</span>
+</pre></div>
+</div>
+<p>3、 取出/etc/passwd 文件中的第6行至第10行，并将这些信息按第3个字段数值进行排序，最后显示进显示第一个字段</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># head -n 10 /etc/passwd | tail -n 5 | sort -t &quot;:&quot; -k 3 | cut -d &quot;:&quot; -f 1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cat-who-seq">
+<h2>## 练习2-cat,who,seq</h2>
+<p>1、将/etc/issue 文件中的内容转换为大写后保存至/tmp/issue.out 文件中</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 app<span class="o">]</span><span class="c1"># cat /etc/issue |tr &quot;a-z&quot; &quot;A-Z&quot; &gt;/tmp/issue.out</span>
+</pre></div>
+</div>
+<p>2 、将当前系统登录用户的信息转换为大写后保存至/tmp/who.out 文件中</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 app<span class="o">]</span><span class="c1"># who| tr &quot;a-z&quot; &quot;A-Z&quot; &gt; /tmp/who.out</span>
+</pre></div>
+</div>
+<p>3 、一个linux 用户给root 发邮件，要求邮件标题为”help” ，邮件正文如下：Hello, I am  用户名,The system version is here,please help me tocheck it ,thanks! 操作系统版本信息</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 app<span class="o">]</span><span class="c1"># echo &quot;hello,I am $USER, The system version is $(uname -r), please help me to check it ,thanks&quot; | mail -s &quot;help&quot; root</span>
+</pre></div>
+</div>
+<p>4 、将/root/ 下文件列表，显示成一行，并文件名之间用空格隔开</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 app<span class="o">]</span><span class="c1"># ls -1 /root  |tr &quot;\n&quot; &quot; &quot;</span>
+</pre></div>
+</div>
+<p>5 、计算1+2+3+..+99+100 的总和</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 app<span class="o">]</span><span class="c1"># seq -s + 1 100 |bc</span>
+<span class="m">5050</span>
+<span class="o">[</span>root@centos7 app<span class="o">]</span><span class="c1"># echo {1..100} |tr &quot; &quot; &quot;+&quot; |bc</span>
+<span class="m">5050</span>
+</pre></div>
+</div>
+<p>6 、删除Windows 文本文件中的‘^M’ 字符</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 app<span class="o">]</span><span class="c1"># cat -A win.txt</span>
+zhaojiedi ^M$
+hello world^M$
+end^M$
+<span class="o">[</span>root@centos7 app<span class="o">]</span><span class="c1"># dos2unix win.txt</span>
+dos2unix: converting file win.txt to Unix format ...
+<span class="o">[</span>root@centos7 app<span class="o">]</span><span class="c1"># cat -A win.txt</span>
+zhaojiedi $
+hello world$
+end$
+</pre></div>
+</div>
+<p>7 、处理字符串“xt.,l 1 jr#!$mn 2 c*/fe 3 uz 4 ”，只保留其中的数字和空格</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 app<span class="o">]</span><span class="c1"># echo &#39;xt.,l 1 jr#win.txtmn 2 c*/fe 3 uz 4 &#39; | tr -cd &quot;[0-9] &quot;</span>
+</pre></div>
+</div>
+<p>8 、将PATH 变量每个目录显示在独立的一行</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 app<span class="o">]</span><span class="c1"># echo $PATH |tr &quot;:&quot; &quot;\n&quot;</span>
+/usr/local/sbin
+/usr/local/bin
+/usr/sbin
+/usr/bin
+/root/bin
+</pre></div>
+</div>
+<p>9、  将 指定文件中0-9 分别替代成a-j</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 app<span class="o">]</span><span class="c1"># cat /etc/fstab |tr [0-9] [a-j]</span>
+<span class="c1">#</span>
+<span class="c1"># /etc/fstab</span>
+<span class="c1"># Created by anaconda on Tue Nov  a aa:aa:aa aaaa</span>
+<span class="c1">#</span>
+<span class="c1"># Accessible filesystems, by reference, are maintained under &#39;/dev/disk&#39;</span>
+<span class="c1"># See man pages fstab(a), findfs(a), mount(a) and/or blkid(a) for more info</span>
+<span class="c1">#</span>
+<span class="nv">UUID</span><span class="o">=</span>aacceaaa-acae-abbc-aeaf-afadbadcfaea /                       exta    defaults        a a
+<span class="nv">UUID</span><span class="o">=</span>faeaaaea-bcde-aaaa-adca-caabaaaaeaaf /app                    exta    noatime        a a
+<span class="nv">UUID</span><span class="o">=</span>adacbeaa-ffba-aadf-bacf-aabeafaaaaaa /boot                   exta    defaults        a a
+<span class="nv">UUID</span><span class="o">=</span>bacaaafa-aeea-abac-aeaa-edaacbaacaaa swap                    swap    defaults        a a
+</pre></div>
+</div>
+<p>10 、将/etc/centos-release文件中每个单词（由字母组成）显示在独立的一行，并无空行</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 app<span class="o">]</span><span class="c1"># cat /etc/centos-release | tr -sc &quot;a-zA-Z &quot; &quot;\n&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

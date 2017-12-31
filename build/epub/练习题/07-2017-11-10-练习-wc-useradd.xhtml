@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>07-2017-11-10-练习-wc-useradd</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="wc-useradd">
+<h1>07-2017-11-10-练习-wc-useradd</h1>
+<div class="section" id="id1">
+<h2>练习1-编写统计行数脚本</h2>
+<p>1、编写一个脚本，脚本可以接受一个以上的文件路径作为参数，显示每个文件所拥有的行数，本次工统计了多少个文件执行了行数统计</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="k">for</span> file in <span class="nv">$*</span> <span class="p">;</span> <span class="k">do</span>
+        <span class="nv">line</span><span class="o">=</span><span class="k">$(</span>wc -l /etc/issue <span class="p">|</span>cut -d <span class="s2">&quot; &quot;</span> -f <span class="m">1</span><span class="k">)</span>
+        <span class="nb">echo</span> <span class="nv">$file</span> has <span class="nv">$line</span> lines.
+<span class="k">done</span>
+<span class="nb">echo</span> has <span class="nv">$#</span> files
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>练习2-创建用户并统计个数</h2>
+<p>1、 编写一个脚本传递2个以上的字符串当作用户名创建这些用户，且密码同用户名总结说明创建了多少用户</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">let</span> <span class="nv">cnt</span><span class="o">=</span><span class="m">0</span>
+<span class="k">for</span> user in <span class="nv">$*</span><span class="p">;</span> <span class="k">do</span>
+        <span class="nb">echo</span> <span class="nv">$user</span>
+        <span class="k">if</span> id <span class="nv">$user</span> &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span><span class="k">then</span>
+                <span class="nb">echo</span> <span class="nv">$user</span> exist.
+        <span class="k">else</span>
+                <span class="k">if</span> useradd <span class="nv">$user</span> &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span><span class="k">then</span>
+                        <span class="nb">let</span> cnt++
+                        <span class="nb">echo</span> <span class="nv">$user</span> <span class="p">|</span> passwd --stdin <span class="nv">$user</span> &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+                        <span class="nb">echo</span> <span class="nv">$user</span> created success.
+                <span class="k">else</span>
+                        <span class="nb">echo</span> <span class="nv">$user</span> created failed.
+                <span class="k">fi</span>
+        <span class="k">fi</span>
+
+<span class="k">done</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$cnt</span> -eq <span class="nv">$#</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> create <span class="nv">$cnt</span> users.
+<span class="k">else</span>
+        <span class="nb">echo</span> <span class="nv">$#</span> users ,but create <span class="nv">$cnt</span> users.
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

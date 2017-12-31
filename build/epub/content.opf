@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="zh"
+ unique-identifier="unknown"
+ prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
+  <metadata xmlns:opf="http://www.idpf.org/2007/opf"
+        xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:language>zh</dc:language>
+    <dc:title>my_study_linux v0.1 文档</dc:title>
+    <dc:description>unknown</dc:description>
+    <dc:creator>unknown</dc:creator>
+    <dc:contributor>unknown</dc:contributor>
+    <dc:publisher>unknown</dc:publisher>
+    <dc:rights>2017, zhaojiedi1992@outlook.com</dc:rights>
+    <dc:identifier id="unknown">unknown</dc:identifier>
+    <dc:date>2017-12-31T12:38:08Z</dc:date>
+    <meta property="dcterms:modified">2017-12-31T12:38:08Z</meta>
+    <meta property="ibooks:version">v0.1</meta>
+    <meta property="ibooks:specified-fonts">true</meta>
+    <meta property="ibooks:binding">true</meta>
+    <meta property="ibooks:scroll-axis">vertical</meta>
+  </metadata>
+  <manifest>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />
+    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+    <item id="epub-0" href="genindex.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-1" href="index.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-2" href="_images/das-nas-san.png" media-type="image/png" />
+    <item id="epub-3" href="_static/ajax-loader.gif" media-type="image/gif" />
+    <item id="epub-4" href="_static/basic.css" media-type="text/css" />
+    <item id="epub-5" href="_static/comment-bright.png" media-type="image/png" />
+    <item id="epub-6" href="_static/comment-close.png" media-type="image/png" />
+    <item id="epub-7" href="_static/comment.png" media-type="image/png" />
+    <item id="epub-8" href="_static/down-pressed.png" media-type="image/png" />
+    <item id="epub-9" href="_static/down.png" media-type="image/png" />
+    <item id="epub-10" href="_static/epub.css" media-type="text/css" />
+    <item id="epub-11" href="_static/file.png" media-type="image/png" />
+    <item id="epub-12" href="_static/minus.png" media-type="image/png" />
+    <item id="epub-13" href="_static/plus.png" media-type="image/png" />
+    <item id="epub-14" href="_static/pygments.css" media-type="text/css" />
+    <item id="epub-15" href="_static/up-pressed.png" media-type="image/png" />
+    <item id="epub-16" href="_static/up.png" media-type="image/png" />
+    <item id="epub-17" href="博客作业/1711.1.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-18" href="博客作业/1711.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-19" href="博客作业/1712.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-20" href="博客作业/1801.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-21" href="博客作业/1802.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-22" href="博客作业/1803.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-23" href="博客作业/1804.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-24" href="练习题/01-2017-07-练习-Linux简介.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-25" href="练习题/02-2017-11-08-练习-日期开机关机.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-26" href="练习题/03-2017-11-09-练习-glob.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-27" href="练习题/04-2017-11-09-练习-目录相关.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-28" href="练习题/05-2017-11-09-练习-head-tr-管道.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-29" href="练习题/06-2017-11-16-练习-用户管理.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-30" href="练习题/07-2017-11-10-练习-wc-useradd.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-31" href="练习题/08-2017-11-10-练习-grep-文本.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-32" href="练习题/09-2017-11-13-练习-find.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-33" href="练习题/10-2017-11-14-练习-vim.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-34" href="练习题/11-2017-11-15-练习-mount.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-35" href="练习题/12-2017-11-23-联系-bash.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-36" href="练习题/13-2017-11-25-练习-压缩.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-37" href="练习题/14-2017-11-28-练习-sed.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-38" href="练习题/15-2017-11-29-练习-rpm.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-39" href="练习题/16-2017-12-01-练习-磁盘管理.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-40" href="练习题/17-2017-12-03-练习-高级磁盘管理.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-41" href="练习题/18-2017-12-13-练习-网络.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-42" href="练习题/19-2017-12-15-练习-进程管理和作业管理计划任务.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-43" href="练习题/20-2017-12-16-练习-ip-nmcli.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-44" href="练习题/21-2017-12-16-练习-网络其他.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-45" href="练习题/22-2017-12-18-练习-脚本进阶循环.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-46" href="练习题/23-2017-12-22-练习-脚本进阶服务.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-47" href="练习题/24-2017-12-23-练习-常用启动故障修复.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-48" href="练习题/25-2017-12-26-练习-脚本进阶3.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-49" href="练习题/26-2017-12-25-练习-常用启动故障修复2.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-50" href="练习题/27-2017-12-27-练习-自定linux和编译内核.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-51" href="练习题/28-2017-12-28-练习selinux.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-52" href="练习题/29-2017-12-28-练习awk.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-53" href="课堂笔记/00-2017-11-00.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-54" href="课堂笔记/01-2017-11-06.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-55" href="课堂笔记/02-2017-11-07.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-56" href="课堂笔记/03-2017-11-08.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-57" href="课堂笔记/04-2017-11-10.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-58" href="课堂笔记/05-2017-11-13.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-59" href="课堂笔记/06-2017-11-15.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-60" href="课堂笔记/07-2017-11-17.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-61" href="课堂笔记/08-2017-11-20.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-62" href="课堂笔记/09-2017-11-22.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-63" href="课堂笔记/10-2017-11-24.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-64" href="课堂笔记/11-2017-11-27.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-65" href="课堂笔记/12-2017-11-29.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-66" href="课堂笔记/13-2017-12-01.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-67" href="课堂笔记/14-2017-12-04.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-68" href="课堂笔记/15-2017-12-06.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-69" href="课堂笔记/16-2017-12-11.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-70" href="课堂笔记/17-2017-12-12.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-71" href="课堂笔记/18-2017-12-14.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-72" href="课堂笔记/19-2017-12-15.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-73" href="课堂笔记/20-2017-12-18.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-74" href="课堂笔记/21-2017-12-20.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-75" href="课堂笔记/22-2017-12-22.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-76" href="课堂笔记/23-2017-12-25.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-77" href="课堂笔记/24-2017-12-27.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-78" href="课堂笔记/25-2017-12-29.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-79" href="马哥教育内部讲义/01-Linux简介.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-80" href="马哥教育内部讲义/02-文件系统.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-81" href="马哥教育内部讲义/03-Bash特性.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-82" href="马哥教育内部讲义/04-bash特性2.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-83" href="马哥教育内部讲义/05-linux用户组管理.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-84" href="马哥教育内部讲义/06-linuxbash特性3.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-85" href="马哥教育内部讲义/07-grep正则表达式.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-86" href="马哥教育内部讲义/08-Linux文件查找.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-87" href="马哥教育内部讲义/09-Vim编辑器.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-88" href="马哥教育内部讲义/10-Linux磁盘管理.xhtml" media-type="application/xhtml+xml" />
+  </manifest>
+  <spine toc="ncx" page-progression-direction="ltr">
+    <itemref idref="epub-1" />
+    <itemref idref="epub-79" />
+    <itemref idref="epub-80" />
+    <itemref idref="epub-81" />
+    <itemref idref="epub-82" />
+    <itemref idref="epub-83" />
+    <itemref idref="epub-84" />
+    <itemref idref="epub-85" />
+    <itemref idref="epub-86" />
+    <itemref idref="epub-87" />
+    <itemref idref="epub-88" />
+    <itemref idref="epub-24" />
+    <itemref idref="epub-25" />
+    <itemref idref="epub-26" />
+    <itemref idref="epub-27" />
+    <itemref idref="epub-28" />
+    <itemref idref="epub-29" />
+    <itemref idref="epub-30" />
+    <itemref idref="epub-31" />
+    <itemref idref="epub-32" />
+    <itemref idref="epub-33" />
+    <itemref idref="epub-35" />
+    <itemref idref="epub-36" />
+    <itemref idref="epub-37" />
+    <itemref idref="epub-38" />
+    <itemref idref="epub-39" />
+    <itemref idref="epub-40" />
+    <itemref idref="epub-41" />
+    <itemref idref="epub-42" />
+    <itemref idref="epub-43" />
+    <itemref idref="epub-44" />
+    <itemref idref="epub-45" />
+    <itemref idref="epub-46" />
+    <itemref idref="epub-47" />
+    <itemref idref="epub-48" />
+    <itemref idref="epub-49" />
+    <itemref idref="epub-50" />
+    <itemref idref="epub-51" />
+    <itemref idref="epub-53" />
+    <itemref idref="epub-54" />
+    <itemref idref="epub-55" />
+    <itemref idref="epub-56" />
+    <itemref idref="epub-57" />
+    <itemref idref="epub-58" />
+    <itemref idref="epub-59" />
+    <itemref idref="epub-60" />
+    <itemref idref="epub-61" />
+    <itemref idref="epub-62" />
+    <itemref idref="epub-63" />
+    <itemref idref="epub-64" />
+    <itemref idref="epub-65" />
+    <itemref idref="epub-66" />
+    <itemref idref="epub-67" />
+    <itemref idref="epub-68" />
+    <itemref idref="epub-69" />
+    <itemref idref="epub-70" />
+    <itemref idref="epub-71" />
+    <itemref idref="epub-72" />
+    <itemref idref="epub-73" />
+    <itemref idref="epub-74" />
+    <itemref idref="epub-75" />
+    <itemref idref="epub-76" />
+    <itemref idref="epub-77" />
+    <itemref idref="epub-18" />
+    <itemref idref="epub-19" />
+    <itemref idref="epub-20" />
+    <itemref idref="epub-22" />
+    <itemref idref="epub-23" />
+    <itemref idref="epub-0" />
+    <itemref idref="epub-17" linear="no" />
+    <itemref idref="epub-21" linear="no" />
+    <itemref idref="epub-34" linear="no" />
+    <itemref idref="epub-52" linear="no" />
+    <itemref idref="epub-78" linear="no" />
+  </spine>
+  <guide>
+    <reference type="toc" title="Table of Contents" href="index.xhtml" />
+  </guide>
+</package>

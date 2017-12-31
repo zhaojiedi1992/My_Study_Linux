@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>04 LINUX上bash的基础特性(二)</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="linuxbash">
+<h1>04 LINUX上bash的基础特性(二)</h1>
+<div class="section" id="id1">
+<h2>4.1 命令别名</h2>
+<p>alias cdnet=&quot;cd /etc/sysconfig/network-scripts&quot;</p>
+<p>针对用户的别名： &quot;~/.bashrc&quot;</p>
+<p>针对系统的别名：&quot;/etc/bashrc&quot;</p>
+<p>重读配置文件:source /path/to/config.file</p>
+<p>unalias:撤销别名</p>
+</div>
+<div class="section" id="glob">
+<h2>4.2 glob通配</h2>
+<ul class="simple">
+<li><ul>
+<li><p>代表任意长度的任意字符</p></li>
+</ul>
+</li>
+<li><p>？： 表示任意单个字符</p></li>
+<li><p>[]:匹配指定范围的任意的单个字符</p></li>
+<li><p>[^]:取反</p></li>
+<li><p>[alnum]:所有字母和数字</p></li>
+<li><p>[:alpha:]：字母</p></li>
+<li><p>[:digit:]:数字</p></li>
+<li><p>[:lower:]:小写字母</p></li>
+<li><p>[:upper:]:大写字母</p></li>
+<li><p>[:punct:]:标点符号</p></li>
+<li><p>[:space:]:空白字符，不是仅仅空格</p></li>
+</ul>
+</div>
+<div class="section" id="bash">
+<h2>4.3 bash快捷键盘</h2>
+<ul class="simple">
+<li><p>ctrl+L:</p></li>
+<li><p>ctrl+a:</p></li>
+<li><p>ctrl+e:</p></li>
+<li><p>ctrl+u:</p></li>
+<li><p>ctrl+k:</p></li>
+</ul>
+</div>
+<div class="section" id="bash-i-o">
+<h2>4.4 bash i/o重定向</h2>
+<ul class="simple">
+<li><p>&gt;</p></li>
+<li><p>&gt;&gt;:</p></li>
+<li><p>2&gt;</p></li>
+<li><p>2&gt;&gt;</p></li>
+<li><p>&gt; a.txt 2 &gt; &amp;1</p></li>
+<li><p>&gt;&gt;a.txt 2&gt;&gt; &amp;1</p></li>
+</ul>
+<p>tr</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 dirtest<span class="o">]</span><span class="c1"># tr &#39;a-z&#39; &#39;A-Z&#39; &lt; /etc/fstab</span>
+
+<span class="c1">#</span>
+<span class="c1"># /ETC/FSTAB</span>
+<span class="c1"># CREATED BY ANACONDA ON TUE NOV  7 15:31:40 2017</span>
+<span class="c1">#</span>
+<span class="c1"># ACCESSIBLE FILESYSTEMS, BY REFERENCE, ARE MAINTAINED UNDER &#39;/DEV/DISK&#39;</span>
+<span class="c1"># SEE MAN PAGES FSTAB(5), FINDFS(8), MOUNT(8) AND/OR BLKID(8) FOR MORE INFO</span>
+<span class="c1">#</span>
+<span class="nv">UUID</span><span class="o">=</span>AA4C5795-C48C-4E21-B5A2-31198C603E8D /                       EXT4    DEFAULTS        <span class="m">1</span> <span class="m">1</span>
+<span class="nv">UUID</span><span class="o">=</span>0733A859-9567-48D3-88B1-B8D1FBEBBBA0 /APP                    EXT4    DEFAULTS        <span class="m">1</span> <span class="m">2</span>
+<span class="nv">UUID</span><span class="o">=</span>53B38D7C-322C-484D-B108-5C8191251531 /BOOT                   EXT4    DEFAULTS        <span class="m">1</span> <span class="m">2</span>
+<span class="nv">UUID</span><span class="o">=</span>38651A9B-10AB-4218-960B-D0EBB9CBAA54 SWAP                    SWAP    DEFAULTS        <span class="m">0</span> <span class="m">0</span>
+TMPFS                   /DEV/SHM                TMPFS   DEFAULTS        <span class="m">0</span> <span class="m">0</span>
+DEVPTS                  /DEV/PTS                DEVPTS  <span class="nv">GID</span><span class="o">=</span><span class="m">5</span>,MODE<span class="o">=</span><span class="m">620</span>  <span class="m">0</span> <span class="m">0</span>
+SYSFS                   /SYS                    SYSFS   DEFAULTS        <span class="m">0</span> <span class="m">0</span>
+PROC                    /PROC                   PROC    DEFAULTS        <span class="m">0</span> <span class="m">0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>4.5 文本处理工具</h2>
+<div class="section" id="wc">
+<h3>4.5.1 wc</h3>
+<dl class="option-list">
+<dt><kbd><span class="option">-l</span></kbd></dt>
+<dd><p>行数</p>
+</dd>
+<dt><kbd><span class="option">-c</span></kbd></dt>
+<dd><p>字符数量</p>
+</dd>
+<dt><kbd><span class="option">-w</span></kbd></dt>
+<dd><p>单词个数</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="cut">
+<h3>4.5.2 cut</h3>
+<dl class="option-list">
+<dt><kbd><span class="option">-d</span></kbd></dt>
+<dd><p>分割符号</p>
+</dd>
+<dt><kbd><span class="option">-f</span></kbd></dt>
+<dd><p>提取</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="sort">
+<h3>4.5.3 sort</h3>
+<dl class="option-list">
+<dt><kbd><span class="option">-f</span></kbd></dt>
+<dd><p>忽略大小写</p>
+</dd>
+<dt><kbd><span class="option">-k</span></kbd></dt>
+<dd><p>指定字段排序</p>
+</dd>
+<dt><kbd><span class="option">-t</span></kbd></dt>
+<dd><p>分割</p>
+</dd>
+<dt><kbd><span class="option">-n</span></kbd></dt>
+<dd><p>数字排序</p>
+</dd>
+<dt><kbd><span class="option">-u</span></kbd></dt>
+<dd><p>去重连续的重复</p>
+</dd>
+<dt><kbd><span class="option">-r</span></kbd></dt>
+<dd><p>逆序</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="uniq">
+<h3>4.5.4 uniq</h3>
+<dl class="option-list">
+<dt><kbd><span class="option">-c</span></kbd></dt>
+<dd><p>显示重复的次数</p>
+</dd>
+<dt><kbd><span class="option">-d</span></kbd></dt>
+<dd><p>只显示重复的行</p>
+</dd>
+<dt><kbd><span class="option">-u</span></kbd></dt>
+<dd><p>值显示不重复的行</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

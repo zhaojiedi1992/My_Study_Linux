@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>21-2017-12-16-练习-网络其他</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>21-2017-12-16-练习-网络其他</h1>
+<div class="section" id="ftplftp">
+<h2>练习1-ftplftp使用</h2>
+<p>1、编写脚本完成2个主机日志的收集，日志目录为/root/log目录， 上传主机日志文件/var/log/message文件到这个目录，创建一个目录yyyy-MM-dd的名字修改为hostname_yyyy-MM-dd_meessage。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :ftp.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-12-17 12:53:20</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+<span class="nv">dt</span><span class="o">=</span><span class="sb">`</span>date +%F<span class="sb">`</span>
+<span class="nv">hostname</span><span class="o">=</span><span class="sb">`</span>hostname -s<span class="sb">`</span>
+<span class="nv">newname</span><span class="o">=</span><span class="nv">$hostname</span><span class="s2">&quot;_&quot;</span><span class="nv">$dt</span><span class="s2">&quot;_&quot;</span>messages
+
+ftp -n <span class="s">&lt;&lt;eof</span>
+<span class="s">open 192.168.1.113</span>
+<span class="s">user anonymous 123456</span>
+
+<span class="s">binary</span>
+
+<span class="s">cd pub</span>
+<span class="s">mkdir $dt</span>
+<span class="s">put /var/log/message</span>
+<span class="s">rename message $newname</span>
+<span class="s">close</span>
+<span class="s">bye</span>
+<span class="s">eof</span>
+</pre></div>
+</div>
+<p>2、编写一个脚本完成自动日志信息上传</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#================================================</span>
+<span class="c1">#FileName   :ftp.sh</span>
+<span class="c1">#Author     :zhaojiedi</span>
+<span class="c1">#Description:</span>
+<span class="c1">#DateTime   :2017-12-17 12:53:20</span>
+<span class="c1">#Version    :V1.0</span>
+<span class="c1">#Other      :</span>
+<span class="c1">#================================================</span>
+
+ftp -n <span class="s">&lt;&lt;eof</span>
+<span class="s">open 192.168.1.113</span>
+<span class="s">user anonymous 123456</span>
+<span class="s">binary</span>
+<span class="s">cd pub</span>
+<span class="s">put /var/log/message</span>
+<span class="s">close</span>
+<span class="s">bye</span>
+<span class="s">eof</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

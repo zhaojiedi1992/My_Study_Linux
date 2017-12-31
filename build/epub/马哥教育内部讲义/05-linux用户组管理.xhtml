@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>05 linux用户和组管理</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="linux">
+<h1>05 linux用户和组管理</h1>
+<p>用户分类</p>
+<ul class="simple">
+<li><p>系统用户:1-499(centos6),1-999(centos7)</p></li>
+<li><p>登陆用户： 500+（centos6）,1000+(centos7)</p></li>
+</ul>
+<div class="section" id="id1">
+<h2>5.1 主要配置文件分析</h2>
+<div class="section" id="etc-passwd">
+<h3>5.1.1 /etc/passwd</h3>
+<p>name:password:uid:gid:geocos:homedir:shell</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># head -1 /etc/passwd</span>
+root:x:0:0:root:/root:/bin/bash
+</pre></div>
+</div>
+</div>
+<div class="section" id="etc-group">
+<h3>5.1.2 /etc/group</h3>
+<p>groupname:password:gid:userlist</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># head -1 /etc/group</span>
+root:x:0:
+</pre></div>
+</div>
+</div>
+<div class="section" id="etc-shadow">
+<h3>5.1.2 /etc/shadow</h3>
+<p>name:password: date of last password change : minimum password age : maximum password age : password warning period: password warning period: password inactivity period</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># tail -n 1 /etc/shadow</span>
+zhaojiedi:<span class="nv">$6$rZ5h80aV</span>/7Sci.YB<span class="nv">$D25I</span>/MTmTHyo.2XhUNSiJab1BU/qf1vgpdZ3c0JBgzSDMG8tKzyUsPk..xJ9a31a17kGctcgm0OBIUTQGf7Uv0:17477:0:99999:7:::
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>用户名</p></li>
+<li><p>加密密码</p></li>
+<li><p>上次修改的密码</p></li>
+<li><p>最小使用时间</p></li>
+<li><p>最大使用时间</p></li>
+<li><p>密码警告时间</p></li>
+<li><p>密码禁用期</p></li>
+<li><p>账户过期日期</p></li>
+<li><p>保留字段</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>5.2 用户管理命令</h2>
+<div class="section" id="useradd">
+<h3>5.2.1 useradd</h3>
+<dl class="option-list">
+<dt><kbd><span class="option">-u</span></kbd></dt>
+<dd><p>指定用户id</p>
+</dd>
+<dt><kbd><span class="option">-g</span></kbd></dt>
+<dd><p>基本组</p>
+</dd>
+<dt><kbd><span class="option">-G</span></kbd></dt>
+<dd><p>附加组</p>
+</dd>
+<dt><kbd><span class="option">-c</span></kbd></dt>
+<dd><p>注释信息</p>
+</dd>
+<dt><kbd><span class="option">-s</span></kbd></dt>
+<dd><p>shell类型</p>
+</dd>
+<dt><kbd><span class="option">-d</span></kbd></dt>
+<dd><p>用户的家目录</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="groupadd">
+<h3>5.2.2 groupadd</h3>
+<dl class="option-list">
+<dt><kbd><span class="option">-g</span></kbd></dt>
+<dd><p>组id</p>
+</dd>
+<dt><kbd><span class="option">-r</span></kbd></dt>
+<dd><p>系统用户</p>
+</dd>
+</dl>
+<p>id</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># id</span>
+<span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span> <span class="nv">groups</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span> <span class="nv">context</span><span class="o">=</span>unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># id -u</span>
+<span class="m">0</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># id -g</span>
+<span class="m">0</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># id -G</span>
+<span class="m">0</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># id -un</span>
+root
+</pre></div>
+</div>
+</div>
+<div class="section" id="su">
+<h3>5.2.3 su</h3>
+<ul class="simple">
+<li><p>su username: 非登录切换，不会读取目标用户的配置文件</p></li>
+<li><p>su -username:登陆切换，会读取目标用户配置文件，完全切换</p></li>
+</ul>
+</div>
+<div class="section" id="usermod">
+<h3>5.2.4 usermod</h3>
+<p>-g:
+-G:
+-u:
+-s:
+-c:
+-d:
+-l
+-L
+-U
+-e              指定过期日期
+-f              指定非活动期限</p>
+</div>
+<div class="section" id="passwd">
+<h3>5.2.5 passwd</h3>
+<dl class="option-list">
+<dt><kbd><span class="option">-l</span></kbd></dt>
+<dd><p>锁定用户</p>
+</dd>
+<dt><kbd><span class="option">-u</span></kbd></dt>
+<dd><p>解锁</p>
+</dd>
+<dt><kbd><span class="option">-n</span></kbd></dt>
+<dd><p>最短期限</p>
+</dd>
+<dt><kbd><span class="option">-x</span></kbd></dt>
+<dd><p>最大期限</p>
+</dd>
+<dt><kbd><span class="option">-w</span></kbd></dt>
+<dd><p>警告期限</p>
+</dd>
+<dt><kbd><span class="option">-i</span></kbd></dt>
+<dd><p>非活动期限</p>
+</dd>
+<dt><kbd><span class="option">--stdin</span></kbd></dt>
+<dd><p>接受终端输入</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="userdel">
+<h3>5.2.6 userdel</h3>
+<dl class="option-list">
+<dt><kbd><span class="option">-r</span></kbd></dt>
+<dd><p>删除用户家目录</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="groupdel">
+<h3>5.2.7 groupdel</h3>
+</div>
+<div class="section" id="groupmod">
+<h3>5.2.8 groupmod</h3>
+<dl class="option-list">
+<dt><kbd><span class="option">-n</span></kbd></dt>
+<dd><p>新名字</p>
+</dd>
+<dt><kbd><span class="option">-g</span></kbd></dt>
+<dd><p>新的id</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="gpasswd">
+<h3>5.2.9 gpasswd</h3>
+<dl class="option-list">
+<dt><kbd><span class="option">-a</span></kbd></dt>
+<dd><p>添加到指定的组</p>
+</dd>
+<dt><kbd><span class="option">-d</span></kbd></dt>
+<dd><p>从指定组删除</p>
+</dd>
+<dt><kbd><span class="option">-A</span></kbd></dt>
+<dd><p>设置用户列表</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="newgrp">
+<h3>5.2.10 newgrp</h3>
+<p>用户临时切换基本组</p>
+</div>
+<div class="section" id="chage">
+<h3>5.2.11 chage</h3>
+<dl class="option-list">
+<dt><kbd><span class="option">-d</span></kbd></dt>
+<dd><p>修改用户最近一次修改时间</p>
+</dd>
+<dt><kbd><span class="option">-I</span></kbd></dt>
+<dd><p>修改用户的非活动期限</p>
+</dd>
+<dt><kbd><span class="option">-E</span></kbd></dt>
+<dd><p>过期日期</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="sudo">
+<h2>5.3 sudo</h2>
+<dl class="option-list">
+<dt><kbd><span class="option">-l</span></kbd></dt>
+<dd><p>查看用户可以执行的sudo</p>
+</dd>
+<dt><kbd><span class="option">-k</span></kbd></dt>
+<dd><p>清楚记一下的令牌</p>
+</dd>
+<dt><kbd><span class="option">-u</span></kbd></dt>
+<dd><p>以指定用户运行命令</p>
+</dd>
+</dl>
+<p>配置文件是/etc/sudoers</p>
+<p>账号 登陆这来源主机名 （可切换的身份） 命令</p>
+<p>注意事项</p>
+<ul class="simple">
+<li><p>ALL大写</p></li>
+<li><p>命令使用全路径</p></li>
+<li><p>组使用%</p></li>
+<li><p>别名 User_Alias User1 = magedu,centos,test</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

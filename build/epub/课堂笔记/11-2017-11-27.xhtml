@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>11-2017-11-27</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>11-2017-11-27</h1>
+<div class="section" id="id2">
+<h2>上节课回顾</h2>
+</div>
+<div class="section" id="id3">
+<h2>本节内容</h2>
+<dl class="simple">
+<dt>::</dt>
+<dd><p>find -name  &quot;<a href="#id4"><span class="problematic" id="id5">*</span></a>.conf&quot; -ok cp {} {}.bak ;</p>
+</dd>
+</dl>
+<p>解压缩</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">-</span><span class="n">rolla</span>
+<span class="nb">zip</span> <span class="o">-</span><span class="n">r</span> <span class="n">压缩文件夹</span>
+</pre></div>
+</div>
+<p>打包</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>-j：bz2
+-J: xz
+-z: gzip
+-T:filelist
+</pre></div>
+</div>
+<p>分割</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">split</span>
+</pre></div>
+</div>
+<p>sed</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>i,d,a,s,c,w
+;可以多个命令顺序执行
+P:
+h:模式空间到保留空间
+H:
+g：
+G:
+x:互换
+n:读取下一行覆盖模式空间
+N:读取下一行追加模式空间
+d:删除模式空间
+D:删除第一个换行符号文本， 不读取继续循环
+</pre></div>
+</div>
+<p>源码包</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>19-2017-12-15-练习-进程管理和作业管理</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>19-2017-12-15-练习-进程管理和作业管理</h1>
+<div class="section" id="id2">
+<h2>练习1-进程管理常用命令</h2>
+<p>具体参考：<a href="#id4"><span class="problematic" id="id5">linux进程管理和系统状态常用命令简介_</span></a></p>
+</div>
+<div class="section" id="id3">
+<h2>练习2-作业管理练习</h2>
+<p>1、简述作业状态，并说明各个状态的切换</p>
+<img alt="https://github.com/zhaojiedi1992/My_Study_Linux/blob/master/rstdoc/images/%E4%BD%9C%E4%B8%9A%E7%8A%B6%E6%80%81.png?raw=true" src="https://github.com/zhaojiedi1992/My_Study_Linux/blob/master/rstdoc/images/%E4%BD%9C%E4%B8%9A%E7%8A%B6%E6%80%81.png?raw=true" />
+</div>
+<div class="section" id="at">
+<h2>练习3-计划任务at</h2>
+<p>1、 创建一个计划任务，10.20执行一次wall命令，查看计划任务并删除</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 at<span class="o">]</span>$ at <span class="m">10</span>:20
+at&gt; wall <span class="s2">&quot;wall message&quot;</span>
+at&gt; &lt;EOT&gt;
+job <span class="m">3</span> at Tue Dec <span class="m">19</span> <span class="m">10</span>:20:00 <span class="m">2017</span>
+<span class="o">[</span>root@centos74 at<span class="o">]</span>$ atq
+<span class="m">3</span>   Tue Dec <span class="m">19</span> <span class="m">10</span>:20:00 <span class="m">2017</span> a root
+<span class="o">[</span>root@centos74 at<span class="o">]</span>$ at -c <span class="m">3</span>
+<span class="o">[</span>root@centos74 at<span class="o">]</span>$ atrm <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cron">
+<h2>练习4-计划任务cron</h2>
+<p>1、每天的2点和12点整，将/etc备份至/testdir/backup目录中，保存的文件名称格式为“etcbak-yyyy-mm-dd-HH.tar.xz”</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ crontab  -l
+<span class="m">1</span> <span class="m">2</span>,12 * * * /app/test/backup.sh
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat /backup.sh
+cat: /backup.sh: No such file or directory
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat /app/test/backup.sh
+<span class="c1">#!/bin/bash</span>
+<span class="k">if</span> <span class="o">[</span> ! -e /testdir/backup <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    mkdir -pv /testdir/backup
+<span class="k">fi</span>
+/usr/bin/tar  --acl --xattrs -Jcvf  /testdir/backup/etcbak-<span class="sb">`</span>date +%Y-%m-%d-%H<span class="sb">`</span>.tar.xz   /etc
+You have new mail in /var/spool/mail/root
+</pre></div>
+</div>
+<p>2、每周2, 4, 7备份/var/log/messages文件至/logs目录中，文件名形如“messages-yyyymmdd”</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ crontab -l
+<span class="m">1</span> <span class="m">2</span>,12 * * * /app/test/backup.sh
+<span class="m">1</span> <span class="m">1</span> * * <span class="m">2</span>,4,7 /app/test/backup_message.sh
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat backup_message.sh
+<span class="c1">#!/bin/bash</span>
+
+<span class="k">if</span> <span class="o">[</span> ! -e /logs <span class="o">]</span> <span class="p">;</span>  <span class="k">then</span>
+    mkdir -pv /logs
+<span class="k">fi</span>
+cp -a /var/log/messages /logs/message-<span class="k">$(</span>date <span class="s2">&quot;+%Y%m%d&quot;</span><span class="k">)</span>
+You have new mail in /var/spool/mail/root
+</pre></div>
+</div>
+<p>3、每两小时取出当前系统/proc/meminfo文件中以S或M开头的信息追加至/tmp/meminfo.txt文件中</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ crontab -l
+<span class="m">1</span> <span class="m">2</span>,12 * * * /app/test/backup.sh
+<span class="m">1</span> <span class="m">1</span> * * <span class="m">2</span>,4,7 /app/test/backup_message.sh
+<span class="m">1</span> */2 * * *  /app/test/meminfo.sh
+You have new mail in /var/spool/mail/root
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat meminfo.sh
+<span class="c1">#!/bin/bash</span>
+cat /proc/meminfo  <span class="p">|</span>egrep <span class="s2">&quot;^(S|M).*&quot;</span> &gt;&gt; /tmp/meminfo.txt
+</pre></div>
+</div>
+<p>4、工作日时间，每10分钟执行一次磁盘空间检查，一旦发现任何分区利用率高于80%，就执行wall警报</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ crontab  -l
+<span class="m">1</span> <span class="m">2</span>,12 * * * /app/test/backup.sh
+<span class="m">1</span> <span class="m">1</span> * * <span class="m">2</span>,4,7 /app/test/backup_message.sh
+<span class="m">1</span> */2 * * *  /app/test/meminfo.sh
+*/10 * * * * /app/test/disk_check.sh
+
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat disk_check.sh
+<span class="c1">#!/bin/bash</span>
+<span class="nv">val</span><span class="o">=</span><span class="k">$(</span>df --output<span class="o">=</span>pcent <span class="p">|</span>egrep <span class="s2">&quot;[0-9]+&quot;</span> -o <span class="p">|</span>sort -nr <span class="p">|</span>head -n <span class="m">1</span><span class="k">)</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$val</span><span class="s2">&quot;</span> -gt <span class="m">80</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    wall <span class="s2">&quot;disk 80%&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

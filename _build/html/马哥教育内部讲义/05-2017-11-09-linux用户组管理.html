@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>05 linux用户和组管理 &mdash; my_study_linux v0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> my_study_linux
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">练习题</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/01-2017-07-练习-Linux简介.html">01-2017-07-练习-Linux简介练习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/02-2017-11-08-练习-日期开机关机.html">02-2017-11-08-练习-日期开机关机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/03-2017-11-09-练习-glob.html">03-2017-11-09-练习-glob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/04-2017-11-09-练习-目录相关.html">04-2017-11-09-练习-目录相关</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/05-2017-11-09-练习-head-tr-管道.html">05-2017-11-09-练习-head-tr-管道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/06-2017-11-16-练习-用户管理.html">06-2017-11-16-练习-用户管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/07-2017-11-10-练习-wc-useradd.html">07-2017-11-10-练习-wc-useradd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/08-2017-11-10-练习-grep-文本.html">08-2017-11-10-练习-grep-文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/09-2017-11-13-练习-find.html">09-2017-11-13-练习-find</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/10-2017-11-14-练习-vim.html">10-2017-11-14-练习-vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/12-2017-11-23-联系-bash.html">12-2017-11-23-练习-bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/13-2017-11-25-练习-压缩.html">13-2017-11-25-练习-压缩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/14-2017-11-28-练习-sed.html">14-2017-11-28-练习-sed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/15-2017-11-29-练习-rpm.html">15-2017-11-28-练习-rpm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/16-2017-12-01-练习-磁盘管理.html">16-2017-12-01-练习-磁盘管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/17-2017-12-03-练习-高级磁盘管理.html">17-2017-12-03-练习-高级磁盘管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/18-2017-12-13-练习-网络.html">18-2017-12-13-练习-网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/19-2017-12-15-练习-进程管理和作业管理计划任务.html">19-2017-12-15-练习-进程管理和作业管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/20-2017-12-16-练习-ip-nmcli.html">2017-12-16-练习-ip-nmcli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/21-2017-12-16-练习-网络其他.html">21-2017-12-16-练习-网络其他</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/22-2017-12-18-练习-脚本进阶循环.html">22-2017-12-18-练习-脚本进阶循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/23-2017-12-22-练习-脚本进阶服务.html">23-2017-12-18-练习-脚本进阶服务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/24-2017-12-23-练习-常用启动故障修复.html">24-2017-12-23-练习-常用启动故障修复</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/25-2017-12-26-练习-脚本进阶3.html">25-2017-12-26-练习-脚本进阶3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/26-2017-12-25-练习-常用启动故障修复2.html">26-2017-12-23-练习-常用启动故障修复2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/27-2017-12-27-练习-自定linux和编译内核.html">27-2017-12-27-练习-自定linux和编译内核</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/28-2017-12-28-练习selinux.html">28-2017-12-28-练习selinux</a></li>
+</ul>
+<p class="caption"><span class="caption-text">课堂笔记</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/00-2017-11-00.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/01-2017-11-06.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/02-2017-11-07.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/03-2017-11-08.html">03-2017-11-08</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/04-2017-11-10.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/05-2017-11-13.html">05-2017-11-13</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/06-2017-11-15.html">06-2017-11-15</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/07-2017-11-17.html">07-2017-11-17</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/08-2017-11-20.html">08-2017-11-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/09-2017-11-22.html">09-2017-11-22</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/10-2017-11-24.html">10-2017-11-24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/11-2017-11-27.html">11-2017-11-27</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/12-2017-11-29.html">12-2017-11-29</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/13-2017-12-01.html">13-2017-12-01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/14-2017-12-04.html">14-2017-12-04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/15-2017-12-06.html">15-2017-12-06</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/16-2017-12-11.html">16-2017-12-11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/17-2017-12-12.html">17-2017-12-12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/18-2017-12-14.html">18-2017-12-14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/19-2017-12-15.html">19-2017-12-05</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/20-2017-12-18.html">19-2017-12-05</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/21-2017-12-20.html">21-2017-12-20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/22-2017-12-22.html">22-2017-12-22</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/23-2017-12-25.html">23-2017-12-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/24-2017-12-27.html">24-2017-12-27</a></li>
+</ul>
+<p class="caption"><span class="caption-text">博客作业</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1711.html">11月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1712.html">12月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1801.html">1月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1803.html">3月博客作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../博客作业/1804.html">4月博客作业</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">my_study_linux</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>05 linux用户和组管理</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/马哥教育内部讲义/05-2017-11-09-linux用户组管理.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="linux">
+<h1>05 linux用户和组管理<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
+<p>用户分类</p>
+<ul class="simple">
+<li>系统用户:1-499(centos6),1-999(centos7)</li>
+<li>登陆用户： 500+（centos6）,1000+(centos7)</li>
+</ul>
+<div class="section" id="id1">
+<h2>5.1 主要配置文件分析<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="etc-passwd">
+<h3>5.1.1 /etc/passwd<a class="headerlink" href="#etc-passwd" title="永久链接至标题">¶</a></h3>
+<p>name:password:uid:gid:geocos:homedir:shell</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># head -1 /etc/passwd</span>
+root:x:0:0:root:/root:/bin/bash
+</pre></div>
+</div>
+</div>
+<div class="section" id="etc-group">
+<h3>5.1.2 /etc/group<a class="headerlink" href="#etc-group" title="永久链接至标题">¶</a></h3>
+<p>groupname:password:gid:userlist</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># head -1 /etc/group</span>
+root:x:0:
+</pre></div>
+</div>
+</div>
+<div class="section" id="etc-shadow">
+<h3>5.1.2 /etc/shadow<a class="headerlink" href="#etc-shadow" title="永久链接至标题">¶</a></h3>
+<p>name:password: date of last password change : minimum password age : maximum password age : password warning period: password warning period: password inactivity period</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># tail -n 1 /etc/shadow</span>
+zhaojiedi:<span class="nv">$6$rZ5h80aV</span>/7Sci.YB<span class="nv">$D25I</span>/MTmTHyo.2XhUNSiJab1BU/qf1vgpdZ3c0JBgzSDMG8tKzyUsPk..xJ9a31a17kGctcgm0OBIUTQGf7Uv0:17477:0:99999:7:::
+</pre></div>
+</div>
+<ul class="simple">
+<li>用户名</li>
+<li>加密密码</li>
+<li>上次修改的密码</li>
+<li>最小使用时间</li>
+<li>最大使用时间</li>
+<li>密码警告时间</li>
+<li>密码禁用期</li>
+<li>账户过期日期</li>
+<li>保留字段</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>5.2 用户管理命令<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="useradd">
+<h3>5.2.1 useradd<a class="headerlink" href="#useradd" title="永久链接至标题">¶</a></h3>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-u</span></kbd></td>
+<td>指定用户id</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-g</span></kbd></td>
+<td>基本组</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-G</span></kbd></td>
+<td>附加组</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c</span></kbd></td>
+<td>注释信息</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-s</span></kbd></td>
+<td>shell类型</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span></kbd></td>
+<td>用户的家目录</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="groupadd">
+<h3>5.2.2 groupadd<a class="headerlink" href="#groupadd" title="永久链接至标题">¶</a></h3>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-g</span></kbd></td>
+<td>组id</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span></kbd></td>
+<td>系统用户</td></tr>
+</tbody>
+</table>
+<p>id</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># id</span>
+<span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span> <span class="nv">groups</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span> <span class="nv">context</span><span class="o">=</span>unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># id -u</span>
+<span class="m">0</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># id -g</span>
+<span class="m">0</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># id -G</span>
+<span class="m">0</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># id -un</span>
+root
+</pre></div>
+</div>
+</div>
+<div class="section" id="su">
+<h3>5.2.3 su<a class="headerlink" href="#su" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>su username: 非登录切换，不会读取目标用户的配置文件</li>
+<li>su -username:登陆切换，会读取目标用户配置文件，完全切换</li>
+</ul>
+</div>
+<div class="section" id="usermod">
+<h3>5.2.4 usermod<a class="headerlink" href="#usermod" title="永久链接至标题">¶</a></h3>
+<p>-g:
+-G:
+-u:
+-s:
+-c:
+-d:
+-l
+-L
+-U
+-e              指定过期日期
+-f              指定非活动期限</p>
+</div>
+<div class="section" id="passwd">
+<h3>5.2.5 passwd<a class="headerlink" href="#passwd" title="永久链接至标题">¶</a></h3>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-l</span></kbd></td>
+<td>锁定用户</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-u</span></kbd></td>
+<td>解锁</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-n</span></kbd></td>
+<td>最短期限</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-x</span></kbd></td>
+<td>最大期限</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-w</span></kbd></td>
+<td>警告期限</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-i</span></kbd></td>
+<td>非活动期限</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--stdin</span></kbd></td>
+<td>接受终端输入</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="userdel">
+<h3>5.2.6 userdel<a class="headerlink" href="#userdel" title="永久链接至标题">¶</a></h3>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-r</span></kbd></td>
+<td>删除用户家目录</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="groupdel">
+<h3>5.2.7 groupdel<a class="headerlink" href="#groupdel" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="groupmod">
+<h3>5.2.8 groupmod<a class="headerlink" href="#groupmod" title="永久链接至标题">¶</a></h3>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-n</span></kbd></td>
+<td>新名字</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-g</span></kbd></td>
+<td>新的id</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="gpasswd">
+<h3>5.2.9 gpasswd<a class="headerlink" href="#gpasswd" title="永久链接至标题">¶</a></h3>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-a</span></kbd></td>
+<td>添加到指定的组</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span></kbd></td>
+<td>从指定组删除</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-A</span></kbd></td>
+<td>设置用户列表</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="newgrp">
+<h3>5.2.10 newgrp<a class="headerlink" href="#newgrp" title="永久链接至标题">¶</a></h3>
+<p>用户临时切换基本组</p>
+</div>
+<div class="section" id="chage">
+<h3>5.2.11 chage<a class="headerlink" href="#chage" title="永久链接至标题">¶</a></h3>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-d</span></kbd></td>
+<td>修改用户最近一次修改时间</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span></kbd></td>
+<td>修改用户的非活动期限</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-E</span></kbd></td>
+<td>过期日期</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="sudo">
+<h2>5.3 sudo<a class="headerlink" href="#sudo" title="永久链接至标题">¶</a></h2>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-l</span></kbd></td>
+<td>查看用户可以执行的sudo</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-k</span></kbd></td>
+<td>清楚记一下的令牌</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-u</span></kbd></td>
+<td>以指定用户运行命令</td></tr>
+</tbody>
+</table>
+<p>配置文件是/etc/sudoers</p>
+<p>账号 登陆这来源主机名 （可切换的身份） 命令</p>
+<p>注意事项</p>
+<ul class="simple">
+<li>ALL大写</li>
+<li>命令使用全路径</li>
+<li>组使用%</li>
+<li>别名 User_Alias User1 = magedu,centos,test</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, zhaojiedi1992@outlook.com.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

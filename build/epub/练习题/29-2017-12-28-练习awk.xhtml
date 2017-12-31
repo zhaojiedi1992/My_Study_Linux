@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>29-2017-12-28-练习awk</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="awk">
+<h1>29-2017-12-28-练习awk</h1>
+<div class="section" id="id1">
+<h2>练习1-awk</h2>
+<p>1、统计/etc/fstab文件中每个文件系统类型出现的次数</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat /etc/fstab <span class="p">|</span>awk <span class="s1">&#39; /^[^#]/ {print $3}&#39;</span> <span class="p">|</span> sort  <span class="p">|</span>uniq -c
+        <span class="m">3</span> ext4
+
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat /etc/fstab <span class="p">|</span>awk <span class="s1">&#39; /^[^#]/ {arr[$3]++} END{for (i in arr){print arr[i],i}}&#39;</span>
+<span class="m">3</span> ext4
+</pre></div>
+</div>
+<p>2、统计/etc/fstab文件中每个单词出现的次数</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat /etc/fstab <span class="p">|</span> awk <span class="s1">&#39;{for (i=1;i&lt;=NF;i++){arr[$i]++}} END { for(i in arr){print i,arr[i]}}&#39;</span>
+</pre></div>
+</div>
+<p>3、提取出字符串Yd$C&#64;M05MB%9&amp;Bdh7dq+YVixp3vpw中的所有数字</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&quot;Yd</span><span class="nv">$C</span><span class="s2">@M05MB%9&amp;Bdh7dq+YVixp3vpw&quot;</span>  <span class="p">|</span>tr -dc <span class="s2">&quot;[:digit:]&quot;</span>
+
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&quot;Yd</span><span class="nv">$C</span><span class="s2">@M05MB%9&amp;Bdh7dq+YVixp3vpw&quot;</span>  <span class="p">|</span>awk -F <span class="s2">&quot;&quot;</span> <span class="s1">&#39;{for (i=1;i&lt;=NF;i++){if ($i ~ /[[:digit:]]/){printf &quot;%s&quot; , $i }}print &quot;&quot;}&#39;</span>
+<span class="m">05973</span>
+</pre></div>
+</div>
+<p>4、解决DOS攻击生产案例：根据web日志或者或者网络连接数，监控当某个IP并发连接数或者短时内PV达到100，即调用防火墙命令封掉对应的IP，监控频率每隔5分钟。防火墙命令为：iptables -A INPUT -s IP -j REJECT</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>netstat -tup <span class="p">|</span> awk <span class="s1">&#39;/tcp/ {socket=$5; split(socket,tmps,&quot;:&quot;);ss[tmps[1]]++} END {for (i in ss){if (ss[i] &gt;0){cmd=&quot;iptables -A INPUT -s &quot;i&quot; -j REJECT&quot;; system(cmd);} }}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

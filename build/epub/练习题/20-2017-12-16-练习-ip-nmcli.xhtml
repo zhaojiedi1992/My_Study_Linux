@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>2017-12-16-练习-ip-nmcli</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ip-nmcli">
+<h1>2017-12-16-练习-ip-nmcli</h1>
+<p>练习1- 多网卡整合</p>
+<p>1、使将2个网卡整合， 能达到一个网卡坏掉也能继续工作</p>
+<p>方案1 ： 使用手工配置的bond</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>$ cat ifcfg-bond0
+<span class="nv">DEVICE</span><span class="o">=</span>bond0
+
+<span class="nv">BOOTPROTO</span><span class="o">=</span>static
+<span class="nv">IPADDR</span><span class="o">=</span><span class="m">192</span>.168.27.77
+<span class="nv">PREFIX</span><span class="o">=</span><span class="m">24</span>
+<span class="nv">GATEWAY</span><span class="o">=</span><span class="m">192</span>.168.27.1
+
+<span class="nv">BONDING_OPTS</span><span class="o">=</span><span class="s2">&quot;mode=active-backup miimon=100&quot;</span>
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>$ cat ifcfg-eth1
+<span class="nv">DEVICE</span><span class="o">=</span>eth1
+<span class="nv">MASTER</span><span class="o">=</span>bond0
+<span class="nv">SLAVE</span><span class="o">=</span>yes
+
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>$ cat ifcfg-eth2
+<span class="nv">DEVICE</span><span class="o">=</span>eth2
+<span class="nv">MASTER</span><span class="o">=</span>bond0
+<span class="nv">SLAVE</span><span class="o">=</span>yes
+</pre></div>
+</div>
+<p>方案2 ： 使用nmcli配置bonding</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>  nmcli con add <span class="nb">type</span> bond con-name bond0 ifname bond0 mode active-backup miimon <span class="m">200</span>
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>  nmcli con modify  bond0 ipv4.method static ipv4.address <span class="m">192</span>.168.27.77/24 ipv4.gateway <span class="m">192</span>.168.27.1
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>  nmcli con add <span class="nb">type</span> bond-slave  con-name bond0-eth1 ifname eth1 master bond0
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>  nmcli con add <span class="nb">type</span> bond-slave  con-name bond0-eth2 ifname eth2 master bond0
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>  nmcli con show
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>  nmcli con up bond0
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>  nmcli con up bond0-eth1
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>  nmcli con up bond0-eth2
+</pre></div>
+</div>
+<p>方案3 ： 使用nmcli 配置team</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>$ nmcli con add <span class="nb">type</span> team con-name team0 ifname team0 config <span class="s1">&#39;{&quot;runner&quot;:{&quot;methord&quot;:&quot;activebackup&quot;}}&#39;</span>
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>$ nmcli con modify team0 ipv4.method static ipv4.addresses <span class="m">192</span>.168.27.77/24 ipv4.gateway <span class="m">192</span>.168.27.1
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>$ nmcli con add <span class="nb">type</span> team-slave  ifname eth1 master team0
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>$ nmcli con add <span class="nb">type</span> team-slave  ifname eth2 master team0
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>$ nmcli con up team0
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>$ nmcli con up team-slave-eth1
+<span class="o">[</span>root@centos74 network-scripts<span class="o">]</span>$ nmcli con up team-slave-eth2
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

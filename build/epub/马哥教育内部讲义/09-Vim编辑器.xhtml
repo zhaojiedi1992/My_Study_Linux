@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>09 Vim编辑器</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vim">
+<h1>09 Vim编辑器</h1>
+<p>Vim有3种模式</p>
+<ul class="simple">
+<li><p>编辑模式</p></li>
+<li><p>输入模式</p></li>
+<li><p>末行模式</p></li>
+</ul>
+<div class="section" id="id1">
+<h2>9.1 模式转化</h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>输入模式--&gt; 末行模式： ESC
+编辑模式--&gt; 输入模式：
+                        a
+                        A
+                        o
+                        O
+                        i
+                        I
+编辑模式--&gt; 末行模式：ESC
+末行模式转编辑模式：ESC
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>9.2 退出文件</h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>:q                  退出
+:w                  保存
+:wq                 保存退出
+:x                  保存退出
+:wq!                保存退出
+:w new_file_path    保存到指定的文件
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>9.3 光标移动</h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>字符间移动
+h
+l
+j
+k
+
+单词之间移动
+w
+e
+b
+
+行内移动
+^
+<span class="m">0</span>
+$
+
+句子内移动
+<span class="o">(</span>
+<span class="o">)</span>
+
+段落内移动
+<span class="o">{</span>
+<span class="o">}</span>
+
+行间移动
+<span class="c1">#G</span>
+G
+gg
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>9.4 Vim的编辑命令</h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>x               删除所在位置字符
+<span class="c1">#x              删除后续几个字符</span>
+d               删除命令，配合移动字符
+dd              删除行
+p               粘贴
+y               复制
+Y               复制当前行
+c               修改，配合移动字符
+u               撤销之前操作
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>9.5 Vim可视化模式</h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>v               光标走过的字符
+V               光标走过的行
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>9.6 翻屏操作</h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>ctrl+f              文件尾部翻一屏
+ctrl+b              文件首部翻1屏
+ctrl+d              文件尾部翻半屏
+ctrl+u              文件首部翻半屏
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>9.7 Vim末行模式</h2>
+<div class="section" id="id8">
+<h3>9.7.1 内容定界</h3>
+<p>startpos,endpos</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1">#               第#行</span>
+<span class="c1">#,#             第#到第#行</span>
+.               当前行
+$               最后一行
+%               全文
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>9.7.2 查找</h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>/pathern           正向查找
+?                  反向查找
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>9.7.3 查找并替换</h3>
+<p>s/查找模式/要替换的内容/修饰符</p>
+<p>修饰符：</p>
+<ul class="simple">
+<li><p>i         忽略大小写</p></li>
+<li><p>g         全局替换</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>9.8 多文件模式</h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>:next               下一个文档
+:previous           前一个文档
+:last               最后一个文档
+:first              第一个文档
+:waall              保存所有
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>9.9 窗口属性设置</h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>:set nu             显示行号
+:set nonu           关闭行号显示
+:set ai             打开智能提示
+:set noai           关闭智能提示
+:set ic             忽略大小写
+:set noic           关闭忽略大小写
+:set sm             括号匹配
+:set nosm           关闭括号匹配
+:syntax on          语法高亮
+:syntax off         语法高亮关闭
+:set hlsearch       高亮搜索
+:set nohlsearch     关闭高亮搜索
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

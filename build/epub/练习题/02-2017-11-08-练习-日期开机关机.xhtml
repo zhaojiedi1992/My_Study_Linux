@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>02-2017-11-08-练习-日期开机关机</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>02-2017-11-08-练习-日期开机关机</h1>
+<div class="section" id="date">
+<h2>练习1-date</h2>
+<p>1 、显示当前时间，格式：2016-06-18 10:20:30</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># date &quot;+%Y-%m-%d %H:%M:%S&quot;</span>
+<span class="m">2017</span>-11-10 <span class="m">09</span>:20:34
+</pre></div>
+</div>
+<p>2 、显示前天是星期几</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># date</span>
+Fri Nov <span class="m">10</span> <span class="m">09</span>:27:41 CST <span class="m">2017</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># date -d  &quot;@&quot;$(echo $(date +%s) -  60*60*24*2 |bc) +%w</span>
+<span class="m">3</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># date -d  &quot;-2 day&quot; +%w</span>
+<span class="m">3</span>
+</pre></div>
+</div>
+<p>3 、设置当前日期为2019-08-07 06:05:10</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># date 080706052019.10</span>
+Wed Aug  <span class="m">7</span> <span class="m">06</span>:05:10 CST <span class="m">2019</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># date</span>
+Wed Aug  <span class="m">7</span> <span class="m">06</span>:05:12 CST <span class="m">2019</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># date &quot;+%Y-%m-%d %H:%M:%S&quot;</span>
+<span class="m">2019</span>-08-07 <span class="m">06</span>:05:42
+</pre></div>
+</div>
+</div>
+<div class="section" id="mingetty-shutdown">
+<h2>练习2-mingetty,shutdown</h2>
+<p>1、在本机字符终端登录时，除显示原有信息外，再显示当前登录终端号，主机名和当前时间
+我们使用man mingetty可以获取到如下的帮助信息。</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-d</span></kbd></dt>
+<dd><p>insert current day (localtime), 插入当前日期</p>
+</dd>
+<dt><kbd><span class="option">-l</span></kbd></dt>
+<dd><p>insert line on which mingetty is running,终端类型</p>
+</dd>
+<dt><kbd><span class="option">-m</span></kbd></dt>
+<dd><p>inserts machine architecture (uname -m),机器架构</p>
+</dd>
+<dt><kbd><span class="option">-n</span></kbd></dt>
+<dd><p>inserts machine’s network node hostname (uname -n),主机名</p>
+</dd>
+<dt><kbd><span class="option">-o</span></kbd></dt>
+<dd><p>inserts domain name,域名</p>
+</dd>
+<dt><kbd><span class="option">-r</span></kbd></dt>
+<dd><p>inserts operating system release (uname -r),版本号</p>
+</dd>
+<dt><kbd><span class="option">-t</span></kbd></dt>
+<dd><p>insert current time (localtime),时间</p>
+</dd>
+<dt><kbd><span class="option">-s</span></kbd></dt>
+<dd><p>inserts operating system name,操作系统名字</p>
+</dd>
+<dt><kbd><span class="option">-u</span></kbd></dt>
+<dd><p>resp.  U  the current number of users which are currently loggedin. 显示登陆用户数量</p>
+</dd>
+<dt><kbd><span class="option">-v</span></kbd></dt>
+<dd><p>inserts operating system version (uname -v).操作系统版本</p>
+</dd>
+</dl>
+<p>修改文件如下即可</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># cat /etc/issue</span>
+CentOS release <span class="m">6</span>.9 <span class="o">(</span>Final<span class="o">)</span>
+Kernel <span class="se">\r</span> on an <span class="se">\m</span>
+current time: <span class="se">\d</span> <span class="se">\t</span>
+hostname : <span class="se">\n</span>
+tty:    <span class="se">\l</span>
+</pre></div>
+</div>
+<p>2、今天18：30自动关机，并提示用户</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># shutdown 18:30 &quot;computer will close&quot;</span>
+
+Broadcast message from root@centos6.magedu.com
+        <span class="o">(</span>/dev/pts/1<span class="o">)</span> at <span class="m">6</span>:28 ...
+
+The system is going down <span class="k">for</span> maintenance in <span class="m">722</span> minutes!
+computer will close
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

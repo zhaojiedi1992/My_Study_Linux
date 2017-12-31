@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>08-2017-11-20</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>08-2017-11-20</h1>
+<p>whatis = man - f</p>
+<p>whereis = man -aw</p>
+<div class="section" id="id2">
+<h2>上节课回顾</h2>
+</div>
+<div class="section" id="id3">
+<h2>本节内容</h2>
+<p>chvt 3： 切换终端</p>
+<p>history -p <cite>cmd</cite>：执行命令跳过记录</p>
+<p>history -s cmd :  伪造历史</p>
+<p>HISTTIMEFORMAT:修改history显示格式</p>
+<p>HISTIGNORE</p>
+<p>HISTCONTROL:</p>
+<p>www.pathname.org/fhs:查看目录命令
+filesystem hierarchy standard
+文件系统层次标准</p>
+<p>字符设备和块设备：
+* 字符：顺序读取。</p>
+<p>echo &quot;- - -&quot; &gt; /sys/class/scsi_host/host0/scan</p>
+<p>自己写一个扫描硬件的脚本在使用脚本目录下scanscsi.sh</p>
+<p>查看设备文件系统和类型
+<a href="#id4"><span class="problematic" id="id5">``</span></a><a href="#id6"><span class="problematic" id="id7">`</span></a>bash
+[<a class="reference external" href="mailto:root&#37;&#52;&#48;centos7">root<span>&#64;</span>centos7</a> sh]# lsblk  -a -o+FSTYPE,TYPE
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT                      FSTYPE  TYPE
+sda      8:0    0  200G  0 disk                                         disk
+├─sda1   8:1    0    1G  0 part /boot                           ext4    part
+├─sda2   8:2    0  128G  0 part [SWAP]                          swap    part
+├─sda3   8:3    0 48.8G  0 part /                               ext4    part
+├─sda4   8:4    0    1K  0 part                                         part
+└─sda5   8:5    0 19.5G  0 part /app                            ext4    part
+sdb      8:16   0    1G  0 disk                                         disk
+sr0     11:0    1  8.1G  0 rom  /run/media/root/CentOS 7 x86_64 iso9660 rom</p>
+<p><a href="#id8"><span class="problematic" id="id9">``</span></a>`
+systemctl start autofs:启动autofs，自动实现挂载。/misc/cd目录</p>
+<p>文件颜色
+* 蓝色： 文件夹
+* 绿色： 可执行
+* 浅蓝色： 链接文件
+* 红色： 压缩文件
+* 灰色： 其他文件
+* 粉色： socket文件
+* 黄色: 管道文件</p>
+<p>/etc/DIR_COLORS 定义目录颜色的。</p>
+<p>pwd -P : 显示真正所在目录</p>
+<p>ctime：关心的是元数据</p>
+<p>mtime：</p>
+<p>atime：访问时间</p>
+<p>超过一天，文件修改。</p>
+<p>如何屏蔽atime</p>
+<p>recursive 递归。</p>
+<p>ls -1: 列显示列表</p>
+<p>ls -X：按照后缀去排序</p>
+<p>f[A-C]:不仅仅是A-C的。</p>
+<p>ls -a  -I &quot;[^.]*&quot;  = l. = ls -a .*</p>
+<p>cp --preserve： 指定保留的属性。</p>
+<p>cp -f : 覆盖其他人的文件</p>
+<p>cp --backup : 给原有文件备份，然后复制。</p>
+<p>mknod:创建特殊文件</p>
+<p>rename &quot;.log&quot; &quot;.log.bak&quot; <a href="#id10"><span class="problematic" id="id11">*</span></a>log</p>
+<p>定义别名完成rm成mv命令，完成数据删除都剪切到指定的目录</p>
+<p>man 7 glob 查看glob相关的配置文件</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>
