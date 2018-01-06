@@ -6,6 +6,7 @@
 
 本节内容
 ----------------------------
+
 ::
 
     [root@centos7 boot]# lsof |grep deleted ： 查看删除文件的信息

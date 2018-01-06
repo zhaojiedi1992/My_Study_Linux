@@ -3,9 +3,11 @@
 
 练习1
 --------------------------------------------
+
 1、 mbr损坏的修复 
 
-.. code-block:: bash
+.. code-block:: text
+
     [root@centos7 ~]$ dd if=/dev/sda of=/app/mbr bs=1 count=512
     512+0 records in
     512+0 records out

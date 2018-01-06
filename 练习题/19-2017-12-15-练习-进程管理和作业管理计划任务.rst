@@ -6,7 +6,7 @@
 
 具体参考：linux进程管理和系统状态常用命令简介_
 
-.. _linux进程管理和系统状态常用命令简介 http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_045_ps.html
+.. _linux进程管理和系统状态常用命令简介: http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_045_ps.html
 
 练习2-作业管理练习
 ----------------------------------------------

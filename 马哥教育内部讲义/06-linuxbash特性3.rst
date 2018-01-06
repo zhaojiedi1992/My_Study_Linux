@@ -33,7 +33,7 @@ bash的配置文件
 
 - 全局配置文件
     - /etc/profile
-    - /etc/profile.d/*.sh
+    - /etc/profile.d/\*.sh
 - 个人的配置文件
     - ~/.bash_profile
     - ~/.bashrc
@@ -116,8 +116,10 @@ bashrc：用于定义命令别名和本地变量
 - file2 -ef file2: 相同inode文件
 - file1 -nt file2:file1比file2新
 - file1 -ot file2:file1比file2旧
+
 6.1.6 组合测试
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 - && 
 - || 
 - -a

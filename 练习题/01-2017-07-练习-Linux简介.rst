@@ -10,11 +10,12 @@
     其实主要区别是halt和poweroff，做没有acpi（高级配置和电源管理接口）的系统上，
     halt只是关闭了os，电源还在工作，你得手动取按一下那个按钮，
     但在现在的系统上，他们实际上都一样了 
+
 重启相关reboot,shudown,init6::
 
     "init 6" 基于一系列/etc/inittab文件，并且每个应用都会有一个相应shutdown脚本。
-    'init 6' 调用一系列shutdown脚本(/etc/rc0.d/K*)来使系统优雅关机;
-    'reboot'并不执行这些过程，
+    "init 6" 调用一系列shutdown脚本(/etc/rc0.d/K*)来使系统优雅关机;
+    "reboot" 并不执行这些过程，
     reboot更是一个kernel级别的命令，不对应用使用shutdown脚本。
     我们应该在通常情况下使用 init 6.
     在出问题的状况下或强制重启时使用reboot.

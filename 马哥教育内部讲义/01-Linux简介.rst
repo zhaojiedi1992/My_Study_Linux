@@ -74,9 +74,9 @@ CLI
   [root@mail ~]# echo $PS1
   [\u@\h \W]\$
 
-详细的PS1设置可以通过`man bash |grep PS1 -A 40`获得
+详细的PS1设置可以通过"man bash \|grep PS1 -A 40"获得
 
-.. code-block:: bash
+.. code-block:: text
 
               \a     an ASCII bell character (07)
               \d     the date in "Weekday Month Date" format (e.g., "Tue May 26")
@@ -154,7 +154,7 @@ shell命令分类
 文件系统特性
 
 - 文件名区分大小写
-- 文件名除了`/`的任意字符都可以，不建议特殊字符
+- 文件名除了'/'的任意字符都可以，不建议特殊字符
 - 文件名长度不能超过255字符
 - 所有`.`开头的文件都是隐藏文件
 
@@ -275,7 +275,7 @@ LINUX命令获取帮助方式
 1.6.1 date命令使用
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: bash
+.. code-block:: text
 
   NAME
         date - print or set the system date and time 打印或者设置日期
@@ -519,7 +519,7 @@ date显示和修改日期
 1.6.3 ls
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: bash
+.. code-block:: text
 
   NAME
         ls - list directory contents   列出目录的内容
