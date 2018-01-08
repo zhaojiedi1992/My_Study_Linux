@@ -137,7 +137,7 @@ shell命令分类
 内建命令 
   由shell自带。
 外部命令
-  某路径下对i用那个的可执行程序文件。
+  某路径下的可执行程序文件。
 
 查看命令类型
 
@@ -156,7 +156,7 @@ shell命令分类
 - 文件名区分大小写
 - 文件名除了'/'的任意字符都可以，不建议特殊字符
 - 文件名长度不能超过255字符
-- 所有`.`开头的文件都是隐藏文件
+- 所有'.'开头的文件都是隐藏文件或者目录
 
 路径分类：
 
@@ -229,15 +229,18 @@ LINUX命令获取帮助方式
       with each displayed history entry.  No time stamps are printed otherwise.
 
 
-1.5.3查询命令的所属章节
+1.5.3 查询命令的所属章节
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
-  [root@mail user1]# whatis ls
-  ls (1)               - list directory contents
-  ls (1p)              - list directory contents
-  [root@mail user1]# man 1 ls
+        [root@centos74 test]$ man -f ls
+        ls (1)               - list directory contents
+        ls (1p)              - list directory contents
+        [root@mail user1]# whatis ls
+        ls (1)               - list directory contents
+        ls (1p)              - list directory contents
+        [root@mail user1]# man 1 ls
 
 1.5.4 命令的分类
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -266,8 +269,8 @@ LINUX命令获取帮助方式
 * sysnopsis: 使用格式
 * examples： 使用样例
 * notes:相关的注意事项
-* files：先关的配置文件
-* see also：先关的参考
+* files：相关的配置文件
+* see also：相关的参考
 
 1.6 练习
 -------------------------------------------------------------------------- 
@@ -728,27 +731,28 @@ ls -l列出的信息说明
 
 .. code-block:: bash
 
-  [root@mail ~]# ls -l 
-  total 16
-  -rw-r--r--  1 root root  154 Sep 25 19:34 adduserbat.sh
-  -：文件类型
-  rw-r--r--：权限
-  1： 文件被硬连接的次数
-  root:文件的owner
-  root:文件的group
-  154:文件的大小
-  Sep 25 19:34： 文件最近修改的时间
-  adduserbat.sh： 文件名字
+        [root@mail ~]# ls -l 
+        total 16
+        -rw-r--r--.  1 root root  154 Sep 25 19:34 adduserbat.sh
+        -：文件类型
+        rw-r--r--：权限
+        .：这个位置有3个值，".","+","-"三个值。
+        1： 文件被硬连接的次数
+        root:文件的owner
+        root:文件的group
+        154:文件的大小
+        Sep 25 19:34： 文件最近修改的时间
+        adduserbat.sh： 文件名字
 
 文件类型有一下几类
 
-- -：普通文件
-- d:目录文件
-- b:块设备文件
-- c:字符设备文件
-- s:socket文件
-- p:管道文件
-- l：连接文件
+- \-            普通文件
+- d             目录文件
+- b             块设备文件
+- c             字符设备文件
+- s             socket文件
+- p             管道文件
+- l             连接文件
 
 1.6.4 cat
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

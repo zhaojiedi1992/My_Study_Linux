@@ -163,7 +163,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../练习题/30-2018-01-02-练习systemd.html">30-2018-01-02-练习systemd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/31-2018-01-03-练习加密.html">31-2018-01-03-练习加密</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/32-2018-01-05-练习ssh.html">32-2018-01-05-练习ssh</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/33-2018-01-06-练习sudotcpwarp.html">33-2018-01-06-练习sudotcpwarp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/33-2018-01-06-练习sudotcpwrap.html">33-2018-01-06-练习sudotcpwarp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/34-2018-01-08-练习tcpwrap,rsync.html">34-2018-01-08-练习tcpwrap,rsync</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/35-2018-01-09-练习自动化安装.html">35-2018-01-09-练习自动化安装</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
@@ -196,6 +198,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/26-2018-01-02.html">26-2018-01-02</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/27-2018-01-03.html">27-2018-01-03</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/28-2018-01-05.html">28-2018-01-05</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/29-2018-01-08.html">29-2018-01-08</a></li>
 </ul>
 
             
@@ -272,10 +275,7 @@
 <div class="section" id="glob">
 <h2>4.2 glob通配<a class="headerlink" href="#glob" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><ul class="first">
-<li>代表任意长度的任意字符</li>
-</ul>
-</li>
+<li>* 代表任意长度的任意字符</li>
 <li>？： 表示任意单个字符</li>
 <li>[]:匹配指定范围的任意的单个字符</li>
 <li>[^]:取反</li>
@@ -405,7 +405,7 @@ PROC                    /PROC                   PROC    DEFAULTS        <span cl
 <td>只显示重复的行</td></tr>
 <tr><td class="option-group">
 <kbd><span class="option">-u</span></kbd></td>
-<td>值显示不重复的行</td></tr>
+<td>只显示不重复的行</td></tr>
 </tbody>
 </table>
 </div>

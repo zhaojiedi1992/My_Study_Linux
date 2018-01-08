@@ -173,7 +173,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../练习题/30-2018-01-02-练习systemd.html">30-2018-01-02-练习systemd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/31-2018-01-03-练习加密.html">31-2018-01-03-练习加密</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/32-2018-01-05-练习ssh.html">32-2018-01-05-练习ssh</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/33-2018-01-06-练习sudotcpwarp.html">33-2018-01-06-练习sudotcpwarp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/33-2018-01-06-练习sudotcpwrap.html">33-2018-01-06-练习sudotcpwarp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/34-2018-01-08-练习tcpwrap,rsync.html">34-2018-01-08-练习tcpwrap,rsync</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/35-2018-01-09-练习自动化安装.html">35-2018-01-09-练习自动化安装</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
@@ -206,6 +208,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/26-2018-01-02.html">26-2018-01-02</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/27-2018-01-03.html">27-2018-01-03</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/28-2018-01-05.html">28-2018-01-05</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/29-2018-01-08.html">29-2018-01-08</a></li>
 </ul>
 
             
@@ -273,14 +276,16 @@
 <h1>05 linux用户和组管理<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
 <p>用户分类</p>
 <ul class="simple">
-<li>系统用户:1-499(centos6),1-999(centos7)</li>
+<li>系统用户:  1-499(centos6),1-999(centos7)</li>
 <li>登陆用户： 500+（centos6）,1000+(centos7)</li>
 </ul>
 <div class="section" id="id1">
 <h2>5.1 主要配置文件分析<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="section" id="etc-passwd">
 <h3>5.1.1 /etc/passwd<a class="headerlink" href="#etc-passwd" title="永久链接至标题">¶</a></h3>
-<p>name:password:uid:gid:geocos:homedir:shell</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>name:password:uid:gid:geocos:homedir:shell
+</pre></div>
+</div>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># head -1 /etc/passwd</span>
 root:x:0:0:root:/root:/bin/bash
 </pre></div>
@@ -288,7 +293,9 @@ root:x:0:0:root:/root:/bin/bash
 </div>
 <div class="section" id="etc-group">
 <h3>5.1.2 /etc/group<a class="headerlink" href="#etc-group" title="永久链接至标题">¶</a></h3>
-<p>groupname:password:gid:userlist</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>groupname:password:gid:userlist
+</pre></div>
+</div>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># head -1 /etc/group</span>
 root:x:0:
 </pre></div>
@@ -296,7 +303,9 @@ root:x:0:
 </div>
 <div class="section" id="etc-shadow">
 <h3>5.1.2 /etc/shadow<a class="headerlink" href="#etc-shadow" title="永久链接至标题">¶</a></h3>
-<p>name:password: date of last password change : minimum password age : maximum password age : password warning period: password warning period: password inactivity period</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>name:password: date of last password change : minimum password age : maximum password age : password warning period: password warning period: password inactivity period
+</pre></div>
+</div>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># tail -n 1 /etc/shadow</span>
 zhaojiedi:<span class="nv">$6$rZ5h80aV</span>/7Sci.YB<span class="nv">$D25I</span>/MTmTHyo.2XhUNSiJab1BU/qf1vgpdZ3c0JBgzSDMG8tKzyUsPk..xJ9a31a17kGctcgm0OBIUTQGf7Uv0:17477:0:99999:7:::
 </pre></div>
@@ -340,6 +349,9 @@ zhaojiedi:<span class="nv">$6$rZ5h80aV</span>/7Sci.YB<span class="nv">$D25I</spa
 <tr><td class="option-group">
 <kbd><span class="option">-d</span></kbd></td>
 <td>用户的家目录</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span></kbd></td>
+<td>系统用户</td></tr>
 </tbody>
 </table>
 </div>
@@ -380,17 +392,45 @@ root
 </div>
 <div class="section" id="usermod">
 <h3>5.2.4 usermod<a class="headerlink" href="#usermod" title="永久链接至标题">¶</a></h3>
-<p>-g:
--G:
--u:
--s:
--c:
--d:
--l
--L
--U
--e              指定过期日期
--f              指定非活动期限</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-g</span></kbd></td>
+<td>主组</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-G</span></kbd></td>
+<td>附加组</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-u</span></kbd></td>
+<td>用户名</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-s</span></kbd></td>
+<td>shell</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c</span></kbd></td>
+<td>注释</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span></kbd></td>
+<td>家目录</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-l</span></kbd></td>
+<td>新的登陆名</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-L</span></kbd></td>
+<td>锁定</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-U</span></kbd></td>
+<td>解锁</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-e</span></kbd></td>
+<td>指定过期日期</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-f</span></kbd></td>
+<td>指定非活动期限</td></tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="passwd">
 <h3>5.2.5 passwd<a class="headerlink" href="#passwd" title="永久链接至标题">¶</a></h3>
@@ -504,14 +544,14 @@ root
 <td>查看用户可以执行的sudo</td></tr>
 <tr><td class="option-group">
 <kbd><span class="option">-k</span></kbd></td>
-<td>清楚记一下的令牌</td></tr>
+<td>清除下的令牌时间戳</td></tr>
 <tr><td class="option-group">
 <kbd><span class="option">-u</span></kbd></td>
 <td>以指定用户运行命令</td></tr>
 </tbody>
 </table>
 <p>配置文件是/etc/sudoers</p>
-<p>账号 登陆这来源主机名 （可切换的身份） 命令</p>
+<p>账号 登陆这来源主机名=可切换的身份） 命令</p>
 <p>注意事项</p>
 <ul class="simple">
 <li>ALL大写</li>

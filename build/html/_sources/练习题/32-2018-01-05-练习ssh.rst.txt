@@ -6,6 +6,11 @@
 
 1、复制centos7下目录的/etc/sysconfig 到centos6的/app目录下去。复制centos6对应目录到centos7 。复制保留权限且静默。
 
+.. code-block:: bash
+
+    scp -aq /etc/sysconfig 172.18.46.6:/app/
+    scp -aq /etc/sysconfig 172.18.46.7:/app/
+
 2、熟练掌握pssh命令使用
 
 .. code-block:: text
@@ -120,7 +125,33 @@
 
 1、监控系统重要文件。
 
+.. code-block:: bash
 
+    [root@centos74 aide]$ yum install aide
+    [root@centos74 aide]$ vim /etc/aide.conf 
+    这行后面的都删除， 我这里值关注boot目录的变换情况
+    /boot/   CONTENT_EX
+    [root@centos74 boot]$ touch t1 >>/boot/t1.txt
+    [root@centos74 boot]$ mkdir t2
+    [root@centos74 boot]$ cd /var/lib/aide/
+    [root@centos74 aide]$ mv aide.db.new.gz aide.db.gz
+    [root@centos74 aide]$ aide --check
+    AIDE 0.15.1 found differences between database and filesystem!!
+    Start timestamp: 2018-01-08 18:45:46
+
+    Summary:
+    Total number of files:	321
+    Added files:			2
+    Removed files:		0
+    Changed files:		0
+
+
+    ---------------------------------------------------
+    Added files:
+    ---------------------------------------------------
+
+    added: /boot/t1.txt
+    added: /boot/t2
 
 
 

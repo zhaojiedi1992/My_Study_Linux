@@ -100,7 +100,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id5">1.5 基础命令学习</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#hash">1.5.1 hash命令学习</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#history">1.5.2 history命令学习</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">1.5.3查询命令的所属章节</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">1.5.3 查询命令的所属章节</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id7">1.5.4 命令的分类</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#man">1.5.5 man文档的配置文件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id8">1.5.6 man手册段落含义</a></li>
@@ -175,7 +175,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../练习题/30-2018-01-02-练习systemd.html">30-2018-01-02-练习systemd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/31-2018-01-03-练习加密.html">31-2018-01-03-练习加密</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/32-2018-01-05-练习ssh.html">32-2018-01-05-练习ssh</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/33-2018-01-06-练习sudotcpwarp.html">33-2018-01-06-练习sudotcpwarp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/33-2018-01-06-练习sudotcpwrap.html">33-2018-01-06-练习sudotcpwarp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/34-2018-01-08-练习tcpwrap,rsync.html">34-2018-01-08-练习tcpwrap,rsync</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/35-2018-01-09-练习自动化安装.html">35-2018-01-09-练习自动化安装</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
@@ -208,6 +210,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/26-2018-01-02.html">26-2018-01-02</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/27-2018-01-03.html">27-2018-01-03</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/28-2018-01-05.html">28-2018-01-05</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/29-2018-01-08.html">29-2018-01-08</a></li>
 </ul>
 
             
@@ -390,7 +393,7 @@ ls: /usr/bin/ls /usr/share/man/man1/ls.1.gz /usr/share/man/man1p/ls.1p.gz
 <dt>内建命令</dt>
 <dd>由shell自带。</dd>
 <dt>外部命令</dt>
-<dd>某路径下对i用那个的可执行程序文件。</dd>
+<dd>某路径下的可执行程序文件。</dd>
 </dl>
 <p>查看命令类型</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@mail user1<span class="o">]</span><span class="c1"># type cd</span>
@@ -407,7 +410,7 @@ service is /usr/sbin/service
 <li>文件名区分大小写</li>
 <li>文件名除了'/'的任意字符都可以，不建议特殊字符</li>
 <li>文件名长度不能超过255字符</li>
-<li>所有`.`开头的文件都是隐藏文件</li>
+<li>所有'.'开头的文件都是隐藏文件或者目录</li>
 </ul>
 <p>路径分类：</p>
 <ul class="simple">
@@ -477,8 +480,11 @@ history: <span class="nb">history</span> <span class="o">[</span>-c<span class="
 </div>
 </div>
 <div class="section" id="id6">
-<h3>1.5.3查询命令的所属章节<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@mail user1<span class="o">]</span><span class="c1"># whatis ls</span>
+<h3>1.5.3 查询命令的所属章节<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ man -f ls
+ls <span class="o">(</span><span class="m">1</span><span class="o">)</span>               - list directory contents
+ls <span class="o">(</span>1p<span class="o">)</span>              - list directory contents
+<span class="o">[</span>root@mail user1<span class="o">]</span><span class="c1"># whatis ls</span>
 ls <span class="o">(</span><span class="m">1</span><span class="o">)</span>               - list directory contents
 ls <span class="o">(</span>1p<span class="o">)</span>              - list directory contents
 <span class="o">[</span>root@mail user1<span class="o">]</span><span class="c1"># man 1 ls</span>
@@ -514,8 +520,8 @@ ls <span class="o">(</span>1p<span class="o">)</span>              - list direct
 <li>sysnopsis: 使用格式</li>
 <li>examples： 使用样例</li>
 <li>notes:相关的注意事项</li>
-<li>files：先关的配置文件</li>
-<li>see also：先关的参考</li>
+<li>files：相关的配置文件</li>
+<li>see also：相关的参考</li>
 </ul>
 </div>
 </div>
@@ -964,9 +970,10 @@ DESCRIPTION
 <p>ls -l列出的信息说明</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@mail ~<span class="o">]</span><span class="c1"># ls -l</span>
 total <span class="m">16</span>
--rw-r--r--  <span class="m">1</span> root root  <span class="m">154</span> Sep <span class="m">25</span> <span class="m">19</span>:34 adduserbat.sh
+-rw-r--r--.  <span class="m">1</span> root root  <span class="m">154</span> Sep <span class="m">25</span> <span class="m">19</span>:34 adduserbat.sh
 -：文件类型
 rw-r--r--：权限
+.：这个位置有3个值，<span class="s2">&quot;.&quot;</span>,<span class="s2">&quot;+&quot;</span>,<span class="s2">&quot;-&quot;</span>三个值。
 <span class="m">1</span>： 文件被硬连接的次数
 root:文件的owner
 root:文件的group
@@ -977,13 +984,13 @@ adduserbat.sh： 文件名字
 </div>
 <p>文件类型有一下几类</p>
 <ul class="simple">
-<li>-：普通文件</li>
-<li>d:目录文件</li>
-<li>b:块设备文件</li>
-<li>c:字符设备文件</li>
-<li>s:socket文件</li>
-<li>p:管道文件</li>
-<li>l：连接文件</li>
+<li>-            普通文件</li>
+<li>d             目录文件</li>
+<li>b             块设备文件</li>
+<li>c             字符设备文件</li>
+<li>s             socket文件</li>
+<li>p             管道文件</li>
+<li>l             连接文件</li>
 </ul>
 </div>
 <div class="section" id="cat">

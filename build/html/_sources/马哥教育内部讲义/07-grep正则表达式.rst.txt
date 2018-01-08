@@ -11,6 +11,9 @@ grep:global search regula expression and print out the line.
 - 基本的
 - 扩展的
 
+grep学习笔记_
+
+.. _grep学习笔记: http://my-study-grep.readthedocs.io/
 7.1 grep语法
 ------------------------------------------------------
 
@@ -33,8 +36,8 @@ grep:global search regula expression and print out the line.
 .. code-block:: bash
 
     .                   任意字符一次
-    []                  几何中任一个字符
-    [^]                 几何之外任何一个
+    []                  集合中任一个字符
+    [^]                 几集合之外任何一个
     [:alpha:]           字母
     [:alnum:]           字母数字
     [:digit:]           数字

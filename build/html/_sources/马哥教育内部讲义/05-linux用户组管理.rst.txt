@@ -3,8 +3,8 @@
 
 用户分类
 
-- 系统用户:1-499(centos6),1-999(centos7)
-- 登陆用户： 500+（centos6）,1000+(centos7)
+-   系统用户:  1-499(centos6),1-999(centos7)
+-   登陆用户： 500+（centos6）,1000+(centos7)
 
 5.1 主要配置文件分析
 ---------------------------------------------------
@@ -12,7 +12,9 @@
 5.1.1 /etc/passwd
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-name:password:uid:gid:geocos:homedir:shell
+.. code-block:: text
+
+    name:password:uid:gid:geocos:homedir:shell
 
 .. code-block:: bash
 
@@ -22,7 +24,9 @@ name:password:uid:gid:geocos:homedir:shell
 5.1.2 /etc/group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-groupname:password:gid:userlist
+.. code-block:: text
+
+    groupname:password:gid:userlist
 
 .. code-block:: bash
 
@@ -32,7 +36,9 @@ groupname:password:gid:userlist
 5.1.2 /etc/shadow
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-name:password: date of last password change : minimum password age : maximum password age : password warning period: password warning period: password inactivity period
+.. code-block:: text
+
+    name:password: date of last password change : minimum password age : maximum password age : password warning period: password warning period: password inactivity period
 
 .. code-block:: bash
 
@@ -61,6 +67,7 @@ name:password: date of last password change : minimum password age : maximum pas
 -c              注释信息
 -s              shell类型
 -d              用户的家目录
+-r              系统用户
 
 5.2.2 groupadd
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -92,28 +99,28 @@ id
 5.2.4 usermod
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--g:             
--G:                 
--u:
--s:
--c:
--d:
--l
--L
--U 
+-g              主组        
+-G              附加组
+-u              用户名
+-s              shell
+-c              注释
+-d              家目录
+-l              新的登陆名
+-L              锁定
+-U              解锁
 -e              指定过期日期
 -f              指定非活动期限
 
 5.2.5 passwd
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--l          锁定用户
--u          解锁
--n          最短期限
--x          最大期限
--w          警告期限
--i          非活动期限
---stdin     接受终端输入
+-l              锁定用户
+-u              解锁
+-n              最短期限
+-x              最大期限
+-w              警告期限
+-i              非活动期限
+--stdin         接受终端输入
 
 5.2.6 userdel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -152,12 +159,12 @@ id
 -------------------------------------------------------
 
 -l              查看用户可以执行的sudo
--k              清楚记一下的令牌
+-k              清除下的令牌时间戳
 -u              以指定用户运行命令
 
 配置文件是/etc/sudoers
 
-账号 登陆这来源主机名 （可切换的身份） 命令
+账号 登陆这来源主机名=可切换的身份） 命令
 
 注意事项
 
