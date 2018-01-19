@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>02 LINUX文件系统 &mdash; my_study_linux v0.1 文档</title>
+  <title>LINUX文件系统 &mdash; my_study_linux v0.1 文档</title>
   
 
   
@@ -35,9 +35,7 @@
         <link rel="index" title="索引"
               href="../genindex.html"/>
         <link rel="search" title="搜索" href="../search.html"/>
-    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
-        <link rel="next" title="03 LINUX上bash的基础特性(一）" href="03-Bash特性.html"/>
-        <link rel="prev" title="01 LINUX简介" href="01-Linux简介.html"/> 
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -91,105 +89,25 @@
             
             
               <p class="caption"><span class="caption-text">马哥教育内部讲义</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="01-Linux简介.html">01 LINUX简介</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">02 LINUX文件系统</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">2.1 linux根简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">2.2 应用程序主要组成部分</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="03-Bash特性.html">03 LINUX上bash的基础特性(一）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-bash特性2.html">04 LINUX上bash的基础特性(二)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05-linux用户组管理.html">05 linux用户和组管理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-linuxbash特性3.html">06 Linux上bash的基础特性（三）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-grep正则表达式.html">07 grep正则表达式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08-Linux文件查找.html">08 Linux文件查找</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-Vim编辑器.html">09 Vim编辑器</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10-Linux磁盘管理.html">10 Linux磁盘管理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11-Linux文件系统上的权限.html">11 Linux文件系统上的权限</a></li>
-<li class="toctree-l1"><a class="reference internal" href="12-RAID.html">12 RAID</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13-LVM.html">13 LVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14-Btrfs文件系统.html">14 Btrfs文件系统</a></li>
-<li class="toctree-l1"><a class="reference internal" href="15-解压缩.html">15 解压缩</a></li>
-<li class="toctree-l1"><a class="reference internal" href="16-Linux系统程序包管理.html">16 Linux系统程序包管理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="17-Linux系统网络属性管理.html">17 Linux系统网络属性管理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="19-Linux计划任务.html">19 Linux计划任务</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20-Centos系统启动流程与Grub.html">20 Centos系统启动流程与Grub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="21-Linux Kernel.html">21 Linux Kernel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="22-文本处理工具之sed,awk.html">22文本处理工具之sed,awk</a></li>
-<li class="toctree-l1"><a class="reference internal" href="23-Openssl.html">23 Openssl</a></li>
-<li class="toctree-l1"><a class="reference internal" href="24-Nssitch、pam.html">22 文本处理工具之sed,awk</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">1. 基础类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id2">2. 服务类</a></li>
 </ul>
 <p class="caption"><span class="caption-text">练习题</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/01-2017-07-练习-Linux简介.html">01-2017-07-练习-Linux简介练习</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/02-2017-11-08-练习-日期开机关机.html">02-2017-11-08-练习-日期开机关机</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/03-2017-11-09-练习-glob.html">03-2017-11-09-练习-glob</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/04-2017-11-09-练习-目录相关.html">04-2017-11-09-练习-目录相关</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/05-2017-11-09-练习-head-tr-管道.html">05-2017-11-09-练习-head-tr-管道</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/06-2017-11-16-练习-用户管理.html">06-2017-11-16-练习-用户管理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/07-2017-11-10-练习-wc-useradd.html">07-2017-11-10-练习-wc-useradd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/08-2017-11-10-练习-grep-文本.html">08-2017-11-10-练习-grep-文本</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/09-2017-11-13-练习-find.html">09-2017-11-13-练习-find</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/10-2017-11-14-练习-vim.html">10-2017-11-14-练习-vim</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/11-2017-11-15-练习-mount.html">11-2017-11-15-练习-mount</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/12-2017-11-23-联系-bash.html">12-2017-11-23-练习-bash</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/13-2017-11-25-练习-压缩.html">13-2017-11-25-练习-压缩</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/14-2017-11-28-练习-sed.html">14-2017-11-28-练习-sed</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/15-2017-11-29-练习-rpm.html">15-2017-11-28-练习-rpm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/16-2017-12-01-练习-磁盘管理.html">16-2017-12-01-练习-磁盘管理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/17-2017-12-03-练习-高级磁盘管理.html">17-2017-12-03-练习-高级磁盘管理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/18-2017-12-13-练习-网络.html">18-2017-12-13-练习-网络</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/19-2017-12-15-练习-进程管理和作业管理计划任务.html">19-2017-12-15-练习-进程管理和作业管理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/20-2017-12-16-练习-ip-nmcli.html">2017-12-16-练习-ip-nmcli</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/21-2017-12-16-练习-网络其他.html">21-2017-12-16-练习-网络其他</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/22-2017-12-18-练习-脚本进阶循环.html">22-2017-12-18-练习-脚本进阶循环</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/23-2017-12-22-练习-脚本进阶服务.html">23-2017-12-18-练习-脚本进阶服务</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/24-2017-12-23-练习-常用启动故障修复.html">24-2017-12-23-练习-常用启动故障修复</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/25-2017-12-26-练习-脚本进阶3.html">25-2017-12-26-练习-脚本进阶3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/26-2017-12-25-练习-常用启动故障修复2.html">26-2017-12-23-练习-常用启动故障修复2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/27-2017-12-27-练习-自定linux和编译内核.html">27-2017-12-27-练习-自定linux和编译内核</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/28-2017-12-28-练习selinux.html">28-2017-12-28-练习selinux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/29-2017-12-28-练习awk.html">29-2017-12-28-练习awk</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/30-2018-01-02-练习systemd.html">30-2018-01-02-练习systemd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/31-2018-01-03-练习加密.html">31-2018-01-03-练习加密</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/32-2018-01-05-练习ssh.html">32-2018-01-05-练习ssh</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/33-2018-01-06-练习sudotcpwrap.html">33-2018-01-06-练习sudotcpwarp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/34-2018-01-08-练习tcpwrap,rsync.html">34-2018-01-08-练习tcpwrap,rsync</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/35-2018-01-09-练习自动化安装.html">35-2018-01-09-练习自动化安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html">1. 练习题11月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id2">2. 练习题1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id3">3. 练习题2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id4">4. 练习题3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id5">5. 练习题4月</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/00-2017-11-00.html">08-2017-11-20</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/01-2017-11-06.html">08-2017-11-20</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/02-2017-11-07.html">08-2017-11-20</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/03-2017-11-08.html">03-2017-11-08</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/04-2017-11-10.html">08-2017-11-20</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/05-2017-11-13.html">05-2017-11-13</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/06-2017-11-15.html">06-2017-11-15</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/07-2017-11-17.html">07-2017-11-17</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/08-2017-11-20.html">08-2017-11-20</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/09-2017-11-22.html">09-2017-11-22</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/10-2017-11-24.html">10-2017-11-24</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/11-2017-11-27.html">11-2017-11-27</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/12-2017-11-29.html">12-2017-11-29</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/13-2017-12-01.html">13-2017-12-01</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/14-2017-12-04.html">14-2017-12-04</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/15-2017-12-06.html">15-2017-12-06</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/16-2017-12-11.html">16-2017-12-11</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/17-2017-12-12.html">17-2017-12-12</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/18-2017-12-14.html">18-2017-12-14</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/19-2017-12-15.html">19-2017-12-05</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/20-2017-12-18.html">19-2017-12-05</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/21-2017-12-20.html">21-2017-12-20</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/22-2017-12-22.html">22-2017-12-22</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/23-2017-12-25.html">23-2017-12-25</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/24-2017-12-27.html">24-2017-12-27</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/25-2017-12-29.html">25-2017-12-29</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/26-2018-01-02.html">26-2018-01-02</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/27-2018-01-03.html">27-2018-01-03</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/28-2018-01-05.html">28-2018-01-05</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/29-2018-01-08.html">29-2018-01-08</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html">1. 课堂笔记11月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id2">2. 课堂笔记1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id3">3. 课堂笔记2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id4">4. 课堂笔记3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id5">5. 课堂笔记4月</a></li>
 </ul>
 
             
@@ -234,7 +152,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>02 LINUX文件系统</li>
+      <li>LINUX文件系统</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -254,11 +172,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="linux">
-<h1>02 LINUX文件系统<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
+<h1>LINUX文件系统<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
 <p>根文件系统： linux识别的第一个与根直接关联的文件系统。</p>
 <p>FHS:LSB组织定义的LINUX发行版基础目录命名法则及功用规定。filesystem hierarchy standard，文件系统层级标准</p>
 <div class="section" id="id1">
-<h2>2.1 linux根简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>linux根简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li>/boot: 系统引导启动目录</li>
 <li>/bin:系统相关的二进制程序</li>
@@ -289,7 +207,7 @@
 </ul>
 </div>
 <div class="section" id="id2">
-<h2>2.2 应用程序主要组成部分<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>应用程序主要组成部分<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li>二进制程序: /bin,/sbin,/usr/bin,/usr/sbin,/usr/local/bin,/usr/local/sbin</li>
 <li>库文件:/lib,/lib64,/usr/lib,/usr/lib64,/usr/local/lib,/usr/local/lib64</li>
@@ -306,15 +224,6 @@
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="03-Bash特性.html" class="btn btn-neutral float-right" title="03 LINUX上bash的基础特性(一）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="01-Linux简介.html" class="btn btn-neutral" title="01 LINUX简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

@@ -1,0 +1,478 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11. 2017-11-16-练习-用户管理 &mdash; my_study_linux v0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
+        <link rel="up" title="练习题11月" href="index.html"/>
+        <link rel="next" title="12. 2017-11-23-练习-bash" href="2017-11-23-联系-bash.html"/>
+        <link rel="prev" title="10. 2017-11-15-练习-mount" href="2017-11-15-练习-mount.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> my_study_linux
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">马哥教育内部讲义</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../马哥教育内部讲义/index.html">基础类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../马哥教育内部讲义/index.html#id2">服务类</a></li>
+</ul>
+<p class="caption"><span class="caption-text">练习题</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">练习题11月</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2017-11-07-练习-Linux简介.html">1. 2017-07-练习-Linux简介练习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-08-练习-日期开机关机.html">2. 2017-11-08-练习-日期开机关机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-09-练习-glob.html">3. 2017-11-09-练习-glob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-09-练习-head-tr-管道.html">4. 2017-11-09-练习-head-tr-管道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-09-练习-目录相关.html">5. 2017-11-09-练习-目录相关</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-10-练习-grep-文本.html">6. 2017-11-10-练习-grep-文本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-10-练习-wc-useradd.html">7. 2017-11-10-练习-wc-useradd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-13-练习-find.html">8. 2017-11-13-练习-find</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-14-练习-vim.html">9. 2017-11-14-练习-vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-15-练习-mount.html">10. 2017-11-15-练习-mount</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">11. 2017-11-16-练习-用户管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#useradd-usermod">11.1. 练习1-useradd,usermod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">11.2. 练习2-恢复用户家目录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#useradd-passwd">11.3. 练习3-useradd,passwd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">11.4. 练习4-批量添加用户和修改密码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">11.5. 练习5-权限判断</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getfacl-setfacl-chmod">11.6. 练习6-getfacl,setfacl,chmod</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-23-联系-bash.html">12. 2017-11-23-练习-bash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-25-练习-压缩.html">13. 2017-11-25-练习-压缩</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-28-练习-sed.html">14. 2017-11-28-练习-sed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-29-练习-rpm.html">15. 2017-11-28-练习-rpm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id2">练习题1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id3">练习题2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id4">练习题3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id5">练习题4月</a></li>
+</ul>
+<p class="caption"><span class="caption-text">课堂笔记</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html">课堂笔记11月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id2">课堂笔记1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id3">课堂笔记2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id4">课堂笔记3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id5">课堂笔记4月</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">my_study_linux</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">练习题11月</a> &raquo;</li>
+        
+      <li>11. 2017-11-16-练习-用户管理</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/练习题/2017-11-16-练习-用户管理.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>11. 2017-11-16-练习-用户管理<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="useradd-usermod">
+<h2>11.1. 练习1-useradd,usermod<a class="headerlink" href="#useradd-usermod" title="永久链接至标题">¶</a></h2>
+<p>1、创建用户gentoo，附加组为distro和linux,默认shell为/bin/csh,注释信息&quot;gentoo distribution&quot;</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># useradd -G distro,linux -s /bin/csh -c &quot;gentoo distribution&quot; gentoo</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>11.2. 练习2-恢复用户家目录<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>1、创建好的用户wang,用户家目录被删除的，如何还原。</p>
+<p>模拟一个破坏环境</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># useradd wang                          #创建用户</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># echo &quot;oracle&quot; | passwd --stdin wang   #设置密码</span>
+Changing password <span class="k">for</span> user wang.
+passwd: all authentication tokens updated successfully.
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># rm -rf /home/wang                     #模拟恶意删除家目录</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># ll /home/wang                         #查看</span>
+ls: cannot access /home/wang: No such file or directory
+<span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># su - test01                        #切换到普通用户</span>
+<span class="o">[</span>test01@centos6 ~<span class="o">]</span>$ su - wang                           <span class="c1">#从普通用户切换到wang</span>
+Password:
+su: warning: cannot change directory to /home/wang: No such file or directory
+-bash-4.1$                                                <span class="c1">#这里家目录没有就是-bash-4.1的样子了。</span>
+</pre></div>
+</div>
+<p>修复过程</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># cp -r /etc/skel /home/wang   #复制模板文件夹</span>
+<span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># ll</span>
+total <span class="m">28</span>
+drwx------.  <span class="m">5</span> git       git       <span class="m">4096</span> Nov  <span class="m">9</span> <span class="m">23</span>:51 git
+drwx------.  <span class="m">4</span> nginx     nginx     <span class="m">4096</span> Nov <span class="m">11</span> <span class="m">15</span>:39 nginx
+drwx------.  <span class="m">4</span> <span class="nb">test</span>      <span class="nb">test</span>      <span class="m">4096</span> Nov <span class="m">11</span> <span class="m">15</span>:04 <span class="nb">test</span>
+drwx------.  <span class="m">4</span> test01    test01    <span class="m">4096</span> Nov <span class="m">11</span> <span class="m">15</span>:04 test01
+drwx------.  <span class="m">4</span> test03    test03    <span class="m">4096</span> Nov <span class="m">11</span> <span class="m">15</span>:33 test03
+drwxr-xr-x.  <span class="m">4</span> root      root      <span class="m">4096</span> Nov <span class="m">11</span> <span class="m">16</span>:05 wang
+drwx------. <span class="m">25</span> zhaojiedi zhaojiedi <span class="m">4096</span> Nov <span class="m">11</span> <span class="m">15</span>:03 zhaojiedi
+<span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># chown -R  wang:wang wang #修改所有者和组</span>
+<span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># chmod  700 wang        #修改权限700</span>
+<span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># ll                       #检查下权限和所有者</span>
+total <span class="m">28</span>
+drwx------.  <span class="m">5</span> git       git       <span class="m">4096</span> Nov  <span class="m">9</span> <span class="m">23</span>:51 git
+drwx------.  <span class="m">4</span> nginx     nginx     <span class="m">4096</span> Nov <span class="m">11</span> <span class="m">15</span>:39 nginx
+drwx------.  <span class="m">4</span> <span class="nb">test</span>      <span class="nb">test</span>      <span class="m">4096</span> Nov <span class="m">11</span> <span class="m">15</span>:04 <span class="nb">test</span>
+drwx------.  <span class="m">4</span> test01    test01    <span class="m">4096</span> Nov <span class="m">11</span> <span class="m">15</span>:04 test01
+drwx------.  <span class="m">4</span> test03    test03    <span class="m">4096</span> Nov <span class="m">11</span> <span class="m">15</span>:33 test03
+drwx------.  <span class="m">4</span> wang      wang      <span class="m">4096</span> Nov <span class="m">11</span> <span class="m">16</span>:05 wang
+drwx------. <span class="m">25</span> zhaojiedi zhaojiedi <span class="m">4096</span> Nov <span class="m">11</span> <span class="m">15</span>:03 zhaojiedi
+<span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># su - test01             #切换到普通用户</span>
+<span class="o">[</span>test01@centos6 ~<span class="o">]</span>$ su - wang                <span class="c1">#切换到wang用户</span>
+Password:
+<span class="o">[</span>wang@centos6 ~<span class="o">]</span>$ l.                         <span class="c1">#查看文件</span>
+.  ..  .bash_logout  .bash_profile  .bashrc  .emacs  .gnome2  .mozilla
+</pre></div>
+</div>
+</div>
+<div class="section" id="useradd-passwd">
+<h2>11.3. 练习3-useradd,passwd<a class="headerlink" href="#useradd-passwd" title="永久链接至标题">¶</a></h2>
+<p>1 、创建用户gentoo ，附加组为bin 和root ，默认shell为 为/bin/csh ，注释信息为&quot;Gentoo Distribution&quot;</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># useradd -G bin,root -s /bin/csh -c &quot;Gentoo Distribution&quot; gentoo</span>
+</pre></div>
+</div>
+<p>2 、创建下面的用户、组和组成员关系如下：</p>
+<ul class="simple">
+<li>名字为admins  的组</li>
+<li>用户natasha ，使用admins  作为附属组</li>
+<li>用户harry ，也使用admins  作为附属组</li>
+<li>用户sarah ，不可交互登录系统，且不是admins  的成员，</li>
+<li>natasha ，harry ，sarah 密码都是centos</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># groupadd admins</span>
+<span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># useradd -G admins natasha</span>
+<span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># useradd -G admins harry</span>
+<span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># useradd -s /sbin/nologin</span>
+<span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># useradd -s /sbin/nologin sarah</span>
+<span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># echo &quot;centos&quot; | passwd --stdin natasha</span>
+Changing password <span class="k">for</span> user natasha.
+passwd: all authentication tokens updated successfully.
+<span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># echo &quot;centos&quot; | passwd --stdin harry</span>
+Changing password <span class="k">for</span> user harry.
+passwd: all authentication tokens updated successfully.
+<span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># echo &quot;centos&quot; | passwd --stdin sarah</span>
+Changing password <span class="k">for</span> user sarah.
+passwd: all authentication tokens updated successfully.
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>11.4. 练习4-批量添加用户和修改密码<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>批量添加用户</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 home<span class="o">]</span><span class="c1"># echo user{00..10} |tr &quot; &quot; &quot;\n&quot;   |xargs -L  1  useradd  #cent6创建11个用户</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># tail -n 11 /etc/passwd &gt;&gt;need_to_add_users.txt             #cent6把/etc/passwd后面的11行数据到文件中</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># sz need_to_add_users.txt    #在cent6使用sz上传文件</span>
+<span class="o">[</span>root@centos7 ~<span class="o">]</span><span class="c1"># rz                          #cent7 接受这个文件</span>
+<span class="o">[</span>root@centos7 ~<span class="o">]</span><span class="c1"># newusers  &lt; need_to_add_users.txt #批量添加</span>
+<span class="o">[</span>root@centos7 ~<span class="o">]</span><span class="c1"># tail -n 11 /etc/passwd</span>
+user00:x:607:608::/home/user00:/bin/bash
+user01:x:608:609::/home/user01:/bin/bash
+user02:x:609:610::/home/user02:/bin/bash
+user03:x:610:611::/home/user03:/bin/bash
+user04:x:611:612::/home/user04:/bin/bash
+user05:x:612:613::/home/user05:/bin/bash
+user06:x:613:614::/home/user06:/bin/bash
+user07:x:614:615::/home/user07:/bin/bash
+user08:x:615:616::/home/user08:/bin/bash
+user09:x:616:617::/home/user09:/bin/bash
+user10:x:617:618::/home/user10:/bin/bash
+<span class="o">[</span>root@centos7 ~<span class="o">]</span><span class="c1"># id user01</span>
+<span class="nv">uid</span><span class="o">=</span><span class="m">608</span><span class="o">(</span>user01<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span><span class="m">609</span><span class="o">(</span>user01<span class="o">)</span> <span class="nv">groups</span><span class="o">=</span><span class="m">609</span><span class="o">(</span>user01<span class="o">)</span>
+</pre></div>
+</div>
+<p>批量改密码</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 ~<span class="o">]</span><span class="c1"># nano all_pass.txt #编辑一个密码文件</span>
+<span class="o">[</span>root@centos7 ~<span class="o">]</span><span class="c1"># cat all_pass.txt  #查看</span>
+user00:oracle
+user01:oracle
+user02:oracle
+user03:oracle
+user04:oracle
+user05:oracle
+user06:oracle
+user07:oracle
+user08:oracle
+user09:oracle
+user10:oracle
+<span class="o">[</span>root@centos7 ~<span class="o">]</span><span class="c1"># cat all_pass.txt  | chpasswd #批量修改密码</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>11.5. 练习5-权限判断<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>1 、当用户xiaoming 对/testdir  目录无执行权限时，意味着无法做哪些操作？</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>无法进入目录
+</pre></div>
+</div>
+<p>2 、当用户xiaoqiang 对/testdir  目录无读权限时，意味着无法做哪些操作？</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>无法查看目录下的文件
+</pre></div>
+</div>
+<p>3 、当用户wangcai  对/testdir  目录无写权限时，该目录下的只读文件file1 是否可修改和删除？</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>不可修改，无法删除
+</pre></div>
+</div>
+<p>4 、当用户wangcai  对/testdir  目录有写和执行权限时，该目录下的只读文件file1 是否可修改和删除？</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>不可修改，但是可以删除
+</pre></div>
+</div>
+<p>5 、复制/etc/fstab 文件到/var/tmp 下，设置文件所有者为wangcai 读写权限，所属组为sysadmins 组有读写权限，其他人无权限</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 app<span class="o">]</span>$ chown wangcai:sysadmins /var/tmp/fstab
+<span class="o">[</span>root@centos7 app<span class="o">]</span>$ chmod <span class="m">660</span> /var/tmp/fstab
+</pre></div>
+</div>
+</div>
+<div class="section" id="getfacl-setfacl-chmod">
+<h2>11.6. 练习6-getfacl,setfacl,chmod<a class="headerlink" href="#getfacl-setfacl-chmod" title="永久链接至标题">¶</a></h2>
+<p>1 、在/testdir/dir 里创建的新文件自动属于g1 组，组g2 的成员如：alice 能对这些新文件有读写权限，组g3的成员如：tom 只能对新文件有读权限，其它用户（不属于g1,g2,g3 ）不能访问这个文件夹。</p>
+<p>分析下题目</p>
+<ul class="simple">
+<li>1）创建一个目录</li>
+<li>2）自动属于g1组，这个应该设置gid,且组名为g1</li>
+<li>3)alice 在g2组，需要先创建用户，读写权限</li>
+<li>4）tome在g3组， 需要创建用户，有读权限</li>
+<li>5）其他用户无权限</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># mkdir /testdir/dir -pv</span>
+mkdir: created directory<span class="s1">&#39;/testdir&#39;</span>
+mkdir: created directory <span class="s1">&#39;/testdir/dir&#39;</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># groupadd g1</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># chgrp  g1 /testdir/dir/</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># chmod g+s /testdir/dir/</span>
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># cd /testdir/dir/</span>
+<span class="o">[</span>root@centos6 dir<span class="o">]</span><span class="c1"># touch a.txt</span>
+<span class="o">[</span>root@centos6 dir<span class="o">]</span><span class="c1"># ll</span>
+total <span class="m">0</span>
+-rw-r--r--. <span class="m">1</span> root g1 <span class="m">0</span> Nov <span class="m">13</span> <span class="m">01</span>:44 a.txt
+<span class="o">[</span>root@centos6 dir<span class="o">]</span><span class="c1"># groupadd g2</span>
+<span class="o">[</span>root@centos6 dir<span class="o">]</span><span class="c1"># useradd alice -G g2</span>
+<span class="o">[</span>root@centos6 dir<span class="o">]</span><span class="c1"># setfacl -m &quot;g:g2:rw&quot; -R /testdir/dir/</span>
+<span class="o">[</span>root@centos6 dir<span class="o">]</span><span class="c1"># groupadd g3</span>
+<span class="o">[</span>root@centos6 dir<span class="o">]</span><span class="c1"># useradd tom -G g3</span>
+<span class="o">[</span>root@centos6 dir<span class="o">]</span><span class="c1"># setfacl -m &quot;g:g3:r&quot; -R /testdir/dir/</span>
+<span class="o">[</span>root@centos6 dir<span class="o">]</span><span class="c1"># ll</span>
+total <span class="m">0</span>
+-rw-r--r--. <span class="m">1</span> root g1 <span class="m">0</span> Nov <span class="m">13</span> <span class="m">01</span>:44 a.txt
+<span class="o">[</span>root@centos6 dir<span class="o">]</span><span class="c1"># chmod o-rx /testdir/dir/ -R</span>
+<span class="o">[</span>root@centos6 dir<span class="o">]</span><span class="c1"># setfacl -m &quot;d:o::---&quot; -R /testdir/dir/</span>
+</pre></div>
+</div>
+<p>2 、备份/testdir/dir 里所有文件的ACL 权限到/root/acl.txt 中，清除/testdir/dir 中所有ACL 权限，最后还原ACL</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 dir<span class="o">]</span><span class="c1"># getfacl /testdir/dir -R &gt;/root/acl.txt</span>
+getfacl: Removing leading <span class="s1">&#39;/&#39;</span> from absolute path names
+<span class="o">[</span>root@centos6 dir<span class="o">]</span><span class="c1"># cd /testdir/</span>
+<span class="o">[</span>root@centos6 testdir<span class="o">]</span><span class="c1"># getfacl -R dir &gt; /root/acl.txt</span>
+<span class="o">[</span>root@centos6 testdir<span class="o">]</span><span class="c1"># setfacl -R -b dir                        # -b ==--remove-all</span>
+<span class="o">[</span>root@centos6 testdir<span class="o">]</span><span class="c1"># setfacl --restore /root/acl.txt</span>
+<span class="o">[</span>root@centos6 testdir<span class="o">]</span><span class="c1"># getfacl -R dir</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="2017-11-23-联系-bash.html" class="btn btn-neutral float-right" title="12. 2017-11-23-练习-bash" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="2017-11-15-练习-mount.html" class="btn btn-neutral" title="10. 2017-11-15-练习-mount" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, zhaojiedi1992@outlook.com.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

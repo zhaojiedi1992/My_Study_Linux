@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. 2017-11-09-练习-glob &mdash; my_study_linux v0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
+        <link rel="up" title="练习题11月" href="index.html"/>
+        <link rel="next" title="4. 2017-11-09-练习-head-tr-管道" href="2017-11-09-练习-head-tr-管道.html"/>
+        <link rel="prev" title="2. 2017-11-08-练习-日期开机关机" href="2017-11-08-练习-日期开机关机.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> my_study_linux
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">马哥教育内部讲义</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../马哥教育内部讲义/index.html">基础类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../马哥教育内部讲义/index.html#id2">服务类</a></li>
+</ul>
+<p class="caption"><span class="caption-text">练习题</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">练习题11月</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2017-11-07-练习-Linux简介.html">1. 2017-07-练习-Linux简介练习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-08-练习-日期开机关机.html">2. 2017-11-08-练习-日期开机关机</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. 2017-11-09-练习-glob</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">3.1. 练习1-glob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.2. 练习2-glob</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-09-练习-head-tr-管道.html">4. 2017-11-09-练习-head-tr-管道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-09-练习-目录相关.html">5. 2017-11-09-练习-目录相关</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-10-练习-grep-文本.html">6. 2017-11-10-练习-grep-文本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-10-练习-wc-useradd.html">7. 2017-11-10-练习-wc-useradd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-13-练习-find.html">8. 2017-11-13-练习-find</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-14-练习-vim.html">9. 2017-11-14-练习-vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-15-练习-mount.html">10. 2017-11-15-练习-mount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-16-练习-用户管理.html">11. 2017-11-16-练习-用户管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-23-联系-bash.html">12. 2017-11-23-练习-bash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-25-练习-压缩.html">13. 2017-11-25-练习-压缩</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-28-练习-sed.html">14. 2017-11-28-练习-sed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-29-练习-rpm.html">15. 2017-11-28-练习-rpm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id2">练习题1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id3">练习题2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id4">练习题3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id5">练习题4月</a></li>
+</ul>
+<p class="caption"><span class="caption-text">课堂笔记</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html">课堂笔记11月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id2">课堂笔记1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id3">课堂笔记2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id4">课堂笔记3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id5">课堂笔记4月</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">my_study_linux</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">练习题11月</a> &raquo;</li>
+        
+      <li>3. 2017-11-09-练习-glob</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/练习题/2017-11-09-练习-glob.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="glob">
+<h1>3. 2017-11-09-练习-glob<a class="headerlink" href="#glob" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>3.1. 练习1-glob<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>1、 显示/var目录下所有一1开头，一一个小写字母结果，且中间至少出现一个数字的目录和文件</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 dirtest<span class="o">]</span><span class="c1"># ls -d /var/1*[0-9]*[[:lower:]]</span>
+</pre></div>
+</div>
+<p>2、 显示/etc目录下，一非字母开头，后面跟一个字母，以及其他任意长度字符的文件或者目录</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 dirtest<span class="o">]</span><span class="c1"># ls -d /etc/[^[:alpha:]][[:alpha:]]*</span>
+</pre></div>
+</div>
+<p>3、复制/etc/目录下，所有以m开头，以非数字结尾的文件或者目录到/tmp/magedu目录</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 dirtest<span class="o">]</span><span class="c1"># cp /etc/m*[^0-9] /tmp/magedu</span>
+</pre></div>
+</div>
+<p>4、复制/etc目录下，所有以.d结尾的文件或者目录到/tmp/magedu.com目录中</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 dirtest<span class="o">]</span><span class="c1"># cp /etc/*.d /tmp/magedu.com</span>
+</pre></div>
+</div>
+<p>5、复制/etc目录下，所有以.conf结果，且一m,n,r，p开头的文件或者目录到/tmp/magedu.com目录中</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 dirtest<span class="o">]</span><span class="c1"># cp /etc/[mnrp]*.conf /tmp/magedu</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>3.2. 练习2-glob<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>1 、显示/var 目录下所有以l 开头，以一个小写字母结尾，且中间出现至少一位数字的文件或目录</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 glob<span class="o">]</span><span class="c1"># ls -d /var/l*[0-9]*[[:lower:]]</span>
+</pre></div>
+</div>
+<p>2 、显示/etc 目录下以任意一位数字开头，且以非数字结尾的文件或目录</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 glob<span class="o">]</span><span class="c1"># ls /etc/[0-9]*[^0-9]</span>
+</pre></div>
+</div>
+<p>3 、显示/etc/ 目录下以非字母开头，后面跟了一个字母及其它任意长度任意字符的文件或目录</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 glob<span class="o">]</span><span class="c1"># ls -d /etc/[^[:alpha:]][[:alpha:]]*</span>
+</pre></div>
+</div>
+<p>4 、显示/etc/ 目录下所有以rc 开头，并后面是0-6 之间的数字，其它为任意字符的文件或目录</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 glob<span class="o">]</span><span class="c1"># ls -d /etc/rc[0-6]*</span>
+</pre></div>
+</div>
+<p>5 、显示/etc 目录下，所有以.d 结尾的文件或目录</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 glob<span class="o">]</span><span class="c1"># ls -d /etc/*.d</span>
+</pre></div>
+</div>
+<p>6 、显示/etc 目录下，所有.conf 结尾，且以m,n,r,p 开头的文件或目录</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 glob<span class="o">]</span><span class="c1"># ls -d /etc/[mnrp]*.conf</span>
+</pre></div>
+</div>
+<p>7 、只显示/root 下的隐藏文件和目录</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 glob<span class="o">]</span><span class="c1"># ls -ad /root/.*</span>
+</pre></div>
+</div>
+<p>8 、只显示/etc下的非隐藏文件</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>ls /etc/<span class="o">[</span>^.<span class="o">]</span>* -d
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="2017-11-09-练习-head-tr-管道.html" class="btn btn-neutral float-right" title="4. 2017-11-09-练习-head-tr-管道" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="2017-11-08-练习-日期开机关机.html" class="btn btn-neutral" title="2. 2017-11-08-练习-日期开机关机" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, zhaojiedi1992@outlook.com.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

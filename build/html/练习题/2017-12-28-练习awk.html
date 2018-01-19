@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.13. 2017-12-28-练习awk &mdash; my_study_linux v0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
+        <link rel="up" title="1. 练习题11月" href="index.html"/>
+        <link rel="next" title="2.14. 2017-12-28-练习selinux" href="2017-12-28-练习selinux.html"/>
+        <link rel="prev" title="2.12. 2017-12-27-练习-自定linux和编译内核" href="2017-12-27-练习-自定linux和编译内核.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> my_study_linux
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">马哥教育内部讲义</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../马哥教育内部讲义/index.html">1. 基础类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../马哥教育内部讲义/index.html#id2">2. 服务类</a></li>
+</ul>
+<p class="caption"><span class="caption-text">练习题</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">1. 练习题11月</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html#id2">2. 练习题1月</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2017-12-01-练习-磁盘管理.html">2.1. 2017-12-01-练习-磁盘管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-03-练习-高级磁盘管理.html">2.2. 2017-12-03-练习-高级磁盘管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-13-练习-网络.html">2.3. 2017-12-13-练习-网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-15-练习-进程管理和作业管理计划任务.html">2.4. 2017-12-15-练习-进程管理和作业管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-16-练习-ip-nmcli.html">2.5. 2017-12-16-练习-ip-nmcli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-16-练习-网络其他.html">2.6. 2017-12-16-练习-网络其他</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-18-练习-脚本进阶循环.html">2.7. 2017-12-18-练习-脚本进阶循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-22-练习-脚本进阶服务.html">2.8. 2017-12-18-练习-脚本进阶服务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-23-练习-常用启动故障修复.html">2.9. 2017-12-23-练习-常用启动故障修复</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-25-练习-常用启动故障修复2.html">2.10. 2017-12-23-练习-常用启动故障修复2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-26-练习-脚本进阶3.html">2.11. 2017-12-26-练习-脚本进阶3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-27-练习-自定linux和编译内核.html">2.12. 2017-12-27-练习-自定linux和编译内核</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.13. 2017-12-28-练习awk</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.13.1. 练习1-awk</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-28-练习selinux.html">2.14. 2017-12-28-练习selinux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-02-练习systemd.html">2.15. 2018-01-02-练习systemd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-03-练习加密.html">2.16. 2018-01-03-练习加密</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-05-练习ssh.html">2.17. 2018-01-05-练习ssh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-06-练习sudotcpwrap.html">2.18. 2018-01-06-练习sudotcpwrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-08-练习tcpwrap,rsync.html">2.19. 2018-01-08-练习tcpwrap,rsync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-09-练习pam,自动化安装.1.html">2.20. 2018-01-09-练习pam,自动化安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-11-练习自动化安装.html">2.21. 2018-01-11-练习自动化安装</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id3">3. 练习题2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id4">4. 练习题3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id5">5. 练习题4月</a></li>
+</ul>
+<p class="caption"><span class="caption-text">课堂笔记</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html">1. 课堂笔记11月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id2">2. 课堂笔记1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id3">3. 课堂笔记2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id4">4. 课堂笔记3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id5">5. 课堂笔记4月</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">my_study_linux</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">1. 练习题11月</a> &raquo;</li>
+        
+      <li>2.13. 2017-12-28-练习awk</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/练习题/2017-12-28-练习awk.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="awk">
+<h1>2.13. 2017-12-28-练习awk<a class="headerlink" href="#awk" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>2.13.1. 练习1-awk<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>1、统计/etc/fstab文件中每个文件系统类型出现的次数</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat /etc/fstab <span class="p">|</span>awk <span class="s1">&#39; /^[^#]/ {print $3}&#39;</span> <span class="p">|</span> sort  <span class="p">|</span>uniq -c
+        <span class="m">3</span> ext4
+
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat /etc/fstab <span class="p">|</span>awk <span class="s1">&#39; /^[^#]/ {arr[$3]++} END{for (i in arr){print arr[i],i}}&#39;</span>
+<span class="m">3</span> ext4
+</pre></div>
+</div>
+<p>2、统计/etc/fstab文件中每个单词出现的次数</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat /etc/fstab <span class="p">|</span> awk <span class="s1">&#39;{for (i=1;i&lt;=NF;i++){arr[$i]++}} END { for(i in arr){print i,arr[i]}}&#39;</span>
+</pre></div>
+</div>
+<p>3、提取出字符串Yd$C&#64;M05MB%9&amp;Bdh7dq+YVixp3vpw中的所有数字</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&quot;Yd</span><span class="nv">$C</span><span class="s2">@M05MB%9&amp;Bdh7dq+YVixp3vpw&quot;</span>  <span class="p">|</span>tr -dc <span class="s2">&quot;[:digit:]&quot;</span>
+
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ <span class="nb">echo</span> <span class="s2">&quot;Yd</span><span class="nv">$C</span><span class="s2">@M05MB%9&amp;Bdh7dq+YVixp3vpw&quot;</span>  <span class="p">|</span>awk -F <span class="s2">&quot;&quot;</span> <span class="s1">&#39;{for (i=1;i&lt;=NF;i++){if ($i ~ /[[:digit:]]/){printf &quot;%s&quot; , $i }}print &quot;&quot;}&#39;</span>
+<span class="m">05973</span>
+</pre></div>
+</div>
+<p>4、解决DOS攻击生产案例：根据web日志或者或者网络连接数，监控当某个IP并发连接数或者短时内PV达到100，即调用防火墙命令封掉对应的IP，监控频率每隔5分钟。防火墙命令为：iptables -A INPUT -s IP -j REJECT</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>netstat -tup <span class="p">|</span> awk <span class="s1">&#39;/tcp/ {socket=$5; split(socket,tmps,&quot;:&quot;);ss[tmps[1]]++} END {for (i in ss){if (ss[i] &gt;0){cmd=&quot;iptables -A INPUT -s &quot;i&quot; -j REJECT&quot;; system(cmd);} }}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="2017-12-28-练习selinux.html" class="btn btn-neutral float-right" title="2.14. 2017-12-28-练习selinux" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="2017-12-27-练习-自定linux和编译内核.html" class="btn btn-neutral" title="2.12. 2017-12-27-练习-自定linux和编译内核" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, zhaojiedi1992@outlook.com.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+33-2018-01-17
+======================
+
+上节课回顾
+----------------------------
+
+
+本节内容
+----------------------------
+
+::
+   
+    bind 服务名named
+    53端口。
+
+     /etc/rc.d/init.d/named
+     /usr/lib/systemd/named.service
+
+    /etc/named.conf
+    /etc/named.rfc1992.zones
+
+    /var/named/zone_name.zone
+
+    soa： 起始授权记录
+    ns:
+    a:
+    aaaa:
+    ptr:
+    cname:
+    srv：
+    txt:
+    
+    优先级： 数字越低优先级越高
+
+    host www.suhu.com
+
+    smtp
+    pop
+
+    name ttl IN rr_type value
+
+    admin@magedu.com 写成admin.magedu.com
+
+    

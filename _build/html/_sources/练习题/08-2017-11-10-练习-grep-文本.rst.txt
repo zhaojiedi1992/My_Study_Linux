@@ -21,7 +21,7 @@
 
 .. code-block:: bash
 
-        [root@centos7 sh]# egrep  -v "/sbin/nologin" /etc/passwd | cut -d ":" -f1
+        [root@centos7 sh]# egrep  -v "/sbin/nologin$" /etc/passwd | cut -d ":" -f1
         root
         sync
         shutdown
@@ -31,44 +31,19 @@
         u3
         u1
 
-3、显示/etc/passwd文件中器默认shell为/bin/bash的用户，进一步进现实上述结果中id最大的用户 
+3、显示/etc/passwd文件中默认shell为/bin/bash的用户，进一步进现实上述结果中id最大的用户 
 
 .. code-block:: bash
 
-        [root@centos7 sh]# cat /etc/passwd | egrep "/bin/bash" | sort -t ":" -k 3 -n |tail -n 1 | cut -d ":" -f1
+        [root@centos7 sh]# cat /etc/passwd | egrep "/bin/bash$" | sort -t ":" -k 3 -n |tail -n 1 | cut -d ":" -f1
         u1
 
 4、找出/etc/passwd文件中的一位数或者2位数。 
 
 .. code-block:: bash
 
-        [root@centos7 sh]# cat /etc/passwd | egrep "\b[0-9]{1,2}\b" 
-        root:x:0:0:root:/root:/bin/bash
-        bin:x:1:1:bin:/bin:/sbin/nologin
-        daemon:x:2:2:daemon:/sbin:/sbin/nologin
-        adm:x:3:4:adm:/var/adm:/sbin/nologin
-        lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
-        sync:x:5:0:sync:/sbin:/bin/sync
-        shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
-        halt:x:7:0:halt:/sbin:/sbin/halt
-        mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
-        operator:x:11:0:operator:/root:/sbin/nologin
-        games:x:12:100:games:/usr/games:/sbin/nologin
-        ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
-        nobody:x:99:99:Nobody:/:/sbin/nologin
-        dbus:x:81:81:System message bus:/:/sbin/nologin
-        rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
-        saslauth:x:996:76:Saslauthd user:/run/saslauthd:/sbin/nologin
-        rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
-        ntp:x:38:38::/etc/ntp:/sbin/nologin
-        tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
-        radvd:x:75:75:radvd user:/:/sbin/nologin
-        gdm:x:42:42::/var/lib/gdm:/sbin/nologin
-        sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
-        avahi:x:70:70:Avahi mDNS/DNS-SD Stack:/var/run/avahi-daemon:/sbin/nologin
-        postfix:x:89:89::/var/spool/postfix:/sbin/nologin
-        tcpdump:x:72:72::/:/sbin/nologin
-
+        [root@centos7 sh]# cat /etc/passwd | egrep "\b[0-9]{1,2}\b" -o
+       
 5、显示/boot/grub/grub.conf中以至少一个空白字符开头的行 
 
 .. code-block:: bash
@@ -111,7 +86,7 @@
 练习2-grep
 ----------------
 
-1 、找出ifconfig ” “网卡名”  命令结果中本机的IPv4 地址 
+1 、找出ifconfig"网卡名"命令结果中本机的IPv4 地址 
 
 .. code-block:: bash
 
@@ -144,6 +119,7 @@
 
         [root@centos7 app]# ss -tn | grep "ESTAB"| tr  -s " "|tr  " " ":"  |cut -d ":" -f6 | sort | uniq -c |sort -r
         2 172.18.1.25
+        [root@localhost ~]# ss -tn  | awk 'BEGIN{ PROCINFO["sorted_in"]="@val_num_desc"} NR >1  {gsub(/:[0-9]+/,"") ; ips[$NF]++;}END{for (ip in ips){print ip,ips[ip]} }'
 
 
 练习3-diff,patch
@@ -265,6 +241,7 @@
 .. code-block:: bash
 
         [root@centos7 app]# cat /etc/passwd |grep "^[^:]*:[^:]*:[0-9]{2,3}:.*" |cut -d ":" -f 1,3
+        [root@localhost ~]# cat /etc/passwd |awk -F ":"  ' $3 < 1000 { print $1 , $ 3}'
 
 8 、添加用户bash 、testbash 、basher 、sh 、nologin( 其shell为/sbin/nologin), 找出/etc/passwd 用户名同shell 名的行 
 
@@ -352,4 +329,5 @@
 .. code-block:: bash
 
         [root@centos7 app]# echo "welcome to magedu linux"  |grep "[[:alnum:]]"  -o |sort |uniq -c   | sort -nrt " " -k2 |cut -d " " -f8 |tr -d "\n"
+        [root@localhost ~]# echo "welcome to magedu linux"  | awk -F "" 'BEGIN{PROCINFO["sorted_in"]="@ind_str_asc"}{for (i=1;i<=NF; i++){if($i ~ /[a-zA-Z]/){num[$i]++}}} END{ for (i in num){print i}}'
 

@@ -22,7 +22,7 @@
 
     [root@centos6 ~]# head -n 10 /etc/passwd | tail -n 5 | sort -t ":" -k 3 | cut -d ":" -f 1
 
-## 练习2-cat,who,seq
+练习2-cat,who,seq
 -------------------------------
 
 1、将/etc/issue 文件中的内容转换为大写后保存至/tmp/issue.out 文件中 

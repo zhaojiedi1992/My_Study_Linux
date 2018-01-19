@@ -1,0 +1,30 @@
+2017-12-03-练习-高级磁盘管理
+==============================================
+
+练习1-LVM
+------------------------------------------------
+
+
+.. code-block:: bash
+
+    1、创建一个至少有两个PV组成的大小为20G的名为testvg的VG；要求PE大小为16MB, 而后在卷组中创建大小为5G的逻辑卷testlv；挂载至/users目录
+    2、 新建用户archlinux，要求其家目录为/users/archlinux，而后su切换至archlinux用户，复制/etc/pam.d目录至自己的家目录
+    3、扩展testlv至7G，要求archlinux用户的文件不能丢失
+    4、收缩testlv至3G，要求archlinux用户的文件不能丢失
+    5、对testlv创建快照，并尝试基于快照备份数据，验证快照的功能
+
+具体参考地址如下 ： LVM的使用_.
+
+..  _LVM的使用: http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_042_lvm.html
+
+练习2-raid
+------------------------------------------------------------------
+具体参考地址如下 ： raid的使用_.
+
+..  _raid的使用: http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_041_raid.html
+
+练习3-quota
+----------------------------------------------------------------------
+具体参考地址如下 ： quota的使用_.
+
+..  _quota的使用: http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_040_quota.html

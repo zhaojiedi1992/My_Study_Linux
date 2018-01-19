@@ -8,17 +8,7 @@
 
 .. code-block:: bash
 
-    [root@centos6 dirtest]# mkdir x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x/y2/b -pv
-    mkdir: created directory 'x'
-    mkdir: created directory 'x/y1,x'
-    mkdir: created directory 'x/y1,x/y2,x'
-    mkdir: created directory 'x/y1,x/y2,x/y1'
-    mkdir: created directory 'x/y1,x/y2,x/y1/a,y1'
-    mkdir: created directory 'x/y1,x/y2,x/y1/a,y1/b,x'
-    mkdir: created directory 'x/y1,x/y2,x/y1/a,y1/b,x/y2'
-    mkdir: created directory 'x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x'
-    mkdir: created directory 'x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x/y2'
-    mkdir: created directory 'x/y1,x/y2,x/y1/a,y1/b,x/y2/a,x/y2/b'
+    [root@centos6 dirtest]# mkdir x/y1  x/y2 x/y1/a y1/b x/y2/a x/y2/b -pv
 
 2、如何创建x_m,y_m,x_n,y_n 
 
@@ -59,6 +49,7 @@
 
 
 练习3-rename
+---------------------------------------------------------------------------
 
 1 、 目录下有f1..f300文件，修改为f001..f300。 
 

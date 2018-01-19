@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. 2017-12-15-练习-进程管理和作业管理 &mdash; my_study_linux v0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
+        <link rel="up" title="练习题11月" href="index.html"/>
+        <link rel="next" title="5. 2017-12-16-练习-ip-nmcli" href="2017-12-16-练习-ip-nmcli.html"/>
+        <link rel="prev" title="3. 2017-12-13-练习-网络" href="2017-12-13-练习-网络.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> my_study_linux
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">马哥教育内部讲义</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../马哥教育内部讲义/index.html">基础类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../马哥教育内部讲义/index.html#id2">服务类</a></li>
+</ul>
+<p class="caption"><span class="caption-text">练习题</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">练习题11月</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html#id2">练习题1月</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2017-12-01-练习-磁盘管理.html">1. 2017-12-01-练习-磁盘管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-03-练习-高级磁盘管理.html">2. 2017-12-03-练习-高级磁盘管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-13-练习-网络.html">3. 2017-12-13-练习-网络</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. 2017-12-15-练习-进程管理和作业管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.1. 练习1-进程管理常用命令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.2. 练习2-作业管理练习</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at">4.3. 练习3-计划任务at</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cron">4.4. 练习4-计划任务cron</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-16-练习-ip-nmcli.html">5. 2017-12-16-练习-ip-nmcli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-16-练习-网络其他.html">6. 2017-12-16-练习-网络其他</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-18-练习-脚本进阶循环.html">7. 2017-12-18-练习-脚本进阶循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-22-练习-脚本进阶服务.html">8. 2017-12-18-练习-脚本进阶服务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-23-练习-常用启动故障修复.html">9. 2017-12-23-练习-常用启动故障修复</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-25-练习-常用启动故障修复2.html">10. 2017-12-23-练习-常用启动故障修复2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-26-练习-脚本进阶3.html">11. 2017-12-26-练习-脚本进阶3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-27-练习-自定linux和编译内核.html">12. 2017-12-27-练习-自定linux和编译内核</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-28-练习awk.html">13. 2017-12-28-练习awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-28-练习selinux.html">14. 2017-12-28-练习selinux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-02-练习systemd.html">1. 2018-01-02-练习systemd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-03-练习加密.html">2. 2018-01-03-练习加密</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-05-练习ssh.html">3. 2018-01-05-练习ssh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-06-练习sudotcpwrap.html">4. 2018-01-06-练习sudotcpwrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-08-练习tcpwrap,rsync.html">5. 2018-01-08-练习tcpwrap,rsync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-09-练习pam,自动化安装.1.html">6. 2018-01-09-练习pam,自动化安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-11-练习自动化安装.html">7. 2018-01-11-练习自动化安装</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id3">练习题2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id4">练习题3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id5">练习题4月</a></li>
+</ul>
+<p class="caption"><span class="caption-text">课堂笔记</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html">课堂笔记11月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id2">课堂笔记1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id3">课堂笔记2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id4">课堂笔记3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id5">课堂笔记4月</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">my_study_linux</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">练习题11月</a> &raquo;</li>
+        
+      <li>4. 2017-12-15-练习-进程管理和作业管理</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/练习题/2017-12-15-练习-进程管理和作业管理计划任务.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>4. 2017-12-15-练习-进程管理和作业管理<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>4.1. 练习1-进程管理常用命令<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>具体参考：<a class="reference external" href="http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_045_ps.html">linux进程管理和系统状态常用命令简介</a></p>
+</div>
+<div class="section" id="id3">
+<h2>4.2. 练习2-作业管理练习<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>1、简述作业状态，并说明各个状态的切换</p>
+<img alt="https://github.com/zhaojiedi1992/My_Study_Linux/blob/master/rstdoc/images/%E4%BD%9C%E4%B8%9A%E7%8A%B6%E6%80%81.png?raw=true" src="https://github.com/zhaojiedi1992/My_Study_Linux/blob/master/rstdoc/images/%E4%BD%9C%E4%B8%9A%E7%8A%B6%E6%80%81.png?raw=true" />
+</div>
+<div class="section" id="at">
+<h2>4.3. 练习3-计划任务at<a class="headerlink" href="#at" title="永久链接至标题">¶</a></h2>
+<p>1、 创建一个计划任务，10.20执行一次wall命令，查看计划任务并删除</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 at<span class="o">]</span>$ at <span class="m">10</span>:20
+at&gt; wall <span class="s2">&quot;wall message&quot;</span>
+at&gt; &lt;EOT&gt;
+job <span class="m">3</span> at Tue Dec <span class="m">19</span> <span class="m">10</span>:20:00 <span class="m">2017</span>
+<span class="o">[</span>root@centos74 at<span class="o">]</span>$ atq
+<span class="m">3</span>   Tue Dec <span class="m">19</span> <span class="m">10</span>:20:00 <span class="m">2017</span> a root
+<span class="o">[</span>root@centos74 at<span class="o">]</span>$ at -c <span class="m">3</span>
+<span class="o">[</span>root@centos74 at<span class="o">]</span>$ atrm <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cron">
+<h2>4.4. 练习4-计划任务cron<a class="headerlink" href="#cron" title="永久链接至标题">¶</a></h2>
+<p>1、每天的2点和12点整，将/etc备份至/testdir/backup目录中，保存的文件名称格式为“etcbak-yyyy-mm-dd-HH.tar.xz”</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ crontab  -l
+<span class="m">1</span> <span class="m">2</span>,12 * * * /app/test/backup.sh
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat /backup.sh
+cat: /backup.sh: No such file or directory
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat /app/test/backup.sh
+<span class="c1">#!/bin/bash</span>
+<span class="k">if</span> <span class="o">[</span> ! -e /testdir/backup <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    mkdir -pv /testdir/backup
+<span class="k">fi</span>
+/usr/bin/tar  --acl --xattrs -Jcvf  /testdir/backup/etcbak-<span class="sb">`</span>date +%Y-%m-%d-%H<span class="sb">`</span>.tar.xz   /etc
+You have new mail in /var/spool/mail/root
+</pre></div>
+</div>
+<p>2、每周2, 4, 7备份/var/log/messages文件至/logs目录中，文件名形如“messages-yyyymmdd”</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ crontab -l
+<span class="m">1</span> <span class="m">2</span>,12 * * * /app/test/backup.sh
+<span class="m">1</span> <span class="m">1</span> * * <span class="m">2</span>,4,7 /app/test/backup_message.sh
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat backup_message.sh
+<span class="c1">#!/bin/bash</span>
+
+<span class="k">if</span> <span class="o">[</span> ! -e /logs <span class="o">]</span> <span class="p">;</span>  <span class="k">then</span>
+    mkdir -pv /logs
+<span class="k">fi</span>
+cp -a /var/log/messages /logs/message-<span class="k">$(</span>date <span class="s2">&quot;+%Y%m%d&quot;</span><span class="k">)</span>
+You have new mail in /var/spool/mail/root
+</pre></div>
+</div>
+<p>3、每两小时取出当前系统/proc/meminfo文件中以S或M开头的信息追加至/tmp/meminfo.txt文件中</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ crontab -l
+<span class="m">1</span> <span class="m">2</span>,12 * * * /app/test/backup.sh
+<span class="m">1</span> <span class="m">1</span> * * <span class="m">2</span>,4,7 /app/test/backup_message.sh
+<span class="m">1</span> */2 * * *  /app/test/meminfo.sh
+You have new mail in /var/spool/mail/root
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat meminfo.sh
+<span class="c1">#!/bin/bash</span>
+cat /proc/meminfo  <span class="p">|</span>egrep <span class="s2">&quot;^(S|M).*&quot;</span> &gt;&gt; /tmp/meminfo.txt
+</pre></div>
+</div>
+<p>4、工作日时间，每10分钟执行一次磁盘空间检查，一旦发现任何分区利用率高于80%，就执行wall警报</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ crontab  -l
+<span class="m">1</span> <span class="m">2</span>,12 * * * /app/test/backup.sh
+<span class="m">1</span> <span class="m">1</span> * * <span class="m">2</span>,4,7 /app/test/backup_message.sh
+<span class="m">1</span> */2 * * *  /app/test/meminfo.sh
+*/10 * * * * /app/test/disk_check.sh
+
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat disk_check.sh
+<span class="c1">#!/bin/bash</span>
+<span class="nv">val</span><span class="o">=</span><span class="k">$(</span>df --output<span class="o">=</span>pcent <span class="p">|</span>egrep <span class="s2">&quot;[0-9]+&quot;</span> -o <span class="p">|</span>sort -nr <span class="p">|</span>head -n <span class="m">1</span><span class="k">)</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$val</span><span class="s2">&quot;</span> -gt <span class="m">80</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    wall <span class="s2">&quot;disk 80%&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="2017-12-16-练习-ip-nmcli.html" class="btn btn-neutral float-right" title="5. 2017-12-16-练习-ip-nmcli" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="2017-12-13-练习-网络.html" class="btn btn-neutral" title="3. 2017-12-13-练习-网络" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, zhaojiedi1992@outlook.com.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

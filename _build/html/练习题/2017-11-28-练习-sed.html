@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>14. 2017-11-28-练习-sed &mdash; my_study_linux v0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
+        <link rel="up" title="练习题11月" href="index.html"/>
+        <link rel="next" title="15. 2017-11-28-练习-rpm" href="2017-11-29-练习-rpm.html"/>
+        <link rel="prev" title="13. 2017-11-25-练习-压缩" href="2017-11-25-练习-压缩.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> my_study_linux
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">马哥教育内部讲义</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../马哥教育内部讲义/index.html">基础类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../马哥教育内部讲义/index.html#id2">服务类</a></li>
+</ul>
+<p class="caption"><span class="caption-text">练习题</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">练习题11月</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2017-11-07-练习-Linux简介.html">1. 2017-07-练习-Linux简介练习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-08-练习-日期开机关机.html">2. 2017-11-08-练习-日期开机关机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-09-练习-glob.html">3. 2017-11-09-练习-glob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-09-练习-head-tr-管道.html">4. 2017-11-09-练习-head-tr-管道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-09-练习-目录相关.html">5. 2017-11-09-练习-目录相关</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-10-练习-grep-文本.html">6. 2017-11-10-练习-grep-文本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-10-练习-wc-useradd.html">7. 2017-11-10-练习-wc-useradd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-13-练习-find.html">8. 2017-11-13-练习-find</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-14-练习-vim.html">9. 2017-11-14-练习-vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-15-练习-mount.html">10. 2017-11-15-练习-mount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-16-练习-用户管理.html">11. 2017-11-16-练习-用户管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-23-联系-bash.html">12. 2017-11-23-练习-bash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-25-练习-压缩.html">13. 2017-11-25-练习-压缩</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">14. 2017-11-28-练习-sed</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">14.1. 练习1</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2017-11-29-练习-rpm.html">15. 2017-11-28-练习-rpm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id2">练习题1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id3">练习题2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id4">练习题3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id5">练习题4月</a></li>
+</ul>
+<p class="caption"><span class="caption-text">课堂笔记</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html">课堂笔记11月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id2">课堂笔记1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id3">课堂笔记2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id4">课堂笔记3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id5">课堂笔记4月</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">my_study_linux</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">练习题11月</a> &raquo;</li>
+        
+      <li>14. 2017-11-28-练习-sed</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/练习题/2017-11-28-练习-sed.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sed">
+<h1>14. 2017-11-28-练习-sed<a class="headerlink" href="#sed" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>14.1. 练习1<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>1、删除centos7系统/etc/grub2.cfg文件中所有以空白开头的行行首的空白字符</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 ~<span class="o">]</span>$ sed -nr <span class="s1">&#39;s@^([[:space:]]+)(.*)@\2@p&#39;</span> /etc/grub2.cfg
+</pre></div>
+</div>
+<p>2、删除/etc/fstab文件中所有以#开头，后面至少跟一个空白字符的行的行首的#和空白字符</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 ~<span class="o">]</span>$ sed -nr <span class="s1">&#39;s@(^#[[:space:]])(.*)@\2@p&#39;</span> /etc/fstab
+</pre></div>
+</div>
+<p>3、在centos6系统/root/install.log每一行行首增加#号</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># sed -nr &#39;s@.*@#\0@p&#39; /root/install.log</span>
+</pre></div>
+</div>
+<p>4、在/etc/fstab文件中不以#开头的行的行首增加#号</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># sed -nr &#39;s@^[^#].*@#\0@p&#39; /etc/fstab</span>
+</pre></div>
+</div>
+<p>5、处理/etc/fstab路径,使用sed命令取出其目录名和基名</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># echo &quot;/etc/fstab&quot;   |sed -nr &#39;s@(.*/)([^/]+)/?@\2@p&#39;</span>
+fstab
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># echo &quot;/etc/fstab/&quot;   |sed -nr &#39;s@(.*/)([^/]+)/?@\2@p&#39;</span>
+fstab
+<span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># echo &quot;/etc/&quot;   |sed -nr &#39;s@(.*/)([^/]+)/?@\1@p&#39;</span>
+/
+</pre></div>
+</div>
+<p>6、利用sed 取出ifconfig命令中本机的IPv4地址</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 ~<span class="o">]</span>$ ifconfig ens33 <span class="p">|</span>sed -nr <span class="s1">&#39;2s@.*inet (.*) netmask.*@\1@p&#39;</span>
+</pre></div>
+</div>
+<p>7、统计centos安装光盘中Package目录下的所有rpm文件的以.分隔倒数第二个字段的重复次数</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>root@centos7 ~<span class="o">]</span>$ ls /misc/cd/Packages/ <span class="p">|</span>sed -nr <span class="s1">&#39;s@.*\.([^.]*)\.rpm@\1@p&#39;</span> <span class="p">|</span>sort  <span class="p">|</span>uniq -c
+<span class="m">2141</span> i686
+<span class="m">3076</span> noarch
+<span class="m">4374</span> x86_64
+</pre></div>
+</div>
+<p>8、统计/etc/init.d/functions文件中每个单词的出现次数，并排序（用grep和sed两种方法分别实现）</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>cat  /etc/init.d/functions  <span class="p">|</span> egrep -o <span class="s2">&quot;([[:alpha:]]+)&quot;</span>  <span class="p">|</span>sort <span class="p">|</span>uniq -c  &gt; /root/grep.txt
+cat /etc/init.d/functions <span class="p">|</span> sed -r <span class="s1">&#39;s@[^[:alpha:]]@\n@g&#39;</span> <span class="p">|</span>sed <span class="s1">&#39;/^$/d&#39;</span> <span class="p">|</span>sort <span class="p">|</span>uniq -c  &gt;/root/sed.txt
+diff /root/sed.txt /root/grep.txt
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">这个题，2种结果必须是一致的， 如果第二种方式没有sed -nr 's&#64;.*&#64;#0&#64;p' 就会少统计行单独为fi的行。</p>
+</div>
+<p>9、将文本文件的n和n+1行合并为一行，n为奇数行</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 ~<span class="o">]</span>$ sed <span class="s1">&#39;N;s@\n@@&#39;</span> /etc/fstab
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="2017-11-29-练习-rpm.html" class="btn btn-neutral float-right" title="15. 2017-11-28-练习-rpm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="2017-11-25-练习-压缩.html" class="btn btn-neutral" title="13. 2017-11-25-练习-压缩" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, zhaojiedi1992@outlook.com.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

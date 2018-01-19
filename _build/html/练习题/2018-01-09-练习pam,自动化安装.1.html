@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6. 2018-01-09-练习pam,自动化安装 &mdash; my_study_linux v0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
+        <link rel="up" title="练习题11月" href="index.html"/>
+        <link rel="next" title="7. 2018-01-11-练习自动化安装" href="2018-01-11-练习自动化安装.html"/>
+        <link rel="prev" title="5. 2018-01-08-练习tcpwrap,rsync" href="2018-01-08-练习tcpwrap,rsync.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> my_study_linux
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">马哥教育内部讲义</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../马哥教育内部讲义/index.html">基础类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../马哥教育内部讲义/index.html#id2">服务类</a></li>
+</ul>
+<p class="caption"><span class="caption-text">练习题</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">练习题11月</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html#id2">练习题1月</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2017-12-01-练习-磁盘管理.html">1. 2017-12-01-练习-磁盘管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-03-练习-高级磁盘管理.html">2. 2017-12-03-练习-高级磁盘管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-13-练习-网络.html">3. 2017-12-13-练习-网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-15-练习-进程管理和作业管理计划任务.html">4. 2017-12-15-练习-进程管理和作业管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-16-练习-ip-nmcli.html">5. 2017-12-16-练习-ip-nmcli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-16-练习-网络其他.html">6. 2017-12-16-练习-网络其他</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-18-练习-脚本进阶循环.html">7. 2017-12-18-练习-脚本进阶循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-22-练习-脚本进阶服务.html">8. 2017-12-18-练习-脚本进阶服务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-23-练习-常用启动故障修复.html">9. 2017-12-23-练习-常用启动故障修复</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-25-练习-常用启动故障修复2.html">10. 2017-12-23-练习-常用启动故障修复2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-26-练习-脚本进阶3.html">11. 2017-12-26-练习-脚本进阶3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-27-练习-自定linux和编译内核.html">12. 2017-12-27-练习-自定linux和编译内核</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-28-练习awk.html">13. 2017-12-28-练习awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017-12-28-练习selinux.html">14. 2017-12-28-练习selinux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-02-练习systemd.html">1. 2018-01-02-练习systemd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-03-练习加密.html">2. 2018-01-03-练习加密</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-05-练习ssh.html">3. 2018-01-05-练习ssh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-06-练习sudotcpwrap.html">4. 2018-01-06-练习sudotcpwrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-08-练习tcpwrap,rsync.html">5. 2018-01-08-练习tcpwrap,rsync</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6. 2018-01-09-练习pam,自动化安装</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">6.1. 练习1-pam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">6.2. 练习2、自动化安装</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-11-练习自动化安装.html">7. 2018-01-11-练习自动化安装</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id3">练习题2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id4">练习题3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id5">练习题4月</a></li>
+</ul>
+<p class="caption"><span class="caption-text">课堂笔记</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html">课堂笔记11月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id2">课堂笔记1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id3">课堂笔记2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id4">课堂笔记3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id5">课堂笔记4月</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">my_study_linux</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">练习题11月</a> &raquo;</li>
+        
+      <li>6. 2018-01-09-练习pam,自动化安装</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/练习题/2018-01-09-练习pam,自动化安装.1.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pam">
+<h1>6. 2018-01-09-练习pam,自动化安装<a class="headerlink" href="#pam" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>6.1. 练习1-pam<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>1、使用pam_nologin,pam_security,pam_limit,pam_shell</p>
+<p>pam_shell</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>vim /etc/pam.d/login 第一行添加如下行
+auth      required  pam_shells.so
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>pam_nologin</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>[root@centos74 pam.d]$ man pam_nologin
+[root@centos74 pam.d]$ grep nologin ./*
+./gdm-autologin:account    required    pam_nologin.so
+./gdm-fingerprint:account     required      pam_nologin.so
+./gdm-password:account     required      pam_nologin.so
+./gdm-pin:account     required      pam_nologin.so
+./gdm-smartcard:account     required      pam_nologin.so
+./login:account    required     pam_nologin.so
+./pluto:account required pam_nologin.so
+./ppp:account    required   pam_nologin.so
+./remote:account    required     pam_nologin.so
+./sshd:account    required     pam_nologin.so
+[root@centos74 pam.d]$ touch /etc/nologin
+[root@centos74 pam.d]$ ssh zhao@localhost
+zhao@localhost&#39;s password:
+Authentication failed.
+</pre></div>
+</div>
+<p>pam_limit</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>[root@centos74 limits.d]$ man 5 limits.conf
+[root@centos74 limits.d]$ ulimit  -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 7823
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 7823
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+
+[root@centos74 limits.d]$ vim 20-nproc.conf
+[root@centos74 limits.d]$ cat 20-nproc.conf
+# Default limit for number of user&#39;s processes to prevent
+# accidental fork bombs.
+# See rhbz #432903 for reasoning.
+
+*          soft    nproc     4096
+root       soft    nproc     unlimited
+zhao           hard    nproc     5
+
+ulimit: ulimit [-SHacdefilmnpqrstuvx] [limit]
+    Modify shell resource limits.
+
+    Provides control over the resources available to the shell and processes
+    it creates, on systems that allow such control.
+
+    Options:
+    -S      use the &#39;soft&#39; resource limit               # 软限制
+    -H      use the &#39;hard&#39; resource limit               # 硬限制
+    -a      all current limits are reported             # 列出限制
+    -b      the socket buffer size                      # socket 缓冲大小
+    -c      the maximum size of core files created      # 最大核心文件创建
+    -d      the maximum size of a process&#39;s data segment# 最大进程数据段大小
+    -e      the maximum scheduling priority (&#39;nice&#39;)    # 最大nice值
+    -f      the maximum size of files written by the shell and its children # 最大的文件大小
+    -i      the maximum number of pending signals       # 最大的暂停信号
+    -l      the maximum size a process may lock into memory # 最大的锁到内存的进程数
+    -m      the maximum resident set size                   #
+    -n      the maximum number of open file descriptors     # 最大打开的文件数量
+    -p      the pipe buffer size                            # 管道缓冲区大小
+    -q      the maximum number of bytes in POSIX message queues # 最大字节关于post消息队列
+    -r      the maximum real-time scheduling priority           # 实时调度优先级最大值
+    -s      the maximum stack size                              # 最大栈大小
+    -t      the maximum amount of cpu time in seconds           # 最大cpu用时
+    -u      the maximum number of user processes                # 最大用户进程数量
+    -v      the size of virtual memory                          # 虚拟内存大小
+    -x      the maximum number of file locks                    # 最大文件锁定个数
+</pre></div>
+</div>
+<p>2、编写脚本/root/bin/checkip.sh，每5分钟检查一次，如果发现通过ssh登录失败次数超过10次，自动将此远程IP放入Tcp Wrapper的黑名单中予以禁止防问</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>   <span class="c1">#!/bin/awk -f</span>
+   /sshd.*Failed password/<span class="o">{</span><span class="nv">ip</span><span class="o">=</span><span class="k">$(</span>NF-3<span class="k">)</span><span class="p">;</span> ips<span class="o">[</span>ip<span class="o">]</span>++<span class="o">}</span>
+   END<span class="o">{</span>
+           <span class="k">for</span> <span class="o">(</span>i in ips<span class="o">){</span>
+                   <span class="k">if</span><span class="o">(</span>ips<span class="o">[</span>i<span class="o">]</span>&gt;4<span class="o">){</span>
+                           <span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;echo sshd:&quot;</span>i<span class="s2">&quot;&gt;&gt;/etc/hosts.deny&quot;</span><span class="p">;</span> system<span class="o">(</span>cmd<span class="o">)</span>
+                   <span class="o">}</span>
+           <span class="o">}</span>
+   <span class="o">}</span>
+
+<span class="c1"># crontab -e</span>
+*/5 * * * *  /root/bin/checkip.awk /var/log/secure
+</pre></div>
+</div>
+<p>3、限制centos用户只能够在工作时间通过ssh远程连接本机
+.. code-block:: bash</p>
+<blockquote>
+<div># vim /etc/pam.d/sshd  # 添加如下行
+account  required  pam_time.so
+# vim /etc/security/time.conf # 添加行
+sshd;*;test1;Wd0800-1800</div></blockquote>
+<p>4、限制只有admins组内的用户可ssh到本机</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># 编辑 /etc/ssh/sshd_config 文件，添加AllowGroups admins</span>
+<span class="c1"># 重启sshd服务。</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>6.2. 练习2、自动化安装<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>1、通过光盘启动，安装局域网的系统</p>
+<blockquote>
+<div>linux askmethod ip=172.18.46.105 netmask=255.255.0.0</div></blockquote>
+<p>2、不使用大光盘， 直接自制一个小光盘，然后安装网络的系统</p>
+<blockquote>
+<div>linux ks=http://172.18.46.6/pub/ks/ks7-mini.cfg ip=172.18.46.105 netmask=255.255.0.0</div></blockquote>
+<p>3、制作可启动U盘，自动安装系统</p>
+<blockquote>
+<div><p>[<a class="reference external" href="mailto:root&#37;&#52;&#48;station">root<span>&#64;</span>station</a> /]# find /centos6/ -name TRANS.TBL -exec rm -rf {} ;
+[<a class="reference external" href="mailto:root&#37;&#52;&#48;centos66">root<span>&#64;</span>centos66</a> centos6]$ rm -rf repodata/*
+[<a class="reference external" href="mailto:root&#37;&#52;&#48;centos66">root<span>&#64;</span>centos66</a> centos6]$ cp /mnt/cdrom/repodata/43d8fd068164b0f042845474d6a22262798b9f0d1f49ad1bf9f95b953089777d-c6-x86_64-comps.xml repodata/</p>
+<p>[<a class="reference external" href="mailto:root&#37;&#52;&#48;station">root<span>&#64;</span>station</a> centos6]# createrepo  -g repodata/38b60f66d52704cffb8696750b2b6552438c1ace283bc2cf22408b0ba0e4cbfa-c7-x86_64-comps.xml  .
+[<a class="reference external" href="mailto:root&#37;&#52;&#48;station">root<span>&#64;</span>station</a> centos6]# mkisofs -R -J -T -v --no-emul-boot --boot-load-size 4 --boot-info-table -V &quot;centos 6 boot&quot; -b isolinux/isolinux.bin -c isolinux/boot.cat -o /var/www/html/iso/c66.iso /centos6
+#修改linuxiso下的linuxiso.cfg文件ks.cfg文件
+#记得ks.cfg有reboot行</p>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="2018-01-11-练习自动化安装.html" class="btn btn-neutral float-right" title="7. 2018-01-11-练习自动化安装" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="2018-01-08-练习tcpwrap,rsync.html" class="btn btn-neutral" title="5. 2018-01-08-练习tcpwrap,rsync" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, zhaojiedi1992@outlook.com.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

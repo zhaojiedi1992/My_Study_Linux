@@ -8,7 +8,8 @@
 
 .. code-block:: bash
 
-
+    scp -aq /etc/sysconfig 172.18.46.6:/app/
+    scp -aq /etc/sysconfig 172.18.46.7:/app/
 
 2、熟练掌握pssh命令使用
 

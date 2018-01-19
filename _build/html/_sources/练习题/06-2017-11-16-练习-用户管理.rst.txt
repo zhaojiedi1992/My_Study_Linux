@@ -186,6 +186,7 @@
 1 、在/testdir/dir 里创建的新文件自动属于g1 组，组g2 的成员如：alice 能对这些新文件有读写权限，组g3的成员如：tom 只能对新文件有读权限，其它用户（不属于g1,g2,g3 ）不能访问这个文件夹。
 
 分析下题目
+
 * 1）创建一个目录
 * 2）自动属于g1组，这个应该设置gid,且组名为g1
 * 3)alice 在g2组，需要先创建用户，读写权限
@@ -196,8 +197,8 @@
 .. code-block:: bash
 
     [root@centos6 ~]# mkdir /testdir/dir -pv
-    mkdir: created directory `/testdir'
-    mkdir: created directory `/testdir/dir'
+    mkdir: created directory'/testdir'
+    mkdir: created directory '/testdir/dir'
     [root@centos6 ~]# groupadd g1
     [root@centos6 ~]# chgrp  g1 /testdir/dir/
     [root@centos6 ~]# chmod g+s /testdir/dir/
@@ -208,10 +209,10 @@
     -rw-r--r--. 1 root g1 0 Nov 13 01:44 a.txt
     [root@centos6 dir]# groupadd g2
     [root@centos6 dir]# useradd alice -G g2
-    [root@centos6 dir]# setfacl -m "d:g:g2:rw" -R /testdir/dir/
+    [root@centos6 dir]# setfacl -m "g:g2:rw" -R /testdir/dir/
     [root@centos6 dir]# groupadd g3
     [root@centos6 dir]# useradd tom -G g3
-    [root@centos6 dir]# setfacl -m "d:g:g3:r" -R /testdir/dir/
+    [root@centos6 dir]# setfacl -m "g:g3:r" -R /testdir/dir/
     [root@centos6 dir]# ll
     total 0
     -rw-r--r--. 1 root g1 0 Nov 13 01:44 a.txt
@@ -226,7 +227,7 @@
     getfacl: Removing leading '/' from absolute path names
     [root@centos6 dir]# cd /testdir/
     [root@centos6 testdir]# getfacl -R dir > /root/acl.txt
-    [root@centos6 testdir]# setfacl -R -b dir
+    [root@centos6 testdir]# setfacl -R -b dir                        # -b ==--remove-all
     [root@centos6 testdir]# setfacl --restore /root/acl.txt
     [root@centos6 testdir]# getfacl -R dir
 
