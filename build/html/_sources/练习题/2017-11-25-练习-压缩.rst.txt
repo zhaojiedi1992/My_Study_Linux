@@ -67,6 +67,12 @@
     drwxr-xr-x. 3 root root 4096 Nov 28 10:19 etc
     drwxr-xr-x. 3 root root 4096 Nov 23 10:06 kernels
 
+tar 命令配合压缩选项： 
+
+-J       xz
+-j       bz
+-z       gzip
+
 4 、split分割一个tar文件，并合并这些文件 
 
 .. code-block:: bash
@@ -98,7 +104,7 @@
 .. code-block:: bash
 
     [root@centos7 test]$ find /etc/sysconfig -print  |cpio -ovc >sysconfig.cpio
-    [root@centos7 test]$ find /etc/scpio -tv < sysconfig.cpio
+    [root@centos7 test]$ cpio -tv < sysconfig.cpio
     [root@centos7 test]$ cpio -idv < sysconfig.cpio 
 
 6 、测试压缩并解压对文件权限的影响 
@@ -161,4 +167,4 @@
     -rw-rwxr--+ 1 root root 0 Nov 28 10:33 acl.txt
     -rw-r--r--. 1 root root 0 Nov 28 10:33 general.txt
 
-.. important :: 经过测试我们发现使用tar --acl 选项打包的时候可以保留acl权限。其实还有xattrs，selinux保留选项的
+.. important:: 经过测试我们发现使用"--acl"选项打包的时候可以保留acl权限。其实还有"--xattrs，--selinux"保留选项的
