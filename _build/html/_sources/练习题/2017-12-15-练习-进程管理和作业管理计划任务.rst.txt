@@ -13,7 +13,7 @@
 
 1、简述作业状态，并说明各个状态的切换
 
-.. image:: https://github.com/zhaojiedi1992/My_Study_Linux/blob/master/rstdoc/images/%E4%BD%9C%E4%B8%9A%E7%8A%B6%E6%80%81.png?raw=true
+.. image:: /images/作业状态.png
 
 练习3-计划任务at
 ----------------------------------------------------------

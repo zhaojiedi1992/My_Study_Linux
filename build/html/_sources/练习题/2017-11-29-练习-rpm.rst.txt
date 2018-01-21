@@ -1,7 +1,7 @@
 2017-11-28-练习-rpm
 ==========================================
 
-练习1
+练习1-基础启动故障修复
 ------------------------------------------------
 1 、 删除一个动态链接库， 并使用救援模式修复它 
 
@@ -96,7 +96,7 @@
     initrd /initrd-2.6.32-696.el6.x86_64
     #b键重启
 
-练习2 
+练习2-rpm基础使用
 ---------------------------------------------------------------------------
 1 、 查询/usr/bin/java来自于哪个rpm 
 
@@ -285,7 +285,7 @@
 
     # add bin
     httpd_bin=$install_dir/bin
-    echo "PATH=$httpd_bin:\$PATH" > /etc/profile.d/httpd.sh
+    echo 'PATH=$httpd_bin:\$PATH' > /etc/profile.d/httpd.sh
     . /etc/profile.d/httpd.sh
     # add man 
     httpd_man=$install_dir/man

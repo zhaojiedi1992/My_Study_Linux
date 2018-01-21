@@ -14,7 +14,7 @@
 
 .. code-block:: bash
 
-    [root@centos7 ~]$ sed -nr 's@(^#[[:space:]])(.*)@\2@p' /etc/fstab
+    [root@centos7 ~]$ sed -nr 's@^(#[[:space:]])+(.*)@\2@p' /etc/fstab
 
 3、在centos6系统/root/install.log每一行行首增加#号 
 
@@ -62,7 +62,7 @@
     cat /etc/init.d/functions | sed -r 's@[^[:alpha:]]@\n@g' |sed '/^$/d' |sort |uniq -c  >/root/sed.txt
     diff /root/sed.txt /root/grep.txt 
 
-.. warning:: 这个题，2种结果必须是一致的， 如果第二种方式没有sed -nr 's@.*@#\0@p' 就会少统计行单独为fi的行。
+.. warning:: 这个题，2种结果必须是一致的。
 
 9、将文本文件的n和n+1行合并为一行，n为奇数行 
 
