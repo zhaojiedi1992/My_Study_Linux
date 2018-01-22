@@ -1,7 +1,7 @@
 2017-12-23-练习-常用启动故障修复
 ============================================
 
-练习1
+练习1-centos6基础故障
 ----------------------------------------
 1、修改root密码
 
@@ -65,7 +65,7 @@
 .. code-block:: bash
 
     # 进入救援模式
-    # grub-install --root-directory=/ /dev/sda
+    # grub-install --root-directory=/dev/sda
     # reboot
 
 5、磁盘前27个扇区损坏的修复

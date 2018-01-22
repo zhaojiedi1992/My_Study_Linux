@@ -97,12 +97,12 @@
 </ul>
 <p class="caption"><span class="caption-text">练习题</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html">练习题11月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id2">练习题12月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id3">练习题1月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id4">练习题2月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id5">练习题3月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id6">练习题4月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html">1. 练习题11月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id2">2. 练习题12月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id3">3. 练习题1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id4">4. 练习题2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id5">5. 练习题3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id6">6. 练习题4月</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul class="current">
@@ -212,27 +212,68 @@
 </div>
 <div class="section" id="id3">
 <h2>2.23.2. 本节内容<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql_install_db</span>
-<span class="n">mysql</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;show variables like &quot;basedir&quot; ;&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span>mysql_install_db
+mysql -e &#39;show variables like &quot;basedir&quot; ;&#39;
 
-<span class="n">port</span><span class="o">=</span><span class="mi">3307</span>
+port=3307
 
-<span class="n">select</span> <span class="n">user</span><span class="p">,</span><span class="n">password</span><span class="p">,</span><span class="n">host</span> <span class="kn">from</span> <span class="nn">mysql.user</span><span class="p">;</span>
+select user,password,host from mysql.user;
 
-<span class="n">update</span> <span class="n">mysql</span><span class="o">.</span><span class="n">user</span> <span class="nb">set</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">(</span><span class="s2">&quot;root&quot;</span><span class="p">)</span> <span class="p">;</span>
+update mysql.user set password=password(&quot;root&quot;) ;
 
-<span class="n">drop</span> <span class="n">user</span> <span class="s1">&#39;&#39;</span><span class="nd">@localhost</span><span class="p">;</span>
+drop user &#39;&#39;@localhost;
 
-<span class="n">flush</span> <span class="n">privileges</span><span class="p">;</span>
+flush privileges;
 
-<span class="n">select</span> <span class="n">user</span><span class="p">();</span>
-<span class="n">skip</span><span class="o">-</span><span class="n">grant</span><span class="o">-</span><span class="n">tables</span>
+select user();
+skip-grant-tables
 
-<span class="n">delete</span> <span class="kn">from</span> <span class="nn">mysql.user</span> <span class="n">where</span>  <span class="n">host</span><span class="o">=</span><span class="s2">&quot;centos7.localdomain&quot;</span>
+delete from mysql.user where  host=&quot;centos7.localdomain&quot;
 
-<span class="n">create</span> <span class="n">usr</span> <span class="n">wang</span><span class="o">@</span><span class="s1">&#39;192.168.46.1&#39;</span> <span class="n">identified</span> <span class="n">by</span> <span class="s1">&#39;oracle&#39;</span><span class="p">;</span>
+create usr wang@&#39;192.168.46.1&#39; identified by &#39;oracle&#39;;
 
-<span class="n">select</span> <span class="o">*</span> <span class="kn">from</span> <span class="nn">mysql.user</span><span class="o">/</span><span class="n">G</span><span class="p">;</span>
+select * from mysql.user/G;
+
+注释：
+--
+/* */
+#
+show tables
+
+create database if not exists panda.
+show create database panda.
+show character set
+
+select table status from mysql;
+show engines;
+
+create table newt1 select * from t1;
+
+insert into nett2 select * from t1;
+
+show columns from t1;
+truncate table t1;
+
+explain
+
+show indexes from students
+
+drop index index_name on t1;
+
+values (v1,v2), (v3,v4);
+
+insert into t1 set id=5,name=&quot;zhaojiedi&quot;;
+
+--safe-updates
+-U
+
+order by -col1 desc;
+
+limit 3
+
+litmit 3,4 ; 跳过3个取4个。
+
+between 10 and 20 ; 左封闭右封闭
 </pre></div>
 </div>
 </div>

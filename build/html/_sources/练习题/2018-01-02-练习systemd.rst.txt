@@ -9,11 +9,14 @@
 2、破解centos7 口令
 
 方法1： 
-#.在启动的时候添加内核参数rd.break
-#.chmount -o remount,rw /sysroot ; chroot /sysroot
-# passwd ; 
-# touch /.autorelabel
+
+#. 在启动的时候添加内核参数rd.break
+#. chmount -o remount,rw /sysroot ; chroot /sysroot
+#. passwd ; 
+#. touch /.autorelabel
+
 方法2： 
+
 #. 启动的时候修改r为rw,添加内核参数init=/sysroot/bin/bash 
 #. chroot /sysroot
 #. passwd 

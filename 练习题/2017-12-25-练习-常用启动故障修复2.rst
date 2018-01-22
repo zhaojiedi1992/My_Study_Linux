@@ -28,9 +28,3 @@
         5.编写grub.conf文件
 
 
-练习2-定制linux
----------------------------------------
-1、定制一个linux，支持bash,ifconfig,nmcli,insmod,modprobe命令
-
-.. code-block:: bash
-
