@@ -1,0 +1,35 @@
+2018-01-22
+======================
+
+上节课回顾
+----------------------------
+
+
+本节内容
+----------------------------
+
+::
+
+    mysql_install_db
+    mysql -e 'show variables like "basedir" ;'
+
+    port=3307
+
+    select user,password,host from mysql.user;
+
+    update mysql.user set password=password("root") ;
+
+    drop user ''@localhost;
+
+    flush privileges;
+
+    select user();
+    skip-grant-tables
+
+    delete from mysql.user where  host="centos7.localdomain"
+
+    create usr wang@'192.168.46.1' identified by 'oracle';
+
+    select * from mysql.user/G;
+    
+

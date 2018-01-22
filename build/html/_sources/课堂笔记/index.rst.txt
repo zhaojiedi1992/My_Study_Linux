@@ -5,7 +5,7 @@
     :caption: 课堂笔记-11月
     :maxdepth: 1
     :glob:
-    :numbered:
+
 
     *2017-11*
 
@@ -16,7 +16,7 @@
     :caption: 课堂笔记-12月
     :maxdepth: 1
     :glob:
-    :numbered:
+
 
     *2017-12*
 
@@ -24,7 +24,7 @@
     :caption: 课堂笔记-1月
     :maxdepth: 1
     :glob:
-    :numbered:
+
 
     *2018-01*
 
@@ -35,7 +35,7 @@
     :caption: 课堂笔记-2月
     :maxdepth: 1
     :glob:
-    :numbered:
+
 
     *2018-02*
 
@@ -46,7 +46,7 @@
     :caption: 课堂笔记-3月
     :maxdepth: 1
     :glob:
-    :numbered:
+
 
     *2018-03*  
 
@@ -57,6 +57,6 @@
     :caption: 课堂笔记-4月
     :maxdepth: 1
     :glob:
-    :numbered:
+
 
     *2018-04*   

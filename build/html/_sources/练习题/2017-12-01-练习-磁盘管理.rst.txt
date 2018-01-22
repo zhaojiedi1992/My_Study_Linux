@@ -143,7 +143,7 @@
 
 mkdvdiso.sh_
 
-.. _mkdvdiso: https://github.com/zhaojiedi1992/Bash/tree/master/bin
+.. _mkdvdiso.sh: https://github.com/zhaojiedi1992/Bash/tree/master/bin
 
 
 练习3-交换分区

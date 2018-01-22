@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.16. 2018-01-05 &mdash; my_study_linux v0.1 文档</title>
+  <title>2.23. 2018-01-22 &mdash; my_study_linux v0.1 文档</title>
   
 
   
@@ -37,8 +37,7 @@
         <link rel="search" title="搜索" href="../search.html"/>
     <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
         <link rel="up" title="1. 课堂笔记11月" href="index.html"/>
-        <link rel="next" title="2.17. 2018-01-08" href="2018-01-08.html"/>
-        <link rel="prev" title="2.15. 2018-01-03" href="2018-01-03.html"/> 
+        <link rel="prev" title="2.22. 2018-01-17" href="2018-01-19.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -124,18 +123,18 @@
 <li class="toctree-l2"><a class="reference internal" href="2017-12-29.html">2.13. 2017-12-29</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2018-01-02.html">2.14. 2018-01-02</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2018-01-03.html">2.15. 2018-01-03</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.16. 2018-01-05</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">2.16.1. 上节课回顾</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">2.16.2. 本节内容</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-05.html">2.16. 2018-01-05</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2018-01-08.html">2.17. 2018-01-08</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2018-01-10.html">2.18. 2018-01-10</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2018-01-12.html">2.19. 2018-01-12</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2018-01-15.html">2.20. 2018-01-15</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2018-01-17.html">2.21. 2018-01-17</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2018-01-19.html">2.22. 2018-01-17</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2018-01-22.html">2.23. 2018-01-22</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.23. 2018-01-22</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.23.1. 上节课回顾</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2.23.2. 本节内容</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#id3">3. 课堂笔记2月</a></li>
@@ -187,13 +186,13 @@
         
           <li><a href="index.html">1. 课堂笔记11月</a> &raquo;</li>
         
-      <li>2.16. 2018-01-05</li>
+      <li>2.23. 2018-01-22</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/课堂笔记/2018-01-05.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/课堂笔记/2018-01-22.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -207,55 +206,33 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>2.16. 2018-01-05<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>2.23. 2018-01-22<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id2">
-<h2>2.16.1. 上节课回顾<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">搭建私有ca的主要过程</span>
-
-<span class="p">(</span><span class="n">umask</span> <span class="mi">066</span> <span class="p">;</span> <span class="n">openssl</span> <span class="n">genrsa</span> <span class="o">-</span><span class="n">out</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">CA</span><span class="o">/</span><span class="n">private</span><span class="o">/</span><span class="n">cakey</span><span class="o">.</span><span class="n">pem</span><span class="p">)</span>
-<span class="n">openssl</span> <span class="n">req</span> <span class="o">-</span><span class="n">new</span> <span class="o">-</span><span class="n">x509</span> <span class="o">-</span><span class="n">key</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">CA</span><span class="o">/</span><span class="n">private</span><span class="o">/</span><span class="n">cakey</span><span class="o">.</span><span class="n">pem</span> <span class="o">-</span><span class="n">out</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">CA</span><span class="o">/</span><span class="n">cacert</span><span class="o">.</span><span class="n">pem</span> <span class="o">-</span><span class="n">days</span> <span class="mi">3650</span>
-<span class="n">touch</span> <span class="mi">01</span> <span class="o">&gt;/</span><span class="n">etc</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">CA</span><span class="o">/</span><span class="n">serial</span>
-<span class="n">touch</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">CA</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">txt</span>
-
-<span class="p">(</span><span class="n">umask</span> <span class="mi">066</span><span class="p">;</span> <span class="n">openssl</span> <span class="n">genrsa</span> <span class="o">-</span><span class="n">out</span> <span class="n">http</span><span class="o">.</span><span class="n">pem</span><span class="p">)</span>
-<span class="n">openssl</span> <span class="n">req</span> <span class="o">-</span><span class="n">new</span> <span class="o">-</span><span class="n">key</span> <span class="n">http</span><span class="o">.</span><span class="n">pem</span> <span class="o">-</span><span class="n">out</span> <span class="n">http</span><span class="o">.</span><span class="n">csr</span>
-
-<span class="n">scp</span>
-
-<span class="n">openssl</span> <span class="n">ca</span> <span class="o">-</span><span class="ow">in</span> <span class="n">http</span><span class="o">.</span><span class="n">csr</span> <span class="o">-</span><span class="n">out</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">CA</span><span class="o">/</span><span class="n">certs</span><span class="o">/</span><span class="n">http</span><span class="o">.</span><span class="n">crt</span> <span class="o">-</span><span class="n">days</span> <span class="mi">365</span>
-
-<span class="n">scp</span>
-</pre></div>
-</div>
+<h2>2.23.1. 上节课回顾<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="id3">
-<h2>2.16.2. 本节内容<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span>rsync
+<h2>2.23.2. 本节内容<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql_install_db</span>
+<span class="n">mysql</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;show variables like &quot;basedir&quot; ;&#39;</span>
 
-rsync -av /etc/sysconfig/ remote:/app
-rsync -av /etc/sysconfig remote:/app
+<span class="n">port</span><span class="o">=</span><span class="mi">3307</span>
 
-pssh
+<span class="n">select</span> <span class="n">user</span><span class="p">,</span><span class="n">password</span><span class="p">,</span><span class="n">host</span> <span class="kn">from</span> <span class="nn">mysql.user</span><span class="p">;</span>
 
-pssh -H 172.18.46.6 -i getenforce
-pssh -H &quot;172.18.46.6 ip2&quot; -i getenforce
-pssh -h ip.txt -i getenforce
+<span class="n">update</span> <span class="n">mysql</span><span class="o">.</span><span class="n">user</span> <span class="nb">set</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">(</span><span class="s2">&quot;root&quot;</span><span class="p">)</span> <span class="p">;</span>
 
--o 指定一个目录， 每个ip会生成一个文件，存储信息。
+<span class="n">drop</span> <span class="n">user</span> <span class="s1">&#39;&#39;</span><span class="nd">@localhost</span><span class="p">;</span>
 
-后续命令可以使用双引号。
+<span class="n">flush</span> <span class="n">privileges</span><span class="p">;</span>
 
-aide
+<span class="n">select</span> <span class="n">user</span><span class="p">();</span>
+<span class="n">skip</span><span class="o">-</span><span class="n">grant</span><span class="o">-</span><span class="n">tables</span>
 
-aide --init
+<span class="n">delete</span> <span class="kn">from</span> <span class="nn">mysql.user</span> <span class="n">where</span>  <span class="n">host</span><span class="o">=</span><span class="s2">&quot;centos7.localdomain&quot;</span>
 
-aide --check
+<span class="n">create</span> <span class="n">usr</span> <span class="n">wang</span><span class="o">@</span><span class="s1">&#39;192.168.46.1&#39;</span> <span class="n">identified</span> <span class="n">by</span> <span class="s1">&#39;oracle&#39;</span><span class="p">;</span>
 
-visudo -c
-
-visudo -f file
-
-sudoedit
+<span class="n">select</span> <span class="o">*</span> <span class="kn">from</span> <span class="nn">mysql.user</span><span class="o">/</span><span class="n">G</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -271,10 +248,8 @@ sudoedit
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="2018-01-08.html" class="btn btn-neutral float-right" title="2.17. 2018-01-08" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="2018-01-03.html" class="btn btn-neutral" title="2.15. 2018-01-03" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="2018-01-19.html" class="btn btn-neutral" title="2.22. 2018-01-17" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>linux用户和组管理 &mdash; my_study_linux v0.1 文档</title>
+  <title>1.5. linux用户和组管理 &mdash; my_study_linux v0.1 文档</title>
   
 
   
@@ -35,7 +35,10 @@
         <link rel="index" title="索引"
               href="../genindex.html"/>
         <link rel="search" title="搜索" href="../search.html"/>
-    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/> 
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
+        <link rel="up" title="1. 基础类" href="index.html"/>
+        <link rel="next" title="1.6. Linux上bash的基础特性（三）" href="06-linuxbash特性3.html"/>
+        <link rel="prev" title="1.4. LINUX上bash的基础特性(二)" href="04-bash特性2.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -89,8 +92,51 @@
             
             
               <p class="caption"><span class="caption-text">马哥教育内部讲义</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">1. 基础类</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">1. 基础类</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-Linux简介.html">1.1. LINUX简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-文件系统.html">1.2. LINUX文件系统</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-Bash特性.html">1.3. LINUX上bash的基础特性(一）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-bash特性2.html">1.4. LINUX上bash的基础特性(二)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.5. linux用户和组管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.5.1. 主要配置文件分析</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#etc-passwd">1.5.1.1. /etc/passwd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etc-group">1.5.1.2. /etc/group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etc-shadow">1.5.1.3. /etc/shadow</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1.5.2. 用户管理命令</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#useradd">1.5.2.1. useradd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#groupadd">1.5.2.2. groupadd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#su">1.5.2.3. su</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usermod">1.5.2.4. usermod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passwd">1.5.2.5. passwd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#userdel">1.5.2.6. userdel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#groupdel">1.5.2.7. groupdel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#groupmod">1.5.2.8. groupmod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gpasswd">1.5.2.9. gpasswd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#newgrp">1.5.2.10. newgrp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#chage">1.5.2.11. chage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sudo">1.5.3. sudo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="06-linuxbash特性3.html">1.6. Linux上bash的基础特性（三）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07-grep正则表达式.html">1.7. grep正则表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08-Linux文件查找.html">1.8. Linux文件查找</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09-Vim编辑器.html">1.9. Vim编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10-Linux磁盘管理.html">1.10. Linux磁盘管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-Linux文件系统上的权限.html">1.11. Linux文件系统上的权限</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12-RAID.html">1.12. RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13-LVM.html">1.13. LVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14-Btrfs文件系统.html">1.14. Btrfs文件系统</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15-解压缩.html">1.15. 解压缩</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16-Linux系统程序包管理.html">1.16. Linux系统程序包管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17-Linux系统网络属性管理.html">1.17. Linux系统网络属性管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19-Linux计划任务.html">1.18. Linux计划任务</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#id2">2. 服务类</a></li>
 </ul>
 <p class="caption"><span class="caption-text">练习题</span></p>
@@ -104,11 +150,11 @@
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html">课堂笔记11月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id2">课堂笔记1月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id3">课堂笔记2月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id4">课堂笔记3月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id5">课堂笔记4月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html">1. 课堂笔记11月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id2">2. 课堂笔记1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id3">3. 课堂笔记2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id4">4. 课堂笔记3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id5">5. 课堂笔记4月</a></li>
 </ul>
 
             
@@ -153,7 +199,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>linux用户和组管理</li>
+          <li><a href="index.html">1. 基础类</a> &raquo;</li>
+        
+      <li>1.5. linux用户和组管理</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -173,16 +221,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="linux">
-<h1>linux用户和组管理<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
+<h1>1.5. linux用户和组管理<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
 <p>用户分类</p>
 <ul class="simple">
 <li>系统用户:  1-499(centos6),1-999(centos7)</li>
 <li>登陆用户： 500+（centos6）,1000+(centos7)</li>
 </ul>
 <div class="section" id="id1">
-<h2>主要配置文件分析<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>1.5.1. 主要配置文件分析<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="section" id="etc-passwd">
-<h3>/etc/passwd<a class="headerlink" href="#etc-passwd" title="永久链接至标题">¶</a></h3>
+<h3>1.5.1.1. /etc/passwd<a class="headerlink" href="#etc-passwd" title="永久链接至标题">¶</a></h3>
 <div class="highlight-text"><div class="highlight"><pre><span></span>name:password:uid:gid:geocos:homedir:shell
 </pre></div>
 </div>
@@ -192,7 +240,7 @@ root:x:0:0:root:/root:/bin/bash
 </div>
 </div>
 <div class="section" id="etc-group">
-<h3>/etc/group<a class="headerlink" href="#etc-group" title="永久链接至标题">¶</a></h3>
+<h3>1.5.1.2. /etc/group<a class="headerlink" href="#etc-group" title="永久链接至标题">¶</a></h3>
 <div class="highlight-text"><div class="highlight"><pre><span></span>groupname:password:gid:userlist
 </pre></div>
 </div>
@@ -202,7 +250,7 @@ root:x:0:
 </div>
 </div>
 <div class="section" id="etc-shadow">
-<h3>/etc/shadow<a class="headerlink" href="#etc-shadow" title="永久链接至标题">¶</a></h3>
+<h3>1.5.1.3. /etc/shadow<a class="headerlink" href="#etc-shadow" title="永久链接至标题">¶</a></h3>
 <div class="highlight-text"><div class="highlight"><pre><span></span>name:password: date of last password change : minimum password age : maximum password age : password warning period: password warning period: password inactivity period
 </pre></div>
 </div>
@@ -224,9 +272,9 @@ zhaojiedi:<span class="nv">$6$rZ5h80aV</span>/7Sci.YB<span class="nv">$D25I</spa
 </div>
 </div>
 <div class="section" id="id2">
-<h2>用户管理命令<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>1.5.2. 用户管理命令<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <div class="section" id="useradd">
-<h3>useradd<a class="headerlink" href="#useradd" title="永久链接至标题">¶</a></h3>
+<h3>1.5.2.1. useradd<a class="headerlink" href="#useradd" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -256,7 +304,7 @@ zhaojiedi:<span class="nv">$6$rZ5h80aV</span>/7Sci.YB<span class="nv">$D25I</spa
 </table>
 </div>
 <div class="section" id="groupadd">
-<h3>groupadd<a class="headerlink" href="#groupadd" title="永久链接至标题">¶</a></h3>
+<h3>1.5.2.2. groupadd<a class="headerlink" href="#groupadd" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -284,14 +332,14 @@ root
 </div>
 </div>
 <div class="section" id="su">
-<h3>su<a class="headerlink" href="#su" title="永久链接至标题">¶</a></h3>
+<h3>1.5.2.3. su<a class="headerlink" href="#su" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>su username: 非登录切换，不会读取目标用户的配置文件</li>
 <li>su -username:登陆切换，会读取目标用户配置文件，完全切换</li>
 </ul>
 </div>
 <div class="section" id="usermod">
-<h3>usermod<a class="headerlink" href="#usermod" title="永久链接至标题">¶</a></h3>
+<h3>1.5.2.4. usermod<a class="headerlink" href="#usermod" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -333,7 +381,7 @@ root
 </table>
 </div>
 <div class="section" id="passwd">
-<h3>passwd<a class="headerlink" href="#passwd" title="永久链接至标题">¶</a></h3>
+<h3>1.5.2.5. passwd<a class="headerlink" href="#passwd" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -363,7 +411,7 @@ root
 </table>
 </div>
 <div class="section" id="userdel">
-<h3>userdel<a class="headerlink" href="#userdel" title="永久链接至标题">¶</a></h3>
+<h3>1.5.2.6. userdel<a class="headerlink" href="#userdel" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -375,10 +423,10 @@ root
 </table>
 </div>
 <div class="section" id="groupdel">
-<h3>groupdel<a class="headerlink" href="#groupdel" title="永久链接至标题">¶</a></h3>
+<h3>1.5.2.7. groupdel<a class="headerlink" href="#groupdel" title="永久链接至标题">¶</a></h3>
 </div>
 <div class="section" id="groupmod">
-<h3>groupmod<a class="headerlink" href="#groupmod" title="永久链接至标题">¶</a></h3>
+<h3>1.5.2.8. groupmod<a class="headerlink" href="#groupmod" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -393,7 +441,7 @@ root
 </table>
 </div>
 <div class="section" id="gpasswd">
-<h3>gpasswd<a class="headerlink" href="#gpasswd" title="永久链接至标题">¶</a></h3>
+<h3>1.5.2.9. gpasswd<a class="headerlink" href="#gpasswd" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -411,11 +459,11 @@ root
 </table>
 </div>
 <div class="section" id="newgrp">
-<h3>newgrp<a class="headerlink" href="#newgrp" title="永久链接至标题">¶</a></h3>
+<h3>1.5.2.10. newgrp<a class="headerlink" href="#newgrp" title="永久链接至标题">¶</a></h3>
 <p>用户临时切换基本组</p>
 </div>
 <div class="section" id="chage">
-<h3>chage<a class="headerlink" href="#chage" title="永久链接至标题">¶</a></h3>
+<h3>1.5.2.11. chage<a class="headerlink" href="#chage" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -434,7 +482,7 @@ root
 </div>
 </div>
 <div class="section" id="sudo">
-<h2>sudo<a class="headerlink" href="#sudo" title="永久链接至标题">¶</a></h2>
+<h2>1.5.3. sudo<a class="headerlink" href="#sudo" title="永久链接至标题">¶</a></h2>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -469,6 +517,15 @@ root
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="06-linuxbash特性3.html" class="btn btn-neutral float-right" title="1.6. Linux上bash的基础特性（三）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="04-bash特性2.html" class="btn btn-neutral" title="1.4. LINUX上bash的基础特性(二)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

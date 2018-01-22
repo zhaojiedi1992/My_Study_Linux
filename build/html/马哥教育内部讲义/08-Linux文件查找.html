@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Linux文件查找 &mdash; my_study_linux v0.1 文档</title>
+  <title>1.8. Linux文件查找 &mdash; my_study_linux v0.1 文档</title>
   
 
   
@@ -35,7 +35,10 @@
         <link rel="index" title="索引"
               href="../genindex.html"/>
         <link rel="search" title="搜索" href="../search.html"/>
-    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/> 
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
+        <link rel="up" title="1. 基础类" href="index.html"/>
+        <link rel="next" title="1.9. Vim编辑器" href="09-Vim编辑器.html"/>
+        <link rel="prev" title="1.7. grep正则表达式" href="07-grep正则表达式.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -89,8 +92,42 @@
             
             
               <p class="caption"><span class="caption-text">马哥教育内部讲义</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">1. 基础类</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">1. 基础类</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-Linux简介.html">1.1. LINUX简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-文件系统.html">1.2. LINUX文件系统</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-Bash特性.html">1.3. LINUX上bash的基础特性(一）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-bash特性2.html">1.4. LINUX上bash的基础特性(二)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-linux用户组管理.html">1.5. linux用户和组管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-linuxbash特性3.html">1.6. Linux上bash的基础特性（三）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07-grep正则表达式.html">1.7. grep正则表达式</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.8. Linux文件查找</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#locate">1.8.1. locate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#find">1.8.2. find</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">1.8.2.1. 8.2.1 find的查找用法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">1.8.2.2. 查找条件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">1.8.2.3. 组合条件查找</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">1.8.2.4. 文件类型判断</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">1.8.2.5. 根据文件大小</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">1.8.2.6. 根据时间戳</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">1.8.2.7. 根据权限</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">1.8.2.8. 处理动作</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09-Vim编辑器.html">1.9. Vim编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10-Linux磁盘管理.html">1.10. Linux磁盘管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-Linux文件系统上的权限.html">1.11. Linux文件系统上的权限</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12-RAID.html">1.12. RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13-LVM.html">1.13. LVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14-Btrfs文件系统.html">1.14. Btrfs文件系统</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15-解压缩.html">1.15. 解压缩</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16-Linux系统程序包管理.html">1.16. Linux系统程序包管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17-Linux系统网络属性管理.html">1.17. Linux系统网络属性管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19-Linux计划任务.html">1.18. Linux计划任务</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#id2">2. 服务类</a></li>
 </ul>
 <p class="caption"><span class="caption-text">练习题</span></p>
@@ -104,11 +141,11 @@
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html">课堂笔记11月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id2">课堂笔记1月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id3">课堂笔记2月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id4">课堂笔记3月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id5">课堂笔记4月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html">1. 课堂笔记11月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id2">2. 课堂笔记1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id3">3. 课堂笔记2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id4">4. 课堂笔记3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id5">5. 课堂笔记4月</a></li>
 </ul>
 
             
@@ -153,7 +190,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Linux文件查找</li>
+          <li><a href="index.html">1. 基础类</a> &raquo;</li>
+        
+      <li>1.8. Linux文件查找</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -173,14 +212,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="linux">
-<h1>Linux文件查找<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
+<h1>1.8. Linux文件查找<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
 <p>文件的查找分为2种：</p>
 <ul class="simple">
 <li>实时查找</li>
 <li>非实时查找</li>
 </ul>
 <div class="section" id="locate">
-<h2>locate<a class="headerlink" href="#locate" title="永久链接至标题">¶</a></h2>
+<h2>1.8.1. locate<a class="headerlink" href="#locate" title="永久链接至标题">¶</a></h2>
 <p>locate的使用比较简单，依赖于数据库，需要更新数据库</p>
 <ul class="simple">
 <li>centos6 : makewhatis</li>
@@ -188,15 +227,15 @@
 </ul>
 </div>
 <div class="section" id="find">
-<h2>find<a class="headerlink" href="#find" title="永久链接至标题">¶</a></h2>
+<h2>1.8.2. find<a class="headerlink" href="#find" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id1">
-<h3>8.2.1 find的查找用法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
+<h3>1.8.2.1. 8.2.1 find的查找用法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>find <span class="o">[</span>选项<span class="o">]</span> <span class="o">[</span>查找路径<span class="o">]</span> <span class="o">[</span>查找条件<span class="o">]</span> <span class="o">[</span>处理动作<span class="o">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id2">
-<h3>查找条件<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<h3>1.8.2.2. 查找条件<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -226,7 +265,7 @@
 </table>
 </div>
 <div class="section" id="id3">
-<h3>组合条件查找<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<h3>1.8.2.3. 组合条件查找<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -244,7 +283,7 @@
 </table>
 </div>
 <div class="section" id="id4">
-<h3>文件类型判断<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<h3>1.8.2.4. 文件类型判断<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>-type 文件类型</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>f           普通文件
 d           目录
@@ -257,7 +296,7 @@ p           管道文件
 </div>
 </div>
 <div class="section" id="id5">
-<h3>根据文件大小<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<h3>1.8.2.5. 根据文件大小<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>-size [+|-] #UNIT</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1">#UNIT                   #-1&lt; X &lt;= #</span>
 -UNIT                   <span class="m">0</span>&lt;<span class="o">=</span> X &lt; <span class="c1">#</span>
@@ -266,7 +305,7 @@ p           管道文件
 </div>
 </div>
 <div class="section" id="id6">
-<h3>根据时间戳<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<h3>1.8.2.6. 根据时间戳<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>-atime [+|-] #UNIT</li>
 <li>-ctime [+|-] #UNIT</li>
@@ -279,7 +318,7 @@ p           管道文件
 </div>
 </div>
 <div class="section" id="id7">
-<h3>根据权限<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<h3>1.8.2.7. 根据权限<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>-perm [+|-] MODE</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="m">644</span>                     精确匹配权限
 +644                    任何一位满足就匹配
@@ -288,7 +327,7 @@ p           管道文件
 </div>
 </div>
 <div class="section" id="id8">
-<h3>处理动作<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<h3>1.8.2.8. 处理动作<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -324,6 +363,15 @@ p           管道文件
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="09-Vim编辑器.html" class="btn btn-neutral float-right" title="1.9. Vim编辑器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="07-grep正则表达式.html" class="btn btn-neutral" title="1.7. grep正则表达式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
