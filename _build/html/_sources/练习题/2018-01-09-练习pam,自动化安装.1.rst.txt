@@ -13,11 +13,9 @@ pam_shell
     vim /etc/pam.d/login 第一行添加如下行
     auth      required	pam_shells.so	
 
-.. code-block:: bash
-
 pam_nologin
 
-.. code-block:: bash
+.. code-block:: text
 
     [root@centos74 pam.d]$ man pam_nologin
     [root@centos74 pam.d]$ grep nologin ./*
@@ -38,7 +36,7 @@ pam_nologin
 
 pam_limit
 
-.. code-block:: bash
+.. code-block:: text
 
     [root@centos74 limits.d]$ man 5 limits.conf
     [root@centos74 limits.d]$ ulimit  -a
@@ -116,12 +114,14 @@ pam_limit
  */5 * * * *  /root/bin/checkip.awk /var/log/secure
  
 3、限制centos用户只能够在工作时间通过ssh远程连接本机
+
 .. code-block:: bash
 
     # vim /etc/pam.d/sshd  # 添加如下行
     account  required  pam_time.so
     # vim /etc/security/time.conf # 添加行
     sshd;*;test1;Wd0800-1800
+
 4、限制只有admins组内的用户可ssh到本机
 
 .. code-block:: bash

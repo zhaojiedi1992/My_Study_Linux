@@ -45,7 +45,7 @@
 
 .. code-block:: bash
 
-    [root@centos74 network-scripts]$ nmcli con add type team con-name team0 ifname team0 config '{"runner":{"methord":"activebackup"}}'
+    [root@centos74 network-scripts]$ nmcli con add type team con-name team0 ifname team0 config '{"runner":{"method":"activebackup"}}'
     [root@centos74 network-scripts]$ nmcli con modify team0 ipv4.method static ipv4.addresses 192.168.27.77/24 ipv4.gateway 192.168.27.1
     [root@centos74 network-scripts]$ nmcli con add type team-slave  ifname eth1 master team0 
     [root@centos74 network-scripts]$ nmcli con add type team-slave  ifname eth2 master team0

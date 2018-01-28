@@ -15,7 +15,7 @@ grep学习笔记_
 
 .. _grep学习笔记: http://my-study-grep.readthedocs.io/
 
- grep语法
+grep语法
 ------------------------------------------------------
 
 --color         高亮显示匹配到字符串

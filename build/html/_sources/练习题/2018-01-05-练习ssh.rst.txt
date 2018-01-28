@@ -13,6 +13,14 @@
 
 2、熟练掌握pssh命令使用
 
+pssh详细参考_
+
+pssh详细参考2_
+
+.. _pssh详细参考: http://my-study-linux-services.readthedocs.io/en/latest/
+
+.. _pssh详细参考2: http://services.linuxpanda.tech/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/pssh.html
+
 .. code-block:: text
 
     [root@centos74 ~]$ pssh --help

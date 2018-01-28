@@ -13,8 +13,6 @@ pam_shell
     vim /etc/pam.d/login 第一行添加如下行
     auth      required	pam_shells.so	
 
-.. code-block:: bash
-
 pam_nologin
 
 .. code-block:: text

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6. 2018-01-09-练习pam,自动化安装 &mdash; my_study_linux v0.1 文档</title>
+  <title>3.6. 2018-01-09-练习pam,自动化安装 &mdash; my_study_linux v0.1 文档</title>
   
 
   
@@ -37,8 +37,8 @@
         <link rel="search" title="搜索" href="../search.html"/>
     <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
         <link rel="up" title="1. 练习题11月" href="index.html"/>
-        <link rel="next" title="7. 2018-01-11-练习自动化安装" href="2018-01-11-练习自动化安装.html"/>
-        <link rel="prev" title="5. 2018-01-08-练习tcpwrap,rsync" href="2018-01-08-练习tcpwrap,rsync.html"/> 
+        <link rel="next" title="3.7. 2018-01-11-练习自动化安装" href="2018-01-11-练习自动化安装.html"/>
+        <link rel="prev" title="3.5. 2018-01-08-练习tcpwrap,rsync" href="2018-01-08-练习tcpwrap,rsync.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -101,17 +101,23 @@
 <li class="toctree-l1"><a class="reference internal" href="index.html">1. 练习题11月</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#id2">2. 练习题12月</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html#id3">3. 练习题1月</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="2018-01-02-练习systemd.html">1. 2018-01-02-练习systemd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2018-01-03-练习加密.html">2. 2018-01-03-练习加密</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2018-01-05-练习ssh.html">3. 2018-01-05-练习ssh</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2018-01-06-练习sudotcpwrap.html">4. 2018-01-06-练习sudotcpwrap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2018-01-08-练习tcpwrap,rsync.html">5. 2018-01-08-练习tcpwrap,rsync</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6. 2018-01-09-练习pam,自动化安装</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">6.1. 练习1-pam</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">6.2. 练习2、自动化安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-02-练习systemd.html">3.1. 2018-01-02-练习systemd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-03-练习加密.html">3.2. 2018-01-03-练习加密</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-05-练习ssh.html">3.3. 2018-01-05-练习ssh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-06-练习sudotcpwrap.html">3.4. 2018-01-06-练习sudotcpwrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-08-练习tcpwrap,rsync.html">3.5. 2018-01-08-练习tcpwrap,rsync</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.6. 2018-01-09-练习pam,自动化安装</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">3.6.1. 练习1-pam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.6.2. 练习2、自动化安装</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="2018-01-11-练习自动化安装.html">7. 2018-01-11-练习自动化安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-11-练习自动化安装.html">3.7. 2018-01-11-练习自动化安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-13-练习ansible.html">3.8. 2018-01-13-练习ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-15-练习ansible2.html">3.9. 2018-01-15-练习ansible2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-17-练习rsync.html">3.10. 2018-01-17-练习rsync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-19-练习dns.html">3.11. 2018-01-19-练习dns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-20-练习mysql安装.html">3.12. 2018-01-20-练习mysql安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2018-01-23-练习mysql.html">3.13. 2018-01-23-练习mysql</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#id4">4. 练习题2月</a></li>
@@ -171,7 +177,7 @@
         
           <li><a href="index.html">1. 练习题11月</a> &raquo;</li>
         
-      <li>6. 2018-01-09-练习pam,自动化安装</li>
+      <li>3.6. 2018-01-09-练习pam,自动化安装</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -191,20 +197,17 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pam">
-<h1>6. 2018-01-09-练习pam,自动化安装<a class="headerlink" href="#pam" title="永久链接至标题">¶</a></h1>
+<h1>3.6. 2018-01-09-练习pam,自动化安装<a class="headerlink" href="#pam" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2>6.1. 练习1-pam<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>3.6.1. 练习1-pam<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>1、使用pam_nologin,pam_security,pam_limit,pam_shell</p>
 <p>pam_shell</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>vim /etc/pam.d/login 第一行添加如下行
 auth      required  pam_shells.so
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <p>pam_nologin</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>[root@centos74 pam.d]$ man pam_nologin
+<div class="highlight-text"><div class="highlight"><pre><span></span>[root@centos74 pam.d]$ man pam_nologin
 [root@centos74 pam.d]$ grep nologin ./*
 ./gdm-autologin:account    required    pam_nologin.so
 ./gdm-fingerprint:account     required      pam_nologin.so
@@ -223,7 +226,7 @@ Authentication failed.
 </pre></div>
 </div>
 <p>pam_limit</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>[root@centos74 limits.d]$ man 5 limits.conf
+<div class="highlight-text"><div class="highlight"><pre><span></span>[root@centos74 limits.d]$ man 5 limits.conf
 [root@centos74 limits.d]$ ulimit  -a
 core file size          (blocks, -c) 0
 data seg size           (kbytes, -d) unlimited
@@ -296,13 +299,13 @@ ulimit: ulimit [-SHacdefilmnpqrstuvx] [limit]
 */5 * * * *  /root/bin/checkip.awk /var/log/secure
 </pre></div>
 </div>
-<p>3、限制centos用户只能够在工作时间通过ssh远程连接本机
-.. code-block:: bash</p>
-<blockquote>
-<div># vim /etc/pam.d/sshd  # 添加如下行
+<p>3、限制centos用户只能够在工作时间通过ssh远程连接本机</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/pam.d/sshd  # 添加如下行</span>
 account  required  pam_time.so
-# vim /etc/security/time.conf # 添加行
-sshd;*;test1;Wd0800-1800</div></blockquote>
+<span class="c1"># vim /etc/security/time.conf # 添加行</span>
+sshd<span class="p">;</span>*<span class="p">;</span>test1<span class="p">;</span>Wd0800-1800
+</pre></div>
+</div>
 <p>4、限制只有admins组内的用户可ssh到本机</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># 编辑 /etc/ssh/sshd_config 文件，添加AllowGroups admins</span>
 <span class="c1"># 重启sshd服务。</span>
@@ -310,7 +313,7 @@ sshd;*;test1;Wd0800-1800</div></blockquote>
 </div>
 </div>
 <div class="section" id="id2">
-<h2>6.2. 练习2、自动化安装<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>3.6.2. 练习2、自动化安装<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>1、通过光盘启动，安装局域网的系统</p>
 <blockquote>
 <div>linux askmethod ip=172.18.46.105 netmask=255.255.0.0</div></blockquote>
@@ -340,10 +343,10 @@ sshd;*;test1;Wd0800-1800</div></blockquote>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="2018-01-11-练习自动化安装.html" class="btn btn-neutral float-right" title="7. 2018-01-11-练习自动化安装" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="2018-01-11-练习自动化安装.html" class="btn btn-neutral float-right" title="3.7. 2018-01-11-练习自动化安装" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="2018-01-08-练习tcpwrap,rsync.html" class="btn btn-neutral" title="5. 2018-01-08-练习tcpwrap,rsync" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="2018-01-08-练习tcpwrap,rsync.html" class="btn btn-neutral" title="3.5. 2018-01-08-练习tcpwrap,rsync" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

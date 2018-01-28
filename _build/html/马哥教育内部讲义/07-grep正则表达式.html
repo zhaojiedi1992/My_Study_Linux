@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>grep正则表达式 &mdash; my_study_linux v0.1 文档</title>
+  <title>1.7. grep正则表达式 &mdash; my_study_linux v0.1 文档</title>
   
 
   
@@ -35,7 +35,10 @@
         <link rel="index" title="索引"
               href="../genindex.html"/>
         <link rel="search" title="搜索" href="../search.html"/>
-    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/> 
+    <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
+        <link rel="up" title="1. 基础类" href="index.html"/>
+        <link rel="next" title="1.8. Linux文件查找" href="08-Linux文件查找.html"/>
+        <link rel="prev" title="1.6. Linux上bash的基础特性（三）" href="06-linuxbash特性3.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -89,25 +92,58 @@
             
             
               <p class="caption"><span class="caption-text">马哥教育内部讲义</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">基础类</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#id2">服务类</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">1. 基础类</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-Linux简介.html">1.1. LINUX简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-文件系统.html">1.2. LINUX文件系统</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-Bash特性.html">1.3. LINUX上bash的基础特性(一）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-bash特性2.html">1.4. LINUX上bash的基础特性(二)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-linux用户组管理.html">1.5. linux用户和组管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-linuxbash特性3.html">1.6. Linux上bash的基础特性（三）</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.7. grep正则表达式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.7.1. grep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1.7.2. grep语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">1.7.3. 基本的正则表达式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">1.7.3.1. 字符匹配</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">1.7.3.2. 次数匹配</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">1.7.3.3. 位置锚定</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">1.7.3.4. 分组</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">1.7.4. 扩展正则表达式</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="08-Linux文件查找.html">1.8. Linux文件查找</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09-Vim编辑器.html">1.9. Vim编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10-Linux磁盘管理.html">1.10. Linux磁盘管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-Linux文件系统上的权限.html">1.11. Linux文件系统上的权限</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12-RAID.html">1.12. RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13-LVM.html">1.13. LVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14-Btrfs文件系统.html">1.14. Btrfs文件系统</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15-解压缩.html">1.15. 解压缩</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16-Linux系统程序包管理.html">1.16. Linux系统程序包管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17-Linux系统网络属性管理.html">1.17. Linux系统网络属性管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19-Linux计划任务.html">1.18. Linux计划任务</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#id2">2. 服务类</a></li>
 </ul>
 <p class="caption"><span class="caption-text">练习题</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html">练习题11月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id2">练习题1月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id3">练习题2月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id4">练习题3月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id5">练习题4月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html">1. 练习题11月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id2">2. 练习题12月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id3">3. 练习题1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id4">4. 练习题2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id5">5. 练习题3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id6">6. 练习题4月</a></li>
 </ul>
 <p class="caption"><span class="caption-text">课堂笔记</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html">课堂笔记11月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id2">课堂笔记1月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id3">课堂笔记2月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id4">课堂笔记3月</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id5">课堂笔记4月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html">1. 课堂笔记11月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id2">2. 课堂笔记1月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id3">3. 课堂笔记2月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id4">4. 课堂笔记3月</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id5">5. 课堂笔记4月</a></li>
 </ul>
 
             
@@ -152,7 +188,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>grep正则表达式</li>
+          <li><a href="index.html">1. 基础类</a> &raquo;</li>
+        
+      <li>1.7. grep正则表达式</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,9 +210,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="grep">
-<h1>grep正则表达式<a class="headerlink" href="#grep" title="永久链接至标题">¶</a></h1>
+<h1>1.7. grep正则表达式<a class="headerlink" href="#grep" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2>grep<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>1.7.1. grep<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>grep:global search regula expression and print out the line.</p>
 <p>分类：</p>
 <ul class="simple">
@@ -182,9 +220,9 @@
 <li>扩展的</li>
 </ul>
 <p><a class="reference external" href="http://my-study-grep.readthedocs.io/">grep学习笔记</a></p>
-<blockquote>
-<div>grep语法</div></blockquote>
-<hr class="docutils" />
+</div>
+<div class="section" id="id3">
+<h2>1.7.2. grep语法<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -219,10 +257,10 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="id3">
-<h2>基本的正则表达式<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id4">
-<h3>字符匹配<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<h2>1.7.3. 基本的正则表达式<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h3>1.7.3.1. 字符匹配<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>.                   任意字符一次
 <span class="o">[]</span>                  集合中任一个字符
 <span class="o">[</span>^<span class="o">]</span>                 几集合之外任何一个
@@ -236,8 +274,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h3>次数匹配<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id6">
+<h3>1.7.3.2. 次数匹配<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>*               多次
 <span class="se">\?</span>              0次或者1次
 <span class="se">\+</span>              1次或者更多次
@@ -248,8 +286,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id6">
-<h3>位置锚定<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id7">
+<h3>1.7.3.3. 位置锚定<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>^           行首锚定
 $           行尾锚定
 <span class="se">\&lt;</span>          单词头锚定
@@ -258,16 +296,16 @@ $           行尾锚定
 </pre></div>
 </div>
 </div>
-<div class="section" id="id7">
-<h3>分组<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id8">
+<h3>1.7.3.4. 分组<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="se">\(\)</span>            分组
 <span class="se">\1</span>              分组后的后向引用
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="id8">
-<h2>扩展正则表达式<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id9">
+<h2>1.7.4. 扩展正则表达式<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 </div>
 </div>
 
@@ -278,6 +316,15 @@ $           行尾锚定
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="08-Linux文件查找.html" class="btn btn-neutral float-right" title="1.8. Linux文件查找" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="06-linuxbash特性3.html" class="btn btn-neutral" title="1.6. Linux上bash的基础特性（三）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
