@@ -135,9 +135,13 @@ pam_limit
 
 1、通过光盘启动，安装局域网的系统
 
+.. code-block:: text
+
     linux askmethod ip=172.18.46.105 netmask=255.255.0.0
 
 2、不使用大光盘， 直接自制一个小光盘，然后安装网络的系统
+
+.. code-block:: text
 
     linux ks=http://172.18.46.6/pub/ks/ks7-mini.cfg ip=172.18.46.105 netmask=255.255.0.0
 
@@ -148,7 +152,7 @@ pam_limit
     [root@station /]# find /centos6/ -name TRANS.TBL -exec rm -rf {} \;
     [root@centos66 centos6]$ rm -rf repodata/*
     [root@centos66 centos6]$ cp /mnt/cdrom/repodata/43d8fd068164b0f042845474d6a22262798b9f0d1f49ad1bf9f95b953089777d-c6-x86_64-comps.xml repodata/
-    
+
     [root@station centos6]# createrepo  -g repodata/38b60f66d52704cffb8696750b2b6552438c1ace283bc2cf22408b0ba0e4cbfa-c7-x86_64-comps.xml  .
     [root@station centos6]# mkisofs -R -J -T -v --no-emul-boot --boot-load-size 4 --boot-info-table -V "centos 6 boot" -b isolinux/isolinux.bin -c isolinux/boot.cat -o /var/www/html/iso/c66.iso /centos6
     #修改linuxiso下的linuxiso.cfg文件ks.cfg文件
