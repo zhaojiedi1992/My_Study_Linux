@@ -16,7 +16,7 @@ tcpwrap_
 .. _tcpwrap: http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_008.html
 
 
-练习3-
+练习3-tcpwarp
 ---------------------------------------------------
 
 1、仅开放本机两个IP地址中的一个地址172.16.0.X上绑定的sshd和vsftpd服务给172.16.0.0/16
