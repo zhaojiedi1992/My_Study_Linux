@@ -110,8 +110,8 @@ pam_limit
             }
     }
 
- # crontab -e 
- */5 * * * *  /root/bin/checkip.awk /var/log/secure
+    # crontab -e 
+    */5 * * * *  /root/bin/checkip.awk /var/log/secure
  
 3、限制centos用户只能够在工作时间通过ssh远程连接本机
 
@@ -128,12 +128,9 @@ pam_limit
 
     # 编辑 /etc/ssh/sshd_config 文件，添加AllowGroups admins
     # 重启sshd服务。
+   
 
-    
-
-
-
-练习2、自动化安装
+练习2-自动化安装
 --------------------------------------------------------------------
 
 1、通过光盘启动，安装局域网的系统
@@ -146,6 +143,8 @@ pam_limit
 
 3、制作可启动U盘，自动安装系统
 
+.. code-block:: bash
+
     [root@station /]# find /centos6/ -name TRANS.TBL -exec rm -rf {} \;
     [root@centos66 centos6]$ rm -rf repodata/*
     [root@centos66 centos6]$ cp /mnt/cdrom/repodata/43d8fd068164b0f042845474d6a22262798b9f0d1f49ad1bf9f95b953089777d-c6-x86_64-comps.xml repodata/
@@ -154,6 +153,19 @@ pam_limit
     [root@station centos6]# mkisofs -R -J -T -v --no-emul-boot --boot-load-size 4 --boot-info-table -V "centos 6 boot" -b isolinux/isolinux.bin -c isolinux/boot.cat -o /var/www/html/iso/c66.iso /centos6
     #修改linuxiso下的linuxiso.cfg文件ks.cfg文件
     #记得ks.cfg有reboot行
+
+
+参考1_
+
+参考2_
+
+.. _参考1: http://services.linuxpanda.tech/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AE%89%E8%A3%85/index.html
+
+.. _参考2: http://my-study-linux-service.readthedocs.io/en/latest/
+
+
+
+
 
 
 
