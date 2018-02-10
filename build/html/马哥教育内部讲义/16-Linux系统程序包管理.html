@@ -258,12 +258,69 @@
 <li class="toctree-l3"><a class="reference internal" href="10-Linux磁盘管理.html#id13">1.10.11. 软连接</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="11-Linux文件系统上的权限.html">1.11. Linux文件系统上的权限</a></li>
-<li class="toctree-l2"><a class="reference internal" href="12-RAID.html">1.12. RAID</a></li>
-<li class="toctree-l2"><a class="reference internal" href="13-LVM.html">1.13. LVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-Linux文件系统上的权限.html">1.11. Linux文件系统上的权限</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="11-Linux文件系统上的权限.html#chmod">1.11.1. 文件权限的修改chmod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-Linux文件系统上的权限.html#chown">1.11.2. 文件所有者的修改chown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-Linux文件系统上的权限.html#umask">1.11.3. umask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-Linux文件系统上的权限.html#id2">1.11.4. 特殊权限</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="11-Linux文件系统上的权限.html#id3">1.11.4.1. 安全上下文：</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11-Linux文件系统上的权限.html#suid">1.11.4.2. suid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11-Linux文件系统上的权限.html#sgid">1.11.4.3. sgid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11-Linux文件系统上的权限.html#sticky">1.11.4.4. sticky</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="12-RAID.html">1.12. RAID</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="12-RAID.html#id1">1.12.1. raid的实现方式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12-RAID.html#id2">1.12.2. raid级别</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12-RAID.html#id3">1.12.3. 软raid的实现</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="13-LVM.html">1.13. LVM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="13-LVM.html#id1">1.13.1. 基础的概念</a></li>
+<li class="toctree-l3"><a class="reference internal" href="13-LVM.html#id2">1.13.2. lvm的实现</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="13-LVM.html#pv">1.13.2.1. 创建pv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="13-LVM.html#vg">1.13.2.2. 创建vg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="13-LVM.html#lv">1.13.2.3. 创建lv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="13-LVM.html#id3">1.13.2.4. 扩容lv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="13-LVM.html#id4">1.13.2.5. 缩减lv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="13-LVM.html#id5">1.13.2.6. 快照</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="14-Btrfs文件系统.html">1.14. Btrfs文件系统</a></li>
-<li class="toctree-l2"><a class="reference internal" href="15-解压缩.html">1.15. 解压缩</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">1.16. Linux系统程序包管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15-解压缩.html">1.15. 解压缩</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15-解压缩.html#gzip">1.15.1. gzip的使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15-解压缩.html#bzip">1.15.2. bzip的使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15-解压缩.html#xz">1.15.3. xz的使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15-解压缩.html#zip">1.15.4. zip的使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15-解压缩.html#id2">1.15.5. 归档工具</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="15-解压缩.html#tar">1.15.5.1. tar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.16. Linux系统程序包管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rpm">1.16.1. rpm包格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.16.2. rpm的优点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1.16.3. rpm包管理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">1.16.3.1. 安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">1.16.3.2. 升级</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">1.16.3.3. 卸载</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">1.16.3.4. 查询</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">1.16.3.5. 校验</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">1.16.3.6. 额外选项</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#yum">1.16.4. yum</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">1.16.4.1. yum的配置</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">1.16.5. 源码编译安装</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="17-Linux系统网络属性管理.html">1.17. Linux系统网络属性管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="19-Linux计划任务.html">1.18. Linux计划任务</a></li>
 </ul>
@@ -375,6 +432,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../练习题/2017-12-03-练习-高级磁盘管理.html#lvm">2.2.1. 练习1-LVM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../练习题/2017-12-03-练习-高级磁盘管理.html#raid">2.2.2. 练习2-raid</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../练习题/2017-12-03-练习-高级磁盘管理.html#quota">2.2.3. 练习3-quota</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../练习题/2017-12-03-练习-高级磁盘管理.html#id5">2.2.4. 练习3-raid</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../练习题/2017-12-13-练习-网络.html">2.3. 2017-12-13-练习-网络</a><ul>
@@ -803,6 +861,364 @@
             
   <div class="section" id="linux">
 <h1>1.16. Linux系统程序包管理<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
+<p>linux环境下有2种软件管理软件，分别是rpm和dpkg。</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">发行版代表</th>
+<th class="head">软件管理机制</th>
+<th class="head">使用命令</th>
+<th class="head">线上升级机制</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Red Hat/Fedora</td>
+<td>RPM</td>
+<td>rpm,rpmbuild</td>
+<td>yum</td>
+</tr>
+<tr class="row-odd"><td>Debian/Ubuntu</td>
+<td>DPKG</td>
+<td>dpkg</td>
+<td>apt-get</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="rpm">
+<h2>1.16.1. rpm包格式<a class="headerlink" href="#rpm" title="永久链接至标题">¶</a></h2>
+<p>样例： ftp-0.17-54.el6.x86_64.rpm</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>ftp             软件名称
+0.17            软件版本
+54              编译次数
+el6             红帽企业6
+x86_64          适合的硬件平台，有i386,i586,i686,x_86_6,noarch
+.rpm            rpm的扩展名
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>1.16.2. rpm的优点<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li>rpm内部宝航已经编译过程序和配置等数据，可以让用户免去重新编译的困扰。</li>
+<li>rpm在被安装之前，会自动检查磁盘容量，操作系统环境，避免错误安装。</li>
+<li>rpm文件本身提供软件信息，依赖性软件，方便用户了解软件信息</li>
+<li>便于升级、移除、查询和验证工作。</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>1.16.3. rpm包管理<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h3>1.16.3.1. 安装<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>安装相关的选项</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span></kbd></td>
+<td>以#来表示安装的进度</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v</span></kbd></td>
+<td>显示安装过程的详细信息</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v<var>vv</var></span></kbd></td>
+<td>更详细的信息</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--test</span></kbd></td>
+<td>不执行真正的安装，只是测试下</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--nodeps</span></kbd></td>
+<td>忽略依赖关系，可能安装成功，但是没法使用</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--replacepkgs</span></kbd></td>
+<td>覆盖安装</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--force</span></kbd></td>
+<td>强制安装</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h3>1.16.3.2. 升级<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>升级相关的选项</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">--oldpackage</span></kbd></td>
+<td>降级到旧版本</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-U</span></kbd></td>
+<td>升级或者安装</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-F</span></kbd></td>
+<td>升级</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h3>1.16.3.3. 卸载<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>卸载相关的选项</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-e</span></kbd></td>
+<td>卸载</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--allmatches</span></kbd></td>
+<td>如果一个安装包安装多个版本，就都卸载</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id6">
+<h3>1.16.3.4. 查询<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>查询相关选项</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-q</span></kbd></td>
+<td>查询</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-a</span></kbd></td>
+<td>所有包</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-f</span></kbd></td>
+<td>查询文件有那个包安装的</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-i</span></kbd></td>
+<td>查询安装的包信息</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-l</span></kbd></td>
+<td>列出包安装提供的文件列表</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c</span></kbd></td>
+<td>列出安装的配置文件</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span></kbd></td>
+<td>列出安装的帮助文档信息</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--changlog</span></kbd></td>
+<td>列出版本变化信息</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--provides</span></kbd></td>
+<td>列出包提供的能力，能使用的命令</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--requires</span></kbd></td>
+<td>查询包依赖于那个包</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--scripts</span></kbd></td>
+<td>查询包安装前和安装后脚本，preinstall,preuninstall,postinstall,postuninstall</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id7">
+<h3>1.16.3.5. 校验<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>校验包使用-V选项</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>S size          文件大小被修改了
+M mode          文件的类型或者属性被修改了。
+5 md5           文件的指纹信息不同了
+D device        文件的主设备号变了
+L link          文件link路径变化了
+U user          所有者变了
+G group         所属组变了
+T time          创建时间变了
+P capabilities 提供能力变化
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>1.16.3.6. 额外选项<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-K</span></kbd></td>
+<td>验证包</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--nosignature</span></kbd></td>
+<td>不检查包来源合法性</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--nodigest</span></kbd></td>
+<td>不检查完整性</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--initdb</span></kbd></td>
+<td>初始化数据库</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--rebuliddb</span></kbd></td>
+<td>重建数据库</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="yum">
+<h2>1.16.4. yum<a class="headerlink" href="#yum" title="永久链接至标题">¶</a></h2>
+<p>yum是通过分析rpmde 标头信息，根据各个软件的依赖关系制作出有依赖关系的解决方案，
+然后可以自动处理软件的依赖问题，以解决软件安装或移除与升级的问题。</p>
+<div class="section" id="id9">
+<h3>1.16.4.1. yum的配置<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>yum的配置需要配置到/etc/yum.repo.d目录下，且以repo作为后缀。
+主要片段</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>[repoid]        仓库名字，全局唯一的
+name            仓库名字
+url             仓库的地址，支持ftp,http,file三种协议
+enabled         是否启用
+gpgcheck        是否包校验
+gpgkey          gpgkey文件路径
+cost            代价，默认1000，越小越优先
+</pre></div>
+</div>
+<p>yum命令</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">子命令</th>
+<th class="head">功能</th>
+<th class="head">样例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>install</td>
+<td>安装包</td>
+<td>yum install tree</td>
+</tr>
+<tr class="row-odd"><td>update</td>
+<td>更新包</td>
+<td>yum update tree</td>
+</tr>
+<tr class="row-even"><td>downgrade</td>
+<td>降级</td>
+<td>yum downgrade tree</td>
+</tr>
+<tr class="row-odd"><td>check-update</td>
+<td>检查那些升级可用</td>
+<td>yum check-update</td>
+</tr>
+<tr class="row-even"><td>remove</td>
+<td>移除包</td>
+<td>yum remove tree</td>
+</tr>
+<tr class="row-odd"><td>list</td>
+<td>列出包</td>
+<td>yum list all <a href="#id10"><span class="problematic" id="id11">|</span></a>grep tree</td>
+</tr>
+<tr class="row-even"><td>info</td>
+<td>查看包详细信息</td>
+<td>yum info tree</td>
+</tr>
+<tr class="row-odd"><td>provides</td>
+<td>查看包提供信息</td>
+<td>yum provides tree</td>
+</tr>
+<tr class="row-even"><td>clean</td>
+<td>清空特定缓存</td>
+<td>yum clean all</td>
+</tr>
+<tr class="row-odd"><td>makecache</td>
+<td>制作缓存</td>
+<td>yum makecache</td>
+</tr>
+<tr class="row-even"><td>groupinstall</td>
+<td>包组安装</td>
+<td>yum groupinstall 'development tools'</td>
+</tr>
+<tr class="row-odd"><td>grouplist</td>
+<td>包组列表</td>
+<td>yum grouplist 'development tools'</td>
+</tr>
+<tr class="row-even"><td>groupremove</td>
+<td>包组卸载</td>
+<td>yum groupremvoe 'development tools'</td>
+</tr>
+<tr class="row-odd"><td>groupinfo</td>
+<td>包组详细信息</td>
+<td>yum groupinfo 'development tools'</td>
+</tr>
+<tr class="row-even"><td>search</td>
+<td>搜索相关包</td>
+<td>yum search top</td>
+</tr>
+<tr class="row-odd"><td>localinstall</td>
+<td>本地安装</td>
+<td>yum localinstall tree*.rpm</td>
+</tr>
+<tr class="row-even"><td>reinstall</td>
+<td>重新安装包</td>
+<td>yum reinstall tree -f</td>
+</tr>
+<tr class="row-odd"><td>deplist</td>
+<td>查看包依赖列表</td>
+<td>yum deplist tree</td>
+</tr>
+<tr class="row-even"><td>repolist</td>
+<td>查看仓库列表</td>
+<td>yum repolist</td>
+</tr>
+<tr class="row-odd"><td>history</td>
+<td>安装历史</td>
+<td>yum histrory</td>
+</tr>
+</tbody>
+</table>
+<p>yum history 这个是个比较好用的工具，支持redo和undo的。</p>
+<p>样例:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos-155 backup<span class="o">]</span><span class="c1"># yum history</span>
+Loaded plugins: fastestmirror
+ID     <span class="p">|</span> Command line             <span class="p">|</span> Date and <span class="nb">time</span>    <span class="p">|</span> Action<span class="o">(</span>s<span class="o">)</span>      <span class="p">|</span> Altered
+-------------------------------------------------------------------------------
+    <span class="m">39</span> <span class="p">|</span> install mdadm            <span class="p">|</span> <span class="m">2018</span>-02-10 <span class="m">17</span>:34 <span class="p">|</span> Install        <span class="p">|</span>    <span class="m">2</span>
+    <span class="m">38</span> <span class="p">|</span> install MariaDB-server M <span class="p">|</span> <span class="m">2018</span>-02-08 <span class="m">18</span>:55 <span class="p">|</span> I, O           <span class="p">|</span>    <span class="m">5</span> EE
+    <span class="m">37</span> <span class="p">|</span> remove mysql             <span class="p">|</span> <span class="m">2018</span>-02-08 <span class="m">18</span>:50 <span class="p">|</span> Erase          <span class="p">|</span>    <span class="m">2</span> EE
+    <span class="m">36</span> <span class="p">|</span> install mariadb-server   <span class="p">|</span> <span class="m">2018</span>-02-06 <span class="m">15</span>:38 <span class="p">|</span> Install        <span class="p">|</span>    <span class="m">4</span>
+    <span class="m">35</span> <span class="p">|</span> install libsemanage-pyth <span class="p">|</span> <span class="m">2018</span>-02-06 <span class="m">14</span>:47 <span class="p">|</span> Install        <span class="p">|</span>    <span class="m">1</span>
+    <span class="m">34</span> <span class="p">|</span> install libselinux-stati <span class="p">|</span> <span class="m">2018</span>-02-06 <span class="m">14</span>:45 <span class="p">|</span> Install        <span class="p">|</span>    <span class="m">4</span>
+    <span class="m">33</span> <span class="p">|</span> install cifs-utils       <span class="p">|</span> <span class="m">2018</span>-02-06 <span class="m">10</span>:14 <span class="p">|</span> Install        <span class="p">|</span>    <span class="m">1</span>
+    <span class="m">32</span> <span class="p">|</span> install samba-client     <span class="p">|</span> <span class="m">2018</span>-02-06 <span class="m">09</span>:39 <span class="p">|</span> Install        <span class="p">|</span>    <span class="m">3</span>
+    <span class="m">31</span> <span class="p">|</span> install samba            <span class="p">|</span> <span class="m">2018</span>-02-06 <span class="m">09</span>:37 <span class="p">|</span> Install        <span class="p">|</span>   <span class="m">14</span>
+    <span class="m">30</span> <span class="p">|</span> install nfs-utils        <span class="p">|</span> <span class="m">2018</span>-02-04 <span class="m">18</span>:18 <span class="p">|</span> Install        <span class="p">|</span>   <span class="m">16</span>
+    <span class="m">29</span> <span class="p">|</span> install <span class="nb">bind</span> bind-utils  <span class="p">|</span> <span class="m">2018</span>-01-21 <span class="m">03</span>:10 <span class="p">|</span> Install        <span class="p">|</span>    <span class="m">1</span>
+    <span class="m">28</span> <span class="p">|</span> remove <span class="nb">bind</span>              <span class="p">|</span> <span class="m">2018</span>-01-21 <span class="m">01</span>:42 <span class="p">|</span> Erase          <span class="p">|</span>    <span class="m">1</span> EE
+    <span class="m">27</span> <span class="p">|</span> install psmisc           <span class="p">|</span> <span class="m">2018</span>-01-20 <span class="m">13</span>:29 <span class="p">|</span> Install        <span class="p">|</span>    <span class="m">1</span>
+    <span class="m">26</span> <span class="p">|</span> install wget             <span class="p">|</span> <span class="m">2018</span>-01-20 <span class="m">11</span>:12 <span class="p">|</span> Install        <span class="p">|</span>    <span class="m">1</span>
+    <span class="m">25</span> <span class="p">|</span> remove Maria*            <span class="p">|</span> <span class="m">2018</span>-01-20 <span class="m">10</span>:59 <span class="p">|</span> Erase          <span class="p">|</span>    <span class="m">6</span> EE
+    <span class="m">24</span> <span class="p">|</span> install mariadb-server   <span class="p">|</span> <span class="m">2018</span>-01-20 <span class="m">10</span>:22 <span class="p">|</span> Install        <span class="p">|</span>    <span class="m">2</span>
+    <span class="m">23</span> <span class="p">|</span> remove MariaDB-server Ma <span class="p">|</span> <span class="m">2018</span>-01-20 <span class="m">09</span>:47 <span class="p">|</span> Erase          <span class="p">|</span>    <span class="m">2</span>
+    <span class="m">22</span> <span class="p">|</span> install MariaDB-server M <span class="p">|</span> <span class="m">2018</span>-01-20 <span class="m">09</span>:32 <span class="p">|</span> I, O           <span class="p">|</span>   <span class="m">10</span> EE
+    <span class="m">21</span> <span class="p">|</span> reinstall mariadb-server <span class="p">|</span> <span class="m">2018</span>-01-19 <span class="m">16</span>:53 <span class="p">|</span> Reinstall      <span class="p">|</span>    <span class="m">2</span>
+    <span class="m">20</span> <span class="p">|</span> install mariadb-server   <span class="p">|</span> <span class="m">2018</span>-01-19 <span class="m">16</span>:51 <span class="p">|</span> Install        <span class="p">|</span>   <span class="m">10</span>
+<span class="nb">history</span> list
+<span class="o">[</span>root@centos-155 backup<span class="o">]</span><span class="c1"># yum history undo 39</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>1.16.5. 源码编译安装<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<p>源码编译大概流程</p>
+<ol class="arabic simple">
+<li>./configure --help</li>
+<li>./configure</li>
+<li>make &amp;&amp; make install</li>
+<li>添加bin目录到path环境变量</li>
+<li>创建软连接到/usr/include下</li>
+<li>在帮助文档配置文件安装的帮助man目录</li>
+<li>额外文件的配置，比如服务文件，默认配置文件等。</li>
+</ol>
+</div>
 </div>
 
 

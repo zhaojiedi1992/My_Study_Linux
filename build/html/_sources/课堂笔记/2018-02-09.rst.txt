@@ -4,10 +4,6 @@
 上节课回顾
 ----------------------------
 
-::
-  
-
-
 
 本节内容
 ----------------------------
@@ -16,4 +12,29 @@
 
   log_bin
   sql_log_bin
+
+
+  show binary logs ;
+  show master logs ;
+  show master status ;
+
+  mysqlbinlog -d dbname 
+
+  gtid : global transation id 
+
+  purge binary logs to 'mariadb-log-0000003'
+
+  reset master to 1 ;
+
+  flush logs ;
+
+  mysqldump ;
+
+  mysqlbackup 
+
+  
+
+
+
+
                                               
