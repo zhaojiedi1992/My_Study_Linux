@@ -6,8 +6,8 @@
 
 ::
 
-sudo
-sudoedit
+    sudo
+    sudoedit
 
 
    

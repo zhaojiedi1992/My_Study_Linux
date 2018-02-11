@@ -42,7 +42,7 @@
 
 要求1： 
 
-.. code-block:: bash 
+.. code-block:: text 
 
     [root@centos-155 ~]# yum install mdadm
     [root@centos-155 ~]# fdisk  /dev/sdb
