@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.5. 文本处理工具之sed,awk &mdash; my_study_linux v0.1 文档</title>
+  <title>2.5. Nssitch、pam &mdash; my_study_linux v0.1 文档</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="search" title="搜索" href="../search.html"/>
     <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
         <link rel="up" title="1. 基础类" href="index.html"/>
-        <link rel="next" title="1. 练习题11月" href="../练习题/index.html"/>
+        <link rel="next" title="2.6. 文件共享服务" href="25-文件共享服务.html"/>
         <link rel="prev" title="2.4. Openssl" href="23-Openssl.html"/> 
 
   
@@ -416,11 +416,34 @@
 <li class="toctree-l3"><a class="reference internal" href="23-Openssl.html#id9">2.4.6. 数字证书的获取</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.5. 文本处理工具之sed,awk</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#sed">2.5.1. 22.1 sed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#awk">2.5.2. 22.2 awk</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.5. Nssitch、pam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#nsswitch">2.5.1. nsswitch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#nss">2.5.1.1. nss的配置文件</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#pam">2.5.2. pam</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="25-文件共享服务.html">2.6. 文件共享服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="25-文件共享服务.html#ftp">2.6.1. ftp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="25-文件共享服务.html#vsftpd">2.6.1.1. vsftpd的安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="25-文件共享服务.html#id2">2.6.1.2. 常见配置项</a></li>
+<li class="toctree-l4"><a class="reference internal" href="25-文件共享服务.html#id3">2.6.1.3. 基于虚拟用户的vsftpd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="25-文件共享服务.html#lftp">2.6.1.4. lftp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="25-文件共享服务.html#wget">2.6.1.5. wget</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="25-文件共享服务.html#nfs">2.6.2. nfs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="25-文件共享服务.html#samba">2.6.3. samba</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="26-DNS域名解析服务.html">2.7. DNS域名解析服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="26-DNS域名解析服务.html#id1">2.7.1. dns解析过程</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="27-Linux系统防火墙.html">2.8. Linux系统防火墙</a></li>
+<li class="toctree-l2"><a class="reference internal" href="28-LinuxSyslog系统日志管理.html">2.9. Linux Syslog系统日志管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="29-WebServices.html">2.10. Web Service</a></li>
 </ul>
 </li>
 </ul>
@@ -630,7 +653,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id4">4. 练习题2月</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../练习题/2018-02-03-练习网络文件共享2.html">4.1. 2018-02-03-练习网络文件共享2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../练习题/2018-02-03-练习网络文件共享2.html">4.1. 2018-02-03-练习网络文件共享2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../练习题/2018-02-03-练习网络文件共享2.html#samba">4.1.1. 练习1-建立samba服务器</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id5">5. 练习题3月</a><ul class="simple">
@@ -922,7 +948,7 @@
         
           <li><a href="index.html">1. 基础类</a> &raquo;</li>
         
-      <li>2.5. 文本处理工具之sed,awk</li>
+      <li>2.5. Nssitch、pam</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -940,7 +966,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../练习题/index.html" class="btn btn-neutral float-right" title="1. 练习题11月" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="25-文件共享服务.html" class="btn btn-neutral float-right" title="2.6. 文件共享服务" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="23-Openssl.html" class="btn btn-neutral" title="2.4. Openssl" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -952,15 +978,98 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sed-awk">
-<h1>2.5. 文本处理工具之sed,awk<a class="headerlink" href="#sed-awk" title="永久链接至标题">¶</a></h1>
-<div class="section" id="sed">
-<h2>2.5.1. 22.1 sed<a class="headerlink" href="#sed" title="永久链接至标题">¶</a></h2>
-<p><a class="reference external" href="http://my-study-sed.readthedocs.io/en/latest/">sed学习笔记</a></p>
+  <div class="section" id="nssitchpam">
+<h1>2.5. Nssitch、pam<a class="headerlink" href="#nssitchpam" title="永久链接至标题">¶</a></h1>
+<div class="section" id="nsswitch">
+<h2>2.5.1. nsswitch<a class="headerlink" href="#nsswitch" title="永久链接至标题">¶</a></h2>
+<p>nsswitch是network service switch的简写，叫做网络服务转换，主要用于调整网络服务
+的名称解析机制。</p>
+<div class="section" id="nss">
+<h3>2.5.1.1. nss的配置文件<a class="headerlink" href="#nss" title="永久链接至标题">¶</a></h3>
+<p>nss的配置文件是/etc/nsswitch.conf，格式比较简单。</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>格式：
+    解析库： 解析库类型
+
+样例：
+    # 密码通过文件去验证
+    passwd: files
+    # 主机需要去文件找，没有再去dns找
+    hosts: files dns
+</pre></div>
 </div>
-<div class="section" id="awk">
-<h2>2.5.2. 22.2 awk<a class="headerlink" href="#awk" title="永久链接至标题">¶</a></h2>
-<p><a class="reference external" href="http://my-study-gawk.readthedocs.io/en/latest/">awk学习笔记</a></p>
+<p>解析库：</p>
+<ul class="simple">
+<li>files</li>
+<li>ethers</li>
+<li>group</li>
+<li>hosts</li>
+<li>netgroup</li>
+<li>networks</li>
+<li>passwd</li>
+<li>protocols</li>
+<li>rpm</li>
+<li>services</li>
+<li>shadow</li>
+</ul>
+<p>解析库类型：</p>
+<ul class="simple">
+<li>files</li>
+<li>dns</li>
+<li>compat</li>
+<li>dbm</li>
+<li>hesiod</li>
+<li>winbind</li>
+<li>nis</li>
+<li>nisplus</li>
+</ul>
+<p>查询结果：</p>
+<ul class="simple">
+<li>SUCCESS  成功</li>
+<li>NOTFOUND 没有找到</li>
+<li>UNAVIL   服务不可用</li>
+<li>TRYAGAIN 临时失败</li>
+</ul>
+<p>默认找到一个成功就返回了，后续的就不判断了，如果出现没有找到就继续找下一个配置项，我们可以修改默认配置。</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span># 这个含义就是如果文件没有找到的话，后续的工作（去dns查找）就不做了。
+hosts: files[NOTFOUND]=return] dns
+</pre></div>
+</div>
+<p>其他命令</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos-155 ~<span class="o">]</span><span class="c1"># getent shadow root</span>
+root:<span class="nv">$6$Y1</span>.nEGyQRYQrX.8l<span class="nv">$R6QPw5uthWgpv6RlY</span>.9YfEVv5TrBwbNjWX7Di2f4kKbFsgP1W0T2Z4qyVk.N3XuSOTxp01iEvQC0y9GkDh3sB.::0:99999:7:::
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="pam">
+<h2>2.5.2. pam<a class="headerlink" href="#pam" title="永久链接至标题">¶</a></h2>
+<p>pam是可插入式认证模块，nss用于实现名称解析，pam用于实现认证工作。</p>
+<p>pam的主配置文件是/etc/pam.conf。次级配置目录有/etc/pam.d/目录下的所有文件。</p>
+<p>配置文件格式</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>type control  module-path module-arguments
+
+type:
+    account: 账号相关的非认证功能
+    auth: 认证和授权
+    password: 用户密码修改时候使用
+    session: 用户获取到服务器之前或使用服务完成之后要进行的一些附属性操作。
+control：
+    这个control代表同一种功能的多种检查之间的如何配合组合，有两种方式。
+    1、 使用一个关键词
+        required: 这个条件必须通过才可以
+        requisite: 一票通过
+        sufficient: 一票拒绝
+        optional: 无关紧要的
+        include: 使用其他文件的认证信息来检查
+
+
+    2、 使用一道多组“return value=action”
+        value： 提示特定的返回值
+        action: 采取的操作
+        module-path: 模块路径
+        module-arguments: 模块参数
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -974,7 +1083,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../练习题/index.html" class="btn btn-neutral float-right" title="1. 练习题11月" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="25-文件共享服务.html" class="btn btn-neutral float-right" title="2.6. 文件共享服务" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="23-Openssl.html" class="btn btn-neutral" title="2.4. Openssl" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

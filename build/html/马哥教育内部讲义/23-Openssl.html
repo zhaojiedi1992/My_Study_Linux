@@ -37,7 +37,7 @@
         <link rel="search" title="搜索" href="../search.html"/>
     <link rel="top" title="my_study_linux v0.1 文档" href="../index.html"/>
         <link rel="up" title="1. 基础类" href="index.html"/>
-        <link rel="next" title="2.5. 文本处理工具之sed,awk" href="24-Nssitch、pam.html"/>
+        <link rel="next" title="2.5. Nssitch、pam" href="24-Nssitch、pam.html"/>
         <link rel="prev" title="2.3. 文本处理工具之sed,awk" href="22-文本处理工具之sed,awk.html"/> 
 
   
@@ -416,11 +416,34 @@
 <li class="toctree-l3"><a class="reference internal" href="#id9">2.4.6. 数字证书的获取</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="24-Nssitch、pam.html">2.5. 文本处理工具之sed,awk</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="24-Nssitch、pam.html#sed">2.5.1. 22.1 sed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="24-Nssitch、pam.html#awk">2.5.2. 22.2 awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24-Nssitch、pam.html">2.5. Nssitch、pam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="24-Nssitch、pam.html#nsswitch">2.5.1. nsswitch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="24-Nssitch、pam.html#nss">2.5.1.1. nss的配置文件</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="24-Nssitch、pam.html#pam">2.5.2. pam</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="25-文件共享服务.html">2.6. 文件共享服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="25-文件共享服务.html#ftp">2.6.1. ftp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="25-文件共享服务.html#vsftpd">2.6.1.1. vsftpd的安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="25-文件共享服务.html#id2">2.6.1.2. 常见配置项</a></li>
+<li class="toctree-l4"><a class="reference internal" href="25-文件共享服务.html#id3">2.6.1.3. 基于虚拟用户的vsftpd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="25-文件共享服务.html#lftp">2.6.1.4. lftp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="25-文件共享服务.html#wget">2.6.1.5. wget</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="25-文件共享服务.html#nfs">2.6.2. nfs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="25-文件共享服务.html#samba">2.6.3. samba</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="26-DNS域名解析服务.html">2.7. DNS域名解析服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="26-DNS域名解析服务.html#id1">2.7.1. dns解析过程</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="27-Linux系统防火墙.html">2.8. Linux系统防火墙</a></li>
+<li class="toctree-l2"><a class="reference internal" href="28-LinuxSyslog系统日志管理.html">2.9. Linux Syslog系统日志管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="29-WebServices.html">2.10. Web Service</a></li>
 </ul>
 </li>
 </ul>
@@ -630,7 +653,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id4">4. 练习题2月</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../练习题/2018-02-03-练习网络文件共享2.html">4.1. 2018-02-03-练习网络文件共享2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../练习题/2018-02-03-练习网络文件共享2.html">4.1. 2018-02-03-练习网络文件共享2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../练习题/2018-02-03-练习网络文件共享2.html#samba">4.1.1. 练习1-建立samba服务器</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../练习题/index.html#id5">5. 练习题3月</a><ul class="simple">
@@ -940,7 +966,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="24-Nssitch、pam.html" class="btn btn-neutral float-right" title="2.5. 文本处理工具之sed,awk" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="24-Nssitch、pam.html" class="btn btn-neutral float-right" title="2.5. Nssitch、pam" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="22-文本处理工具之sed,awk.html" class="btn btn-neutral" title="2.3. 文本处理工具之sed,awk" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -1202,7 +1228,7 @@ qYmtfutw/Qnek44a1QIDAQAB
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="24-Nssitch、pam.html" class="btn btn-neutral float-right" title="2.5. 文本处理工具之sed,awk" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="24-Nssitch、pam.html" class="btn btn-neutral float-right" title="2.5. Nssitch、pam" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="22-文本处理工具之sed,awk.html" class="btn btn-neutral" title="2.3. 文本处理工具之sed,awk" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -416,11 +416,34 @@
 <li class="toctree-l3"><a class="reference internal" href="../马哥教育内部讲义/23-Openssl.html#id9">2.4.6. 数字证书的获取</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../马哥教育内部讲义/24-Nssitch、pam.html">2.5. 文本处理工具之sed,awk</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../马哥教育内部讲义/24-Nssitch、pam.html#sed">2.5.1. 22.1 sed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../马哥教育内部讲义/24-Nssitch、pam.html#awk">2.5.2. 22.2 awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../马哥教育内部讲义/24-Nssitch、pam.html">2.5. Nssitch、pam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../马哥教育内部讲义/24-Nssitch、pam.html#nsswitch">2.5.1. nsswitch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../马哥教育内部讲义/24-Nssitch、pam.html#nss">2.5.1.1. nss的配置文件</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../马哥教育内部讲义/24-Nssitch、pam.html#pam">2.5.2. pam</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../马哥教育内部讲义/25-文件共享服务.html">2.6. 文件共享服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../马哥教育内部讲义/25-文件共享服务.html#ftp">2.6.1. ftp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../马哥教育内部讲义/25-文件共享服务.html#vsftpd">2.6.1.1. vsftpd的安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../马哥教育内部讲义/25-文件共享服务.html#id2">2.6.1.2. 常见配置项</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../马哥教育内部讲义/25-文件共享服务.html#id3">2.6.1.3. 基于虚拟用户的vsftpd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../马哥教育内部讲义/25-文件共享服务.html#lftp">2.6.1.4. lftp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../马哥教育内部讲义/25-文件共享服务.html#wget">2.6.1.5. wget</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../马哥教育内部讲义/25-文件共享服务.html#nfs">2.6.2. nfs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../马哥教育内部讲义/25-文件共享服务.html#samba">2.6.3. samba</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../马哥教育内部讲义/26-DNS域名解析服务.html">2.7. DNS域名解析服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../马哥教育内部讲义/26-DNS域名解析服务.html#id1">2.7.1. dns解析过程</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../马哥教育内部讲义/27-Linux系统防火墙.html">2.8. Linux系统防火墙</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../马哥教育内部讲义/28-LinuxSyslog系统日志管理.html">2.9. Linux Syslog系统日志管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../马哥教育内部讲义/29-WebServices.html">2.10. Web Service</a></li>
 </ul>
 </li>
 </ul>
@@ -630,7 +653,10 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html#id4">4. 练习题2月</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. 2018-02-03-练习网络文件共享2</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. 2018-02-03-练习网络文件共享2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#samba">4.1.1. 练习1-建立samba服务器</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#id5">5. 练习题3月</a><ul class="simple">
@@ -952,8 +978,78 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="id1">
-<h1>4.1. 2018-02-03-练习网络文件共享2<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="fileshare">
+<span id="id1"></span><h1>4.1. 2018-02-03-练习网络文件共享2<a class="headerlink" href="#fileshare" title="永久链接至标题">¶</a></h1>
+<div class="section" id="samba">
+<h2>4.1.1. 练习1-建立samba服务器<a class="headerlink" href="#samba" title="永久链接至标题">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>建立samba服务器，共享目录为/data，要求如下:
+1 共享名字为shared,工作组为linuxpanda。
+2 添加组develop,添加用户panda1,panda2,panda3,其中panda1,panda以develop为附加组，</p>
+<blockquote>
+<div>panda3不属于develop组，密码 同用户名</div></blockquote>
+<p>3 添加samba用户，panda1,panda2,panda3密码都是panda
+4 此samba共享shared仅允许develop组具有写权限，其他用户只能只读访问
+5 此samba共享服务仅仅运行来自192.168.46.0、24的网络主机访问。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span># 添加组和用户
+[root@centos-155 home]# groupadd develop
+[root@centos-155 home]# useradd -G develop panda1
+[root@centos-155 home]# useradd -G develop panda2
+[root@centos-155 home]# useradd panda3
+# 配置系统密码和samba密码
+[root@centos-155 home]# echo panda1  |passwd --stdin panda1
+[root@centos-155 home]# echo panda2  |passwd --stdin panda2
+[root@centos-155 home]# echo panda3  |passwd --stdin panda3
+[root@centos-155 home]# smbpasswd  -a panda1
+[root@centos-155 home]# smbpasswd  -a panda2
+[root@centos-155 home]# smbpasswd  -a panda3
+# 创建目录设置权限
+[root@centos-155 home]# mkdir /data
+[root@centos-155 home]# setfacl -R -m &quot;g:develop:rwx&quot; /data
+# 编辑配置文件
+[root@centos-155 home]# systemctl restart smb nmb
+[root@centos-155 home]# netstat -tunlp |grep mb
+# 另一个机器查看
+[root@centos-152 yum.repos.d]# smbclient -L  192.168.46.155 -U panda1
+Enter SAMBA\panda1&#39;s password:
+Domain=[CENTOS-155] OS=[Windows 6.1] Server=[Samba 4.6.2]
+
+    Sharename       Type      Comment
+    ---------       ----      -------
+    print$          Disk      Printer Drivers
+    pub             Disk      this is samba pub for windows
+    shared          Disk      this this test
+    IPC$            IPC       IPC Service (Samba 4.6.2)
+    panda1          Disk      Home Directories
+Domain=[CENTOS-155] OS=[Windows 6.1] Server=[Samba 4.6.2]
+
+    Server               Comment
+    ---------            -------
+
+    Workgroup            Master
+    ---------            -------
+    SAMBA                CENTOS-155
+    WORKGROUP            DESKTOP-31DI5AI
+
+# 挂载
+[root@centos-152 yum.repos.d]# mkdir /mnt/panda1
+[root@centos-152 yum.repos.d]# mount -o username=panda1,password=oracle //192.168.46.155/shared /mnt/panda1/
+# 尝试创建一个文件
+[root@centos-152 panda1]# mkdir a
+[root@centos-152 panda1]# ls
+a  新建文本文档.txt
+
+# 挂载2
+[root@centos-152 yum.repos.d]# mkdir /mnt/panda3
+[root@centos-152 panda1]# mount -o username=panda3,password=oracle //192.168.46.155/shared /mnt/panda3/
+[root@centos-152 panda1]# cd /mnt/panda3
+[root@centos-152 panda3]# touch a.txt
+touch: cannot touch ‘a.txt’: Permission denied
+</pre></div>
+</div>
+</div>
 </div>
 
 
