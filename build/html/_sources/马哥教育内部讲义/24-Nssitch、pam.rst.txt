@@ -58,7 +58,7 @@ nss的配置文件是/etc/nsswitch.conf，格式比较简单。
 .. code-block:: text 
 
     # 这个含义就是如果文件没有找到的话，后续的工作（去dns查找）就不做了。
-    hosts: files[NOTFOUND]=return] dns
+    hosts: files[NOTFOUND=return] dns
  
 其他命令
 

@@ -100,7 +100,7 @@ ssl(secure socket layer)安全套接字协议，是一种应用层协议，主�
 
 数字证书
 -----------------------------------------------
-ca是一个证书办法机构，这个机构负责证书的办法。
+ca是一个证书颁发机构，这个机构负责证书的颁发。
 
 ca只是pki（public key infrastructure 公钥基础设施）的一个组成部分。pki包括： 
 
@@ -122,6 +122,71 @@ ca只是pki（public key infrastructure 公钥基础设施）的一个组成部�
 - 证书主体的唯一标示
 - 扩展信息
 - 签名（ca对证书的签名）
+
+证书样例： 
+
+.. code-block:: text 
+
+    [root@centos-155 CA]# openssl x509 -in cacert.pem -noout -text 
+    Certificate:
+        Data:
+            Version: 3 (0x2)
+            Serial Number:
+                98:6c:25:23:b5:0a:bd:8c
+        Signature Algorithm: sha256WithRSAEncryption
+            Issuer: C=cn, ST=henan, L=nanyang, O=linuxpanda, OU=opt, CN=ca.linuxpanda.tech
+            Validity
+                Not Before: Feb 11 11:27:19 2018 GMT
+                Not After : Feb  9 11:27:19 2028 GMT
+            Subject: C=cn, ST=henan, L=nanyang, O=linuxpanda, OU=opt, CN=ca.linuxpanda.tech
+            Subject Public Key Info:
+                Public Key Algorithm: rsaEncryption
+                    Public-Key: (2048 bit)
+                    Modulus:
+                        00:da:74:2d:f7:bd:ca:8f:ea:88:c0:f9:c4:1f:be:
+                        80:7d:30:7e:ad:2a:dc:25:84:1f:3c:54:82:3a:f3:
+                        ed:63:5f:93:5b:84:d1:24:58:32:12:cb:b5:ff:09:
+                        07:06:fa:33:96:bf:4e:cf:10:b0:6c:2b:27:52:58:
+                        38:76:d5:42:47:9c:cb:fc:f1:72:cf:22:f8:5a:f4:
+                        a6:d5:58:b5:99:3f:ec:41:3f:09:63:d8:dd:ec:19:
+                        1a:d2:59:f8:cb:7d:36:1d:0e:ef:cf:01:7c:53:49:
+                        70:6d:1d:f3:da:44:dd:a0:c4:55:7b:d0:8b:b4:f7:
+                        44:a5:29:13:b3:16:f9:8d:c9:0b:65:5c:d8:a1:95:
+                        9a:57:95:e0:76:d5:13:a7:7a:46:d0:0e:3f:91:6e:
+                        f3:de:ef:0b:b8:19:42:52:48:ea:fb:53:8d:c5:9f:
+                        6f:f5:ad:f6:99:85:45:ec:02:1b:57:84:74:c8:16:
+                        70:b4:17:c0:a2:80:83:e4:3a:46:07:91:72:45:7b:
+                        53:24:b5:fc:d3:a2:a8:28:04:ce:38:e6:e5:0c:3e:
+                        21:54:17:7a:40:fe:59:76:71:ab:e2:de:c2:eb:7e:
+                        07:5f:8e:46:f5:da:a6:45:d7:cb:73:bf:05:f7:70:
+                        5f:ab:e5:0a:0f:20:28:ac:80:75:88:eb:fe:83:77:
+                        c6:1f
+                    Exponent: 65537 (0x10001)
+            X509v3 extensions:
+                X509v3 Subject Key Identifier: 
+                    67:61:B2:E8:29:18:2A:CD:80:6C:98:03:3F:80:DF:A4:85:06:A0:69
+                X509v3 Authority Key Identifier: 
+                    keyid:67:61:B2:E8:29:18:2A:CD:80:6C:98:03:3F:80:DF:A4:85:06:A0:69
+
+                X509v3 Basic Constraints: 
+                    CA:TRUE
+        Signature Algorithm: sha256WithRSAEncryption
+            ae:de:c6:64:88:8d:a1:8d:0d:86:8c:b5:ae:5e:20:eb:07:9c:
+            dc:c1:68:17:28:f5:7c:e8:fa:c3:2d:24:7b:fe:34:73:fd:0f:
+            1a:f6:51:1b:f4:2d:49:03:d3:24:ca:83:ac:8b:7e:df:bf:6c:
+            56:f3:0c:76:30:31:76:a2:dd:7a:63:aa:7b:d4:55:49:a2:ae:
+            aa:c3:5e:58:71:f7:43:9b:d3:11:4c:d8:1e:29:69:bc:77:b4:
+            47:d6:eb:09:15:2b:a2:96:ba:11:1c:ba:c6:1b:ff:ed:02:15:
+            3b:17:58:eb:f2:c8:66:c9:ef:02:a8:f0:8b:1a:67:91:07:b5:
+            11:67:38:de:22:31:0b:0f:06:3c:14:39:ba:77:08:fe:3d:14:
+            2d:ee:3d:5c:46:91:ce:67:10:4d:79:ce:b0:22:cd:81:70:14:
+            b9:63:ba:79:23:80:24:0a:1d:18:92:9a:3f:d6:16:63:91:74:
+            90:cc:0f:2b:87:ff:d1:22:63:ae:64:3f:eb:a2:94:78:6d:fc:
+            3d:17:26:68:e4:88:a3:93:8a:15:10:2d:7c:db:d0:04:2d:89:
+            f2:f8:26:aa:a2:b7:b4:74:01:61:dd:a7:15:6c:d7:ba:d9:4d:
+            54:e5:df:b5:c1:55:5a:f8:ad:24:b8:89:f2:1f:98:45:4c:d4:
+            3a:4f:61:97
+
 
 ssl
 --------------------------------------------------------------------
