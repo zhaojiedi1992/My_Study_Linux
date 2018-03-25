@@ -667,7 +667,7 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">5.2. 2018-03-11-练习nginx.rst</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">5.2.1. 练习1-nginx</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">5.2.2. 练习2-nginx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">5.2.2. 练习2-nginx</a></li>
 </ul>
 </li>
 </ul>
@@ -956,6 +956,31 @@
 <li class="toctree-l3"><a class="reference internal" href="../课堂笔记/2018-03-14.html#id3">5.6.2. 本节内容</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../课堂笔记/2018-03-17.html">5.7. 2018-03-17</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../课堂笔记/2018-03-17.html#id2">5.7.1. 上节课回顾</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../课堂笔记/2018-03-17.html#id3">5.7.2. 本节内容</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../课堂笔记/2018-03-19.html">5.8. 2018-03-19</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../课堂笔记/2018-03-19.html#id2">5.8.1. 上节课回顾</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../课堂笔记/2018-03-19.html#id3">5.8.2. 本节内容</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../课堂笔记/2018-03-21.html">5.9. 2018-03-21</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../课堂笔记/2018-03-21.html#id2">5.9.1. 上节课回顾</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../课堂笔记/2018-03-21.html#id3">5.9.2. 本节内容</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../课堂笔记/2018-03-23.html">5.10. 2018-03-23</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../课堂笔记/2018-03-23.html#id2">5.10.1. 上节课回顾</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../课堂笔记/2018-03-23.html#id3">5.10.2. 本节内容</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../课堂笔记/2018-03-25.html">5.11. 2018-03-25</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../课堂笔记/2018-03-25.html#id2">5.11.1. 上节课回顾</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../课堂笔记/2018-03-25.html#id3">5.11.2. 本节内容</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../课堂笔记/index.html#id6">6. 课堂笔记4月</a><ul class="simple">
@@ -1042,11 +1067,12 @@
 <span id="nginx"></span><h1>5.2. 2018-03-11-练习nginx.rst<a class="headerlink" href="#nginx-rst" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
 <h2>5.2.1. 练习1-nginx<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>1、定义四个虚拟主机，混合使用三种类型的虚拟主机仅开放给来自于本地网络中的主机访问.</p>
-<p>2、实现lnmp，提供多个虚拟主机http, 提供wordpresshttps, 提供pma</p>
+<p>1、nginx虚拟主机配置</p>
+<p><a class="reference external" href="http://services.linuxpanda.tech/WEB/nginx/03-nginx%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E4%B8%89%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F.html#nginx">虚拟主机配置</a></p>
+<p>2、实现lnmp，提供多个虚拟主机http, 提供wordpress, 提供pma</p>
 </div>
-<div class="section" id="id2">
-<h2>5.2.2. 练习2-nginx<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h2>5.2.2. 练习2-nginx<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <div class="highlight-text"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
@@ -1063,6 +1089,9 @@ nginx--&gt;dynamic content servers (shop.magedu.com)
 location ~* .php$ {
 ...
 }</div></blockquote>
+<p>实验：rewrite 实现http跳转到https</p>
+<p>实验：防盗链</p>
+<p>实验：动静分离</p>
 </div>
 </div>
 
